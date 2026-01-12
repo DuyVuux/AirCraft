@@ -21,6 +21,7 @@ export interface Location {
 export interface RequiredTask {
   taskCode: string;
   minLevel?: number;
+  requiredCertificates?: string[];
 }
 
 export interface Aircraft {

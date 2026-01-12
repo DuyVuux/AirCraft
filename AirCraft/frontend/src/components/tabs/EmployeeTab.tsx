@@ -6,6 +6,8 @@ import type { ParseResult } from '@/services/csvParser';
 import { downloadTemplate } from '@/services/csvParser';
 import type { Employee } from '@/types/employee';
 import { useState, useEffect } from 'react';
+import useEmployeeFilter from '@/hooks/useEmployeeFilter';
+import EmployeeTableFilters from '@/components/editor/EmployeeTableFilters';
 
 export const tabConfig: TabConfig = {
     id: 'employees',
@@ -40,6 +42,27 @@ export default function EmployeeTab({
     handleEmployeeDelete,
 }: TabProps) {
     const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
+
+    const {
+        filters,
+        updateFilter,
+        clearFilters,
+        hasActiveFilters,
+        activeFilterCount,
+        filteredEmployees,
+        totalCount,
+        filteredCount,
+    } = useEmployeeFilter(employees);
+
+    // Cleanup selectedIds when employees OR filters change to ensure valid selection
+    useEffect(() => {
+        // When filters change, we might want to keep selection if the item is still visible?
+        // Or clear selection to avoid confusion? 
+        // TaskList cleared it. Let's keep consistent and clear it, or at least validate it against filtered list?
+        // TaskList logic: useEffect(() => setSelectedIds(new Set()), [filters]);
+        // Let's do the same for simplicity and avoiding hidden selections.
+        setSelectedIds(new Set());
+    }, [filters]);
 
     // Cleanup selectedIds when employees change
     useEffect(() => {
@@ -119,26 +142,11 @@ export default function EmployeeTab({
     };
 
     const handleSelectAll = () => {
-        if (selectedIds.size === employees.length) {
+        if (selectedIds.size === filteredEmployees.length) {
             setSelectedIds(new Set());
         } else {
-            const allIds = employees.map(e => e.employeeId);
-            const uniqueIds = new Set(allIds);
-
-            // Debug: Check for duplicates or missing IDs
-            console.log('Total employees:', employees.length);
-            console.log('Unique IDs:', uniqueIds.size);
-            console.log('All IDs:', allIds.length);
-
-            if (uniqueIds.size !== allIds.length) {
-                console.warn('⚠️ Found duplicate or missing employee IDs!');
-                const duplicates = allIds.filter((id, index) => allIds.indexOf(id) !== index);
-                const missing = employees.filter(e => !e.employeeId || e.employeeId === '');
-                console.log('Duplicates:', duplicates);
-                console.log('Missing IDs:', missing);
-            }
-
-            setSelectedIds(uniqueIds);
+            const allIds = filteredEmployees.map(e => e.employeeId);
+            setSelectedIds(new Set(allIds));
         }
     };
 
@@ -166,7 +174,7 @@ export default function EmployeeTab({
         downloadTemplate('employees_export.csv', EMPLOYEE_TEMPLATE_HEADERS, rows);
     };
 
-    const allSelected = selectedIds.size === employees.length && employees.length > 0;
+    const allSelected = selectedIds.size === filteredEmployees.length && filteredEmployees.length > 0;
 
     return (
         <>
@@ -243,7 +251,7 @@ export default function EmployeeTab({
                                         onChange={handleSelectAll}
                                         style={{ cursor: 'pointer', width: '16px', height: '16px' }}
                                     />
-                                    Chọn tất cả ({selectedIds.size}/{employees.length})
+                                    Chọn tất cả ({selectedIds.size}/{filteredEmployees.length})
                                 </label>
                             )}
                             <h3 className="layout-form-card-title" style={{ margin: 0 }}>Employees List</h3>
@@ -267,16 +275,31 @@ export default function EmployeeTab({
                         </div>
                     </div>
 
-                    {employees.map((employee) => (
-                        <EmployeeListItem
-                            key={employee.employeeId}
-                            employee={employee}
-                            isSelected={selectedIds.has(employee.employeeId)}
-                            onToggleSelect={() => handleToggleSelect(employee.employeeId)}
-                            onEdit={() => setEditingEmployeeId(employee.employeeId)}
-                            onDelete={() => handleEmployeeDelete(employee.employeeId)}
-                        />
-                    ))}
+                    <EmployeeTableFilters
+                        filters={filters}
+                        onFilterChange={updateFilter}
+                        onClearFilters={clearFilters}
+                        hasActiveFilters={hasActiveFilters}
+                        activeFilterCount={activeFilterCount}
+                        filteredCount={filteredCount}
+                        totalCount={totalCount}
+                    />
+
+                    {filteredEmployees.length === 0 ? (
+                        <div style={{ padding: '2rem', textAlign: 'center', color: 'var(--color-text-secondary)', background: 'var(--color-surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border)' }}>
+                            Không tìm thấy nhân viên phù hợp với bộ lọc hiện tại.
+                        </div>
+                    ) : (
+                        filteredEmployees.map((employee) => (
+                            <EmployeeListItem
+                                key={employee.employeeId}
+                                employee={employee}
+                                isSelected={selectedIds.has(employee.employeeId)}
+                                onToggleSelect={() => handleToggleSelect(employee.employeeId)}
+                                onEdit={() => setEditingEmployeeId(employee.employeeId)}
+                                onDelete={() => handleEmployeeDelete(employee.employeeId)}
+                            />
+                        )))}
                 </div>
             )}
         </>

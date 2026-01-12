@@ -3,132 +3,74 @@
     "id": "1de61ae6-216b-43b7-9c9f-84a52e9f25cb",
     "name": "abc123",
     "createdAt": "2025-12-12T00:35:02.231816",
-    "updatedAt": "2026-01-03T22:29:31.228392",
+    "updatedAt": "2026-01-12T15:24:22.285028",
     "itemCounts": {
       "tasks": 19,
-      "employees": 283,
+      "employees": 284,
       "hubs": 0,
-      "aircrafts": 3,
+      "aircrafts": 2,
+      "busStops": 0,
+      "busRoutes": 0,
       "timeMatrix": 0
     }
   },
   "data": {
-    "tasks": [
+    "trackingId": null,
+    "aircrafts": [
       {
-        "taskCode": "ARR-M",
-        "description": "Thợ chính Đón tàu",
-        "timeProcess": 600,
-        "requiredCertifications": []
+        "aircraftId": "VN416-2",
+        "flightNumber": "VN416",
+        "aType": {
+          "id": "B787",
+          "desc": "Boeing 787"
+        },
+        "location": {
+          "locationId": "node-1767274395212-htatpb0i9",
+          "locationType": "APRON",
+          "longitude": 105.8068693411589,
+          "latitude": 21.214254544275885
+        },
+        "timeWindow": {
+          "start": "2022-01-31 00:00:00",
+          "end": "2022-01-30 18:00:00"
+        },
+        "requiredTasks": [
+          {
+            "taskCode": "DEP-M"
+          },
+          {
+            "taskCode": "DEP-A"
+          }
+        ]
       },
       {
-        "taskCode": "ARR-A",
-        "description": "Trợ lý Đón tàu",
-        "timeProcess": 600,
-        "requiredCertifications": []
-      },
-      {
-        "taskCode": "DEP-M",
-        "description": "Thợ chính Tiễn tàu",
-        "timeProcess": 600,
-        "requiredCertifications": []
-      },
-      {
-        "taskCode": "DEP-A",
-        "description": "Trợ lý Tiễn tàu",
-        "timeProcess": 600,
-        "requiredCertifications": []
-      },
-      {
-        "taskCode": "TOW",
-        "description": "Kéo đẩy tàu bay",
-        "timeProcess": 600,
-        "requiredCertifications": []
-      },
-      {
-        "taskCode": "WO-01",
-        "description": "Kiểm tra Quá cảnh",
-        "timeProcess": 600,
-        "requiredCertifications": []
-      },
-      {
-        "taskCode": "WO-02",
-        "description": "Kiểm tra Qua đêm",
-        "timeProcess": 600,
-        "requiredCertifications": []
-      },
-      {
-        "taskCode": "WO-03",
-        "description": "Kiểm tra Tuần",
-        "timeProcess": 600,
-        "requiredCertifications": []
-      },
-      {
-        "taskCode": "WO-04",
-        "description": "Dịch vụ Lốp/Dầu",
-        "timeProcess": 600,
-        "requiredCertifications": []
-      },
-      {
-        "taskCode": "WO-05",
-        "description": "Sửa chữa Nội thất",
-        "timeProcess": 600,
-        "requiredCertifications": []
-      },
-      {
-        "taskCode": "WO-06",
-        "description": "Sửa chữa Phát sinh",
-        "timeProcess": 600,
-        "requiredCertifications": []
-      },
-      {
-        "taskCode": "WO-07",
-        "description": "Gói Kỹ thuật 07",
-        "timeProcess": 600,
-        "requiredCertifications": []
-      },
-      {
-        "taskCode": "WO-08",
-        "description": "Gói Kỹ thuật 08",
-        "timeProcess": 600,
-        "requiredCertifications": []
-      },
-      {
-        "taskCode": "WO-09",
-        "description": "Gói Kỹ thuật 09",
-        "timeProcess": 600,
-        "requiredCertifications": []
-      },
-      {
-        "taskCode": "WO-10",
-        "description": "Gói Kỹ thuật 10",
-        "timeProcess": 600,
-        "requiredCertifications": []
-      },
-      {
-        "taskCode": "WO-11",
-        "description": "Gói Kỹ thuật 11",
-        "timeProcess": 600,
-        "requiredCertifications": []
-      },
-      {
-        "taskCode": "WO-12",
-        "description": "Gói Kỹ thuật 12",
-        "timeProcess": 600,
-        "requiredCertifications": []
-      },
-      {
-        "taskCode": "WO-13",
-        "description": "Gói Kỹ thuật 13",
-        "timeProcess": 600,
-        "requiredCertifications": []
-      },
-      {
-        "taskCode": "WO-14",
-        "description": "Gói Kỹ thuật 14",
-        "timeProcess": 600,
-        "requiredCertifications": []
+        "aircraftId": "VN7253-3",
+        "flightNumber": "VN7253",
+        "aType": {
+          "id": "A350",
+          "desc": "Airbus A350"
+        },
+        "location": {
+          "locationId": "node-1767274393712-lorlrbtkw",
+          "locationType": "APRON",
+          "longitude": 105.8073145769256,
+          "latitude": 21.21528973878966
+        },
+        "timeWindow": {
+          "start": "2022-01-31 00:01:00",
+          "end": "2022-01-30 18:01:00"
+        },
+        "requiredTasks": [
+          {
+            "taskCode": "DEP-M"
+          },
+          {
+            "taskCode": "DEP-A"
+          }
+        ]
       }
     ],
+    "hubs": [],
     "employees": [
       {
         "employeeId": "VAE03726",
@@ -6457,87 +6399,156 @@
           "A321-NEO",
           "B737"
         ]
+      },
+      {
+        "employeeId": "NV0078",
+        "name": "Nguyễn Thị A",
+        "position": "Kỹ thuật viên ",
+        "taskCapabilities": [
+          "DEP-M"
+        ],
+        "certifications": [
+          "A320",
+          "A330",
+          "B737",
+          "B787",
+          "ELECTRICAL",
+          "HYDRAULIC",
+          "C919",
+          "B777",
+          "A350",
+          "A321"
+        ],
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "workingTimes": [
+          {
+            "start": "2026-01-15T08:13:00.000Z",
+            "end": "2026-01-31T08:13:00.000Z"
+          }
+        ],
+        "breakDuration": 3600,
+        "fixedBreakTimes": []
       }
     ],
-    "hubs": [],
-    "aircrafts": [
+    "busStops": [],
+    "busRoutes": [],
+    "matrixConfigs": null,
+    "tasks": [
       {
-        "aircraftId": "VN19-1",
-        "flightNumber": "VN19",
-        "aType": {
-          "id": "A350",
-          "desc": "Airbus A350"
-        },
-        "location": {
-          "locationId": "node-1767274394450-mb9m5d4pi",
-          "locationType": "APRON",
-          "longitude": 105.80709464118542,
-          "latitude": 21.21476464103058
-        },
-        "timeWindow": {
-          "start": "2022-01-31 00:00:00",
-          "end": "2022-01-30 18:00:00"
-        },
-        "requiredTasks": [
-          {
-            "taskCode": "DEP-M"
-          },
-          {
-            "taskCode": "DEP-A"
-          }
-        ]
+        "taskCode": "ARR-M",
+        "description": "Thợ chính Đón tàu",
+        "timeProcess": 600,
+        "requiredCertifications": []
       },
       {
-        "aircraftId": "VN416-2",
-        "flightNumber": "VN416",
-        "aType": {
-          "id": "B787",
-          "desc": "Boeing 787"
-        },
-        "location": {
-          "locationId": "node-1767274395212-htatpb0i9",
-          "locationType": "APRON",
-          "longitude": 105.8068693411589,
-          "latitude": 21.214254544275885
-        },
-        "timeWindow": {
-          "start": "2022-01-31 00:00:00",
-          "end": "2022-01-30 18:00:00"
-        },
-        "requiredTasks": [
-          {
-            "taskCode": "DEP-M"
-          },
-          {
-            "taskCode": "DEP-A"
-          }
-        ]
+        "taskCode": "ARR-A",
+        "description": "Trợ lý Đón tàu",
+        "timeProcess": 600,
+        "requiredCertifications": []
       },
       {
-        "aircraftId": "VN7253-3",
-        "flightNumber": "VN7253",
-        "aType": {
-          "id": "A350",
-          "desc": "Airbus A350"
-        },
-        "location": {
-          "locationId": "node-1767274393712-lorlrbtkw",
-          "locationType": "APRON",
-          "longitude": 105.8073145769256,
-          "latitude": 21.21528973878966
-        },
-        "timeWindow": {
-          "start": "2022-01-31 00:01:00",
-          "end": "2022-01-30 18:01:00"
-        },
-        "requiredTasks": [
-          {
-            "taskCode": "DEP-M"
-          },
-          {
-            "taskCode": "DEP-A"
-          }
-        ]
+        "taskCode": "DEP-M",
+        "description": "Thợ chính Tiễn tàu",
+        "timeProcess": 600,
+        "requiredCertifications": []
+      },
+      {
+        "taskCode": "DEP-A",
+        "description": "Trợ lý Tiễn tàu",
+        "timeProcess": 600,
+        "requiredCertifications": []
+      },
+      {
+        "taskCode": "TOW",
+        "description": "Kéo đẩy tàu bay",
+        "timeProcess": 600,
+        "requiredCertifications": []
+      },
+      {
+        "taskCode": "WO-01",
+        "description": "Kiểm tra Quá cảnh",
+        "timeProcess": 600,
+        "requiredCertifications": []
+      },
+      {
+        "taskCode": "WO-02",
+        "description": "Kiểm tra Qua đêm",
+        "timeProcess": 600,
+        "requiredCertifications": []
+      },
+      {
+        "taskCode": "WO-03",
+        "description": "Kiểm tra Tuần",
+        "timeProcess": 600,
+        "requiredCertifications": []
+      },
+      {
+        "taskCode": "WO-04",
+        "description": "Dịch vụ Lốp/Dầu",
+        "timeProcess": 600,
+        "requiredCertifications": []
+      },
+      {
+        "taskCode": "WO-05",
+        "description": "Sửa chữa Nội thất",
+        "timeProcess": 600,
+        "requiredCertifications": []
+      },
+      {
+        "taskCode": "WO-06",
+        "description": "Sửa chữa Phát sinh",
+        "timeProcess": 600,
+        "requiredCertifications": []
+      },
+      {
+        "taskCode": "WO-07",
+        "description": "Gói Kỹ thuật 07",
+        "timeProcess": 600,
+        "requiredCertifications": []
+      },
+      {
+        "taskCode": "WO-08",
+        "description": "Gói Kỹ thuật 08",
+        "timeProcess": 600,
+        "requiredCertifications": []
+      },
+      {
+        "taskCode": "WO-09",
+        "description": "Gói Kỹ thuật 09",
+        "timeProcess": 600,
+        "requiredCertifications": []
+      },
+      {
+        "taskCode": "WO-10",
+        "description": "Gói Kỹ thuật 10",
+        "timeProcess": 600,
+        "requiredCertifications": []
+      },
+      {
+        "taskCode": "WO-11",
+        "description": "Gói Kỹ thuật 11",
+        "timeProcess": 600,
+        "requiredCertifications": []
+      },
+      {
+        "taskCode": "WO-12",
+        "description": "Gói Kỹ thuật 12",
+        "timeProcess": 600,
+        "requiredCertifications": []
+      },
+      {
+        "taskCode": "WO-13",
+        "description": "Gói Kỹ thuật 13",
+        "timeProcess": 600,
+        "requiredCertifications": []
+      },
+      {
+        "taskCode": "WO-14",
+        "description": "Gói Kỹ thuật 14",
+        "timeProcess": 600,
+        "requiredCertifications": []
       }
     ],
     "timeMatrix": []

@@ -273,7 +273,7 @@
 
 .editor-date-input {
   width: 100%;
-  padding: 0.625rem 2.5rem 0.625rem 0.75rem;
+  padding: 0.625rem 2rem 0.625rem 0.75rem;
   background-color: var(--color-background);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -286,6 +286,7 @@
   appearance: none;
   box-sizing: border-box;
   min-width: 0;
+  position: relative;
 }
 
 
@@ -316,6 +317,22 @@
   cursor: pointer;
   z-index: 1;
   font-size: 1.125rem;
+}
+
+.editor-date-input::-webkit-calendar-picker-indicator {
+  position: absolute;
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  /* Ensure it has a reasonable size if needed, though default is usually fine */
+  width: 1rem;
+  height: 1rem;
+  padding: 0;
+
+  /* Optional: filter to adjust color if standard icon color is not desired,
+     but standard is usually black/system. */
 }
 
 .editor-readonly-banner {

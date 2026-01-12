@@ -91,6 +91,15 @@ class OrAdapter(IDataAdapter):
             key = (entry.taskCode, entry.aircraftId)
             task_durations[key].append((entry.role, set(entry.certificates), entry.timeProcess))
         
+        # Fallback: Ensure all required tasks have at least one duration entry
+        for aircraft in context.aircrafts:
+            for task in aircraft.requiredTasks:
+                key = (task.taskCode, aircraft.aircraftId)
+                if key not in task_durations:
+                    # Default: 30 min (1800s), no specific role (None), use certificates from task
+                    # This allows the solver to proceed even if timeMatrix is empty
+                    task_durations[key].append((None, set(task.requiredCertificates), 1800))
+        
         # 2. Calculate global min time
         min_global_time = float('inf')
         

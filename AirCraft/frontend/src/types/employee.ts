@@ -9,6 +9,7 @@ export type Role =
 
 export interface EmployeeType {
   role: Role;
+  certificates?: string[];
 }
 
 export interface WorkingTime {

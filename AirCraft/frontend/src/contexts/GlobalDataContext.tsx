@@ -8,6 +8,7 @@ import type { AirportConfig } from '@/types/airport';
 import { airportApi } from '@/types/airport';
 import type { Task } from '@/components/editor/TaskEditor';
 import { useDatasetManager, useAutoSaveDataset, useAutoSaveAirport } from '@/hooks/useDatasetManager';
+import { transformEmployee, transformAircraft, transformEdgesToDistanceMatrix } from '@/utils/transformForAlgo';
 
 interface GlobalDataState {
     tasks: Task[];
@@ -171,13 +172,19 @@ export function GlobalDataProvider({ children }: { children: React.ReactNode }) 
     const handleExportJSON = useCallback(() => {
         const trackingId = `PLAN-${new Date().toISOString().split('T')[0]}-${String(Math.floor(Math.random() * 1000)).padStart(3, '0')}`;
 
+        const transformedEmployees = employees.map(transformEmployee);
+        const transformedAircrafts = aircrafts.map(transformAircraft);
+        const distanceMatrix = transformEdgesToDistanceMatrix(mapEdges);
+
         const data = {
             trackingId,
-            aircrafts,
+            aircrafts: transformedAircrafts,
             hubs,
-            employees,
+            employees: transformedEmployees,
+            busStops: [],
+            busRoutes: [],
             matrixConfigs: {
-                distanceMatrix: [],
+                distanceMatrix,
                 busTransitMatrix: [],
                 walkingDistanceFromLocationToBusStop: [],
                 timeMatrix
@@ -193,7 +200,7 @@ export function GlobalDataProvider({ children }: { children: React.ReactNode }) 
         link.click();
         document.body.removeChild(link);
         URL.revokeObjectURL(url);
-    }, [aircrafts, employees, hubs, timeMatrix]);
+    }, [aircrafts, employees, hubs, timeMatrix, mapEdges]);
 
     const value = useMemo(() => ({
         tasks, employees, hubs, aircrafts, timeMatrix, mapNodes, mapEdges, mapTrips, currentAirport,

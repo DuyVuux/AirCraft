@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { AVAILABLE_CERTIFICATIONS } from '@/types/certifications';
+import { useTaskFilter } from '@/hooks/useTaskFilter';
+import { TaskTableFilters } from './TaskTableFilters';
 import './Editor.css';
 
 export interface Task {
@@ -205,6 +207,22 @@ interface TaskListProps {
 export const TaskList: React.FC<TaskListProps> = ({ tasks, onEdit, onDelete }) => {
   const [selectedIds, setSelectedIds] = React.useState<Set<string>>(new Set());
 
+  const {
+    filters,
+    updateFilter,
+    clearFilters,
+    hasActiveFilters,
+    activeFilterCount,
+    filteredTasks,
+    totalCount,
+    filteredCount,
+  } = useTaskFilter(tasks);
+
+  // Reset selection when filters change to avoid confusion
+  useEffect(() => {
+    setSelectedIds(new Set());
+  }, [filters]);
+
   if (tasks.length === 0) {
     return (
       <div className="editor-card">
@@ -234,10 +252,10 @@ export const TaskList: React.FC<TaskListProps> = ({ tasks, onEdit, onDelete }) =
   };
 
   const handleSelectAll = () => {
-    if (selectedIds.size === tasks.length) {
+    if (selectedIds.size === filteredTasks.length) {
       setSelectedIds(new Set());
     } else {
-      setSelectedIds(new Set(tasks.map(t => t.taskCode)));
+      setSelectedIds(new Set(filteredTasks.map(t => t.taskCode)));
     }
   };
 
@@ -248,8 +266,6 @@ export const TaskList: React.FC<TaskListProps> = ({ tasks, onEdit, onDelete }) =
       setSelectedIds(new Set());
     }
   };
-
-  const allSelected = selectedIds.size === tasks.length && tasks.length > 0;
 
   return (
     <div className="editor-card">
@@ -273,6 +289,17 @@ export const TaskList: React.FC<TaskListProps> = ({ tasks, onEdit, onDelete }) =
           </button>
         )}
       </div>
+
+      <TaskTableFilters
+        filters={filters}
+        onFilterChange={updateFilter}
+        onClearFilters={clearFilters}
+        hasActiveFilters={hasActiveFilters}
+        activeFilterCount={activeFilterCount}
+        filteredCount={filteredCount}
+        totalCount={totalCount}
+      />
+
       <div style={{ marginTop: '1rem', overflowX: 'auto' }}>
         <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.875rem' }}>
           <thead>
@@ -280,7 +307,7 @@ export const TaskList: React.FC<TaskListProps> = ({ tasks, onEdit, onDelete }) =
               <th style={{ padding: '0.75rem', textAlign: 'left', width: '40px' }}>
                 <input
                   type="checkbox"
-                  checked={allSelected}
+                  checked={filteredTasks.length > 0 && selectedIds.size === filteredTasks.length}
                   onChange={handleSelectAll}
                   style={{ cursor: 'pointer' }}
                 />
@@ -293,83 +320,91 @@ export const TaskList: React.FC<TaskListProps> = ({ tasks, onEdit, onDelete }) =
             </tr>
           </thead>
           <tbody>
-            {tasks.map((task) => {
-              const isSelected = selectedIds.has(task.taskCode);
-              return (
-                <tr
-                  key={task.taskCode}
-                  style={{
-                    borderBottom: '1px solid var(--color-border)',
-                    backgroundColor: isSelected ? 'rgba(59, 130, 246, 0.1)' : 'transparent',
-                  }}
-                >
-                  <td style={{ padding: '0.75rem' }}>
-                    <input
-                      type="checkbox"
-                      checked={isSelected}
-                      onChange={() => handleToggleSelect(task.taskCode)}
-                      style={{ cursor: 'pointer' }}
-                    />
-                  </td>
-                  <td style={{ padding: '0.75rem', fontWeight: 600 }}>
-                    <span className="editor-task-chip">{task.taskCode}</span>
-                  </td>
-                  <td style={{ padding: '0.75rem', color: 'var(--color-text-secondary)' }}>
-                    {task.description || '—'}
-                  </td>
-                  <td style={{ padding: '0.75rem' }}>
-                    <span style={{
-                      color: task.timeProcess && task.timeProcess > 0 ? 'var(--color-success)' : 'var(--color-warning)',
-                      fontWeight: 500
-                    }}>
-                      {formatTime(task.timeProcess)}
-                    </span>
-                  </td>
-                  <td style={{ padding: '0.75rem' }}>
-                    {task.requiredCertifications && task.requiredCertifications.length > 0 ? (
-                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.25rem' }}>
-                        {task.requiredCertifications.map((cert, idx) => (
-                          <span
-                            key={idx}
-                            style={{
-                              fontSize: '0.7rem',
-                              padding: '0.125rem 0.5rem',
-                              borderRadius: '0.75rem',
-                              background: 'var(--color-warning-bg)',
-                              color: 'var(--color-warning)',
-                            }}
-                          >
-                            {cert}
-                          </span>
-                        ))}
+            {filteredTasks.length === 0 ? (
+              <tr>
+                <td colSpan={6} style={{ padding: '2rem', textAlign: 'center', color: 'var(--color-text-secondary)' }}>
+                  Không tìm thấy task phù hợp với bộ lọc hiện tại.
+                </td>
+              </tr>
+            ) : (
+              filteredTasks.map((task) => {
+                const isSelected = selectedIds.has(task.taskCode);
+                return (
+                  <tr
+                    key={task.taskCode}
+                    style={{
+                      borderBottom: '1px solid var(--color-border)',
+                      backgroundColor: isSelected ? 'rgba(59, 130, 246, 0.1)' : 'transparent',
+                    }}
+                  >
+                    <td style={{ padding: '0.75rem' }}>
+                      <input
+                        type="checkbox"
+                        checked={isSelected}
+                        onChange={() => handleToggleSelect(task.taskCode)}
+                        style={{ cursor: 'pointer' }}
+                      />
+                    </td>
+                    <td style={{ padding: '0.75rem', fontWeight: 600 }}>
+                      <span className="editor-task-chip">{task.taskCode}</span>
+                    </td>
+                    <td style={{ padding: '0.75rem', color: 'var(--color-text-secondary)' }}>
+                      {task.description || '—'}
+                    </td>
+                    <td style={{ padding: '0.75rem' }}>
+                      <span style={{
+                        color: task.timeProcess && task.timeProcess > 0 ? 'var(--color-success)' : 'var(--color-warning)',
+                        fontWeight: 500
+                      }}>
+                        {formatTime(task.timeProcess)}
+                      </span>
+                    </td>
+                    <td style={{ padding: '0.75rem' }}>
+                      {task.requiredCertifications && task.requiredCertifications.length > 0 ? (
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.25rem' }}>
+                          {task.requiredCertifications.map((cert, idx) => (
+                            <span
+                              key={idx}
+                              style={{
+                                fontSize: '0.7rem',
+                                padding: '0.125rem 0.5rem',
+                                borderRadius: '0.75rem',
+                                background: 'var(--color-warning-bg)',
+                                color: 'var(--color-warning)',
+                              }}
+                            >
+                              {cert}
+                            </span>
+                          ))}
+                        </div>
+                      ) : (
+                        <span style={{ color: 'var(--color-text-secondary)' }}>Không yêu cầu</span>
+                      )}
+                    </td>
+                    <td style={{ padding: '0.75rem' }}>
+                      <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'flex-end' }}>
+                        <button
+                          className="editor-form-button-secondary"
+                          onClick={() => onEdit(task)}
+                          style={{ padding: '0.375rem 0.75rem', fontSize: '0.875rem' }}
+                        >
+                          <span className="material-symbols-outlined" style={{ fontSize: '1rem' }}>edit</span>
+                          Edit
+                        </button>
+                        <button
+                          className="editor-form-button-secondary"
+                          onClick={() => onDelete(task.taskCode)}
+                          style={{ padding: '0.375rem 0.75rem', fontSize: '0.875rem' }}
+                        >
+                          <span className="material-symbols-outlined text-danger" style={{ fontSize: '1rem' }}>delete</span>
+                          <span className="text-danger">Delete</span>
+                        </button>
                       </div>
-                    ) : (
-                      <span style={{ color: 'var(--color-text-secondary)' }}>Không yêu cầu</span>
-                    )}
-                  </td>
-                  <td style={{ padding: '0.75rem' }}>
-                    <div style={{ display: 'flex', gap: '0.5rem', justifyContent: 'flex-end' }}>
-                      <button
-                        className="editor-form-button-secondary"
-                        onClick={() => onEdit(task)}
-                        style={{ padding: '0.375rem 0.75rem', fontSize: '0.875rem' }}
-                      >
-                        <span className="material-symbols-outlined" style={{ fontSize: '1rem' }}>edit</span>
-                        Edit
-                      </button>
-                      <button
-                        className="editor-form-button-secondary"
-                        onClick={() => onDelete(task.taskCode)}
-                        style={{ padding: '0.375rem 0.75rem', fontSize: '0.875rem' }}
-                      >
-                        <span className="material-symbols-outlined text-danger" style={{ fontSize: '1rem' }}>delete</span>
-                        <span className="text-danger">Delete</span>
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              );
-            })}
+                    </td>
+                  </tr>
+                );
+              })
+            )}
           </tbody>
         </table>
       </div>
@@ -378,4 +413,3 @@ export const TaskList: React.FC<TaskListProps> = ({ tasks, onEdit, onDelete }) =
 };
 
 export default TaskEditor;
-

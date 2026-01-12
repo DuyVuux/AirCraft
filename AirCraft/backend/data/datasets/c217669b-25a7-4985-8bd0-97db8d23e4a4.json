@@ -1,0 +1,7197 @@
+{
+  "id": "c217669b-25a7-4985-8bd0-97db8d23e4a4",
+  "meta": {
+    "name": "DEF123",
+    "description": "Scaled dataset: 20 tasks, 2 aircrafts, 284 employees",
+    "createdAt": "2026-01-12T15:43:25.423576Z",
+    "updatedAt": "2026-01-12T16:29:02.694439",
+    "id": "c217669b-25a7-4985-8bd0-97db8d23e4a4",
+    "itemCounts": {
+      "tasks": 10,
+      "employees": 284,
+      "hubs": 0,
+      "aircrafts": 2,
+      "busStops": 0,
+      "busRoutes": 0,
+      "timeMatrix": 0
+    }
+  },
+  "data": {
+    "trackingId": null,
+    "aircrafts": [
+      {
+        "aircraftId": "DEF-VN101-1",
+        "flightNumber": "VN101",
+        "aType": {
+          "id": "A321",
+          "desc": "Airbus A321"
+        },
+        "location": {
+          "locationId": "stand-01",
+          "locationType": "APRON",
+          "longitude": 105.8071,
+          "latitude": 21.2148
+        },
+        "timeWindow": {
+          "start": "2026-01-12T09:00:00Z",
+          "end": "2026-01-12T15:00:00Z"
+        },
+        "requiredTasks": [
+          {
+            "taskCode": "ARR-M",
+            "requiredCertificates": [
+              "ARR-M"
+            ]
+          },
+          {
+            "taskCode": "ARR-A",
+            "requiredCertificates": [
+              "ARR-A"
+            ]
+          },
+          {
+            "taskCode": "DEP-M",
+            "requiredCertificates": [
+              "DEP-M"
+            ]
+          },
+          {
+            "taskCode": "DEP-A",
+            "requiredCertificates": [
+              "DEP-A"
+            ]
+          },
+          {
+            "taskCode": "TOW",
+            "requiredCertificates": [
+              "TOW"
+            ]
+          },
+          {
+            "taskCode": "WO-01",
+            "requiredCertificates": [
+              "WO-01"
+            ]
+          },
+          {
+            "taskCode": "WO-02",
+            "requiredCertificates": [
+              "WO-02"
+            ]
+          },
+          {
+            "taskCode": "WO-03",
+            "requiredCertificates": [
+              "WO-03"
+            ]
+          },
+          {
+            "taskCode": "WO-04",
+            "requiredCertificates": [
+              "WO-04"
+            ]
+          },
+          {
+            "taskCode": "WO-05",
+            "requiredCertificates": [
+              "WO-05"
+            ]
+          }
+        ]
+      },
+      {
+        "aircraftId": "DEF-VN102-2",
+        "flightNumber": "VN102",
+        "aType": {
+          "id": "B787",
+          "desc": "Boeing 787"
+        },
+        "location": {
+          "locationId": "stand-02",
+          "locationType": "APRON",
+          "longitude": 105.8069,
+          "latitude": 21.2143
+        },
+        "timeWindow": {
+          "start": "2026-01-12T09:00:00Z",
+          "end": "2026-01-12T15:00:00Z"
+        },
+        "requiredTasks": [
+          {
+            "taskCode": "WO-01",
+            "requiredCertificates": [
+              "WO-01"
+            ]
+          },
+          {
+            "taskCode": "WO-02",
+            "requiredCertificates": [
+              "WO-02"
+            ]
+          },
+          {
+            "taskCode": "WO-03",
+            "requiredCertificates": [
+              "WO-03"
+            ]
+          },
+          {
+            "taskCode": "WO-04",
+            "requiredCertificates": [
+              "WO-04"
+            ]
+          },
+          {
+            "taskCode": "WO-05",
+            "requiredCertificates": [
+              "WO-05"
+            ]
+          },
+          {
+            "taskCode": "ARR-M",
+            "requiredCertificates": [
+              "ARR-M"
+            ]
+          },
+          {
+            "taskCode": "ARR-A",
+            "requiredCertificates": [
+              "ARR-A"
+            ]
+          },
+          {
+            "taskCode": "DEP-M",
+            "requiredCertificates": [
+              "DEP-M"
+            ]
+          },
+          {
+            "taskCode": "DEP-A",
+            "requiredCertificates": [
+              "DEP-A"
+            ]
+          },
+          {
+            "taskCode": "TOW",
+            "requiredCertificates": [
+              "TOW"
+            ]
+          }
+        ]
+      }
+    ],
+    "hubs": [],
+    "employees": [
+      {
+        "employeeId": "DEF-EMP-001",
+        "name": "Employee 1",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-002",
+        "name": "Employee 2",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-003",
+        "name": "Employee 3",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "ARR-M",
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-004",
+        "name": "Employee 4",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-A",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-005",
+        "name": "Employee 5",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-006",
+        "name": "Employee 6",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-01",
+          "WO-02",
+          "WO-03"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-007",
+        "name": "Employee 7",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A",
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-008",
+        "name": "Employee 8",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-009",
+        "name": "Employee 9",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-04",
+          "WO-05"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-010",
+        "name": "Employee 10",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-011",
+        "name": "Employee 11",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-A",
+          "WO-02",
+          "WO-04"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-012",
+        "name": "Employee 12",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-013",
+        "name": "Employee 13",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-014",
+        "name": "Employee 14",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "ARR-M",
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-015",
+        "name": "Employee 15",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-A",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-016",
+        "name": "Employee 16",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-017",
+        "name": "Employee 17",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-01",
+          "WO-02",
+          "WO-03"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-018",
+        "name": "Employee 18",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A",
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-019",
+        "name": "Employee 19",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-020",
+        "name": "Employee 20",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-04",
+          "WO-05"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-021",
+        "name": "Employee 21",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-022",
+        "name": "Employee 22",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-A",
+          "WO-02",
+          "WO-04"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-023",
+        "name": "Employee 23",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-024",
+        "name": "Employee 24",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-025",
+        "name": "Employee 25",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "ARR-M",
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-026",
+        "name": "Employee 26",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-A",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-027",
+        "name": "Employee 27",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-028",
+        "name": "Employee 28",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-01",
+          "WO-02",
+          "WO-03"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-029",
+        "name": "Employee 29",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A",
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-030",
+        "name": "Employee 30",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-031",
+        "name": "Employee 31",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-04",
+          "WO-05"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-032",
+        "name": "Employee 32",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-033",
+        "name": "Employee 33",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-A",
+          "WO-02",
+          "WO-04"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-034",
+        "name": "Employee 34",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-035",
+        "name": "Employee 35",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-036",
+        "name": "Employee 36",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "ARR-M",
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-037",
+        "name": "Employee 37",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-A",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-038",
+        "name": "Employee 38",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-039",
+        "name": "Employee 39",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-01",
+          "WO-02",
+          "WO-03"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-040",
+        "name": "Employee 40",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A",
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-041",
+        "name": "Employee 41",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-042",
+        "name": "Employee 42",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-04",
+          "WO-05"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-043",
+        "name": "Employee 43",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-044",
+        "name": "Employee 44",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-A",
+          "WO-02",
+          "WO-04"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-045",
+        "name": "Employee 45",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-046",
+        "name": "Employee 46",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-047",
+        "name": "Employee 47",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "ARR-M",
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-048",
+        "name": "Employee 48",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-A",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-049",
+        "name": "Employee 49",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-050",
+        "name": "Employee 50",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-01",
+          "WO-02",
+          "WO-03"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-051",
+        "name": "Employee 51",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A",
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-052",
+        "name": "Employee 52",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-053",
+        "name": "Employee 53",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-04",
+          "WO-05"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-054",
+        "name": "Employee 54",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-055",
+        "name": "Employee 55",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-A",
+          "WO-02",
+          "WO-04"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-056",
+        "name": "Employee 56",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-057",
+        "name": "Employee 57",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-058",
+        "name": "Employee 58",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "ARR-M",
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-059",
+        "name": "Employee 59",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-A",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-060",
+        "name": "Employee 60",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-061",
+        "name": "Employee 61",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-01",
+          "WO-02",
+          "WO-03"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-062",
+        "name": "Employee 62",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A",
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-063",
+        "name": "Employee 63",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-064",
+        "name": "Employee 64",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-04",
+          "WO-05"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-065",
+        "name": "Employee 65",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-066",
+        "name": "Employee 66",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-A",
+          "WO-02",
+          "WO-04"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-067",
+        "name": "Employee 67",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-068",
+        "name": "Employee 68",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-069",
+        "name": "Employee 69",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "ARR-M",
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-070",
+        "name": "Employee 70",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-A",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-071",
+        "name": "Employee 71",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-072",
+        "name": "Employee 72",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-01",
+          "WO-02",
+          "WO-03"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-073",
+        "name": "Employee 73",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A",
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-074",
+        "name": "Employee 74",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-075",
+        "name": "Employee 75",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-04",
+          "WO-05"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-076",
+        "name": "Employee 76",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-077",
+        "name": "Employee 77",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-A",
+          "WO-02",
+          "WO-04"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-078",
+        "name": "Employee 78",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-079",
+        "name": "Employee 79",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-080",
+        "name": "Employee 80",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "ARR-M",
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-081",
+        "name": "Employee 81",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-A",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-082",
+        "name": "Employee 82",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-083",
+        "name": "Employee 83",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-01",
+          "WO-02",
+          "WO-03"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-084",
+        "name": "Employee 84",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A",
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-085",
+        "name": "Employee 85",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-086",
+        "name": "Employee 86",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-04",
+          "WO-05"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-087",
+        "name": "Employee 87",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-088",
+        "name": "Employee 88",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-A",
+          "WO-02",
+          "WO-04"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-089",
+        "name": "Employee 89",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-090",
+        "name": "Employee 90",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-091",
+        "name": "Employee 91",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "ARR-M",
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-092",
+        "name": "Employee 92",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-A",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-093",
+        "name": "Employee 93",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-094",
+        "name": "Employee 94",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-01",
+          "WO-02",
+          "WO-03"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-095",
+        "name": "Employee 95",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A",
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-096",
+        "name": "Employee 96",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-097",
+        "name": "Employee 97",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-04",
+          "WO-05"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-098",
+        "name": "Employee 98",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-099",
+        "name": "Employee 99",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-A",
+          "WO-02",
+          "WO-04"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-100",
+        "name": "Employee 100",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-101",
+        "name": "Employee 101",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-102",
+        "name": "Employee 102",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "ARR-M",
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-103",
+        "name": "Employee 103",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-A",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-104",
+        "name": "Employee 104",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-105",
+        "name": "Employee 105",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-01",
+          "WO-02",
+          "WO-03"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-106",
+        "name": "Employee 106",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A",
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-107",
+        "name": "Employee 107",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-108",
+        "name": "Employee 108",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-04",
+          "WO-05"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-109",
+        "name": "Employee 109",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-110",
+        "name": "Employee 110",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-A",
+          "WO-02",
+          "WO-04"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-111",
+        "name": "Employee 111",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-112",
+        "name": "Employee 112",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-113",
+        "name": "Employee 113",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "ARR-M",
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-114",
+        "name": "Employee 114",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-A",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-115",
+        "name": "Employee 115",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-116",
+        "name": "Employee 116",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-01",
+          "WO-02",
+          "WO-03"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-117",
+        "name": "Employee 117",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A",
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-118",
+        "name": "Employee 118",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-119",
+        "name": "Employee 119",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-04",
+          "WO-05"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-120",
+        "name": "Employee 120",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-121",
+        "name": "Employee 121",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-A",
+          "WO-02",
+          "WO-04"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-122",
+        "name": "Employee 122",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-123",
+        "name": "Employee 123",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-124",
+        "name": "Employee 124",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "ARR-M",
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-125",
+        "name": "Employee 125",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-A",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-126",
+        "name": "Employee 126",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-127",
+        "name": "Employee 127",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-01",
+          "WO-02",
+          "WO-03"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-128",
+        "name": "Employee 128",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A",
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-129",
+        "name": "Employee 129",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-130",
+        "name": "Employee 130",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-04",
+          "WO-05"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-131",
+        "name": "Employee 131",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-132",
+        "name": "Employee 132",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-A",
+          "WO-02",
+          "WO-04"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-133",
+        "name": "Employee 133",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-134",
+        "name": "Employee 134",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-135",
+        "name": "Employee 135",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "ARR-M",
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-136",
+        "name": "Employee 136",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-A",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-137",
+        "name": "Employee 137",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-138",
+        "name": "Employee 138",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-01",
+          "WO-02",
+          "WO-03"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-139",
+        "name": "Employee 139",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A",
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-140",
+        "name": "Employee 140",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-141",
+        "name": "Employee 141",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-04",
+          "WO-05"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-142",
+        "name": "Employee 142",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-143",
+        "name": "Employee 143",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-A",
+          "WO-02",
+          "WO-04"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-144",
+        "name": "Employee 144",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-145",
+        "name": "Employee 145",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-146",
+        "name": "Employee 146",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "ARR-M",
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-147",
+        "name": "Employee 147",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-A",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-148",
+        "name": "Employee 148",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-149",
+        "name": "Employee 149",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-01",
+          "WO-02",
+          "WO-03"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-150",
+        "name": "Employee 150",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A",
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-151",
+        "name": "Employee 151",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-152",
+        "name": "Employee 152",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-04",
+          "WO-05"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-153",
+        "name": "Employee 153",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-154",
+        "name": "Employee 154",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-A",
+          "WO-02",
+          "WO-04"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-155",
+        "name": "Employee 155",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-156",
+        "name": "Employee 156",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-157",
+        "name": "Employee 157",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "ARR-M",
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-158",
+        "name": "Employee 158",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-A",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-159",
+        "name": "Employee 159",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-160",
+        "name": "Employee 160",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-01",
+          "WO-02",
+          "WO-03"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-161",
+        "name": "Employee 161",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A",
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-162",
+        "name": "Employee 162",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-163",
+        "name": "Employee 163",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-04",
+          "WO-05"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-164",
+        "name": "Employee 164",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-165",
+        "name": "Employee 165",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-A",
+          "WO-02",
+          "WO-04"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-166",
+        "name": "Employee 166",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-167",
+        "name": "Employee 167",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-168",
+        "name": "Employee 168",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "ARR-M",
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-169",
+        "name": "Employee 169",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-A",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-170",
+        "name": "Employee 170",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-171",
+        "name": "Employee 171",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-01",
+          "WO-02",
+          "WO-03"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-172",
+        "name": "Employee 172",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A",
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-173",
+        "name": "Employee 173",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-174",
+        "name": "Employee 174",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-04",
+          "WO-05"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-175",
+        "name": "Employee 175",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-176",
+        "name": "Employee 176",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-A",
+          "WO-02",
+          "WO-04"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-177",
+        "name": "Employee 177",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-178",
+        "name": "Employee 178",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-179",
+        "name": "Employee 179",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "ARR-M",
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-180",
+        "name": "Employee 180",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-A",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-181",
+        "name": "Employee 181",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-182",
+        "name": "Employee 182",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-01",
+          "WO-02",
+          "WO-03"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-183",
+        "name": "Employee 183",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A",
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-184",
+        "name": "Employee 184",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-185",
+        "name": "Employee 185",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-04",
+          "WO-05"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-186",
+        "name": "Employee 186",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-187",
+        "name": "Employee 187",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-A",
+          "WO-02",
+          "WO-04"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-188",
+        "name": "Employee 188",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-189",
+        "name": "Employee 189",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-190",
+        "name": "Employee 190",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "ARR-M",
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-191",
+        "name": "Employee 191",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-A",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-192",
+        "name": "Employee 192",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-193",
+        "name": "Employee 193",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-01",
+          "WO-02",
+          "WO-03"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-194",
+        "name": "Employee 194",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A",
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-195",
+        "name": "Employee 195",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-196",
+        "name": "Employee 196",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-04",
+          "WO-05"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-197",
+        "name": "Employee 197",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-198",
+        "name": "Employee 198",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-A",
+          "WO-02",
+          "WO-04"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-199",
+        "name": "Employee 199",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-200",
+        "name": "Employee 200",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-201",
+        "name": "Employee 201",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "ARR-M",
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-202",
+        "name": "Employee 202",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-A",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-203",
+        "name": "Employee 203",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-204",
+        "name": "Employee 204",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-01",
+          "WO-02",
+          "WO-03"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-205",
+        "name": "Employee 205",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A",
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-206",
+        "name": "Employee 206",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-207",
+        "name": "Employee 207",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-04",
+          "WO-05"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-208",
+        "name": "Employee 208",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-209",
+        "name": "Employee 209",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-A",
+          "WO-02",
+          "WO-04"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-210",
+        "name": "Employee 210",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-211",
+        "name": "Employee 211",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-212",
+        "name": "Employee 212",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "ARR-M",
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-213",
+        "name": "Employee 213",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-A",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-214",
+        "name": "Employee 214",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-215",
+        "name": "Employee 215",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-01",
+          "WO-02",
+          "WO-03"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-216",
+        "name": "Employee 216",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A",
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-217",
+        "name": "Employee 217",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-218",
+        "name": "Employee 218",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-04",
+          "WO-05"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-219",
+        "name": "Employee 219",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-220",
+        "name": "Employee 220",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-A",
+          "WO-02",
+          "WO-04"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-221",
+        "name": "Employee 221",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-222",
+        "name": "Employee 222",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-223",
+        "name": "Employee 223",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "ARR-M",
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-224",
+        "name": "Employee 224",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-A",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-225",
+        "name": "Employee 225",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-226",
+        "name": "Employee 226",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-01",
+          "WO-02",
+          "WO-03"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-227",
+        "name": "Employee 227",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A",
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-228",
+        "name": "Employee 228",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-229",
+        "name": "Employee 229",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-04",
+          "WO-05"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-230",
+        "name": "Employee 230",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-231",
+        "name": "Employee 231",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-A",
+          "WO-02",
+          "WO-04"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-232",
+        "name": "Employee 232",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-233",
+        "name": "Employee 233",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-234",
+        "name": "Employee 234",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "ARR-M",
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-235",
+        "name": "Employee 235",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-A",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-236",
+        "name": "Employee 236",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-237",
+        "name": "Employee 237",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-01",
+          "WO-02",
+          "WO-03"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-238",
+        "name": "Employee 238",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A",
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-239",
+        "name": "Employee 239",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-240",
+        "name": "Employee 240",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-04",
+          "WO-05"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-241",
+        "name": "Employee 241",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-242",
+        "name": "Employee 242",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-A",
+          "WO-02",
+          "WO-04"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-243",
+        "name": "Employee 243",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-244",
+        "name": "Employee 244",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-245",
+        "name": "Employee 245",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "ARR-M",
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-246",
+        "name": "Employee 246",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-A",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-247",
+        "name": "Employee 247",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-248",
+        "name": "Employee 248",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-01",
+          "WO-02",
+          "WO-03"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-249",
+        "name": "Employee 249",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A",
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-250",
+        "name": "Employee 250",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-251",
+        "name": "Employee 251",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-04",
+          "WO-05"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-252",
+        "name": "Employee 252",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-253",
+        "name": "Employee 253",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-A",
+          "WO-02",
+          "WO-04"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-254",
+        "name": "Employee 254",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-255",
+        "name": "Employee 255",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-256",
+        "name": "Employee 256",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "ARR-M",
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-257",
+        "name": "Employee 257",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-A",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-258",
+        "name": "Employee 258",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-259",
+        "name": "Employee 259",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-01",
+          "WO-02",
+          "WO-03"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-260",
+        "name": "Employee 260",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A",
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-261",
+        "name": "Employee 261",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-262",
+        "name": "Employee 262",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-04",
+          "WO-05"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-263",
+        "name": "Employee 263",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-264",
+        "name": "Employee 264",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-A",
+          "WO-02",
+          "WO-04"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-265",
+        "name": "Employee 265",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-266",
+        "name": "Employee 266",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-267",
+        "name": "Employee 267",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "ARR-M",
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-268",
+        "name": "Employee 268",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-A",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-269",
+        "name": "Employee 269",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-270",
+        "name": "Employee 270",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-01",
+          "WO-02",
+          "WO-03"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-271",
+        "name": "Employee 271",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A",
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-272",
+        "name": "Employee 272",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-273",
+        "name": "Employee 273",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-04",
+          "WO-05"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-274",
+        "name": "Employee 274",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-275",
+        "name": "Employee 275",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-A",
+          "WO-02",
+          "WO-04"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-276",
+        "name": "Employee 276",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-277",
+        "name": "Employee 277",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-278",
+        "name": "Employee 278",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "ARR-M",
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-279",
+        "name": "Employee 279",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-A",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-280",
+        "name": "Employee 280",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW",
+          "WO-01"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-281",
+        "name": "Employee 281",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-01",
+          "WO-02",
+          "WO-03"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-282",
+        "name": "Employee 282",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "DEP-M",
+          "DEP-A",
+          "ARR-M",
+          "ARR-A"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-283",
+        "name": "Employee 283",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "TOW"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      },
+      {
+        "employeeId": "DEF-EMP-284",
+        "name": "Employee 284",
+        "position": "Technician",
+        "eType": {
+          "role": "MECHANIC"
+        },
+        "taskCapabilities": [
+          "WO-04",
+          "WO-05"
+        ],
+        "certifications": [
+          "A321",
+          "B787"
+        ],
+        "workingTimes": [
+          {
+            "start": "2026-01-12T08:00:00Z",
+            "end": "2026-01-12T17:00:00Z"
+          }
+        ],
+        "breakDuration": 0,
+        "fixedBreakTimes": []
+      }
+    ],
+    "busStops": [],
+    "busRoutes": [],
+    "matrixConfigs": null,
+    "tasks": [
+      {
+        "taskCode": "ARR-M",
+        "description": "Arrival Maintenance",
+        "timeProcess": 1800,
+        "requiredCertifications": []
+      },
+      {
+        "taskCode": "ARR-A",
+        "description": "Arrival Assistance",
+        "timeProcess": 1200,
+        "requiredCertifications": []
+      },
+      {
+        "taskCode": "DEP-M",
+        "description": "Departure Maintenance",
+        "timeProcess": 1800,
+        "requiredCertifications": []
+      },
+      {
+        "taskCode": "DEP-A",
+        "description": "Departure Assistance",
+        "timeProcess": 1200,
+        "requiredCertifications": []
+      },
+      {
+        "taskCode": "TOW",
+        "description": "Aircraft Towing",
+        "timeProcess": 900,
+        "requiredCertifications": []
+      },
+      {
+        "taskCode": "WO-01",
+        "description": "Work Order 01",
+        "timeProcess": 3600,
+        "requiredCertifications": []
+      },
+      {
+        "taskCode": "WO-02",
+        "description": "Work Order 02",
+        "timeProcess": 2400,
+        "requiredCertifications": []
+      },
+      {
+        "taskCode": "WO-03",
+        "description": "Work Order 03",
+        "timeProcess": 1800,
+        "requiredCertifications": []
+      },
+      {
+        "taskCode": "WO-04",
+        "description": "Work Order 04",
+        "timeProcess": 1500,
+        "requiredCertifications": []
+      },
+      {
+        "taskCode": "WO-05",
+        "description": "Work Order 05",
+        "timeProcess": 2100,
+        "requiredCertifications": []
+      }
+    ],
+    "timeMatrix": []
+  }
+}
