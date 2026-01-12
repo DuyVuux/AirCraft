@@ -1,0 +1,119 @@
+{
+  "solution": [
+    {
+      "employeeId": "EMP_001",
+      "certificates": [
+        "CERT_BASIC_MAINTENANCE",
+        "CERT_TIRE_SPECIALIST"
+      ],
+      "assignment": [],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "EMP_002",
+      "certificates": [
+        "CERT_BASIC_MAINTENANCE",
+        "CERT_ENGINE",
+        "CERT_TIRE_SPECIALIST"
+      ],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "TASK_TIRE_CHECK",
+            "aircraftId": "VN-A320",
+            "requiredCertificates": [
+              "CERT_BASIC_MAINTENANCE",
+              "CERT_TIRE_SPECIALIST"
+            ]
+          },
+          "locationId": "GATE-01",
+          "startTime": "2024-12-05T08:00:00Z",
+          "endTime": "2024-12-05T08:25:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "TASK_OIL_CHANGE",
+            "aircraftId": "VN-A320",
+            "requiredCertificates": [
+              "CERT_BASIC_MAINTENANCE",
+              "CERT_ENGINE"
+            ]
+          },
+          "locationId": "GATE-01",
+          "startTime": "2024-12-05T08:25:00Z",
+          "endTime": "2024-12-05T09:00:00Z"
+        }
+      ],
+      "travels": [
+        {
+          "fromLocation": "REST_AREA_A",
+          "toLocation": "GATE-01",
+          "method": "WALK",
+          "travelTime": 600,
+          "departureTime": "2024-12-05T07:50:00Z",
+          "arrivalTime": "2024-12-05T08:00:00Z"
+        }
+      ],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "EMP_003",
+      "certificates": [
+        "CERT_CLEANING"
+      ],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "TASK_CLEANING",
+            "aircraftId": "VN-B787",
+            "requiredCertificates": [
+              "CERT_CLEANING"
+            ]
+          },
+          "locationId": "HANGAR-02",
+          "startTime": "2024-12-05T08:20:00Z",
+          "endTime": "2024-12-05T09:20:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "EMP_SUPER",
+      "certificates": [
+        "CERT_BASIC_MAINTENANCE",
+        "CERT_ENGINE",
+        "CERT_INSPECTOR",
+        "CERT_TIRE_SPECIALIST"
+      ],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "TASK_ENGINE_INSPECT",
+            "aircraftId": "VN-B787",
+            "requiredCertificates": [
+              "CERT_ENGINE",
+              "CERT_INSPECTOR"
+            ]
+          },
+          "locationId": "HANGAR-02",
+          "startTime": "2024-12-05T08:20:00Z",
+          "endTime": "2024-12-05T10:20:00Z"
+        }
+      ],
+      "travels": [
+        {
+          "fromLocation": "REST_AREA_A",
+          "toLocation": "HANGAR-02",
+          "method": "WALK",
+          "travelTime": 1500,
+          "departureTime": "2024-12-05T07:55:00Z",
+          "arrivalTime": "2024-12-05T08:20:00Z"
+        }
+      ],
+      "breakTimes": []
+    }
+  ],
+  "droppedTasks": []
+}

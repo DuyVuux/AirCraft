@@ -1,0 +1,178 @@
+.dataset-manager {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dataset-select-wrapper {
+    position: relative;
+    min-width: 12rem;
+}
+
+.dataset-select {
+    width: 100%;
+    padding: 0.5rem 2rem 0.5rem 0.75rem;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    color: var(--color-text-primary);
+    font-family: 'Inter', sans-serif;
+    appearance: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.dataset-select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
+}
+
+.dataset-select-icon {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+    pointer-events: none;
+    font-size: 1.125rem;
+}
+
+.dataset-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.dataset-btn:hover {
+    background-color: var(--color-surface-hover);
+    color: var(--color-text-primary);
+}
+
+.dataset-btn.primary {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+}
+
+.dataset-btn.primary:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.dataset-btn.danger:hover {
+    background-color: var(--color-error-bg);
+    border-color: var(--color-error);
+    color: var(--color-error);
+}
+
+.dataset-btn .material-symbols-outlined {
+    font-size: 1.125rem;
+}
+
+.dataset-dialog-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.dataset-dialog {
+    background-color: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    min-width: 20rem;
+    max-width: 90vw;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.dataset-dialog-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin: 0 0 1rem 0;
+}
+
+.dataset-dialog-input {
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 0.875rem;
+    color: var(--color-text-primary);
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 1rem;
+}
+
+.dataset-dialog-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
+}
+
+.dataset-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.dataset-dialog-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.dataset-dialog-btn.cancel {
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+}
+
+.dataset-dialog-btn.cancel:hover {
+    background-color: var(--color-surface-hover);
+}
+
+.dataset-dialog-btn.confirm {
+    background-color: var(--color-primary);
+    border: none;
+    color: white;
+}
+
+.dataset-dialog-btn.confirm:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.dataset-dialog-btn.danger {
+    background-color: var(--color-error);
+    border: none;
+    color: white;
+}
+
+.dataset-dialog-btn.danger:hover {
+    background-color: var(--color-error);
+    opacity: 0.9;
+}
+
+.dataset-dialog-message {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}

@@ -1,0 +1,20 @@
+Mã Task,Tên Task (Viết tắt),Tên Đầy Đủ (Tiếng Việt),Thời Gian (giây),Mô Tả & Ý Nghĩa Thực Tế
+ARR-M,Arrival (Main),Thợ chính Đón tàu,600,"Kỹ sư chịu trách nhiệm chính tại bãi đỗ khi tàu về. Kiểm tra an toàn, ký xác nhận tình trạng."
+ARR-A,Arrival (Assist),Trợ lý Đón tàu,600,"Thợ máy hỗ trợ: Chèn bánh, cắm điện (GPU), kéo dây, kiểm tra ngoại quan."
+DEP-M,Departure (Main),Thợ chính Tiễn tàu,600,"QUAN TRỌNG: Kỹ sư trưởng ca. Ký sổ nhật ký (CRS/Logbook), xác nhận tàu đủ điều kiện bay."
+DEP-A,Departure (Assist),Trợ lý Tiễn tàu,600,"Thợ máy hỗ trợ: Rút chèn, ngắt điện, đóng cửa, đeo tai nghe liên lạc đẩy lùi."
+TOW,Towing,Kéo đẩy tàu bay,600,ĐẶC BIỆT: Lái xe đầu kéo chuyên dụng để đẩy lùi (Pushback) hoặc kéo đổi bãi đỗ.
+WO-01,Work Order 01,Kiểm tra Quá cảnh,600,(Transit Check) Kiểm tra kỹ thuật nhanh giữa 2 chuyến bay.
+WO-02,Work Order 02,Kiểm tra Qua đêm,600,(Daily/Pre-flight) Kiểm tra kỹ lưỡng trước chuyến bay đầu ngày hoặc ngủ đêm.
+WO-03,Work Order 03,Kiểm tra Tuần,600,(Weekly Check) Gói bảo dưỡng định kỳ hàng tuần.
+WO-04,Work Order 04,Dịch vụ Lốp/Dầu,600,"(Service Check) Thay lốp mòn, nạp dầu mỡ, kiểm tra áp suất."
+WO-05,Work Order 05,Sửa chữa Nội thất,600,"(Cabin) Sửa ghế, thảm, đèn đọc sách, toilet..."
+WO-06,Work Order 06,Sửa chữa Phát sinh,600,(Defect Rectification) Khắc phục các hỏng hóc bất thường báo về.
+WO-07,Work Order 07,Gói Kỹ thuật 07,600,Theo quy định nội bộ VAECO.
+WO-08,Work Order 08,Gói Kỹ thuật 08,600,Theo quy định nội bộ VAECO.
+WO-09,Work Order 09,Gói Kỹ thuật 09,600,Theo quy định nội bộ VAECO.
+WO-10,Work Order 10,Gói Kỹ thuật 10,600,Theo quy định nội bộ VAECO.
+WO-11,Work Order 11,Gói Kỹ thuật 11,600,Theo quy định nội bộ VAECO.
+WO-12,Work Order 12,Gói Kỹ thuật 12,600,Theo quy định nội bộ VAECO.
+WO-13,Work Order 13,Gói Kỹ thuật 13,600,Theo quy định nội bộ VAECO.
+WO-14,Work Order 14,Gói Kỹ thuật 14,600,Theo quy định nội bộ VAECO.

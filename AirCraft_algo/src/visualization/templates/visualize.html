@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ filename }} - Schedule Visualization</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Open Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            primary: '#0A0E27',
+                            secondary: '#121830',
+                            card: '#1A1F3D',
+                            border: '#2A3158',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* 1. Primitives & Semantics */
+        :root {
+            /* Primitives - Palette */
+            --color-slate-950: #020617;
+            --color-slate-900: #0f172a;
+            --color-slate-800: #1e293b;
+            --color-slate-700: #334155;
+            --color-slate-400: #94a3b8;
+            --color-slate-300: #cbd5e1;
+            --color-slate-200: #e2e8f0;
+            --color-slate-100: #f1f5f9;
+            --color-slate-50: #f8fafc;
+
+            --color-blue-500: #3b82f6;
+            --color-blue-600: #2563eb;
+            --color-purple-500: #a855f7;
+            --color-purple-600: #9333ea;
+            --color-green-500: #22c55e;
+            --color-green-600: #16a34a;
+            --color-orange-500: #f97316;
+            --color-orange-600: #ea580c;
+            --color-red-500: #ef4444;
+            --color-yellow-400: #facc15;
+            --color-yellow-500: #eab308;
+
+            /* Semantics - Dark Theme (Default) */
+            --bg-body: #1f273b;
+            /* Slightly lighter than slate-900 */
+            --bg-surface: rgba(30, 41, 59, 0.7);
+            /* Slate 800 - Glass */
+            --bg-surface-hover: rgba(51, 65, 85, 0.7);
+            --bg-header: rgba(15, 23, 42, 0.85);
+            /* Slate 900 */
+            --bg-tooltip: rgba(15, 23, 42, 0.95);
+
+            --border-default: rgba(148, 163, 184, 0.1);
+            --border-accent: rgba(59, 130, 246, 0.3);
+
+            --text-primary: var(--color-slate-50);
+            --text-secondary: var(--color-slate-400);
+            --text-muted: var(--color-slate-700);
+            --text-accent: var(--color-blue-500);
+            --text-inverse: var(--color-slate-900);
+
+            --status-success: var(--color-green-500);
+            --status-warning: var(--color-yellow-400);
+            --status-error: var(--color-red-500);
+            --status-info: var(--color-blue-500);
+
+            /* Gradients */
+            --grad-primary: linear-gradient(135deg, var(--bg-body) 0%, #1e293b 100%);
+            --grad-card-success: linear-gradient(to bottom right, rgba(34, 197, 94, 0.1), rgba(22, 163, 74, 0.1));
+            --grad-card-warning: linear-gradient(to bottom right, rgba(250, 204, 21, 0.1), rgba(234, 179, 8, 0.1));
+            --grad-card-info: linear-gradient(to bottom right, rgba(59, 130, 246, 0.1), rgba(37, 99, 235, 0.1));
+            --grad-card-error: linear-gradient(to bottom right, rgba(239, 68, 68, 0.1), rgba(220, 38, 38, 0.1));
+            --grad-card-purple: linear-gradient(to bottom right, rgba(168, 85, 247, 0.1), rgba(147, 51, 234, 0.1));
+        }
+
+        body.light-theme {
+            /* Semantics - Light Theme */
+            --bg-body: var(--color-slate-100);
+            --bg-surface: rgba(255, 255, 255, 0.85);
+            --bg-surface-hover: rgba(248, 250, 252, 0.9);
+            --bg-header: rgba(255, 255, 255, 0.95);
+            --bg-tooltip: rgba(255, 255, 255, 0.98);
+
+            --border-default: rgba(148, 163, 184, 0.3);
+            --border-accent: rgba(59, 130, 246, 0.4);
+
+            --text-primary: var(--color-slate-900);
+            --text-secondary: var(--color-slate-700);
+            --text-muted: var(--color-slate-400);
+            --text-accent: var(--color-blue-600);
+            --text-inverse: var(--color-slate-50);
+
+            --status-success: var(--color-green-600);
+            --status-warning: var(--color-yellow-500);
+            --status-error: var(--color-red-500);
+            --status-info: var(--color-blue-600);
+
+            /* Light Gradients */
+            --grad-primary: linear-gradient(135deg, var(--color-slate-50) 0%, var(--color-slate-200) 100%);
+        }
+
+        /* 2. Base Styles */
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: var(--bg-body);
+            /* Fallback */
+            background-image: var(--grad-primary);
+            min-height: 100vh;
+            color: var(--text-primary);
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-primary);
+        }
+
+        /* 3. Components */
+
+        /* Cards */
+        .glass-card {
+            background: var(--bg-surface);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border-default);
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.2s ease;
+        }
+
+        /* Navigation */
+        header {
+            background: var(--bg-header) !important;
+            border-bottom: 1px solid var(--border-default);
+            backdrop-filter: blur(8px);
+        }
+
+        .nav-pill {
+            transition: all 0.2s ease;
+        }
+
+        .nav-pill.active {
+            background: linear-gradient(135deg, var(--color-blue-600) 0%, var(--color-purple-600) 100%);
+            color: var(--color-slate-50);
+        }
+
+        /* Utilities */
+        .text-primary {
+            color: var(--text-primary) !important;
+        }
+
+        .text-secondary {
+            color: var(--text-secondary) !important;
+        }
+
+        .text-success {
+            color: var(--status-success) !important;
+        }
+
+        .text-warning {
+            color: var(--status-warning) !important;
+        }
+
+        .text-error {
+            color: var(--status-error) !important;
+        }
+
+        .text-info {
+            color: var(--status-info) !important;
+        }
+
+        /* Icon Containers */
+        .icon-box-success {
+            background: var(--grad-card-success);
+            color: var(--status-success);
+        }
+
+        .icon-box-warning {
+            background: var(--grad-card-warning);
+            color: var(--status-warning);
+        }
+
+        .icon-box-info {
+            background: var(--grad-card-info);
+            color: var(--status-info);
+        }
+
+        .icon-box-error {
+            background: var(--grad-card-error);
+            color: var(--status-error);
+        }
+
+        .icon-box-purple {
+            background: var(--grad-card-purple);
+            color: var(--color-purple-500);
+        }
+
+        /* Timeline */
+        .timeline-container {
+            overflow-x: auto;
+            padding: 20px 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--border-default) transparent;
+        }
+
+        .timeline-row {
+            display: flex;
+            align-items: stretch;
+            margin-bottom: 8px;
+            min-height: 60px;
+            border-bottom: 1px solid transparent;
+        }
+
+        .timeline-label {
+            width: 180px;
+            flex-shrink: 0;
+            padding-right: 16px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .label-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-default);
+            border-radius: 8px;
+            padding: 8px 12px;
+            width: 100%;
+            transition: all 0.2s;
+        }
+
+        .timeline-label:hover .label-content {
+            border-color: var(--border-accent);
+            background: var(--bg-surface-hover);
+        }
+
+        .timeline-track {
+            flex: 1;
+            position: relative;
+            min-width: 800px;
+            height: 56px;
+            background: rgba(0, 0, 0, 0.05);
+            /* Neutral track bg */
+            border-radius: 8px;
+        }
+
+        /* Task Bars */
+        .task-bar {
+            position: absolute;
+            height: 24px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            padding: 0 6px;
+            font-size: 10px;
+            font-weight: 600;
+            color: white !important;
+            /* Always white text on colored bars */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+
+        .task-bar:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            z-index: 50 !important;
+        }
+
+        .task-bar.task {
+            background: linear-gradient(135deg, var(--color-blue-500) 0%, var(--color-blue-600) 100%);
+        }
+
+        .task-bar.break {
+            background: linear-gradient(135deg, var(--color-orange-500) 0%, var(--color-orange-600) 100%);
+        }
+
+        .task-bar.travel {
+            background: linear-gradient(135deg, var(--color-green-500) 0%, var(--color-green-600) 100%);
+            height: 18px;
+            top: 32px !important;
+            font-size: 9px;
+            z-index: 5;
+        }
+
+        .task-bar.travel.bus {
+            background: linear-gradient(135deg, var(--color-purple-500) 0%, var(--color-purple-600) 100%);
+        }
+
+        /* Areas */
+        .working-time-bg {
+            position: absolute;
+            height: 100%;
+            background: rgba(34, 197, 94, 0.1);
+            /* Green tint */
+            border-left: 2px solid rgba(34, 197, 94, 0.3);
+            border-right: 2px solid rgba(34, 197, 94, 0.3);
+            border-radius: 4px;
+            pointer-events: none;
+        }
+
+        .break-time-bg {
+            position: absolute;
+            height: 100%;
+            background: rgba(249, 115, 22, 0.1);
+            /* Orange tint */
+            border-left: 1px dashed rgba(249, 115, 22, 0.4);
+            border-right: 1px dashed rgba(249, 115, 22, 0.4);
+            pointer-events: none;
+        }
+
+        /* Tooltip & Other */
+        .tooltip {
+            position: fixed;
+            background: var(--bg-tooltip);
+            border: 1px solid var(--border-default);
+            color: var(--text-primary);
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 13px;
+            z-index: 1000;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.15s;
+            min-width: 200px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .tooltip.visible {
+            opacity: 1;
+        }
+
+        .role-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .role-mechanic {
+            background: rgba(59, 130, 246, 0.2);
+            color: var(--color-blue-500);
+        }
+
+        .role-cleaner {
+            background: rgba(34, 197, 94, 0.2);
+            color: var(--color-green-500);
+        }
+
+        .time-axis {
+            display: flex;
+            margin-left: 180px;
+            min-width: 800px;
+            border-top: 1px solid var(--border-default);
+            padding-top: 8px;
+            margin-top: 8px;
+        }
+
+        .time-marker {
+            flex: 1;
+            text-align: center;
+            font-size: 10px;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+
+<body class="text-primary">
+    <!-- Header -->
+    <header class="fixed top-4 left-4 right-4 z-50">
+        <div class="glass-card px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <a href="/"
+                        class="w-10 h-10 rounded-lg glass-card flex items-center justify-center mr-4 hover:border-blue-500 transition-colors cursor-pointer">
+                        <svg class="w-5 h-5 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg>
+                    </a>
+                    <div>
+                        <h1 class="font-heading font-semibold text-primary text-lg">{{ filename }}</h1>
+                        <p class="text-secondary text-sm" id="strategy-badge">Loading...</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <div class="flex glass-card rounded-lg p-1">
+                        <button id="employee-tab"
+                            class="nav-pill px-4 py-2 rounded-lg text-sm font-medium text-primary active cursor-pointer"
+                            onclick="switchTab('employee')">
+                            Employees
+                        </button>
+                        <button id="aircraft-tab"
+                            class="nav-pill px-4 py-2 rounded-lg text-sm font-medium text-secondary cursor-pointer"
+                            onclick="switchTab('aircraft')">
+                            Aircraft
+                        </button>
+                    </div>
+                    <!-- Theme Toggle -->
+                    <button id="theme-toggle" onclick="toggleTheme()"
+                        class="w-10 h-10 rounded-lg glass-card flex items-center justify-center hover:border-blue-500 transition-colors cursor-pointer"
+                        title="Toggle Light/Dark Mode">
+                        <svg id="theme-icon-dark" class="w-5 h-5 text-warning" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                            </path>
+                        </svg>
+                        <svg id="theme-icon-light" class="w-5 h-5 text-secondary hidden" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                            </path>
+                        </svg>
+                    </button>
+                    <a href="/benchmark"
+                        class="px-4 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-medium hover:opacity-90 transition-opacity cursor-pointer">
+                        Benchmark
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="pt-28 px-4 pb-8">
+        <div class="max-w-full mx-auto">
+
+            <!-- Solution Info Card -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+                <div class="glass-card p-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-secondary text-xs uppercase tracking-wide">Status</p>
+                            <p class="text-xl font-heading font-bold mt-1" id="status-value">-</p>
+                        </div>
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center icon-box-success"
+                            id="status-icon">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card p-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-secondary text-xs uppercase tracking-wide">Solve Time</p>
+                            <p class="text-xl font-heading font-bold text-info mt-1" id="solve-time">-</p>
+                        </div>
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center icon-box-info">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card p-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-secondary text-xs uppercase tracking-wide">Tasks Assigned</p>
+                            <p class="text-xl font-heading font-bold text-primary mt-1" id="tasks-assigned">-</p>
+                        </div>
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center icon-box-purple">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="glass-card p-4">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <p class="text-secondary text-xs uppercase tracking-wide">Dropped Tasks</p>
+                            <p class="text-xl font-heading font-bold mt-1" id="tasks-dropped">-</p>
+                        </div>
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center icon-box-error">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workload Balance -->
+            <div class="glass-card p-6 mb-6">
+                <div class="flex justify-between items-center mb-4">
+                    <div>
+                        <h2 class="font-heading font-semibold text-primary text-lg">Workload Balance</h2>
+                        <p class="text-secondary text-sm">Work time distribution across employees</p>
+                    </div>
+                </div>
+                <div id="workload-chart" class="space-y-3">
+                    <div class="text-center text-muted py-4">Loading...</div>
+                </div>
+            </div>
+
+            <!-- Employee Timeline -->
+            <div id="employee-view" class="glass-card p-6 mb-6">
+                <div class="flex justify-between items-center mb-4">
+                    <div>
+                        <h2 class="font-heading font-semibold text-primary text-lg">Employee Schedule</h2>
+                        <p class="text-secondary text-sm">Hover on employee name for details • Green = Working Time •
+                            Orange = Fixed Break</p>
+                    </div>
+                </div>
+                <div class="timeline-container" id="employee-timeline">
+                    <div class="text-center text-muted py-8">Loading...</div>
+                </div>
+            </div>
+
+            <!-- Aircraft Timeline -->
+            <div id="aircraft-view" class="glass-card p-6 mb-6 hidden">
+                <div class="flex justify-between items-center mb-4">
+                    <div>
+                        <h2 class="font-heading font-semibold text-primary text-lg">Aircraft Schedule</h2>
+                        <p class="text-secondary text-sm">Green background = Aircraft availability window</p>
+                    </div>
+                </div>
+                <div class="timeline-container" id="aircraft-timeline">
+                    <div class="text-center text-muted py-8">Loading...</div>
+                </div>
+            </div>
+
+            <!-- Legend -->
+            <div class="glass-card p-4">
+                <div class="flex items-center justify-center space-x-6 flex-wrap gap-4">
+                    <div class="flex items-center">
+                        <div class="w-6 h-4 rounded bg-gradient-to-r from-blue-500 to-blue-600 mr-2"></div>
+                        <span class="text-secondary text-sm">Assigned Task</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-6 h-4 rounded bg-gradient-to-r from-orange-500 to-orange-400 mr-2"></div>
+                        <span class="text-secondary text-sm">Break</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-6 h-3 rounded bg-gradient-to-r from-green-500 to-green-400 mr-2"></div>
+                        <span class="text-secondary text-sm">🚶 Walk</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-6 h-3 rounded bg-gradient-to-r from-purple-500 to-purple-400 mr-2"></div>
+                        <span class="text-secondary text-sm">🚌 Bus</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-6 h-4 rounded border-2 border-green-500/50 bg-green-500/10 mr-2"></div>
+                        <span class="text-secondary text-sm">Working Time</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div
+                            class="w-6 h-4 rounded border-l-2 border-r-2 border-dashed border-orange-500/50 bg-orange-500/10 mr-2">
+                        </div>
+                        <span class="text-secondary text-sm">Fixed Break Time</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tooltip -->
+    <div id="tooltip" class="tooltip"></div>
+
+    <script>
+        const filename = "{{ filename }}";
+        let scheduleData = null;
+        let minTime = null;
+        let maxTime = null;
+
+        function switchTab(tab) {
+            const empTab = document.getElementById('employee-tab');
+            const airTab = document.getElementById('aircraft-tab');
+            const empView = document.getElementById('employee-view');
+            const airView = document.getElementById('aircraft-view');
+
+            if (tab === 'employee') {
+                empTab.classList.add('active', 'text-white');
+                empTab.classList.remove('text-gray-400');
+                airTab.classList.remove('active', 'text-white');
+                airTab.classList.add('text-gray-400');
+                empView.classList.remove('hidden');
+                airView.classList.add('hidden');
+            } else {
+                airTab.classList.add('active', 'text-white');
+                airTab.classList.remove('text-gray-400');
+                empTab.classList.remove('active', 'text-white');
+                empTab.classList.add('text-gray-400');
+                airView.classList.remove('hidden');
+                empView.classList.add('hidden');
+            }
+        }
+
+        async function loadData() {
+            try {
+                const response = await fetch(`/api/data/${filename}`);
+                scheduleData = await response.json();
+
+                if (scheduleData.error) {
+                    showError(scheduleData.error);
+                    return;
+                }
+
+                calculateTimeBounds();
+                updateInfoCards();
+                renderWorkloadChart();
+                renderEmployeeTimeline();
+                renderAircraftTimeline();
+            } catch (error) {
+                console.error('Error loading data:', error);
+                showError(error.message);
+            }
+        }
+
+        function showError(message) {
+            document.getElementById('employee-timeline').innerHTML = `
+                <div class="text-center text-red-400 py-8">
+                    <p class="font-semibold">Error loading data</p>
+                    <p class="text-sm text-gray-500 mt-2">${message}</p>
+                </div>
+            `;
+        }
+
+        function calculateTimeBounds() {
+            const solution = scheduleData.solution || [];
+            const employeesInfo = scheduleData.employeesInfo || {};
+            let times = [];
+
+            // Get times from solution
+            solution.forEach(emp => {
+                (emp.assignment || []).forEach(task => {
+                    times.push(new Date(task.startTime).getTime());
+                    times.push(new Date(task.endTime).getTime());
+                });
+                (emp.breakTimes || []).forEach(brk => {
+                    times.push(new Date(brk.startTime).getTime());
+                    times.push(new Date(brk.endTime).getTime());
+                });
+            });
+
+            // Get times from working times
+            Object.values(employeesInfo).forEach(emp => {
+                (emp.workingTimes || []).forEach(wt => {
+                    times.push(new Date(wt.start).getTime());
+                    times.push(new Date(wt.end).getTime());
+                });
+            });
+
+            if (times.length > 0) {
+                minTime = Math.min(...times);
+                maxTime = Math.max(...times);
+            } else {
+                minTime = Date.now();
+                maxTime = minTime + 8 * 60 * 60 * 1000;
+            }
+        }
+
+        function timeToPercent(time) {
+            const t = new Date(time).getTime();
+            return ((t - minTime) / (maxTime - minTime)) * 100;
+        }
+
+        function formatTime(isoStr) {
+            const d = new Date(isoStr);
+            return d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
+        }
+
+        function formatDuration(ms) {
+            const hours = Math.floor(ms / (1000 * 60 * 60));
+            const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
+            if (hours > 0) return `${hours}h ${minutes}m`;
+            return `${minutes}m`;
+        }
+
+        function updateInfoCards() {
+            const metadata = scheduleData.metadata || {};
+            const solution = scheduleData.solution || [];
+            const droppedTasks = scheduleData.droppedTasks || [];
+
+            // Strategy badge
+            const strategy = metadata.strategy || 'unknown';
+            document.getElementById('strategy-badge').innerHTML = `
+                Strategy: <span class="px-2 py-0.5 rounded-full text-xs font-semibold ${strategy === 'hybrid' ? 'bg-purple-500/20 text-purple-400' : 'bg-blue-500/20 text-blue-400'}">${strategy.toUpperCase()}</span>
+            `;
+
+            // Status
+            const isOptimal = metadata.isOptimal;
+            const statusEl = document.getElementById('status-value');
+            const statusIconEl = document.getElementById('status-icon');
+            if (isOptimal === true) {
+                statusEl.textContent = 'OPTIMAL';
+                statusEl.className = 'text-xl font-heading font-bold mt-1 text-green-400';
+                statusIconEl.className = 'w-12 h-12 rounded-xl bg-gradient-to-br from-green-500/20 to-green-600/20 flex items-center justify-center';
+                statusIconEl.innerHTML = '<svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>';
+            } else if (isOptimal === false) {
+                statusEl.textContent = 'FEASIBLE';
+                statusEl.className = 'text-xl font-heading font-bold mt-1 text-yellow-400';
+                statusIconEl.className = 'w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500/20 to-yellow-600/20 flex items-center justify-center';
+                statusIconEl.innerHTML = '<svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>';
+            } else {
+                statusEl.textContent = 'UNKNOWN';
+                statusEl.className = 'text-xl font-heading font-bold mt-1 text-gray-400';
+                statusIconEl.className = 'w-12 h-12 rounded-xl bg-gradient-to-br from-gray-500/20 to-gray-600/20 flex items-center justify-center';
+                statusIconEl.innerHTML = '<svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>';
+            }
+
+            // Solve time
+            const solveTime = metadata.solveTime;
+            document.getElementById('solve-time').textContent = solveTime ? `${solveTime}s` : '-';
+
+            // Tasks
+            const assigned = solution.reduce((sum, e) => sum + (e.assignment?.length || 0), 0);
+            const dropped = droppedTasks.reduce((sum, a) => sum + (a.tasks?.length || 0), 0);
+            const total = assigned + dropped;
+
+            document.getElementById('tasks-assigned').textContent = `${assigned}/${total}`;
+            const droppedEl = document.getElementById('tasks-dropped');
+            droppedEl.textContent = dropped;
+            droppedEl.className = `text-xl font-heading font-bold mt-1 ${dropped > 0 ? 'text-red-400' : 'text-green-400'}`;
+        }
+
+        function renderWorkloadChart() {
+            const solution = scheduleData.solution || [];
+            const employeesInfo = scheduleData.employeesInfo || {};
+            const container = document.getElementById('workload-chart');
+
+            // Calculate work time for each employee
+            const workloads = solution.map(emp => {
+                const assignments = emp.assignment || [];
+                let workMs = 0;
+                assignments.forEach(a => {
+                    workMs += new Date(a.endTime) - new Date(a.startTime);
+                });
+
+                const info = employeesInfo[emp.employeeId] || {};
+                let availableMs = 0;
+                (info.workingTimes || []).forEach(wt => {
+                    availableMs += new Date(wt.end) - new Date(wt.start);
+                });
+
+                return {
+                    id: emp.employeeId,
+                    level: emp.level || info.level || 1,
+                    role: info.role || 'UNKNOWN',
+                    workMs,
+                    availableMs,
+                    utilization: availableMs > 0 ? (workMs / availableMs * 100) : 0,
+                    taskCount: assignments.length
+                };
+            }).filter(w => w.availableMs > 0);
+
+            const maxUtil = Math.max(...workloads.map(w => w.utilization), 100);
+
+            let html = '';
+            workloads.forEach(w => {
+                const barWidth = (w.utilization / maxUtil) * 100;
+                // Use semantic gradients via CSS classes if possible, or keep these gradients if they look good in both modes
+                // For now, these gradients are vibrant and likely okay, but we should ensure text contrast
+                const color = w.utilization > 80 ? 'from-red-500 to-orange-500' :
+                    w.utilization > 50 ? 'from-yellow-500 to-orange-400' :
+                        'from-green-500 to-blue-500';
+                html += `
+                    <div class="flex items-center space-x-4">
+                        <div class="w-32 flex-shrink-0">
+                            <div class="font-medium text-primary text-sm">${w.id}</div>
+                            <div class="text-xs text-secondary">${w.role} L${w.level}</div>
+                        </div>
+                        <div class="flex-1 h-6 glass-card rounded-lg overflow-hidden">
+                            <div class="h-full bg-gradient-to-r ${color} rounded-lg transition-all" style="width: ${barWidth}%"></div>
+                        </div>
+                        <div class="w-24 text-right">
+                            <span class="text-primary font-semibold">${w.utilization.toFixed(0)}%</span>
+                            <span class="text-secondary text-xs ml-1">(${w.taskCount} tasks)</span>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html || '<div class="text-center text-muted py-4">No workload data</div>';
+        }
+
+        function renderEmployeeTimeline() {
+            const container = document.getElementById('employee-timeline');
+            const solution = scheduleData.solution || [];
+            const employeesInfo = scheduleData.employeesInfo || {};
+
+            if (solution.length === 0) {
+                container.innerHTML = '<div class="text-center text-muted py-8">No employee assignments found</div>';
+                return;
+            }
+
+            let html = '';
+
+            solution.forEach(emp => {
+                const info = employeesInfo[emp.employeeId] || {};
+                const assignments = emp.assignment || [];
+                const breaks = emp.breakTimes || [];
+                const workingTimes = info.workingTimes || [];
+                const fixedBreaks = info.fixedBreakTimes || [];
+                const role = info.role || 'UNKNOWN';
+                const level = emp.level || info.level || 1;
+
+                // Calculate overlap offsets for tasks
+                const taskPositions = calculateTaskPositions(assignments);
+
+                html += `
+                    <div class="timeline-row">
+                        <div class="timeline-label" 
+                             onmouseover="showEmployeeTooltip(event, '${emp.employeeId}', '${role}', ${level}, ${assignments.length})"
+                             onmouseout="hideTooltip()">
+                            <div class="label-content">
+                                <div class="font-medium text-primary text-sm">${emp.employeeId}</div>
+                                <div class="flex items-center space-x-2 mt-1">
+                                    <span class="role-badge role-${role.toLowerCase()}">${role}</span>
+                                    <span class="text-xs text-secondary">Lv.${level}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-track">
+                `;
+
+                // Render working time backgrounds
+                workingTimes.forEach(wt => {
+                    const left = timeToPercent(wt.start);
+                    const width = timeToPercent(wt.end) - left;
+                    html += `<div class="working-time-bg" style="left: ${left}%; width: ${width}%;"></div>`;
+                });
+
+                // Render fixed break backgrounds
+                fixedBreaks.forEach(fb => {
+                    const left = timeToPercent(fb.start);
+                    const width = timeToPercent(fb.end) - left;
+                    html += `<div class="break-time-bg" style="left: ${left}%; width: ${width}%;"></div>`;
+                });
+
+                // Render tasks with offset for overlaps
+                assignments.forEach((task, i) => {
+                    const left = timeToPercent(task.startTime);
+                    const width = timeToPercent(task.endTime) - left;
+                    const pos = taskPositions[i];
+                    const top = 4 + (pos.row * 26); // Stack overlapping tasks
+
+                    html += `
+                        <div class="task-bar task" 
+                             style="left: ${left}%; width: ${Math.max(width, 2)}%; top: ${top}px; z-index: ${10 + i};"
+                             onmouseover="showTaskTooltip(event, '${task.task?.taskCode}', '${task.task?.aircraftId}', '${formatTime(task.startTime)}', '${formatTime(task.endTime)}', '${task.locationId}')"
+                             onmouseout="hideTooltip()">
+                            ${task.task?.taskCode || 'Task'}
+                        </div>
+                    `;
+                });
+
+                // Render travel segments
+                const travels = emp.travels || [];
+                travels.forEach(travel => {
+                    const left = timeToPercent(travel.departureTime);
+                    const width = timeToPercent(travel.arrivalTime) - left;
+                    const isBus = travel.method === 'BUS';
+                    const methodClass = isBus ? 'travel bus' : 'travel';
+                    const methodIcon = isBus ? '🚌' : '🚶';
+                    const durationMin = Math.round(travel.travelTime / 60);
+
+                    // Render Travel Bar
+                    html += `
+                        <div class="task-bar ${methodClass}" 
+                             style="left: ${left}%; width: ${Math.max(width, 1)}%;"
+                             onmouseover="showTravelTooltip(event, '${travel.fromLocation}', '${travel.toLocation}', '${travel.method}', ${travel.travelTime}, '${formatTime(travel.departureTime)}', '${formatTime(travel.arrivalTime)}', ${travel.waitTime || 0})"
+                             onmouseout="hideTooltip()">
+                            ${methodIcon} ${durationMin}m
+                        </div>
+                    `;
+
+                    // Render Wait Time Bar (if significant)
+                    if (travel.waitTime > 60) { // Only show if > 1 min
+                        const waitLeft = timeToPercent(travel.arrivalTime);
+                        // We need the next task's start time. 
+                        // The gap is simply travel.waitTime seconds long.
+                        // Calculate width based on timeToPercent of (arrivalTime + waitTime*1000) - waitLeft
+                        const arrivalMs = new Date(travel.arrivalTime).getTime();
+                        const nextStartMs = arrivalMs + (travel.waitTime * 1000);
+                        const waitWidth = timeToPercent(new Date(nextStartMs)) - waitLeft;
+                        const waitMin = Math.round(travel.waitTime / 60);
+
+                        html += `
+                            <div class="task-bar" 
+                                 style="left: ${waitLeft}%; width: ${Math.max(waitWidth, 1)}%; background: repeating-linear-gradient(45deg, transparent, transparent 4px, var(--border-default) 4px, var(--border-default) 8px); border: 1px dashed var(--text-muted); color: var(--text-muted) !important; justify-content: center; opacity: 0.6;"
+                                 onmouseover="showTooltipContent(event, 'Wait Time', '${waitMin} min waiting for task/aircraft availability')"
+                                 onmouseout="hideTooltip()">
+                                <span class="text-xs">⌛ ${waitMin}m</span>
+                            </div>
+                        `;
+                    }
+                });
+
+                // Render breaks
+                breaks.forEach(brk => {
+                    const left = timeToPercent(brk.startTime);
+                    const width = timeToPercent(brk.endTime) - left;
+                    html += `
+                        <div class="task-bar break" style="left: ${left}%; width: ${Math.max(width, 2)}%; top: 4px;">
+                            Break
+                        </div>
+                    `;
+                });
+
+                html += '</div></div>';
+            });
+
+            html += renderTimeAxis();
+            container.innerHTML = html;
+        }
+
+        function calculateTaskPositions(assignments) {
+            // For overlapping tasks, stack them vertically
+            const positions = [];
+            const rows = [];
+
+            assignments.forEach((task, i) => {
+                const start = new Date(task.startTime).getTime();
+                const end = new Date(task.endTime).getTime();
+
+                // Find first row where this task doesn't overlap
+                let row = 0;
+                for (let r = 0; r < rows.length; r++) {
+                    let canUseRow = true;
+                    for (const existingEnd of rows[r]) {
+                        if (start < existingEnd) {
+                            canUseRow = false;
+                            break;
+                        }
+                    }
+                    if (canUseRow) {
+                        row = r;
+                        break;
+                    }
+                    row = r + 1;
+                }
+
+                if (!rows[row]) rows[row] = [];
+                rows[row].push(end);
+                positions[i] = { row };
+            });
+
+            return positions;
+        }
+
+        function renderAircraftTimeline() {
+            const container = document.getElementById('aircraft-timeline');
+            const solution = scheduleData.solution || [];
+            const aircraftsInfo = scheduleData.aircraftsInfo || {};
+
+            // Group tasks by aircraft
+            const aircraftTasks = {};
+            solution.forEach(emp => {
+                (emp.assignment || []).forEach(task => {
+                    const aircraftId = task.task?.aircraftId;
+                    if (!aircraftTasks[aircraftId]) {
+                        aircraftTasks[aircraftId] = [];
+                    }
+                    aircraftTasks[aircraftId].push({
+                        ...task,
+                        employeeId: emp.employeeId
+                    });
+                });
+            });
+
+            if (Object.keys(aircraftTasks).length === 0) {
+                container.innerHTML = '<div class="text-center text-muted py-8">No aircraft assignments found</div>';
+                return;
+            }
+
+            let html = '';
+
+            Object.entries(aircraftTasks).forEach(([aircraftId, tasks]) => {
+                const info = aircraftsInfo[aircraftId] || {};
+                const timeWindow = info.timeWindow || {};
+                const taskPositions = calculateTaskPositions(tasks);
+
+                html += `
+                    <div class="timeline-row">
+                        <div class="timeline-label">
+                            <div class="label-content">
+                                <div class="font-medium text-primary text-sm">${aircraftId}</div>
+                                <div class="text-xs text-secondary">${info.aType?.desc || ''}</div>
+                            </div>
+                        </div>
+                        <div class="timeline-track">
+                `;
+
+                // Render time window background
+                if (timeWindow.start && timeWindow.end) {
+                    const left = timeToPercent(timeWindow.start);
+                    const width = timeToPercent(timeWindow.end) - left;
+                    html += `<div class="working-time-bg" style="left: ${left}%; width: ${width}%;"></div>`;
+                }
+
+                // Render tasks
+                tasks.forEach((task, i) => {
+                    const left = timeToPercent(task.startTime);
+                    const width = timeToPercent(task.endTime) - left;
+                    const pos = taskPositions[i];
+                    const top = 4 + (pos.row * 26);
+
+                    html += `
+                        <div class="task-bar task" 
+                             style="left: ${left}%; width: ${Math.max(width, 2)}%; top: ${top}px; z-index: ${10 + i};"
+                             onmouseover="showTaskTooltip(event, '${task.task?.taskCode}', '${task.employeeId}', '${formatTime(task.startTime)}', '${formatTime(task.endTime)}', '${task.locationId}')"
+                             onmouseout="hideTooltip()">
+                            ${task.task?.taskCode} (${task.employeeId})
+                        </div>
+                    `;
+                });
+
+                html += '</div></div>';
+            });
+
+            html += renderTimeAxis();
+            container.innerHTML = html;
+        }
+
+        function renderTimeAxis() {
+            const numMarkers = 10;
+            let html = '<div class="time-axis">';
+
+            for (let i = 0; i <= numMarkers; i++) {
+                const time = minTime + (i / numMarkers) * (maxTime - minTime);
+                const d = new Date(time);
+                const timeStr = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
+                html += `<div class="time-marker">${timeStr}</div>`;
+            }
+
+            html += '</div>';
+            return html;
+        }
+
+        function showEmployeeTooltip(event, id, role, level, taskCount) {
+            const tooltip = document.getElementById('tooltip');
+            const empInfo = scheduleData.employeesInfo?.[id] || {};
+            const workingTimes = empInfo.workingTimes || [];
+
+            let wtHtml = workingTimes.map(wt =>
+                `<div class="text-secondary">${formatTime(wt.start)} - ${formatTime(wt.end)}</div>`
+            ).join('');
+
+            tooltip.innerHTML = `
+                <div class="font-heading font-semibold text-primary text-lg mb-2">${id}</div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-1">
+                    <span class="text-secondary">Role:</span>
+                    <span class="role-badge role-${role.toLowerCase()}">${role}</span>
+                    <span class="text-secondary">Level:</span>
+                    <span class="text-primary font-semibold">${level}</span>
+                    <span class="text-secondary">Tasks:</span>
+                    <span class="text-accent font-semibold">${taskCount}</span>
+                </div>
+                ${workingTimes.length > 0 ? `
+                    <div class="mt-3 pt-3 border-t border-default">
+                        <div class="text-secondary text-xs uppercase mb-1">Working Time</div>
+                        ${wtHtml}
+                    </div>
+                ` : ''}
+            `;
+
+            positionTooltip(event);
+            tooltip.classList.add('visible');
+        }
+
+        function showTaskTooltip(event, taskCode, id, start, end, location) {
+            const tooltip = document.getElementById('tooltip');
+
+            tooltip.innerHTML = `
+                <div class="font-heading font-semibold text-primary text-lg mb-2">${taskCode}</div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-1">
+                    <span class="text-secondary">Assigned:</span>
+                    <span class="text-accent">${id}</span>
+                    <span class="text-secondary">Start:</span>
+                    <span class="text-primary">${start}</span>
+                    <span class="text-secondary">End:</span>
+                    <span class="text-primary">${end}</span>
+                    <span class="text-secondary">Location:</span>
+                    <span class="text-muted">${location || '-'}</span>
+                </div>
+            `;
+
+            positionTooltip(event);
+            tooltip.classList.add('visible');
+        }
+
+        function showTravelTooltip(event, from, to, method, travelTime, departure, arrival, waitTime) {
+            const tooltip = document.getElementById('tooltip');
+            const durationMin = Math.round(travelTime / 60);
+            const waitMin = waitTime ? Math.round(waitTime / 60) : 0;
+            const methodIcon = method === 'BUS' ? '🚌 Bus' : '🚶 Walking';
+            const methodColor = method === 'BUS' ? 'text-info' : 'text-success';
+
+            tooltip.innerHTML = `
+                <div class="font-heading font-semibold text-primary text-lg mb-2">
+                    <span class="${methodColor}">${methodIcon}</span>
+                </div>
+                <div class="grid grid-cols-2 gap-x-4 gap-y-1">
+                    <span class="text-secondary">From:</span>
+                    <span class="text-primary">${from}</span>
+                    <span class="text-secondary">To:</span>
+                    <span class="text-primary">${to}</span>
+                    <span class="text-secondary">Depart:</span>
+                    <span class="text-primary">${departure}</span>
+                    <span class="text-secondary">Arrive:</span>
+                    <span class="text-primary">${arrival}</span>
+                    <span class="text-secondary">Duration:</span>
+                    <span class="text-accent font-semibold">${durationMin} min</span>
+                    ${waitMin > 0 ? `
+                        <span class="text-secondary">Wait Time:</span>
+                        <span class="text-warning">${waitMin} min</span>
+                    ` : ''}
+                </div>
+            `;
+
+            positionTooltip(event);
+            tooltip.classList.add('visible');
+        }
+
+        function positionTooltip(event) {
+            const tooltip = document.getElementById('tooltip');
+            let left = event.clientX + 15;
+            let top = event.clientY + 15;
+
+            // Prevent tooltip from going off screen
+            if (left + 250 > window.innerWidth) {
+                left = event.clientX - 260;
+            }
+            if (top + 200 > window.innerHeight) {
+                top = event.clientY - 210;
+            }
+
+            tooltip.style.left = left + 'px';
+            tooltip.style.top = top + 'px';
+        }
+
+        function showTooltipContent(event, title, content) {
+            const tooltip = document.getElementById('tooltip');
+            tooltip.innerHTML = `
+                <div class="font-heading font-semibold text-primary text-lg mb-2">${title}</div>
+                <div class="text-secondary">${content}</div>
+            `;
+            positionTooltip(event);
+            tooltip.classList.add('visible');
+        }
+
+        function hideTooltip() {
+            document.getElementById('tooltip').classList.remove('visible');
+        }
+
+        // Theme Toggle
+        function toggleTheme() {
+            const body = document.body;
+            const isDark = !body.classList.contains('light-theme');
+
+            if (isDark) {
+                body.classList.add('light-theme');
+                localStorage.setItem('theme', 'light');
+                document.getElementById('theme-icon-dark').classList.add('hidden');
+                document.getElementById('theme-icon-light').classList.remove('hidden');
+            } else {
+                body.classList.remove('light-theme');
+                localStorage.setItem('theme', 'dark');
+                document.getElementById('theme-icon-dark').classList.remove('hidden');
+                document.getElementById('theme-icon-light').classList.add('hidden');
+            }
+        }
+
+        // Initialize theme from localStorage
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-theme');
+                document.getElementById('theme-icon-dark').classList.add('hidden');
+                document.getElementById('theme-icon-light').classList.remove('hidden');
+            }
+        }
+
+        // Initialize
+        initTheme();
+        loadData();
+    </script>
+</body>
+
+</html>

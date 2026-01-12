@@ -1,0 +1,128 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Poppins:wght@400;700&display=swap');
+
+.splash-intro-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slideshow-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.slideshow-background.fade-in {
+  opacity: 1;
+}
+
+.slideshow-background.fade-out {
+  opacity: 0;
+}
+
+.slideshow-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  /* Dark mode support */
+}
+
+@media (prefers-color-scheme: dark) {
+  .slideshow-overlay {
+    background: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.splash-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  color: white;
+  padding: 1rem;
+}
+
+.splash-heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .splash-heading {
+    font-size: 3.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .splash-heading {
+    font-size: 4.5rem;
+  }
+}
+
+.splash-tagline {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  margin-top: 1.5rem;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 768px) {
+  .splash-tagline {
+    font-size: 1.5rem;
+  }
+}
+
+.splash-button {
+  margin-top: 3rem;
+  background: linear-gradient(to bottom, #3b82f6, #2563eb);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+  transform: scale(1);
+}
+
+.splash-button:hover {
+  background: linear-gradient(to bottom, #2563eb, #1d4ed8);
+  transform: scale(1.05);
+}
+
+.splash-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3);
+}
+
+@media (prefers-color-scheme: dark) {
+  .splash-button:focus {
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5);
+  }
+}
+
+/* Fade animation cho slideshow - đã được xử lý bằng transition */
+

@@ -1,0 +1,62 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-12-07T03:58:36Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1456610152",
+        "aeroway": "maintenance_base",
+        "name": "VAECO Maintenance Hub",
+        "operator": "VAECO",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.811821,
+          21.2117934
+        ]
+      },
+      "id": "way/1456610152"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1456610153",
+        "aeroway": "maintenance_base",
+        "name": "VAECO Maintenance Hub",
+        "operator": "VAECO",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8103157,
+          21.2121425
+        ]
+      },
+      "id": "way/1456610153"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "way/1456610154",
+        "aeroway": "maintenance_base",
+        "name": "VAECO Maintenance Hub",
+        "operator": "VAECO",
+        "@geometry": "center"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          105.8153099,
+          21.2106645
+        ]
+      },
+      "id": "way/1456610154"
+    }
+  ]
+}

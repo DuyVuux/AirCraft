@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aircraft Maintenance Solver - Dashboard</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Open Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            primary: '#0A0E27',
+                            secondary: '#121830',
+                            card: '#1A1F3D',
+                            border: '#2A3158',
+                        },
+                        accent: {
+                            blue: '#2563EB',
+                            purple: '#7C3AED',
+                            orange: '#F97316',
+                            green: '#10B981',
+                            red: '#EF4444',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #0A0E27 0%, #121830 50%, #0A0E27 100%);
+            min-height: 100vh;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .glass-card {
+            background: rgba(26, 31, 61, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(42, 49, 88, 0.5);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(37, 99, 235, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(37, 99, 235, 0.15);
+        }
+
+        .glow-blue {
+            box-shadow: 0 0 30px rgba(37, 99, 235, 0.4);
+        }
+
+        .glow-purple {
+            box-shadow: 0 0 30px rgba(124, 58, 237, 0.4);
+        }
+
+        .glow-orange {
+            box-shadow: 0 0 30px rgba(249, 115, 22, 0.4);
+        }
+
+        .nav-card {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .nav-card:hover {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.2) 0%, rgba(124, 58, 237, 0.2) 100%);
+            border-color: rgba(37, 99, 235, 0.5);
+            transform: scale(1.02);
+        }
+
+        .file-item {
+            transition: all 0.2s ease;
+        }
+
+        .file-item:hover {
+            background: rgba(37, 99, 235, 0.1) !important;
+            border-color: rgba(37, 99, 235, 0.5) !important;
+        }
+
+        .btn-primary-glow {
+            background: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary-glow:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+        }
+
+        .stat-value {
+            background: linear-gradient(135deg, #60A5FA 0%, #A78BFA 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0A0E27;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #2A3158;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body class="text-gray-200">
+    <div class="min-h-screen px-4 py-8 md:px-8">
+        <div class="max-w-6xl mx-auto">
+            <!-- Header -->
+            <header class="text-center mb-12">
+                <div
+                    class="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 mb-6 glow-blue float-animation">
+                    <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                    </svg>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-heading font-bold text-white mb-4">
+                    Aircraft <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Maintenance</span>
+                    Solver
+                </h1>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    Optimize maintenance schedules using CP-SAT and Hybrid solvers
+                </p>
+            </header>
+
+            <!-- Quick Navigation -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                <!-- View Schedules -->
+                <a href="#schedules" class="nav-card rounded-2xl p-6 cursor-pointer block">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="font-heading font-semibold text-white text-lg">Schedules</h3>
+                            <p class="text-gray-400 text-sm">{{ files|length }} available</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">View and visualize generated maintenance schedules</p>
+                </a>
+
+                <!-- Benchmark -->
+                <a href="/benchmark" class="nav-card rounded-2xl p-6 cursor-pointer block">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                                </path>
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="font-heading font-semibold text-white text-lg">Benchmark</h3>
+                            <p class="text-gray-400 text-sm">Compare solvers</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">Test CP-SAT vs Hybrid performance</p>
+                </a>
+
+                <!-- Run Solver -->
+                <a href="/api/NBP" class="nav-card rounded-2xl p-6 cursor-pointer block"
+                    onclick="event.preventDefault(); document.getElementById('runSolverModal').classList.remove('hidden');">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z">
+                                </path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="font-heading font-semibold text-white text-lg">Run Solver</h3>
+                            <p class="text-gray-400 text-sm">API endpoint</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">Execute solver on new input data</p>
+                </a>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+                <div class="glass-card p-4 text-center">
+                    <div class="text-3xl font-heading font-bold stat-value">{{ files|length }}</div>
+                    <div class="text-gray-400 text-sm mt-1">Schedules</div>
+                </div>
+                <div class="glass-card p-4 text-center">
+                    <div class="text-3xl font-heading font-bold stat-value">2</div>
+                    <div class="text-gray-400 text-sm mt-1">Solvers</div>
+                </div>
+                <div class="glass-card p-4 text-center">
+                    <div class="text-3xl font-heading font-bold stat-value">3</div>
+                    <div class="text-gray-400 text-sm mt-1">Test Sizes</div>
+                </div>
+                <div class="glass-card p-4 text-center">
+                    <div class="text-3xl font-heading font-bold text-green-400">Active</div>
+                    <div class="text-gray-400 text-sm mt-1">Status</div>
+                </div>
+            </div>
+
+            <!-- Available Schedules -->
+            <div id="schedules" class="glass-card p-6 mb-8">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center mr-3">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4">
+                                </path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="font-heading font-semibold text-white text-xl">Available Schedules</h2>
+                            <p class="text-gray-400 text-sm">Select a schedule to visualize</p>
+                        </div>
+                    </div>
+                    <span class="px-4 py-2 rounded-full bg-blue-500/20 text-blue-400 text-sm font-medium">
+                        {{ files|length }} files
+                    </span>
+                </div>
+
+                {% if files %}
+                <div class="space-y-3">
+                    {% for file in files %}
+                    <a href="/visualize/{{ file }}"
+                        class="file-item flex items-center justify-between p-4 rounded-xl bg-dark-primary/50 border border-dark-border cursor-pointer block">
+                        <div class="flex items-center">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-gradient-to-br from-green-500/20 to-blue-500/20 flex items-center justify-center mr-4">
+                                <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-white">{{ file }}</h3>
+                                <p class="text-gray-500 text-sm">Schedule output file</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center text-blue-400">
+                            <span class="mr-2 text-sm">View</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="text-center py-12">
+                    <div
+                        class="w-16 h-16 rounded-full bg-dark-primary/50 flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-gray-400 font-medium mb-2">No schedules found</h3>
+                    <p class="text-gray-500 text-sm">Run the solver or place JSON files in <code
+                            class="bg-dark-card px-2 py-1 rounded">data/output</code></p>
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- Input Files Section -->
+            <div id="inputs" class="glass-card p-6 mb-8">
+                <div class="flex items-center justify-between mb-6">
+                    <div class="flex items-center">
+                        <div
+                            class="w-10 h-10 rounded-lg bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center mr-3">
+                            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12">
+                                </path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="font-heading font-semibold text-white text-xl">Input Files</h2>
+                            <p class="text-gray-400 text-sm">Select an input file to run solver</p>
+                        </div>
+                    </div>
+                    <span class="px-4 py-2 rounded-full bg-orange-500/20 text-orange-400 text-sm font-medium">
+                        {{ input_files|length }} files
+                    </span>
+                </div>
+
+                {% if input_files %}
+                <div class="space-y-3">
+                    {% for file in input_files %}
+                    <div
+                        class="file-item flex items-center justify-between p-4 rounded-xl bg-dark-primary/50 border border-dark-border">
+                        <div class="flex items-center">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-gradient-to-br from-orange-500/20 to-red-500/20 flex items-center justify-center mr-4">
+                                <svg class="w-5 h-5 text-orange-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="font-medium text-white">{{ file }}</h3>
+                                <p class="text-gray-500 text-sm">Input JSON file</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <select id="strategy-{{ loop.index }}"
+                                class="px-3 py-2 rounded-lg bg-dark-primary border border-dark-border text-gray-300 text-sm cursor-pointer">
+                                <option value="cpsat">CP-SAT</option>
+                                <option value="hybrid">Hybrid</option>
+                            </select>
+                            <button
+                                onclick="runSolver('{{ file }}', document.getElementById('strategy-{{ loop.index }}').value)"
+                                class="px-4 py-2 rounded-lg bg-gradient-to-r from-orange-500 to-red-500 text-white text-sm font-medium hover:opacity-90 transition-opacity cursor-pointer flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z">
+                                    </path>
+                                </svg>
+                                Run
+                            </button>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="text-center py-12">
+                    <div
+                        class="w-16 h-16 rounded-full bg-dark-primary/50 flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-gray-400 font-medium mb-2">No input files found</h3>
+                    <p class="text-gray-500 text-sm">Place JSON input files in <code
+                            class="bg-dark-card px-2 py-1 rounded">data/input</code></p>
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <a href="/benchmark" class="glass-card p-6 cursor-pointer block group">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3
+                                class="font-heading font-semibold text-white text-lg mb-2 group-hover:text-blue-400 transition-colors">
+                                🚀 Run Benchmark
+                            </h3>
+                            <p class="text-gray-400 text-sm">Compare CP-SAT vs Hybrid solver performance on different
+                                instance sizes</p>
+                        </div>
+                        <svg class="w-8 h-8 text-gray-500 group-hover:text-blue-400 transition-colors" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </div>
+                </a>
+
+                <div class="glass-card p-6">
+                    <h3 class="font-heading font-semibold text-white text-lg mb-2">📁 Data Folders</h3>
+                    <p class="text-gray-400 text-sm mb-3">Place files in these folders:</p>
+                    <div class="space-y-2">
+                        <code class="block bg-dark-primary/50 px-4 py-2 rounded-lg text-orange-400 text-sm">
+                            data/input/ → Input JSON files
+                        </code>
+                        <code class="block bg-dark-primary/50 px-4 py-2 rounded-lg text-blue-400 text-sm">
+                            data/output/ → Generated schedules
+                        </code>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="text-center text-gray-500 text-sm pt-8 border-t border-dark-border">
+                <p>Aircraft Maintenance Scheduling System • CP-SAT + Hybrid Solver</p>
+                <p class="mt-1">Built with OR-Tools & Flask</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+        <div class="text-center">
+            <div class="w-16 h-16 border-4 border-blue-500/30 rounded-full animate-spin border-t-blue-500 mx-auto">
+            </div>
+            <h3 class="mt-6 text-xl font-heading font-semibold text-white">Running Solver...</h3>
+            <p class="mt-2 text-gray-400" id="loadingText">Processing input file</p>
+        </div>
+    </div>
+
+    <!-- Result Modal -->
+    <div id="resultModal" class="hidden fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+        <div class="glass-card p-8 max-w-lg w-full mx-4">
+            <div id="resultContent">
+                <!-- Populated by JS -->
+            </div>
+            <div class="flex space-x-4 mt-6">
+                <button onclick="closeResultModal()"
+                    class="flex-1 py-3 rounded-xl bg-dark-card border border-dark-border text-white font-semibold cursor-pointer hover:border-blue-500 transition-colors">
+                    Close
+                </button>
+                <a id="viewResultLink" href="#"
+                    class="flex-1 py-3 rounded-xl bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold cursor-pointer text-center hover:opacity-90 transition-opacity">
+                    View Schedule
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function runSolver(filename, strategy) {
+            // Show loading
+            document.getElementById('loadingOverlay').classList.remove('hidden');
+            document.getElementById('loadingText').textContent = `Running ${strategy.toUpperCase()} solver on ${filename}...`;
+
+            try {
+                const response = await fetch(`/api/solve/${filename}?strategy=${strategy}&time_limit=30`, {
+                    method: 'POST'
+                });
+
+                const data = await response.json();
+
+                // Hide loading
+                document.getElementById('loadingOverlay').classList.add('hidden');
+
+                // Show result
+                showResult(data, strategy);
+
+            } catch (error) {
+                document.getElementById('loadingOverlay').classList.add('hidden');
+                alert('Error: ' + error.message);
+            }
+        }
+
+        function showResult(data, strategy) {
+            const resultContent = document.getElementById('resultContent');
+            const viewLink = document.getElementById('viewResultLink');
+
+            if (data.success) {
+                resultContent.innerHTML = `
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <h2 class="font-heading font-bold text-white text-2xl mb-2">Solution Found!</h2>
+                        <p class="text-gray-400">${strategy.toUpperCase()} solver completed successfully</p>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between p-3 rounded-lg bg-dark-primary/50">
+                            <span class="text-gray-400">Solve Time</span>
+                            <span class="text-white font-semibold">${data.solve_time_s}s</span>
+                        </div>
+                        <div class="flex justify-between p-3 rounded-lg bg-dark-primary/50">
+                            <span class="text-gray-400">Tasks Assigned</span>
+                            <span class="text-green-400 font-semibold">${data.assigned_tasks} / ${data.total_tasks}</span>
+                        </div>
+                        <div class="flex justify-between p-3 rounded-lg bg-dark-primary/50">
+                            <span class="text-gray-400">Output File</span>
+                            <span class="text-blue-400 font-mono text-sm">${data.output_file}</span>
+                        </div>
+                    </div>
+                `;
+                viewLink.href = `/visualize/${data.output_file}`;
+                viewLink.classList.remove('hidden');
+            } else {
+                resultContent.innerHTML = `
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 rounded-full bg-red-500/20 flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </div>
+                        <h2 class="font-heading font-bold text-white text-2xl mb-2">No Solution Found</h2>
+                        <p class="text-gray-400">${data.error || 'Solver could not find a feasible solution'}</p>
+                    </div>
+                    <div class="flex justify-between p-3 rounded-lg bg-dark-primary/50">
+                        <span class="text-gray-400">Solve Time</span>
+                        <span class="text-white font-semibold">${data.solve_time_s || 'N/A'}s</span>
+                    </div>
+                `;
+                viewLink.classList.add('hidden');
+            }
+
+            document.getElementById('resultModal').classList.remove('hidden');
+        }
+
+        function closeResultModal() {
+            document.getElementById('resultModal').classList.add('hidden');
+            // Reload page to update file lists
+            location.reload();
+        }
+    </script>
+</body>
+
+</html>

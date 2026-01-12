@@ -1,0 +1,278 @@
+/* ========================================
+   THEME-AWARE COLOR UTILITY CLASSES
+   Automatically adapt to dark/light mode
+   ======================================== */
+
+/* CSS Variables for Theme Colors */
+:root {
+    /* Light mode colors */
+    --color-primary: #3b82f6;
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-danger: #ef4444;
+    --color-info: #0ea5e9;
+    --color-purple: #8b5cf6;
+    --color-pink: #ec4899;
+
+    /* Semantic colors - Light Mode */
+    --color-text-primary: #1f2937;
+    --color-text-secondary: #6b7280;
+    --color-text-tertiary: #9ca3af;
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #f3f4f6;
+    --color-bg-elevated: #ffffff;
+    --color-border: #e5e7eb;
+    --color-surface: #ffffff;
+    --color-surface-hover: #f9fafb;
+
+    /* Darker shades */
+    --color-primary-dark: #2563eb;
+    --color-success-dark: #059669;
+    --color-danger-dark: #dc2626;
+    --color-error: #ef4444;
+
+    /* Background variants with opacity */
+    --color-primary-bg: rgba(59, 130, 246, 0.1);
+    --color-success-bg: rgba(16, 185, 129, 0.1);
+    --color-warning-bg: rgba(245, 158, 11, 0.1);
+    --color-error-bg: rgba(239, 68, 68, 0.1);
+    --color-danger-bg: rgba(239, 68, 68, 0.1);
+}
+
+/* Dark mode using data-theme attribute (for toggle button) */
+[data-theme='dark'] {
+    --color-text-primary: #f9fafb;
+    --color-text-secondary: #d1d5db;
+    --color-text-tertiary: #9ca3af;
+    --color-bg-primary: #0f172a;
+    --color-bg-secondary: #1e293b;
+    --color-bg-elevated: #1e293b;
+    --color-border: #334155;
+    --color-surface: #1e293b;
+    --color-surface-hover: #334155;
+
+    /* Background variants with opacity for dark mode */
+    --color-primary-bg: rgba(59, 130, 246, 0.15);
+    --color-success-bg: rgba(16, 185, 129, 0.15);
+    --color-warning-bg: rgba(245, 158, 11, 0.15);
+    --color-error-bg: rgba(239, 68, 68, 0.15);
+    --color-danger-bg: rgba(239, 68, 68, 0.15);
+}
+
+/* Dark mode fallback using prefers-color-scheme (for system theme) */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) {
+        --color-text-primary: #f9fafb;
+        --color-text-secondary: #d1d5db;
+        --color-text-tertiary: #9ca3af;
+        --color-bg-primary: #0f172a;
+        --color-bg-secondary: #1e293b;
+        --color-bg-elevated: #1e293b;
+        --color-border: #334155;
+        --color-surface: #1e293b;
+        --color-surface-hover: #334155;
+
+        /* Background variants with opacity for dark mode */
+        --color-primary-bg: rgba(59, 130, 246, 0.15);
+        --color-success-bg: rgba(16, 185, 129, 0.15);
+        --color-warning-bg: rgba(245, 158, 11, 0.15);
+        --color-error-bg: rgba(239, 68, 68, 0.15);
+        --color-danger-bg: rgba(239, 68, 68, 0.15);
+    }
+}
+
+/* ========================================
+   BUTTON UTILITY CLASSES
+   ======================================== */
+
+/* Base button styles - use dataset-btn class */
+.dataset-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    border-radius: 0.375rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    background: var(--color-primary);
+    color: white;
+}
+
+.dataset-btn:hover:not(:disabled) {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.dataset-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.dataset-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Button variants */
+.dataset-btn.primary {
+    background: var(--color-primary);
+    color: white;
+}
+
+.dataset-btn.success {
+    background: var(--color-success);
+    color: white;
+}
+
+.dataset-btn.danger {
+    background: var(--color-danger);
+    color: white;
+}
+
+.dataset-btn.warning {
+    background: var(--color-warning);
+    color: white;
+}
+
+.dataset-btn.secondary {
+    background: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+    border-color: var(--color-border);
+}
+
+.dataset-btn.ghost {
+    background: transparent;
+    color: var(--color-text-primary);
+    border-color: var(--color-border);
+}
+
+/* ========================================
+   TEXT COLOR UTILITY CLASSES
+   ======================================== */
+
+.text-primary {
+    color: var(--color-primary);
+}
+
+.text-success {
+    color: var(--color-success);
+}
+
+.text-danger {
+    color: var(--color-danger);
+}
+
+.text-warning {
+    color: var(--color-warning);
+}
+
+.text-info {
+    color: var(--color-info);
+}
+
+.text-muted {
+    color: var(--color-text-secondary);
+}
+
+/* ========================================
+   BACKGROUND COLOR UTILITY CLASSES
+   ======================================== */
+
+.bg-primary {
+    background-color: var(--color-primary);
+}
+
+.bg-success {
+    background-color: var(--color-success);
+}
+
+.bg-danger {
+    background-color: var(--color-danger);
+}
+
+.bg-warning {
+    background-color: var(--color-warning);
+}
+
+.bg-elevated {
+    background-color: var(--color-bg-elevated);
+}
+
+/* ========================================
+   BORDER COLOR UTILITY CLASSES
+   ======================================== */
+
+.border-primary {
+    border-color: var(--color-primary);
+}
+
+.border-danger {
+    border-color: var(--color-danger);
+}
+
+.border-default {
+    border-color: var(--color-border);
+}
+
+/* ========================================
+   STATUS INDICATOR CLASSES
+   ======================================== */
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.status-dot.success {
+    background-color: var(--color-success);
+}
+
+.status-dot.danger {
+    background-color: var(--color-danger);
+}
+
+.status-dot.warning {
+    background-color: var(--color-warning);
+}
+
+.status-dot.info {
+    background-color: var(--color-info);
+}
+
+/* ========================================
+   USAGE EXAMPLES
+   ======================================== */
+
+/*
+  BUTTONS:
+  --------
+  <button className="dataset-btn">Default (Primary)</button>
+  <button className="dataset-btn success">Success Button</button>
+  <button className="dataset-btn danger">Delete Button</button>
+  <button className="dataset-btn warning">Warning Button</button>
+  <button className="dataset-btn secondary">Secondary</button>
+  <button className="dataset-btn ghost">Ghost Button</button>
+
+  TEXT COLORS:
+  -----------
+  <span className="text-success">Success message</span>
+  <span className="text-danger">Error message</span>
+  <span className="text-warning">Warning message</span>
+  <span className="text-muted">Muted text</span>
+
+  STATUS INDICATORS:
+  -----------------
+  <span className="status-dot success"></span>
+  <span className="status-dot danger"></span>
+  
+  BACKGROUNDS:
+  -----------
+  <div className="bg-elevated">Elevated surface</div>
+  <div className="bg-success" style={{padding: '1rem', color: 'white'}}>
+    Success background
+  </div>
+*/

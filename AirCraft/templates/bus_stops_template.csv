@@ -1,0 +1,4 @@
+busStopId,bType.id,bType.desc,location.longitude,location.latitude
+BS_TERMINAL,TERMINAL_STOP,Terminal Bus Stop,106.6588,10.8185
+BS_HANGAR,HANGAR_STOP,Hangar Area Bus Stop,106.6600,10.8190
+BS_REST_AREA,REST_AREA_STOP,Rest Area Bus Stop,106.6650,10.8200

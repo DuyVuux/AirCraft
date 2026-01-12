@@ -1,0 +1,33 @@
+{
+    "meta": {
+        "id": "1719bc98-d478-4d2c-8071-7008b19cb5cc",
+        "name": "Test Dataset New Structure",
+        "createdAt": "2026-01-04T11:00:08.821725",
+        "updatedAt": "2026-01-04T11:00:08.821725",
+        "itemCounts": {
+            "tasks": 0,
+            "employees": 0,
+            "hubs": 0,
+            "aircrafts": 0,
+            "busStops": 0,
+            "busRoutes": 0,
+            "timeMatrix": 0
+        }
+    },
+    "data": {
+        "trackingId": null,
+        "tasks": [],
+        "employees": [],
+        "hubs": [],
+        "aircrafts": [],
+        "busStops": [],
+        "busRoutes": [],
+        "matrixConfigs": {
+            "distanceMatrix": [],
+            "busTransitMatrix": [],
+            "walkingDistanceFromLocationToBusStop": [],
+            "timeMatrix": []
+        },
+        "timeMatrix": []
+    }
+}

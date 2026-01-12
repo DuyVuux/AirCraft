@@ -1,0 +1,144 @@
+{
+  "meta": {
+    "id": "1719bc98-d478-4d2c-8071-7008b19cb5cc",
+    "name": "Test Dataset New Structure",
+    "createdAt": "2026-01-04T11:00:08.821725",
+    "updatedAt": "2026-01-12T13:36:40.890252",
+    "itemCounts": {
+      "tasks": 0,
+      "employees": 3,
+      "hubs": 0,
+      "aircrafts": 2,
+      "busStops": 0,
+      "busRoutes": 0,
+      "timeMatrix": 0
+    }
+  },
+  "data": {
+    "trackingId": null,
+    "aircrafts": [
+      {
+        "aircraftId": "VN-A320",
+        "aType": {
+          "id": "A320",
+          "desc": "Airbus A320"
+        },
+        "location": {
+          "locationId": "GATE-01",
+          "locationType": "GATE",
+          "longitude": 106.6588,
+          "latitude": 10.8185
+        },
+        "timeWindow": {
+          "start": "2024-12-05T08:00:00Z",
+          "end": "2024-12-07T12:00:00Z"
+        },
+        "requiredTasks": [
+          {
+            "taskCode": "TASK_TIRE_CHECK",
+            "minLevel": 1
+          },
+          {
+            "taskCode": "TASK_OIL_CHANGE",
+            "minLevel": 2
+          }
+        ]
+      },
+      {
+        "aircraftId": "VN-B787",
+        "aType": {
+          "id": "B787",
+          "desc": "Boeing 787"
+        },
+        "location": {
+          "locationId": "HANGAR-02",
+          "locationType": "HANGAR",
+          "longitude": 106.66,
+          "latitude": 10.819
+        },
+        "timeWindow": {
+          "start": "2024-12-05T08:20:00Z",
+          "end": "2024-12-05T13:20:00Z"
+        },
+        "requiredTasks": [
+          {
+            "taskCode": "TASK_ENGINE_INSPECT",
+            "minLevel": 2
+          },
+          {
+            "taskCode": "TASK_CLEANING",
+            "minLevel": 1
+          }
+        ]
+      }
+    ],
+    "hubs": [],
+    "employees": [
+      {
+        "employeeId": "EMP_001",
+        "eType": {
+          "role": "MECHANIC",
+          "level": 1
+        },
+        "workingTimes": [
+          {
+            "start": "2024-12-05T07:00:00Z",
+            "end": "2024-12-05T17:00:00Z"
+          }
+        ],
+        "breakDuration": 3600,
+        "fixedBreakTimes": [
+          {
+            "start": "2024-12-05T12:00:00Z",
+            "end": "2024-12-05T13:00:00Z"
+          }
+        ]
+      },
+      {
+        "employeeId": "EMP_002",
+        "eType": {
+          "role": "MECHANIC",
+          "level": 2
+        },
+        "workingTimes": [
+          {
+            "start": "2024-12-05T07:00:00Z",
+            "end": "2024-12-05T17:00:00Z"
+          }
+        ],
+        "breakDuration": 3600,
+        "fixedBreakTimes": [
+          {
+            "start": "2024-12-05T12:00:00Z",
+            "end": "2024-12-05T13:00:00Z"
+          }
+        ]
+      },
+      {
+        "employeeId": "EMP_003",
+        "eType": {
+          "role": "CLEANER",
+          "level": 1
+        },
+        "workingTimes": [
+          {
+            "start": "2024-12-05T06:00:00Z",
+            "end": "2024-12-05T16:00:00Z"
+          }
+        ],
+        "breakDuration": 1800,
+        "fixedBreakTimes": [
+          {
+            "start": "2024-12-05T11:30:00Z",
+            "end": "2024-12-05T12:00:00Z"
+          }
+        ]
+      }
+    ],
+    "busStops": [],
+    "busRoutes": [],
+    "matrixConfigs": null,
+    "tasks": [],
+    "timeMatrix": []
+  }
+}

@@ -1,0 +1,49 @@
+{
+    "solution": [
+        {
+            "employeeId": "EMP_001",
+            "level": 1,
+            "assignment": [],
+            "breakTimes": [
+                {
+                    "startTime": "2024-12-05T12:00:00Z",
+                    "endTime": "2024-12-05T13:00:00Z"
+                }
+            ]
+        },
+        {
+            "employeeId": "EMP_002",
+            "level": 2,
+            "assignment": [
+                {
+                    "task": {
+                        "taskCode": "TASK_ENGINE_INSPECT",
+                        "aircraftId": "VN-B787",
+                        "minLevel": 2
+                    },
+                    "locationId": "HANGAR-02",
+                    "startTime": "2024-12-05T08:15:00Z",
+                    "endTime": "2024-12-05T10:15:00Z"
+                }
+            ],
+            "breakTimes": [
+                {
+                    "startTime": "2024-12-05T12:00:00Z",
+                    "endTime": "2024-12-05T13:00:00Z"
+                }
+            ]
+        }
+    ],
+    "droppedTasks": [
+        {
+            "aircraftId": "VN-A320",
+            "tasks": [
+                {
+                    "taskCode": "TASK_TIRE_CHECK",
+                    "aircraftId": "VN-A320",
+                    "minLevel": 1
+                }
+            ]
+        }
+    ]
+}

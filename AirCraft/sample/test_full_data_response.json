@@ -1,0 +1,396 @@
+{
+  "trackingId": "PLAN-2024-12-05-001",
+  "aircrafts": [
+    {
+      "aircraftId": "VN-A320",
+      "aType": {
+        "id": "A320",
+        "desc": "Airbus A320"
+      },
+      "location": {
+        "locationId": "GATE-01",
+        "locationType": "GATE",
+        "longitude": 106.6588,
+        "latitude": 10.8185
+      },
+      "timeWindow": {
+        "start": "2024-12-05T08:00:00Z",
+        "end": "2024-12-07T12:00:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "TASK_TIRE_CHECK",
+          "minLevel": 1
+        },
+        {
+          "taskCode": "TASK_OIL_CHANGE",
+          "minLevel": 2
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-B787",
+      "aType": {
+        "id": "B787",
+        "desc": "Boeing 787"
+      },
+      "location": {
+        "locationId": "HANGAR-02",
+        "locationType": "HANGAR",
+        "longitude": 106.66,
+        "latitude": 10.819
+      },
+      "timeWindow": {
+        "start": "2024-12-05T08:20:00Z",
+        "end": "2024-12-05T13:20:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "TASK_ENGINE_INSPECT",
+          "minLevel": 2
+        },
+        {
+          "taskCode": "TASK_CLEANING",
+          "minLevel": 1
+        }
+      ]
+    }
+  ],
+  "hubs": [
+    {
+      "hubId": "HUB_01",
+      "location": {
+        "locationId": "REST_AREA_A",
+        "locationType": "HUB",
+        "longitude": 106.665,
+        "latitude": 10.82
+      }
+    }
+  ],
+  "employees": [
+    {
+      "employeeId": "EMP_001",
+      "eType": {
+        "role": "MECHANIC",
+        "level": 1
+      },
+      "workingTimes": [
+        {
+          "start": "2024-12-05T07:00:00Z",
+          "end": "2024-12-05T17:00:00Z"
+        }
+      ],
+      "breakDuration": 3600,
+      "fixedBreakTimes": [
+        {
+          "start": "2024-12-05T12:00:00Z",
+          "end": "2024-12-05T13:00:00Z"
+        }
+      ]
+    },
+    {
+      "employeeId": "EMP_002",
+      "eType": {
+        "role": "MECHANIC",
+        "level": 2
+      },
+      "workingTimes": [
+        {
+          "start": "2024-12-05T07:00:00Z",
+          "end": "2024-12-05T17:00:00Z"
+        }
+      ],
+      "breakDuration": 3600,
+      "fixedBreakTimes": [
+        {
+          "start": "2024-12-05T12:00:00Z",
+          "end": "2024-12-05T13:00:00Z"
+        }
+      ]
+    },
+    {
+      "employeeId": "EMP_003",
+      "eType": {
+        "role": "CLEANER",
+        "level": 1
+      },
+      "workingTimes": [
+        {
+          "start": "2024-12-05T06:00:00Z",
+          "end": "2024-12-05T16:00:00Z"
+        }
+      ],
+      "breakDuration": 1800,
+      "fixedBreakTimes": [
+        {
+          "start": "2024-12-05T11:30:00Z",
+          "end": "2024-12-05T12:00:00Z"
+        }
+      ]
+    }
+  ],
+  "busStops": [
+    {
+      "busStopId": "BS_TERMINAL",
+      "bType": {
+        "id": "TERMINAL_STOP",
+        "desc": "Terminal Bus Stop"
+      },
+      "location": {
+        "longitude": 106.6588,
+        "latitude": 10.8185
+      }
+    },
+    {
+      "busStopId": "BS_HANGAR",
+      "bType": {
+        "id": "HANGAR_STOP",
+        "desc": "Hangar Area Bus Stop"
+      },
+      "location": {
+        "longitude": 106.66,
+        "latitude": 10.819
+      }
+    },
+    {
+      "busStopId": "BS_REST_AREA",
+      "bType": {
+        "id": "REST_AREA_STOP",
+        "desc": "Rest Area Bus Stop"
+      },
+      "location": {
+        "longitude": 106.665,
+        "latitude": 10.82
+      }
+    }
+  ],
+  "busRoutes": [
+    {
+      "routeId": "ROUTE_MAIN",
+      "routeName": "Main Airport Loop",
+      "stops": [
+        {
+          "busStopId": "BS_TERMINAL",
+          "arrivalTime": 0,
+          "departureTime": 120,
+          "stopDuration": 120
+        },
+        {
+          "busStopId": "BS_HANGAR",
+          "arrivalTime": 480,
+          "departureTime": 600,
+          "stopDuration": 120
+        },
+        {
+          "busStopId": "BS_REST_AREA",
+          "arrivalTime": 960,
+          "departureTime": 1080,
+          "stopDuration": 120
+        },
+        {
+          "busStopId": "BS_TERMINAL",
+          "arrivalTime": 1440,
+          "departureTime": null,
+          "stopDuration": 0
+        }
+      ],
+      "cycleTime": 1440,
+      "frequency": 1800,
+      "operatingHours": {
+        "start": "2024-12-05T06:00:00Z",
+        "end": "2024-12-05T18:00:00Z"
+      }
+    }
+  ],
+  "matrixConfigs": {
+    "distanceMatrix": [
+      {
+        "srcCode": "GATE-01",
+        "destCode": "HANGAR-02",
+        "travelTime": 900
+      },
+      {
+        "srcCode": "GATE-01",
+        "destCode": "APRON-03",
+        "travelTime": 1200
+      },
+      {
+        "srcCode": "GATE-01",
+        "destCode": "REST_AREA_A",
+        "travelTime": 600
+      },
+      {
+        "srcCode": "HANGAR-02",
+        "destCode": "GATE-01",
+        "travelTime": 900
+      },
+      {
+        "srcCode": "HANGAR-02",
+        "destCode": "APRON-03",
+        "travelTime": 600
+      },
+      {
+        "srcCode": "HANGAR-02",
+        "destCode": "REST_AREA_A",
+        "travelTime": 1500
+      },
+      {
+        "srcCode": "APRON-03",
+        "destCode": "GATE-01",
+        "travelTime": 1200
+      },
+      {
+        "srcCode": "APRON-03",
+        "destCode": "HANGAR-02",
+        "travelTime": 600
+      },
+      {
+        "srcCode": "APRON-03",
+        "destCode": "REST_AREA_A",
+        "travelTime": 1800
+      },
+      {
+        "srcCode": "REST_AREA_A",
+        "destCode": "GATE-01",
+        "travelTime": 600
+      },
+      {
+        "srcCode": "REST_AREA_A",
+        "destCode": "HANGAR-02",
+        "travelTime": 1500
+      },
+      {
+        "srcCode": "REST_AREA_A",
+        "destCode": "APRON-03",
+        "travelTime": 1800
+      },
+      {
+        "srcCode": "GATE-01",
+        "destCode": "GATE-01",
+        "travelTime": 0
+      },
+      {
+        "srcCode": "HANGAR-02",
+        "destCode": "HANGAR-02",
+        "travelTime": 0
+      },
+      {
+        "srcCode": "APRON-03",
+        "destCode": "APRON-03",
+        "travelTime": 0
+      },
+      {
+        "srcCode": "REST_AREA_A",
+        "destCode": "REST_AREA_A",
+        "travelTime": 0
+      }
+    ],
+    "busTransitMatrix": [
+      {
+        "fromBusStopId": "BS_TERMINAL",
+        "toBusStopId": "BS_HANGAR",
+        "routeId": "ROUTE_MAIN",
+        "transitTime": 360,
+        "averageWaitTime": 900
+      },
+      {
+        "fromBusStopId": "BS_HANGAR",
+        "toBusStopId": "BS_REST_AREA",
+        "routeId": "ROUTE_MAIN",
+        "transitTime": 360,
+        "averageWaitTime": 900
+      },
+      {
+        "fromBusStopId": "BS_REST_AREA",
+        "toBusStopId": "BS_TERMINAL",
+        "routeId": "ROUTE_MAIN",
+        "transitTime": 360,
+        "averageWaitTime": 900
+      },
+      {
+        "fromBusStopId": "BS_TERMINAL",
+        "toBusStopId": "BS_REST_AREA",
+        "routeId": "ROUTE_MAIN",
+        "transitTime": 840,
+        "averageWaitTime": 900
+      },
+      {
+        "fromBusStopId": "BS_HANGAR",
+        "toBusStopId": "BS_TERMINAL",
+        "routeId": "ROUTE_MAIN",
+        "transitTime": 840,
+        "averageWaitTime": 900
+      },
+      {
+        "fromBusStopId": "BS_REST_AREA",
+        "toBusStopId": "BS_HANGAR",
+        "routeId": "ROUTE_MAIN",
+        "transitTime": 840,
+        "averageWaitTime": 900
+      }
+    ],
+    "walkingDistanceFromLocationToBusStop": [
+      {
+        "locationId": "GATE-01",
+        "busStopId": "BS_TERMINAL",
+        "walkTime": 120
+      },
+      {
+        "locationId": "HANGAR-02",
+        "busStopId": "BS_HANGAR",
+        "walkTime": 90
+      },
+      {
+        "locationId": "REST_AREA_A",
+        "busStopId": "BS_REST_AREA",
+        "walkTime": 60
+      }
+    ],
+    "timeMatrix": [
+      {
+        "taskCode": "TASK_TIRE_CHECK",
+        "role": "MECHANIC",
+        "level": 1,
+        "aircraftId": "VN-A320",
+        "timeProcess": 1800
+      },
+      {
+        "taskCode": "TASK_TIRE_CHECK",
+        "role": "MECHANIC",
+        "level": 2,
+        "aircraftId": "VN-A320",
+        "timeProcess": 1500
+      },
+      {
+        "taskCode": "TASK_OIL_CHANGE",
+        "role": "MECHANIC",
+        "level": 1,
+        "aircraftId": "VN-A320",
+        "timeProcess": 2700
+      },
+      {
+        "taskCode": "TASK_OIL_CHANGE",
+        "role": "MECHANIC",
+        "level": 2,
+        "aircraftId": "VN-A320",
+        "timeProcess": 2100
+      },
+      {
+        "taskCode": "TASK_ENGINE_INSPECT",
+        "role": "MECHANIC",
+        "level": 2,
+        "aircraftId": "VN-B787",
+        "timeProcess": 7200
+      },
+      {
+        "taskCode": "TASK_CLEANING",
+        "role": "CLEANER",
+        "level": 1,
+        "aircraftId": "VN-B787",
+        "timeProcess": 3600
+      }
+    ]
+  },
+  "tasks": [],
+  "timeMatrix": []
+}

@@ -1,0 +1,15 @@
+{
+  "airports": [
+    {
+      "id": "noi-bai",
+      "name": "Sân bay Nội Bài",
+      "center": {
+        "lat": 21.2187,
+        "lng": 105.8076
+      },
+      "defaultZoom": 15,
+      "dataFile": "noi-bai.json"
+    }
+  ],
+  "defaultAirportId": "noi-bai"
+}

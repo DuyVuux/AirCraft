@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Add New Aircraft</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1d4ed8", // Using a standard blue from Tailwind for primary
+                        "background-light": "#f8fafc",
+                        "background-dark": "#020817",
+                        "foreground-light": "#24324A",
+                        "foreground-dark": "#e2e8f0",
+                        "card-light": "#ffffff",
+                        "card-dark": "#0f172a",
+                        "border-light": "#e2e8f0",
+                        "border-dark": "#1e293b",
+                        "input-light": "#ffffff",
+                        "input-dark": "#0f172a",
+                        "muted-light": "rgba(36, 50, 74, 0.8)",
+                        "muted-dark": "#94a3b8",
+                        "secondary-light": "#f1f5f9",
+                        "secondary-dark": "#1e293b",
+                        "secondary-foreground-light": "#24324A",
+                        "secondary-foreground-dark": "#f1f5f9",
+                    },
+                    fontFamily: {
+                        display: ["Poppins", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem", // 8px
+                        sm: "0.25rem", // 4px
+                        lg: "0.75rem", // 12px
+                    },
+                    backgroundImage: {
+                        'airport-runway': "url('https://images.unsplash.com/photo-1542382053-f47565c87313?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #24324A;
+        }
+        .dark body {
+            color: #e2e8f0;
+        }
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24
+        }
+        .main-bg {
+            position: relative;
+            z-index: 1;
+        }
+        .main-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: var(--bg-image);
+            background-size: cover;
+            background-position: center;
+            opacity: 0.05;
+            z-index: -1;
+            filter: blur(2px);
+        }
+        .dark .main-bg::before {
+            opacity: 0.1;
+            filter: blur(2px) grayscale(1);
+        }
+        .section-description {
+            font-size: 1.125rem;font-weight: 400;
+            line-height: 1.6;
+            color: rgba(36, 50, 74, 0.8);
+        }
+        .dark .section-description {
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex h-screen">
+<aside class="w-64 border-r border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark flex flex-col">
+<div class="p-4 border-b border-border-light dark:border-border-dark">
+<h1 class="text-2xl font-bold text-foreground-light dark:text-foreground-dark">Flight System</h1>
+</div>
+<nav class="flex-1 p-4 space-y-2">
+<a class="flex items-center px-3 py-2 text-sm font-normal rounded-md text-foreground-light dark:text-foreground-dark hover:bg-secondary-light dark:hover:bg-secondary-dark" href="#">
+<span class="material-symbols-outlined mr-3 text-lg">home</span>
+                    Trang chủ
+                </a>
+<div class="space-y-2 pt-2">
+<p class="px-3 text-xs font-semibold text-muted-light dark:text-muted-dark uppercase tracking-wider">Upload Data</p>
+<a class="flex items-center px-3 py-2 text-sm font-normal rounded-md text-foreground-light dark:text-foreground-dark hover:bg-secondary-light dark:hover:bg-secondary-dark" href="#">
+<span class="material-symbols-outlined mr-3 text-lg">upload_file</span>
+                        Upload file
+                    </a>
+<a class="flex items-center px-3 py-2 text-sm font-normal rounded-md bg-secondary-light dark:bg-secondary-dark text-primary dark:text-white" href="#">
+<span class="material-symbols-outlined mr-3 text-lg">edit</span>
+                        Nhập tay
+                    </a>
+<a class="flex items-center px-3 py-2 text-sm font-normal rounded-md text-foreground-light dark:text-foreground-dark hover:bg-secondary-light dark:hover:bg-secondary-dark" href="#">
+<span class="material-symbols-outlined mr-3 text-lg">code</span>
+                        Developer Mode
+                    </a>
+</div>
+</nav>
+</aside>
+<div class="flex flex-col flex-1">
+<header class="flex items-center justify-between h-16 px-6 border-b border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark">
+<div>
+<h2 class="text-lg font-semibold text-foreground-light dark:text-foreground-dark">Nhập tay</h2>
+<p class="text-sm text-muted-light dark:text-muted-dark">Nhập và chỉnh sửa dữ liệu trực tiếp trên web</p>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center px-4 py-2 text-[15px] font-semibold tracking-[0.01em] text-secondary-foreground-light dark:text-secondary-foreground-dark bg-secondary-light dark:bg-secondary-dark border border-border-light dark:border-border-dark rounded-md hover:bg-gray-200 dark:hover:bg-gray-700">
+<span class="material-symbols-outlined mr-2 text-base">file_upload</span>
+                        Export JSON
+                    </button>
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold text-sm">AE</div>
+</div>
+</header>
+<main class="flex-1 p-6 overflow-y-auto main-bg" style="--bg-image: url('https://images.unsplash.com/photo-1542382053-f47565c87313?q=80&amp;w=2070&amp;auto=format&amp;fit=crop&amp;ixlib-rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')">
+<div class="max-w-6xl mx-auto">
+<div class="flex border-b border-border-light dark:border-border-dark mb-6">
+<button class="px-4 py-2 text-sm font-normal text-muted-light dark:text-muted-dark">TASKS</button>
+<button class="px-4 py-2 text-sm font-normal text-primary border-b-2 border-primary">AIRCRAFTS</button>
+<button class="px-4 py-2 text-sm font-normal text-muted-light dark:text-muted-dark">EMPLOYEES</button>
+<button class="px-4 py-2 text-sm font-normal text-muted-light dark:text-muted-dark">HUBS</button>
+<button class="px-4 py-2 text-sm font-normal text-muted-light dark:text-muted-dark">TIME MATRIX</button>
+</div>
+<div class="space-y-8">
+<div class="p-6 border rounded-lg border-border-light dark:border-border-dark bg-card-light/80 dark:bg-card-dark/80 backdrop-blur-sm">
+<h3 class="text-[30px] md:text-[36px] font-bold text-foreground-light dark:text-foreground-dark">Add New Aircraft</h3>
+<p class="mb-6 section-description">Thông tin máy bay</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-medium text-foreground-light dark:text-foreground-dark mb-2" for="aircraft-id">Aircraft ID *</label>
+<input class="w-full px-3 py-2 bg-input-light dark:bg-input-dark border border-border-light dark:border-border-dark rounded-md focus:ring-primary focus:border-primary text-foreground-light dark:text-foreground-dark" id="aircraft-id" placeholder="Aircraft ID" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-foreground-light dark:text-foreground-dark mb-2" for="aircraft-type">Aircraft Type</label>
+<div class="relative">
+<select class="w-full appearance-none px-3 py-2 bg-input-light dark:bg-input-dark border border-border-light dark:border-border-dark rounded-md focus:ring-primary focus:border-primary text-foreground-light dark:text-foreground-dark" id="aircraft-type">
+<option>Airbus A320</option>
+<option>Boeing 737</option>
+<option>Boeing 787</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-muted-light dark:text-muted-dark pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 border rounded-lg border-border-light dark:border-border-dark bg-card-light/80 dark:bg-card-dark/80 backdrop-blur-sm">
+<h3 class="text-[30px] md:text-[36px] font-bold text-foreground-light dark:text-foreground-dark">Thông tin vị trí</h3>
+<div class="mb-4">
+<label class="block text-sm font-medium text-foreground-light dark:text-foreground-dark mb-2" for="location-id">Location ID (OSM @Id) *</label>
+<input class="w-full px-3 py-2 bg-input-light dark:bg-input-dark border border-border-light dark:border-border-dark rounded-md focus:ring-primary focus:border-primary text-foreground-light dark:text-foreground-dark" id="location-id" placeholder="Location ID (OSM @Id)" type="text"/>
+<p class="text-xs text-muted-light dark:text-muted-dark mt-2">Chọn vùng POI trên bản đồ để tự động điền OSM @Id và centroid</p>
+</div>
+<button class="w-full bg-primary text-white font-semibold py-2 px-4 rounded-md flex items-center justify-center mb-4 text-[15px] tracking-[0.01em]">
+<span class="material-symbols-outlined mr-2">map</span>
+                                SHOW MAP
+                            </button>
+<div>
+<label class="block text-sm font-medium text-foreground-light dark:text-foreground-dark mb-2">Chọn vị trí trên bản đồ</label>
+<p class="text-xs text-muted-light dark:text-muted-dark mb-2">Click trên bản đồ để chọn vị trí, hoặc tìm kiếm địa điểm</p>
+<div class="relative mb-4">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-muted-light dark:text-muted-dark">search</span>
+<input class="w-full pl-10 pr-3 py-2 bg-input-light dark:bg-input-dark border border-border-light dark:border-border-dark rounded-md focus:ring-primary focus:border-primary text-foreground-light dark:text-foreground-dark" placeholder="Tìm kiếm địa điểm (ví dụ: Noi Bai Airport)" type="text"/>
+</div>
+<div class="w-full h-64 bg-gray-200 dark:bg-gray-800 rounded-md overflow-hidden">
+<img alt="Map view showing an airport and surrounding area" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoE6PZPZMXSwWX7GZouxoa0_5uKC5gpxF0CvN8Q4GGGy5hTVb9fFsyCMNNuEnzJXWZhwsLtjIE8Jen5gsxhDRMCEt06Ls9WW4LLqwSzDhNCtt6MitLvFh4kILpX_IeGoqUhrqFhEd-IlftpXp1fqjqzXQnyjeSPsi9cz_KrZvxohfzJ1h2IllY4CFWBuDMJgjxRMtOLKWzVjML5IlezSgyEwLnSsN77oZx4HAOZj5FclqgKAESxKIC0pdhAKTZBlhhLoNkduol4Wqi"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+<div>
+<label class="block text-sm font-medium text-foreground-light dark:text-foreground-dark mb-2" for="latitude">Latitude</label>
+<input class="w-full px-3 py-2 bg-input-light dark:bg-input-dark border border-border-light dark:border-border-dark rounded-md focus:ring-primary focus:border-primary text-foreground-light dark:text-foreground-dark" id="latitude" type="text" value="21.214400"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-foreground-light dark:text-foreground-dark mb-2" for="longitude">Longitude</label>
+<input class="w-full px-3 py-2 bg-input-light dark:bg-input-dark border border-border-light dark:border-border-dark rounded-md focus:ring-primary focus:border-primary text-foreground-light dark:text-foreground-dark" id="longitude" type="text" value="105.806700"/>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 border rounded-lg border-border-light dark:border-border-dark bg-card-light/80 dark:bg-card-dark/80 backdrop-blur-sm">
+<h3 class="text-[30px] md:text-[36px] font-bold text-foreground-light dark:text-foreground-dark">Thời gian hoạt động</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+<div>
+<label class="block text-sm font-medium text-foreground-light dark:text-foreground-dark mb-2" for="time-window-start">Time Window Start *</label>
+<div class="relative">
+<input class="w-full pr-10 pl-3 py-2 bg-input-light dark:bg-input-dark border border-border-light dark:border-border-dark rounded-md focus:ring-primary focus:border-primary text-foreground-light dark:text-foreground-dark" id="time-window-start" placeholder="mm/dd/yyyy, --:--" type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-muted-light dark:text-muted-dark pointer-events-none">calendar_today</span>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-foreground-light dark:text-foreground-dark mb-2" for="time-window-end">Time Window End *</label>
+<div class="relative">
+<input class="w-full pr-10 pl-3 py-2 bg-input-light dark:bg-input-dark border border-border-light dark:border-border-dark rounded-md focus:ring-primary focus:border-primary text-foreground-light dark:text-foreground-dark" id="time-window-end" placeholder="mm/dd/yyyy, --:--" type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-muted-light dark:text-muted-dark pointer-events-none">calendar_today</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 border rounded-lg border-border-light dark:border-border-dark bg-card-light/80 dark:bg-card-dark/80 backdrop-blur-sm">
+<h3 class="text-[30px] md:text-[36px] font-bold text-foreground-light dark:text-foreground-dark">Tasks yêu cầu</h3>
+<div class="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-4 mt-4 items-end">
+<div>
+<label class="block text-sm font-medium text-foreground-light dark:text-foreground-dark mb-2" for="task-code">TASK_TIRE_CHECK hoặc chọn từ danh sách</label>
+<input class="w-full px-3 py-2 bg-input-light dark:bg-input-dark border border-border-light dark:border-border-dark rounded-md focus:ring-primary focus:border-primary text-foreground-light dark:text-foreground-dark" id="task-code" placeholder="TASK_TIRE_CHECK" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-foreground-light dark:text-foreground-dark mb-2" for="min-level">Min Level</label>
+<input class="w-24 px-3 py-2 bg-input-light dark:bg-input-dark border border-border-light dark:border-border-dark rounded-md focus:ring-primary focus:border-primary text-foreground-light dark:text-foreground-dark" id="min-level" type="number" value="1"/>
+</div>
+<button class="px-4 py-2 text-[15px] font-semibold tracking-[0.01em] text-primary border border-primary rounded-md hover:bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined mr-2 text-base">add</span>
+                                    ADD TASK
+                                </button>
+</div>
+<p class="text-xs text-muted-light dark:text-muted-dark mt-2">Chưa có task nào. Nhập task code và click "Add Task" để thêm.</p>
+</div>
+</div>
+<div class="mt-8">
+<button class="w-full py-2.5 px-4 bg-primary text-white font-bold rounded-md hover:bg-primary/90 text-[17px] tracking-[0.02em]">ADD AIRCRAFT</button>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

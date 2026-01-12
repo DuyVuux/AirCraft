@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aviation Workforce Splash Intro</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&amp;family=Poppins:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#3b82f6", // A nice, versatile blue
+              "background-light": "#f3f4f6", // Light gray
+              "background-dark": "#111827", // Dark gray
+            },
+            fontFamily: {
+              display: ["Poppins", "sans-serif"],
+              serif: ["Playfair Display", "serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem", // 8px
+            },
+            animation: {
+              fadeIn: 'fadeIn 1s ease-in-out',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: 0 },
+                '100%': { opacity: 1 },
+              },
+            }
+          },
+        },
+      };
+    </script>
+<style>
+        .slideshow-bg {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: background-image 1.5s ease-in-out;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display antialiased">
+<div class="slideshow-bg relative h-screen w-full" id="slideshow">
+<div class="absolute inset-0 bg-black/40 dark:bg-black/60"></div>
+<div class="relative z-10 flex h-full flex-col items-center justify-center text-center text-white px-4">
+<h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-shadow-md leading-tight" style="text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);">
+                Modern Workforce Scheduling for Aviation &amp; Operations
+            </h1>
+<p class="mt-6 text-xl md:text-2xl font-serif italic text-shadow-sm" style="text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);">
+                Smart. Automated. Reliable.
+            </p>
+<button class="mt-12 bg-primary text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 transition-all duration-300 ease-in-out transform hover:scale-105">
+                Enter Site
+            </button>
+</div>
+</div>
+<script>
+        const slideshowElement = document.getElementById('slideshow');
+        const images = [
+            'image-7a548232-ea63-4416-ab10-72e7f3471018.jpeg',
+            'image-9e455959-5f21-4f1b-85d0-928923a1005a.jpeg'
+        ];
+        let currentImageIndex = 0;
+        function changeBackgroundImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            slideshowElement.style.backgroundImage = `url('${images[currentImageIndex]}')`;
+        }
+        // Set initial background
+        slideshowElement.style.backgroundImage = `url('${images[currentImageIndex]}')`;
+        // Change image every 5 seconds
+        setInterval(changeBackgroundImage, 5000);
+    </script>
+
+</body></html>

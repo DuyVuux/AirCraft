@@ -1,0 +1,68 @@
+.manual-input-page {
+  width: 100%;
+}
+
+.manual-input-tabs {
+  display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--color-surface);
+  padding: 0.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.manual-input-tab {
+  flex: 1;
+  padding: 0.625rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: 'Inter', sans-serif;
+}
+
+.manual-input-tab:hover {
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-hover);
+}
+
+.manual-input-tab.active {
+  color: white;
+  background-color: var(--color-primary);
+}
+
+.manual-input-tabpanel {
+  padding-top: 1rem;
+}
+
+.manual-input-info-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.75rem 1rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+.manual-input-info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.manual-input-info-value {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}

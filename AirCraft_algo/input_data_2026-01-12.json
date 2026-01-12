@@ -1,0 +1,6420 @@
+{
+  "trackingId": "PLAN-2026-01-12-736",
+  "aircrafts": [
+    {
+      "aircraftId": "VN19-1",
+      "flightNumber": "VN19",
+      "aType": {
+        "id": "A350",
+        "desc": "Airbus A350"
+      },
+      "location": {
+        "locationId": "node-1767274394450-mb9m5d4pi",
+        "locationType": "APRON",
+        "longitude": 105.80709464118542,
+        "latitude": 21.21476464103058
+      },
+      "timeWindow": {
+        "start": "2022-01-31 00:00:00",
+        "end": "2022-01-30 18:00:00"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "DEP-M"
+        },
+        {
+          "taskCode": "DEP-A"
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN416-2",
+      "flightNumber": "VN416",
+      "aType": {
+        "id": "B787",
+        "desc": "Boeing 787"
+      },
+      "location": {
+        "locationId": "node-1767274395212-htatpb0i9",
+        "locationType": "APRON",
+        "longitude": 105.8068693411589,
+        "latitude": 21.214254544275885
+      },
+      "timeWindow": {
+        "start": "2022-01-31 00:00:00",
+        "end": "2022-01-30 18:00:00"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "DEP-M"
+        },
+        {
+          "taskCode": "DEP-A"
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN7253-3",
+      "flightNumber": "VN7253",
+      "aType": {
+        "id": "A350",
+        "desc": "Airbus A350"
+      },
+      "location": {
+        "locationId": "node-1767274393712-lorlrbtkw",
+        "locationType": "APRON",
+        "longitude": 105.8073145769256,
+        "latitude": 21.21528973878966
+      },
+      "timeWindow": {
+        "start": "2022-01-31 00:01:00",
+        "end": "2022-01-30 18:01:00"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "DEP-M"
+        },
+        {
+          "taskCode": "DEP-A"
+        }
+      ]
+    }
+  ],
+  "hubs": [],
+  "employees": [
+    {
+      "employeeId": "VAE03726",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.213Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-01"
+      ]
+    },
+    {
+      "employeeId": "VAE02323",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-01"
+      ]
+    },
+    {
+      "employeeId": "VAE02320",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A"
+      ]
+    },
+    {
+      "employeeId": "VAE02244",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "WO-01"
+      ]
+    },
+    {
+      "employeeId": "VAE02141",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-05"
+      ]
+    },
+    {
+      "employeeId": "VAE02021",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-01"
+      ]
+    },
+    {
+      "employeeId": "VAE01466",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-05"
+      ]
+    },
+    {
+      "employeeId": "VAE01374",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-03"
+      ]
+    },
+    {
+      "employeeId": "VAE01368",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-05"
+      ]
+    },
+    {
+      "employeeId": "VAE02363",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-02"
+      ]
+    },
+    {
+      "employeeId": "VAE01231",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-05"
+      ]
+    },
+    {
+      "employeeId": "VAE01218",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-03"
+      ]
+    },
+    {
+      "employeeId": "VAE01130",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-01"
+      ]
+    },
+    {
+      "employeeId": "VAE01123",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-02"
+      ]
+    },
+    {
+      "employeeId": "VAE00714",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW"
+      ]
+    },
+    {
+      "employeeId": "VAE00561",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A"
+      ]
+    },
+    {
+      "employeeId": "VAE00464",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-01",
+        "WO-02"
+      ]
+    },
+    {
+      "employeeId": "VAE00428",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW"
+      ]
+    },
+    {
+      "employeeId": "VAE03483",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW"
+      ]
+    },
+    {
+      "employeeId": "VAE01227",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-01"
+      ]
+    },
+    {
+      "employeeId": "VAE02527",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A"
+      ]
+    },
+    {
+      "employeeId": "VAE02097",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-05"
+      ]
+    },
+    {
+      "employeeId": "VAE02602",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-05"
+      ]
+    },
+    {
+      "employeeId": "VAE03472",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-M",
+        "DEP-M",
+        "WO-02",
+        "WO-03"
+      ]
+    },
+    {
+      "employeeId": "VAE03466",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-M",
+        "DEP-M",
+        "WO-01",
+        "WO-02",
+        "WO-05",
+        "WO-06"
+      ]
+    },
+    {
+      "employeeId": "VAE03258",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-02"
+      ]
+    },
+    {
+      "employeeId": "VAE02538",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "WO-01",
+        "WO-03",
+        "WO-13"
+      ]
+    },
+    {
+      "employeeId": "VAE03080",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-01"
+      ]
+    },
+    {
+      "employeeId": "VAE03022",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-01"
+      ]
+    },
+    {
+      "employeeId": "VAE02998",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-04"
+      ]
+    },
+    {
+      "employeeId": "VAE02995",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-02",
+        "WO-05"
+      ]
+    },
+    {
+      "employeeId": "VAE02955",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-02"
+      ]
+    },
+    {
+      "employeeId": "VAE03082",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-05"
+      ]
+    },
+    {
+      "employeeId": "VAE02926",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-01"
+      ]
+    },
+    {
+      "employeeId": "VAE02910",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-02",
+        "WO-04"
+      ]
+    },
+    {
+      "employeeId": "VAE02842",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-03"
+      ]
+    },
+    {
+      "employeeId": "VAE02841",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-02"
+      ]
+    },
+    {
+      "employeeId": "VAE02834",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-01"
+      ]
+    },
+    {
+      "employeeId": "VAE02815",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-02",
+        "WO-09"
+      ]
+    },
+    {
+      "employeeId": "VAE02802",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-M",
+        "DEP-M",
+        "WO-01"
+      ]
+    },
+    {
+      "employeeId": "VAE02752",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-01",
+        "WO-02"
+      ]
+    },
+    {
+      "employeeId": "VAE02930",
+      "name": "(Chưa cập nhật)",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "DEP-M",
+        "TOW"
+      ]
+    },
+    {
+      "employeeId": "VAE00964",
+      "name": "Bạch Văn Chính",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-02",
+        "WO-05",
+        "WO-06",
+        "WO-11"
+      ],
+      "certifications": [
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE02705",
+      "name": "Bùi Hoài Nam",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE02694",
+      "name": "Bùi Văn Vũ",
+      "position": "Kỹ Sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "ARR-M",
+        "DEP-A",
+        "DEP-M",
+        "TOW",
+        "WO-01",
+        "WO-02",
+        "WO-03"
+      ]
+    },
+    {
+      "employeeId": "VAE00971",
+      "name": "Bùi Đình Hà",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-04"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "B737"
+      ]
+    },
+    {
+      "employeeId": "VAE03503",
+      "name": "Bùi Hải Đăng",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "ARR-M",
+        "DEP-A",
+        "DEP-M",
+        "TOW",
+        "WO-01",
+        "WO-14"
+      ]
+    },
+    {
+      "employeeId": "VAE03042",
+      "name": "Bùi Mạnh Hà",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "ARR-M",
+        "DEP-A",
+        "DEP-M",
+        "WO-01"
+      ],
+      "certifications": [
+        "A330",
+        "A350"
+      ]
+    },
+    {
+      "employeeId": "VAE03063",
+      "name": "Bùi Thành Tín",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "ARR-M",
+        "DEP-A",
+        "DEP-M",
+        "WO-01"
+      ],
+      "certifications": [
+        "A330",
+        "A350"
+      ]
+    },
+    {
+      "employeeId": "VAE01106",
+      "name": "Cao Khánh Phong",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "B787",
+        "ATR"
+      ]
+    },
+    {
+      "employeeId": "VAE01352",
+      "name": "Cù Văn Tuấn",
+      "position": "Kỹ Sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "WO-02",
+        "WO-03"
+      ],
+      "certifications": [
+        "B777",
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE02933",
+      "name": "Dương Mạnh Hùng",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE01992",
+      "name": "Dương Trọng Cường",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE01991",
+      "name": "Dương Tuấn Sơn",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-04"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE00969",
+      "name": "Dương Văn Chung",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "WO-01",
+        "WO-04"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE00752",
+      "name": "Dương Văn Khiêm",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW"
+      ],
+      "certifications": [
+        "A321",
+        "ATR"
+      ]
+    },
+    {
+      "employeeId": "VAE01028",
+      "name": "Dương Văn Ninh",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "WO-01",
+        "WO-02"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "B737"
+      ]
+    },
+    {
+      "employeeId": "VAE00537",
+      "name": "Hà Hồng Huy",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-02",
+        "WO-11"
+      ],
+      "certifications": [
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE01299",
+      "name": "Hà Trung Kiên",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01"
+      ],
+      "certifications": [
+        "B787",
+        "ATR"
+      ]
+    },
+    {
+      "employeeId": "VAE02755",
+      "name": "Hà Văn Tài",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-04"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE01078",
+      "name": "Hoàng Anh",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-02",
+        "WO-04"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE00865",
+      "name": "Hoàng Ngọc Thưởng",
+      "position": "Đội trưởng",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "A330",
+        "A350"
+      ]
+    },
+    {
+      "employeeId": "VAE01235",
+      "name": "Đồng Huy Hoàng",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE03230",
+      "name": "Hoàng Trần Thắng",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-03"
+      ]
+    },
+    {
+      "employeeId": "VAE03476",
+      "name": "Hoàng Đăng Tiến",
+      "position": "Nhân Viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "TOW",
+        "WO-01",
+        "WO-02",
+        "WO-07"
+      ]
+    },
+    {
+      "employeeId": "VAE02703",
+      "name": "Hoàng Hữu Hải",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-06"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE02443",
+      "name": "Hoàng Minh Hiếu",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-M",
+        "DEP-M",
+        "WO-01",
+        "WO-13"
+      ]
+    },
+    {
+      "employeeId": "VAE02669",
+      "name": "Hoàng Minh Tuấn",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "DEP-M",
+        "TOW",
+        "WO-12"
+      ]
+    },
+    {
+      "employeeId": "VAE00903",
+      "name": "Hoàng Nghĩa Trường",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "WO-01",
+        "WO-04"
+      ]
+    },
+    {
+      "employeeId": "VAE00556",
+      "name": "Hoàng Thanh Tùng",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE00975",
+      "name": "Hoàng Xuân Trường",
+      "position": "Tổ trưởng",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321"
+      ]
+    },
+    {
+      "employeeId": "VAE01094",
+      "name": "Hà Hùng Tới",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "ARR-M",
+        "DEP-A",
+        "WO-01"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "A330",
+        "A350"
+      ]
+    },
+    {
+      "employeeId": "VAE00898",
+      "name": "Hà Hồng Thành",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE03061",
+      "name": "Hà Việt Hùng",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-02"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE03266",
+      "name": "Hà Xuân Dương",
+      "position": "ĐH1",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE02422",
+      "name": "Hà Đình Trung",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A330",
+        "B737"
+      ]
+    },
+    {
+      "employeeId": "VAE02305",
+      "name": "Hà Đức Hùng",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "A350",
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE02211",
+      "name": "Khuất Quang Huy",
+      "position": "Kỹ Sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "A330",
+        "A350"
+      ]
+    },
+    {
+      "employeeId": "VAE03043",
+      "name": "Lý Đình Cường",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE01033",
+      "name": "Lê Anh Dũng",
+      "position": "Nhân Viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE00830",
+      "name": "Lê Anh Hào",
+      "position": "ĐH2",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE02300",
+      "name": "Lê Anh Sơn",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "ATR"
+      ]
+    },
+    {
+      "employeeId": "VAE01020",
+      "name": "Lê Anh Tùng Sơn",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-02",
+        "WO-05",
+        "WO-11"
+      ],
+      "certifications": [
+        "B787",
+        "ATR"
+      ]
+    },
+    {
+      "employeeId": "VAE01016",
+      "name": "Lê Anh Tuấn",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE02237",
+      "name": "Lê Anh Đức",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "WO-01"
+      ],
+      "certifications": [
+        "B777",
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE01086",
+      "name": "Lê AnhTuấn",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "WO-01",
+        "WO-09"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE01041",
+      "name": "Lê Bá Quân",
+      "position": "Nhân Viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01"
+      ],
+      "certifications": [
+        "A330",
+        "A350"
+      ]
+    },
+    {
+      "employeeId": "VAE00944",
+      "name": "Lê Cao Nam",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-04"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE01325",
+      "name": "Lê Doãn Tuấn",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE01093",
+      "name": "Lê Hoài Nam",
+      "position": "Đội phó",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "A330",
+        "A350"
+      ]
+    },
+    {
+      "employeeId": "VAE00498",
+      "name": "Lê Huy Thiệp",
+      "position": "Tổ trưởng",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE01019",
+      "name": "Lê Huy Tuấn",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01"
+      ],
+      "certifications": [
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE01560",
+      "name": "Lê Hồng Phú",
+      "position": "Đội phó",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "A350"
+      ]
+    },
+    {
+      "employeeId": "VAE00894",
+      "name": "Lê Kim Hùng",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE01010",
+      "name": "Lê Mạnh Tuân",
+      "position": "Tổ phó",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "WO-01",
+        "WO-02"
+      ],
+      "certifications": [
+        "A321",
+        "B777",
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE01014",
+      "name": "Lê Ngọc Anh",
+      "position": "Nhân Viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01"
+      ],
+      "certifications": [
+        "B777",
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE02203",
+      "name": "Lê Thanh Sơn",
+      "position": "Tổ trưởng",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE00900",
+      "name": "Lê Trung Anh",
+      "position": "Đội trưởng",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "A330"
+      ]
+    },
+    {
+      "employeeId": "VAE01072",
+      "name": "Lê Trung Dũng",
+      "position": "Đội trưởng",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE02922",
+      "name": "Lê Văn Chung",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE02121",
+      "name": "Lê Văn Xuân",
+      "position": "Tổ trưởng",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "DEP-A",
+        "TOW",
+        "WO-02",
+        "WO-04"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "B737"
+      ]
+    },
+    {
+      "employeeId": "VAE01087",
+      "name": "Lê Đình Phong",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-01",
+        "WO-02"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "A330"
+      ]
+    },
+    {
+      "employeeId": "VAE01067",
+      "name": "Lý Thanh Tùng",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01"
+      ],
+      "certifications": [
+        "B777",
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE02264",
+      "name": "Lưu Bằng Phi",
+      "position": "Kỹ Sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW"
+      ],
+      "certifications": [
+        "A330",
+        "A350"
+      ]
+    },
+    {
+      "employeeId": "VAE02426",
+      "name": "Lưu Thanh Tú",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE00488",
+      "name": "Lưu Văn Trang",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "ARR-M",
+        "DEP-M",
+        "WO-09"
+      ]
+    },
+    {
+      "employeeId": "VAE02686",
+      "name": "Lưu Đăng Khoa",
+      "position": "Kỹ Sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-02",
+        "WO-03"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE00982",
+      "name": "Lưu Đức Tuấn",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "ARR-M",
+        "DEP-A",
+        "DEP-M",
+        "TOW"
+      ]
+    },
+    {
+      "employeeId": "VAE00908",
+      "name": "Lại Anh Tuấn",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-05"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE00457",
+      "name": "Mai Quang Hùng",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-M",
+        "DEP-M",
+        "TOW",
+        "WO-03"
+      ]
+    },
+    {
+      "employeeId": "VAE03498",
+      "name": "Mai Trần Bảo Nghi",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE00846",
+      "name": "Nguyễn Anh Tuấn",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE02960",
+      "name": "Nguyễn Hoàng Anh",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE00536",
+      "name": "Nguyễn Quang Tú",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-02",
+        "WO-06",
+        "WO-11"
+      ],
+      "certifications": [
+        "B777",
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE01064",
+      "name": "Nguyễn Sinh Hải Anh",
+      "position": "Nhân Viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "ARR-M",
+        "DEP-A",
+        "DEP-M",
+        "TOW",
+        "WO-03"
+      ]
+    },
+    {
+      "employeeId": "VAE00961",
+      "name": "Nguyễn Sơn Tùng",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01"
+      ],
+      "certifications": [
+        "B777",
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE00730",
+      "name": "Nguyễn Thanh Sơn",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "ARR-M",
+        "DEP-A",
+        "DEP-M",
+        "TOW"
+      ],
+      "certifications": [
+        "ATR"
+      ]
+    },
+    {
+      "employeeId": "VAE00935",
+      "name": "Nguyễn Tiến Nam",
+      "position": "Đội trưởng",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "A330",
+        "A350"
+      ]
+    },
+    {
+      "employeeId": "VAE00525",
+      "name": "Nguyễn Tuấn Anh",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-M",
+        "DEP-M",
+        "TOW",
+        "WO-01",
+        "WO-03"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE02085",
+      "name": "Nguyễn Tuấn Sơn",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "DEP-M",
+        "TOW",
+        "WO-02"
+      ],
+      "certifications": [
+        "A330",
+        "A350"
+      ]
+    },
+    {
+      "employeeId": "VAE00960",
+      "name": "Nguyễn Việt Dũng",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-06"
+      ],
+      "certifications": [
+        "B777",
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE02963",
+      "name": "Nguyễn Văn Dũng",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "ARR-M",
+        "DEP-A",
+        "TOW",
+        "WO-01"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE03059",
+      "name": "Nguyễn Văn Hải",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "DEP-M",
+        "TOW",
+        "WO-07"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE00963",
+      "name": "Nguyễn Văn Khải",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-02",
+        "WO-03"
+      ],
+      "certifications": [
+        "B787",
+        "ATR"
+      ]
+    },
+    {
+      "employeeId": "VAE01259",
+      "name": "Nguyễn Đức Duệ",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "ARR-M",
+        "DEP-A",
+        "TOW",
+        "WO-08"
+      ],
+      "certifications": [
+        "A350"
+      ]
+    },
+    {
+      "employeeId": "VAE03541",
+      "name": "Nguyễn Đức Tiến",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "ARR-M",
+        "DEP-A",
+        "DEP-M",
+        "TOW",
+        "WO-01"
+      ]
+    },
+    {
+      "employeeId": "VAE02799",
+      "name": "Nguyễn Anh Quân",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE02427",
+      "name": "Nguyễn Anh Tuấn",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "DEP-M",
+        "TOW"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE02969",
+      "name": "Nguyễn Anh Đức",
+      "position": "KH-ĐH",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE01003",
+      "name": "Nguyễn Cao Cường",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-06"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "ATR"
+      ]
+    },
+    {
+      "employeeId": "VAE02267",
+      "name": "Nguyễn Chung Sơn",
+      "position": "Kỹ Sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-02"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "A330"
+      ]
+    },
+    {
+      "employeeId": "VAE01075",
+      "name": "Nguyễn Chí Công",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "WO-01"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE01354",
+      "name": "Nguyễn Công Bằng",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "WO-01",
+        "WO-02"
+      ],
+      "certifications": [
+        "B777",
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE02540",
+      "name": "Nguyễn Hoàng Việt Anh",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE01069",
+      "name": "Nguyễn Hoàng Vũ",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A"
+      ],
+      "certifications": [
+        "ATR"
+      ]
+    },
+    {
+      "employeeId": "VAE00465",
+      "name": "Nguyễn Hải Tùng",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "DEP-M",
+        "TOW",
+        "WO-02"
+      ]
+    },
+    {
+      "employeeId": "VAE01040",
+      "name": "Nguyễn Hồng Quang",
+      "position": "Nhân Viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-03"
+      ],
+      "certifications": [
+        "A330",
+        "A350"
+      ]
+    },
+    {
+      "employeeId": "VAE01008",
+      "name": "Nguyễn Hồng Tháp",
+      "position": "Nhân Viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW"
+      ],
+      "certifications": [
+        "B777",
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE00946",
+      "name": "Nguyễn Hồng Thắng",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "ARR-M",
+        "DEP-A",
+        "DEP-M",
+        "TOW"
+      ]
+    },
+    {
+      "employeeId": "VAE02005",
+      "name": "Nguyễn Hữu Lực",
+      "position": "Tổ phó",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "WO-01",
+        "WO-02",
+        "WO-03",
+        "WO-05"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "A350"
+      ]
+    },
+    {
+      "employeeId": "VAE03047",
+      "name": "Nguyễn Hữu Thiện",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-14"
+      ],
+      "certifications": [
+        "A350"
+      ]
+    },
+    {
+      "employeeId": "VAE00066",
+      "name": "Nguyễn Minh Tuấn",
+      "position": "Tổ trưởng",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "WO-01",
+        "WO-03"
+      ],
+      "certifications": [
+        "B777",
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE00897",
+      "name": "Nguyễn Mạnh Trung",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE00868",
+      "name": "Nguyễn Ngọc Bình",
+      "position": "Tổ trưởng",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-01",
+        "WO-02",
+        "WO-05"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "A330",
+        "A350"
+      ]
+    },
+    {
+      "employeeId": "VAE02114",
+      "name": "Nguyễn Ngọc Chiến",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01"
+      ],
+      "certifications": [
+        "B777",
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE02801",
+      "name": "Nguyễn Ngọc Hùng",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-M",
+        "DEP-M",
+        "TOW",
+        "WO-05"
+      ]
+    },
+    {
+      "employeeId": "VAE03040",
+      "name": "Nguyễn Ngọc Nam",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE01054",
+      "name": "Nguyễn Ngọc Tuấn",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01"
+      ],
+      "certifications": [
+        "B787",
+        "ATR"
+      ]
+    },
+    {
+      "employeeId": "VAE02451",
+      "name": "Nguyễn Như Nam",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-03"
+      ]
+    },
+    {
+      "employeeId": "VAE01480",
+      "name": "Nguyễn Quang Hưng",
+      "position": "KH-ĐH",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE02558",
+      "name": "Nguyễn Quang Luân",
+      "position": "Kỹ Sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-05",
+        "WO-07",
+        "WO-13"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE01063",
+      "name": "Nguyễn Quang Nghĩa",
+      "position": "Kỹ Sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-03"
+      ],
+      "certifications": [
+        "B777",
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE03066",
+      "name": "Nguyễn Quang Thao",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "ARR-M",
+        "DEP-A",
+        "TOW"
+      ]
+    },
+    {
+      "employeeId": "VAE00443",
+      "name": "Nguyễn Quang Thắng",
+      "position": "Nhân Viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW"
+      ]
+    },
+    {
+      "employeeId": "VAE00816",
+      "name": "Nguyễn Quang Thục",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "WO-02",
+        "WO-03",
+        "WO-12"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "ATR"
+      ]
+    },
+    {
+      "employeeId": "VAE02275",
+      "name": "Nguyễn Quốc Hoàn",
+      "position": "Tổ trưởng",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-M",
+        "DEP-M"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "B737"
+      ]
+    },
+    {
+      "employeeId": "VAE00998",
+      "name": "Nguyễn Sỹ Kiên",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE01600",
+      "name": "Nguyễn Sỹ Thuần",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE01065",
+      "name": "Nguyễn Thanh Long",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "ATR"
+      ]
+    },
+    {
+      "employeeId": "VAE00907",
+      "name": "Nguyễn Thành Sơn",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "ARR-M",
+        "DEP-A",
+        "DEP-M",
+        "TOW",
+        "WO-01"
+      ]
+    },
+    {
+      "employeeId": "VAE01053",
+      "name": "Nguyễn Thái Vinh",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "B737"
+      ]
+    },
+    {
+      "employeeId": "VAE00813",
+      "name": "Nguyễn Thị Hiên",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE02194",
+      "name": "Nguyễn Thị Hiếu",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE00675",
+      "name": "Nguyễn Thị Thanh Huyền",
+      "position": "Cử nhân",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE01044",
+      "name": "Nguyễn Tiến Hoàng",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-02"
+      ],
+      "certifications": [
+        "A330",
+        "A350"
+      ]
+    },
+    {
+      "employeeId": "VAE02943",
+      "name": "Nguyễn Tiến Long",
+      "position": "Kỹ Sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.214Z",
+          "end": "2026-01-02T20:32:20.214Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-04"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE03463",
+      "name": "Nguyễn Tiến Mạnh",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-M",
+        "DEP-M",
+        "WO-01"
+      ]
+    },
+    {
+      "employeeId": "VAE03540",
+      "name": "Nguyễn Đình Hoàng",
+      "position": "ĐH3",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "ARR-M",
+        "DEP-M",
+        "TOW"
+      ]
+    },
+    {
+      "employeeId": "VAE01013",
+      "name": "Nguyễn Đình Đài",
+      "position": "Nhân Viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW"
+      ],
+      "certifications": [
+        "B777",
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE01036",
+      "name": "Nguyễn Đăng Cường",
+      "position": "Nhân Viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-07"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE01995",
+      "name": "Nguyễn Đức Công",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "WO-01",
+        "WO-02"
+      ],
+      "certifications": [
+        "B777",
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE01015",
+      "name": "Nguyễn Đức Cảnh",
+      "position": "Nhân Viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-02"
+      ],
+      "certifications": [
+        "B777",
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE02502",
+      "name": "Nguyễn Đức Hoạt",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE02449",
+      "name": "Nguyễn Đức Kiên",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-03",
+        "WO-04",
+        "WO-05"
+      ]
+    },
+    {
+      "employeeId": "VAE02553",
+      "name": "Nguyễn Đức Ngọc",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE02559",
+      "name": "Nguyễn Đức Triệu",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "ARR-M",
+        "DEP-A",
+        "WO-02",
+        "WO-03",
+        "WO-07"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE00489",
+      "name": "Ngô Tiến Thành",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-M",
+        "DEP-M",
+        "WO-01"
+      ]
+    },
+    {
+      "employeeId": "VAE01032",
+      "name": "Ngô Trường Độ",
+      "position": "Nhân Viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "WO-02"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE02081",
+      "name": "Ngô Đức Thọ",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-03",
+        "WO-05"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE00967",
+      "name": "Phan Bùi Biên",
+      "position": "Tổ trưởng",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-02"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "A350"
+      ]
+    },
+    {
+      "employeeId": "VAE02618",
+      "name": "Phan Trần Long",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE02122",
+      "name": "Phan Tuấn Dũng",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE02557",
+      "name": "Phan Đình Đại",
+      "position": "Tổ trưởng",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE01070",
+      "name": "Phạm Ngọc Bình",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "ARR-M",
+        "DEP-A",
+        "DEP-M",
+        "TOW",
+        "WO-04",
+        "WO-07"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE00976",
+      "name": "Phạm Tiến Dũng",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "DEP-A",
+        "TOW",
+        "WO-02"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "A350"
+      ]
+    },
+    {
+      "employeeId": "VAE01986",
+      "name": "Phạm Tuấn Giang",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE02130",
+      "name": "Phạm Việt Tú",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "DEP-A",
+        "DEP-M",
+        "TOW"
+      ],
+      "certifications": [
+        "A350",
+        "ATR"
+      ]
+    },
+    {
+      "employeeId": "VAE01573",
+      "name": "Phạm Văn Hê",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE02950",
+      "name": "Phùng Lê Hoàng",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-14"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "A350"
+      ]
+    },
+    {
+      "employeeId": "VAE01092",
+      "name": "Phùng Thanh Hòa",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE00901",
+      "name": "Phùng Viết Sơn",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01"
+      ],
+      "certifications": [
+        "B777",
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE01068",
+      "name": "Phạm Anh Tuấn",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "WO-02",
+        "WO-03",
+        "WO-04",
+        "WO-11"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE02812",
+      "name": "Phạm Duy Trung",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE01356",
+      "name": "Phạm Duy Tám",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE02453",
+      "name": "Phạm Hùng Cường",
+      "position": "Tổ trưởng",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "DEP-A",
+        "WO-01",
+        "WO-11"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "A350",
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE00977",
+      "name": "Phạm Hồng Tứ",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE02919",
+      "name": "Phạm Ngọc Chung",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "ARR-M",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-05",
+        "WO-06"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE00472",
+      "name": "Phạm Phương Nam",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-M",
+        "DEP-M",
+        "TOW",
+        "WO-03"
+      ]
+    },
+    {
+      "employeeId": "VAE00876",
+      "name": "Phạm Thanh Tùng",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE01027",
+      "name": "Phạm Thái Sơn",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "A330",
+        "A350",
+        "B737",
+        "B777",
+        "B787",
+        "ATR"
+      ]
+    },
+    {
+      "employeeId": "VAE01004",
+      "name": "Phạm Văn Kiên",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "WO-02"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "ATR"
+      ]
+    },
+    {
+      "employeeId": "VAE03074",
+      "name": "Phạm Xuân Phúc",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE03065",
+      "name": "Phạm Xuân Trường",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE03198",
+      "name": "Phạm Đức Sơn",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "ARR-M",
+        "DEP-M",
+        "TOW",
+        "WO-01",
+        "WO-02",
+        "WO-11"
+      ]
+    },
+    {
+      "employeeId": "VAE00545",
+      "name": "Thái Xuân Sơn",
+      "position": "Tổ trưởng",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "TOW"
+      ],
+      "certifications": [
+        "B777",
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE03036",
+      "name": "Trần Quang Trung",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-07"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE01017",
+      "name": "Vũ Tuấn Anh",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE03046",
+      "name": "Trương Hồng Quân",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-02",
+        "WO-07"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE02804",
+      "name": "Trương Thái Sơn",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-M",
+        "DEP-M",
+        "TOW"
+      ]
+    },
+    {
+      "employeeId": "VAE00476",
+      "name": "Trương Văn Trung",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-02",
+        "WO-04"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE02555",
+      "name": "Trần Anh Tuấn",
+      "position": "ĐH4",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE03468",
+      "name": "Trần Bảo Sơn",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-M",
+        "DEP-M",
+        "TOW"
+      ]
+    },
+    {
+      "employeeId": "VAE01073",
+      "name": "Trần Bảo Thắng",
+      "position": "ĐH2",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE02941",
+      "name": "Trần Duy Hoàng Thiện",
+      "position": "Kỹ Sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-10"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE01056",
+      "name": "Trần Duy Trung",
+      "position": "Đội trưởng",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE00928",
+      "name": "Trần Hoài Nam",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE01061",
+      "name": "Trần Hoàng Anh",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-M",
+        "DEP-M",
+        "TOW"
+      ]
+    },
+    {
+      "employeeId": "VAE00535",
+      "name": "Trần Hải Anh",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-03"
+      ],
+      "certifications": [
+        "B777",
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE01023",
+      "name": "Trần Mạnh Điệp",
+      "position": "Nhân Viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-03"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE01037",
+      "name": "Trần Nam Trung",
+      "position": "Nhân Viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-03"
+      ]
+    },
+    {
+      "employeeId": "VAE00925",
+      "name": "Trần Quang Hà",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE00555",
+      "name": "Trần Quốc Dũng",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "ARR-M",
+        "DEP-A",
+        "WO-01"
+      ],
+      "certifications": [
+        "A330",
+        "A350"
+      ]
+    },
+    {
+      "employeeId": "VAE02439",
+      "name": "Trần Quốc Hưng",
+      "position": "KH-ĐH",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE02119",
+      "name": "Trần Thanh Bình",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-01",
+        "WO-02",
+        "WO-04",
+        "WO-06"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "A330"
+      ]
+    },
+    {
+      "employeeId": "VAE02128",
+      "name": "Trần Thái Bình",
+      "position": "ĐH3",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE03542",
+      "name": "Trần Tiến Thế",
+      "position": "KH-ĐH",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE00867",
+      "name": "Trần Tuấn Anh",
+      "position": "Đội phó",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-01"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE01519",
+      "name": "Trần Tuấn Quang",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "WO-01",
+        "WO-02",
+        "WO-03"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE03539",
+      "name": "Trần Việt Cường",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-M",
+        "DEP-M",
+        "WO-02",
+        "WO-05"
+      ]
+    },
+    {
+      "employeeId": "VAE02760",
+      "name": "Trần Việt Tiến",
+      "position": "Nhân Viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-07"
+      ]
+    },
+    {
+      "employeeId": "VAE02560",
+      "name": "Trần Việt Tuấn",
+      "position": "Kỹ Sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE00895",
+      "name": "Trần Võ Trung",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE00933",
+      "name": "Trần Văn Lê",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE00722",
+      "name": "Trần Văn Sơn",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-02"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE00540",
+      "name": "Trần Vũ",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE03220",
+      "name": "Trần Xuân Toàn",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-02",
+        "WO-05"
+      ]
+    },
+    {
+      "employeeId": "VAE01021",
+      "name": "Trần Đăng Hạnh",
+      "position": "Nhân Viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "WO-05"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "B737"
+      ]
+    },
+    {
+      "employeeId": "VAE02952",
+      "name": "Trần Đức Xuân Nam",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "TOW",
+        "WO-01",
+        "WO-06"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE00922",
+      "name": "Trịnh Hữu Chiến",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE01062",
+      "name": "Trịnh Trọng Tuệ",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "WO-01",
+        "WO-02"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE03070",
+      "name": "Trịnh Văn Tuấn",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "ARR-M",
+        "DEP-A",
+        "DEP-M",
+        "TOW",
+        "WO-01",
+        "WO-06"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE00959",
+      "name": "Trịnh Xuân Hiếu",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE00522",
+      "name": "Trịnh Đoàn Thế Trinh",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-03"
+      ],
+      "certifications": [
+        "B777",
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE03471",
+      "name": "Trịnh Đăng Trọng Tuấn",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01"
+      ]
+    },
+    {
+      "employeeId": "VAE01046",
+      "name": "Tạ Quốc Huy",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-03",
+        "WO-05"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE03212",
+      "name": "Tạ Vũ Sơn",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-03"
+      ]
+    },
+    {
+      "employeeId": "VAE00858",
+      "name": "Vũ Anh Tuấn",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE02936",
+      "name": "Vũ Hồng Sơn",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "WO-01",
+        "WO-04",
+        "WO-13"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE00981",
+      "name": "Vũ Nam Việt",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "DEP-M",
+        "WO-01",
+        "WO-02"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE01051",
+      "name": "Vũ Ngọc Thắng",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE00938",
+      "name": "Vũ Quang Hanh",
+      "position": "Tổ phó",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "A330"
+      ]
+    },
+    {
+      "employeeId": "VAE01581",
+      "name": "Vũ Quang Tuyến",
+      "position": "Kỹ Sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-02"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE00929",
+      "name": "Vũ Quốc Đạt",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE02126",
+      "name": "Vũ Thành Văn Thọ",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-04"
+      ],
+      "certifications": [
+        "A330",
+        "A350"
+      ]
+    },
+    {
+      "employeeId": "VAE00972",
+      "name": "Vũ Thế Hưng",
+      "position": "Tổ trưởng",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE02138",
+      "name": "Vũ Tiến Đạt",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE02795",
+      "name": "Vũ Trọng Quang Đại",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-02"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE01993",
+      "name": "Vũ Văn Đình Mạnh",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "DEP-M",
+        "WO-02"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE02414",
+      "name": "Vũ Văn Tuấn Anh",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE01455",
+      "name": "Vũ Việt Phương",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-02",
+        "WO-04"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE01034",
+      "name": "Vũ Xuân Mạnh Trường",
+      "position": "Nhân Viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-03"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE01007",
+      "name": "Vũ Xuân Trường",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "B737"
+      ]
+    },
+    {
+      "employeeId": "VAE00989",
+      "name": "Vũ Đức Dũng",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-M",
+        "DEP-M",
+        "TOW",
+        "WO-02",
+        "WO-04"
+      ]
+    },
+    {
+      "employeeId": "VAE01035",
+      "name": "Vũ Đức Kỳ",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "ARR-M",
+        "DEP-A",
+        "DEP-M",
+        "TOW",
+        "WO-02",
+        "WO-03"
+      ],
+      "certifications": [
+        "B777",
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE03037",
+      "name": "Vương Văn Dũng",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW"
+      ],
+      "certifications": [
+        "A330",
+        "A350"
+      ]
+    },
+    {
+      "employeeId": "VAE03038",
+      "name": "Vương Văn Kiên",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE03076",
+      "name": "Đinh Hoàng Tuấn",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "ARR-M",
+        "DEP-A",
+        "DEP-M",
+        "TOW",
+        "WO-01",
+        "WO-03"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE01076",
+      "name": "Đinh Ngọc Hòa",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "ARR-M",
+        "DEP-A",
+        "DEP-M",
+        "TOW",
+        "WO-05"
+      ],
+      "certifications": [
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE03034",
+      "name": "Đinh Quang Khuông",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-02"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE00974",
+      "name": "Đinh Quang Tiến",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE03057",
+      "name": "Đinh Thị Nga",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "ARR-M",
+        "DEP-A",
+        "DEP-M",
+        "TOW",
+        "WO-01",
+        "WO-03"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE01043",
+      "name": "Đinh Trọng Tuấn",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE00999",
+      "name": "Đinh Tuấn Minh",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE00843",
+      "name": "Đinh Văn Bảy",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE02418",
+      "name": "Đặng Văn Hải",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-05",
+        "WO-07"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "A350",
+        "B787"
+      ]
+    },
+    {
+      "employeeId": "VAE02589",
+      "name": "Đặng Văn Vũ",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "WO-01"
+      ]
+    },
+    {
+      "employeeId": "VAE02939",
+      "name": "Đặng Đình Bắc",
+      "position": "Kỹ sư",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A"
+      ]
+    },
+    {
+      "employeeId": "VAE00968",
+      "name": "Đặng Đình Giáp",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A"
+      ]
+    },
+    {
+      "employeeId": "VAE00950",
+      "name": "Đặng Đức Long",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "VAE02117",
+      "name": "Đỗ Xuân Thái",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-02"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "A330"
+      ]
+    },
+    {
+      "employeeId": "VAE03077",
+      "name": "Đồng Thanh Linh",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO"
+      ]
+    },
+    {
+      "employeeId": "VAE02322",
+      "name": "Đỗ Hải Hưng",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "B737"
+      ]
+    },
+    {
+      "employeeId": "VAE01029",
+      "name": "Đỗ Vũ Linh",
+      "position": "Nhân viên",
+      "eType": {
+        "role": "MECHANIC"
+      },
+      "workingTimes": [
+        {
+          "start": "2026-01-02T12:32:20.215Z",
+          "end": "2026-01-02T20:32:20.215Z"
+        }
+      ],
+      "breakDuration": 0,
+      "fixedBreakTimes": [],
+      "taskCapabilities": [
+        "ARR-A",
+        "DEP-A",
+        "TOW",
+        "WO-01",
+        "WO-03"
+      ],
+      "certifications": [
+        "A321",
+        "A321-NEO",
+        "B737"
+      ]
+    }
+  ],
+  "matrixConfigs": {
+    "distanceMatrix": [],
+    "busTransitMatrix": [],
+    "walkingDistanceFromLocationToBusStop": [],
+    "timeMatrix": []
+  }
+}

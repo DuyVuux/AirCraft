@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benchmark Dashboard - Aircraft Maintenance Solver</title>
+
+    <!-- Google Fonts: Poppins + Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Poppins', 'sans-serif'],
+                        body: ['Open Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            primary: '#0A0E27',
+                            secondary: '#121830',
+                            card: '#1A1F3D',
+                            border: '#2A3158',
+                        },
+                        accent: {
+                            blue: '#2563EB',
+                            purple: '#7C3AED',
+                            orange: '#F97316',
+                            green: '#10B981',
+                            red: '#EF4444',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #0A0E27 0%, #121830 50%, #0A0E27 100%);
+            min-height: 100vh;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .glass-card {
+            background: rgba(26, 31, 61, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(42, 49, 88, 0.5);
+            border-radius: 16px;
+        }
+
+        .glow-blue {
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .glow-purple {
+            box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+        }
+
+        .btn-primary-glow {
+            background: linear-gradient(135deg, #2563EB 0%, #7C3AED 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary-glow:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+        }
+
+        .btn-secondary-glow {
+            background: linear-gradient(135deg, #F97316 0%, #EF4444 100%);
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary-glow:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(249, 115, 22, 0.4);
+        }
+
+        .status-optimal {
+            color: #10B981;
+            text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+        }
+
+        .status-feasible {
+            color: #F97316;
+            text-shadow: 0 0 10px rgba(249, 115, 22, 0.5);
+        }
+
+        .status-error {
+            color: #EF4444;
+            text-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+        }
+
+        .input-dark {
+            background: rgba(10, 14, 39, 0.6);
+            border: 1px solid rgba(42, 49, 88, 0.8);
+            color: #E2E8F0;
+            transition: all 0.2s ease;
+        }
+
+        .input-dark:focus {
+            border-color: #2563EB;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+            outline: none;
+        }
+
+        .checkbox-custom {
+            accent-color: #2563EB;
+        }
+
+        .loading-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 14, 39, 0.9);
+            backdrop-filter: blur(8px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .table-row:hover {
+            background: rgba(37, 99, 235, 0.1);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0A0E27;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #2A3158;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3B4178;
+        }
+    </style>
+</head>
+
+<body class="text-gray-200">
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="text-center">
+            <div class="relative">
+                <div class="w-20 h-20 border-4 border-blue-500/30 rounded-full animate-spin border-t-blue-500"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <svg class="w-8 h-8 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                </div>
+            </div>
+            <h3 class="mt-6 text-xl font-heading font-semibold text-white">Running Benchmark...</h3>
+            <p class="mt-2 text-gray-400" id="loadingStatus">Initializing solvers</p>
+        </div>
+    </div>
+
+    <div class="min-h-screen px-4 py-8 md:px-8">
+        <div class="max-w-7xl mx-auto">
+            <!-- Header -->
+            <header class="text-center mb-10">
+                <div
+                    class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-purple-600 mb-4 glow-blue">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                        </path>
+                    </svg>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-heading font-bold text-white mb-3">
+                    Benchmark <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Dashboard</span>
+                </h1>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    Compare CP-SAT vs Hybrid solver performance with configurable test instances
+                </p>
+                <a href="/"
+                    class="inline-flex items-center mt-4 px-4 py-2 rounded-lg bg-dark-card border border-dark-border text-gray-300 hover:text-white hover:border-blue-500 transition-colors cursor-pointer">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    Back to Dashboard
+                </a>
+            </header>
+
+            <!-- Main Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Left Column: Configuration -->
+                <div class="lg:col-span-1 space-y-6">
+                    <!-- Strategy Selection -->
+                    <div class="glass-card p-6">
+                        <h3 class="font-heading font-semibold text-white mb-4 flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-blue-400" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z">
+                                </path>
+                            </svg>
+                            Solver Strategies
+                        </h3>
+                        <div class="space-y-3">
+                            <label
+                                class="flex items-center p-3 rounded-lg bg-dark-primary/50 border border-dark-border hover:border-blue-500 transition-colors cursor-pointer">
+                                <input type="checkbox" id="strategyCpsat" checked
+                                    class="checkbox-custom w-5 h-5 rounded">
+                                <div class="ml-3">
+                                    <span class="text-white font-medium">CP-SAT</span>
+                                    <p class="text-xs text-gray-400">Pure OR-Tools CP-SAT solver</p>
+                                </div>
+                            </label>
+                            <label
+                                class="flex items-center p-3 rounded-lg bg-dark-primary/50 border border-dark-border hover:border-purple-500 transition-colors cursor-pointer">
+                                <input type="checkbox" id="strategyHybrid" checked
+                                    class="checkbox-custom w-5 h-5 rounded">
+                                <div class="ml-3">
+                                    <span class="text-white font-medium">Hybrid</span>
+                                    <p class="text-xs text-gray-400">CP-SAT (Phase 1) + MIP (Phase 2)</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Instance Configuration -->
+                    <div class="glass-card p-6">
+                        <h3 class="font-heading font-semibold text-white mb-4 flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-purple-400" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                                </path>
+                            </svg>
+                            Instance Sizes
+                        </h3>
+                        <div class="space-y-3">
+                            <label
+                                class="flex items-center p-3 rounded-lg bg-dark-primary/50 border border-dark-border hover:border-green-500 transition-colors cursor-pointer">
+                                <input type="checkbox" id="sizeSmall" checked class="checkbox-custom w-5 h-5 rounded">
+                                <div class="ml-3 flex-1">
+                                    <div class="flex justify-between">
+                                        <span class="text-white font-medium">Small</span>
+                                        <span class="text-green-400 text-sm">~1s</span>
+                                    </div>
+                                    <p class="text-xs text-gray-400">3 aircrafts • 9 tasks • 5 employees</p>
+                                </div>
+                            </label>
+                            <label
+                                class="flex items-center p-3 rounded-lg bg-dark-primary/50 border border-dark-border hover:border-yellow-500 transition-colors cursor-pointer">
+                                <input type="checkbox" id="sizeMedium" checked class="checkbox-custom w-5 h-5 rounded">
+                                <div class="ml-3 flex-1">
+                                    <div class="flex justify-between">
+                                        <span class="text-white font-medium">Medium</span>
+                                        <span class="text-yellow-400 text-sm">~30s</span>
+                                    </div>
+                                    <p class="text-xs text-gray-400">10 aircrafts • 50 tasks • 20 employees</p>
+                                </div>
+                            </label>
+                            <label
+                                class="flex items-center p-3 rounded-lg bg-dark-primary/50 border border-dark-border hover:border-orange-500 transition-colors cursor-pointer">
+                                <input type="checkbox" id="sizeLarge" class="checkbox-custom w-5 h-5 rounded">
+                                <div class="ml-3 flex-1">
+                                    <div class="flex justify-between">
+                                        <span class="text-white font-medium">Large</span>
+                                        <span class="text-orange-400 text-sm">~60s</span>
+                                    </div>
+                                    <p class="text-xs text-gray-400">20 aircrafts • 100 tasks • 40 employees</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Custom Instance Config -->
+                    <div class="glass-card p-6">
+                        <h3 class="font-heading font-semibold text-white mb-4 flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-orange-400" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4">
+                                </path>
+                            </svg>
+                            Custom Test Input
+                        </h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-1">Number of Aircrafts</label>
+                                <input type="number" id="customAircrafts" min="1" max="50" value="5"
+                                    class="w-full px-4 py-2 rounded-lg input-dark">
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-1">Tasks per Aircraft</label>
+                                <input type="number" id="customTasksPerAircraft" min="1" max="10" value="4"
+                                    class="w-full px-4 py-2 rounded-lg input-dark">
+                            </div>
+                            <div>
+                                <label class="block text-sm text-gray-400 mb-1">Number of Employees</label>
+                                <input type="number" id="customEmployees" min="1" max="100" value="10"
+                                    class="w-full px-4 py-2 rounded-lg input-dark">
+                            </div>
+                            <label
+                                class="flex items-center p-3 rounded-lg bg-dark-primary/50 border border-dark-border hover:border-orange-500 transition-colors cursor-pointer"
+                                id="useCustomLabel">
+                                <input type="checkbox" id="useCustom" class="checkbox-custom w-5 h-5 rounded"
+                                    onchange="toggleCustomMode()">
+                                <div class="ml-3">
+                                    <span class="text-white font-medium">Use Custom Instance</span>
+                                    <p class="text-xs text-gray-400">Override preset sizes</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Time Limit & Run -->
+                    <div class="glass-card p-6">
+                        <h3 class="font-heading font-semibold text-white mb-4 flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            Time Limit
+                        </h3>
+                        <select id="timeLimit" class="w-full px-4 py-3 rounded-lg input-dark mb-2"
+                            onchange="toggleCustomTimeLimit()">
+                            <option value="10">10 seconds</option>
+                            <option value="30" selected>30 seconds</option>
+                            <option value="60">60 seconds</option>
+                            <option value="120">120 seconds</option>
+                            <option value="300">5 minutes</option>
+                            <option value="600">10 minutes</option>
+                            <option value="custom">Custom...</option>
+                            <option value="0">♾️ Unlimited</option>
+                        </select>
+                        <div id="customTimeLimitContainer" class="mb-4 hidden">
+                            <div class="flex items-center space-x-2">
+                                <input type="number" id="customTimeLimit" min="1" max="3600" value="60"
+                                    class="flex-1 px-4 py-2 rounded-lg input-dark" placeholder="Enter seconds">
+                                <span class="text-gray-400 text-sm">seconds</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">Max: 3600 seconds (1 hour)</p>
+                        </div>
+                        <div id="unlimitedWarning" class="mb-4 hidden">
+                            <div class="flex items-center p-3 rounded-lg bg-orange-500/10 border border-orange-500/30">
+                                <svg class="w-5 h-5 text-orange-400 mr-2 flex-shrink-0" fill="none"
+                                    stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+                                    </path>
+                                </svg>
+                                <p class="text-xs text-orange-300">Unlimited may run for a very long time on large
+                                    instances!</p>
+                            </div>
+                        </div>
+
+                        <button onclick="runBenchmark()"
+                            class="w-full py-4 rounded-xl font-heading font-semibold text-white btn-primary-glow flex items-center justify-center cursor-pointer">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z">
+                                </path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            Run Benchmark
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Column: Results -->
+                <div class="lg:col-span-2 space-y-6">
+                    <!-- Summary Stats -->
+                    <div id="summaryCard" class="glass-card p-6" style="display: none;">
+                        <h3 class="font-heading font-semibold text-white mb-4">Summary</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="summaryStats">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+
+                    <!-- Charts -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="glass-card p-6">
+                            <h3 class="font-heading font-semibold text-white mb-4 flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-blue-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                Solve Time (ms)
+                            </h3>
+                            <div class="h-64">
+                                <canvas id="timeChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="glass-card p-6">
+                            <h3 class="font-heading font-semibold text-white mb-4 flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-green-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                Optimality Status
+                            </h3>
+                            <div class="h-64">
+                                <canvas id="optimalityChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Results Table -->
+                    <div class="glass-card p-6">
+                        <h3 class="font-heading font-semibold text-white mb-4 flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-purple-400" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z">
+                                </path>
+                            </svg>
+                            Detailed Results
+                        </h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left">
+                                <thead>
+                                    <tr class="border-b border-dark-border">
+                                        <th class="pb-3 text-gray-400 font-medium text-sm uppercase tracking-wider">
+                                            Strategy</th>
+                                        <th class="pb-3 text-gray-400 font-medium text-sm uppercase tracking-wider">
+                                            Instance</th>
+                                        <th class="pb-3 text-gray-400 font-medium text-sm uppercase tracking-wider">
+                                            Tasks</th>
+                                        <th class="pb-3 text-gray-400 font-medium text-sm uppercase tracking-wider">Time
+                                        </th>
+                                        <th class="pb-3 text-gray-400 font-medium text-sm uppercase tracking-wider">
+                                            Assigned</th>
+                                        <th class="pb-3 text-gray-400 font-medium text-sm uppercase tracking-wider">
+                                            Objective</th>
+                                        <th class="pb-3 text-gray-400 font-medium text-sm uppercase tracking-wider">
+                                            Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="resultsBody">
+                                    <tr>
+                                        <td colspan="7" class="py-12 text-center text-gray-500">
+                                            <svg class="w-12 h-12 mx-auto mb-3 text-gray-600" fill="none"
+                                                stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+                                                </path>
+                                            </svg>
+                                            Configure and click <span class="text-blue-400">"Run Benchmark"</span> to
+                                            start
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Winner Card -->
+                    <div id="winnerCard" class="glass-card p-6 glow-purple" style="display: none;">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <h3 class="font-heading font-semibold text-white text-xl" id="winnerTitle">Winner</h3>
+                                <p class="text-gray-400 mt-1" id="winnerDetails">Details here</p>
+                            </div>
+                            <div class="text-5xl" id="winnerEmoji">🏆</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let timeChart = null;
+        let optimalityChart = null;
+
+        function toggleCustomMode() {
+            const useCustom = document.getElementById('useCustom').checked;
+            const sizeCheckboxes = ['sizeSmall', 'sizeMedium', 'sizeLarge'];
+            const customInputs = ['customAircrafts', 'customTasksPerAircraft', 'customEmployees'];
+
+            sizeCheckboxes.forEach(id => {
+                const checkbox = document.getElementById(id);
+                const label = checkbox.closest('label');
+                if (useCustom) {
+                    checkbox.disabled = true;
+                    checkbox.checked = false;
+                    label.classList.add('opacity-50', 'cursor-not-allowed');
+                    label.classList.remove('hover:border-green-500', 'hover:border-yellow-500', 'hover:border-orange-500');
+                } else {
+                    checkbox.disabled = false;
+                    label.classList.remove('opacity-50', 'cursor-not-allowed');
+                    // Restore based on position
+                    if (id === 'sizeSmall') label.classList.add('hover:border-green-500');
+                    else if (id === 'sizeMedium') label.classList.add('hover:border-yellow-500');
+                    else label.classList.add('hover:border-orange-500');
+                }
+            });
+
+            // Toggle custom inputs visual state
+            customInputs.forEach(id => {
+                const input = document.getElementById(id);
+                if (useCustom) {
+                    input.classList.add('border-orange-500/50');
+                } else {
+                    input.classList.remove('border-orange-500/50');
+                }
+            });
+
+            // Update label styling
+            const customLabel = document.getElementById('useCustomLabel');
+            if (useCustom) {
+                customLabel.classList.add('border-orange-500', 'bg-orange-500/10');
+            } else {
+                customLabel.classList.remove('border-orange-500', 'bg-orange-500/10');
+            }
+        }
+
+        function toggleCustomTimeLimit() {
+            const select = document.getElementById('timeLimit');
+            const customContainer = document.getElementById('customTimeLimitContainer');
+            const unlimitedWarning = document.getElementById('unlimitedWarning');
+
+            // Hide all first
+            customContainer.classList.add('hidden');
+            unlimitedWarning.classList.add('hidden');
+
+            if (select.value === 'custom') {
+                customContainer.classList.remove('hidden');
+            } else if (select.value === '0') {
+                unlimitedWarning.classList.remove('hidden');
+            }
+        }
+
+        function getTimeLimit() {
+            const select = document.getElementById('timeLimit');
+            if (select.value === 'custom') {
+                const customValue = parseInt(document.getElementById('customTimeLimit').value) || 60;
+                return Math.min(Math.max(customValue, 1), 3600); // Clamp 1-3600
+            }
+            return parseInt(select.value); // 0 for unlimited
+        }
+
+        async function runBenchmark() {
+            // Collect options
+            const strategies = [];
+            if (document.getElementById('strategyCpsat').checked) strategies.push('cpsat');
+            if (document.getElementById('strategyHybrid').checked) strategies.push('hybrid');
+
+            const sizes = [];
+            const useCustom = document.getElementById('useCustom').checked;
+
+            if (!useCustom) {
+                if (document.getElementById('sizeSmall').checked) sizes.push('small');
+                if (document.getElementById('sizeMedium').checked) sizes.push('medium');
+                if (document.getElementById('sizeLarge').checked) sizes.push('large');
+            } else {
+                sizes.push('custom');
+            }
+
+            const timeLimit = getTimeLimit();
+
+            if (strategies.length === 0) {
+                alert('Please select at least one strategy');
+                return;
+            }
+
+            if (sizes.length === 0 && !useCustom) {
+                alert('Please select at least one instance size');
+                return;
+            }
+
+            // Build request body
+            const requestBody = { strategies, sizes, time_limit: timeLimit };
+
+            if (useCustom) {
+                requestBody.custom_config = {
+                    num_aircrafts: parseInt(document.getElementById('customAircrafts').value),
+                    tasks_per_aircraft: parseInt(document.getElementById('customTasksPerAircraft').value),
+                    num_employees: parseInt(document.getElementById('customEmployees').value)
+                };
+            }
+
+            // Show loading
+            document.getElementById('loadingOverlay').style.display = 'flex';
+            updateLoadingStatus('Generating test instances...');
+
+            try {
+                const response = await fetch('/api/benchmark/run', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(requestBody)
+                });
+
+                const data = await response.json();
+
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+
+                displayResults(data);
+            } catch (error) {
+                alert('Benchmark failed: ' + error.message);
+            } finally {
+                document.getElementById('loadingOverlay').style.display = 'none';
+            }
+        }
+
+        function updateLoadingStatus(message) {
+            document.getElementById('loadingStatus').textContent = message;
+        }
+
+        function displayResults(data) {
+            const results = data.results || [];
+
+            // Show summary
+            document.getElementById('summaryCard').style.display = 'block';
+
+            let totalRuns = results.length;
+            let avgTime = results.reduce((a, r) => a + r.solve_time_ms, 0) / totalRuns || 0;
+            let optimalCount = results.filter(r => r.is_optimal).length;
+            let avgAssigned = results.reduce((a, r) => a + r.assigned_count, 0) / totalRuns || 0;
+
+            document.getElementById('summaryStats').innerHTML = `
+                <div class="stat-card rounded-xl p-4 text-center">
+                    <div class="text-3xl font-heading font-bold text-white">${totalRuns}</div>
+                    <div class="text-sm text-gray-400 mt-1">Total Runs</div>
+                </div>
+                <div class="stat-card rounded-xl p-4 text-center">
+                    <div class="text-3xl font-heading font-bold text-white">${formatTime(avgTime)}</div>
+                    <div class="text-sm text-gray-400 mt-1">Avg Time</div>
+                </div>
+                <div class="stat-card rounded-xl p-4 text-center">
+                    <div class="text-3xl font-heading font-bold ${optimalCount === totalRuns ? 'text-green-400' : 'text-yellow-400'}">${optimalCount}/${totalRuns}</div>
+                    <div class="text-sm text-gray-400 mt-1">Optimal</div>
+                </div>
+                <div class="stat-card rounded-xl p-4 text-center">
+                    <div class="text-3xl font-heading font-bold text-white">${avgAssigned.toFixed(0)}</div>
+                    <div class="text-sm text-gray-400 mt-1">Avg Assigned</div>
+                </div>
+            `;
+
+            // Update table
+            let tableHtml = '';
+            for (const result of results) {
+                const isOptimal = result.is_optimal;
+                const statusClass = isOptimal ? 'status-optimal' :
+                    result.status === 'FEASIBLE' ? 'status-feasible' : 'status-error';
+
+                const strategyColor = result.strategy_name === 'cpsat' ?
+                    'bg-gradient-to-r from-blue-500 to-blue-600' :
+                    'bg-gradient-to-r from-purple-500 to-pink-500';
+
+                const objText = result.objective_value !== null && result.objective_value !== Infinity ?
+                    result.objective_value.toLocaleString() : '∞';
+
+                tableHtml += `
+                    <tr class="border-b border-dark-border/50 table-row transition-colors">
+                        <td class="py-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-semibold text-white ${strategyColor}">
+                                ${result.strategy_name.toUpperCase()}
+                            </span>
+                        </td>
+                        <td class="py-4 text-gray-300">${result.instance_name}</td>
+                        <td class="py-4 text-gray-300">${result.num_tasks}</td>
+                        <td class="py-4 text-gray-300">${formatTime(result.solve_time_ms)}</td>
+                        <td class="py-4">
+                            <span class="text-white font-semibold">${result.assigned_count}</span>
+                            <span class="text-gray-500">/${result.num_tasks}</span>
+                        </td>
+                        <td class="py-4 text-gray-300 font-mono text-sm">${objText}</td>
+                        <td class="py-4 ${statusClass} font-semibold">
+                            ${isOptimal ? '✓ OPTIMAL' : result.status}
+                        </td>
+                    </tr>
+                `;
+            }
+            document.getElementById('resultsBody').innerHTML = tableHtml;
+
+            // Update charts
+            updateCharts(results);
+
+            // Show winner
+            showWinner(results);
+        }
+
+        function formatTime(ms) {
+            if (ms < 1000) return `${ms.toFixed(0)}ms`;
+            return `${(ms / 1000).toFixed(1)}s`;
+        }
+
+        function updateCharts(results) {
+            const grouped = {};
+            for (const r of results) {
+                const key = r.strategy_name;
+                if (!grouped[key]) grouped[key] = {};
+                grouped[key][r.instance_size] = r;
+            }
+
+            const strategies = Object.keys(grouped);
+            const sizes = [...new Set(results.map(r => r.instance_size))];
+
+            // Time chart
+            const timeCtx = document.getElementById('timeChart').getContext('2d');
+            if (timeChart) timeChart.destroy();
+
+            timeChart = new Chart(timeCtx, {
+                type: 'bar',
+                data: {
+                    labels: sizes,
+                    datasets: strategies.map((s, i) => ({
+                        label: s.toUpperCase(),
+                        data: sizes.map(size => grouped[s]?.[size]?.solve_time_ms || 0),
+                        backgroundColor: s === 'cpsat' ? 'rgba(37, 99, 235, 0.8)' : 'rgba(124, 58, 237, 0.8)',
+                        borderColor: s === 'cpsat' ? 'rgba(37, 99, 235, 1)' : 'rgba(124, 58, 237, 1)',
+                        borderWidth: 2,
+                        borderRadius: 8
+                    }))
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: { color: '#94A3B8' }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: { color: 'rgba(42, 49, 88, 0.5)' },
+                            ticks: { color: '#94A3B8' }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: '#94A3B8' }
+                        }
+                    }
+                }
+            });
+
+            // Optimality chart (stacked bar showing optimal vs feasible)
+            const optCtx = document.getElementById('optimalityChart').getContext('2d');
+            if (optimalityChart) optimalityChart.destroy();
+
+            const optimalData = strategies.map(s =>
+                sizes.map(size => grouped[s]?.[size]?.is_optimal ? 1 : 0)
+            );
+
+            const feasibleData = strategies.map(s =>
+                sizes.map(size => !grouped[s]?.[size]?.is_optimal && grouped[s]?.[size] ? 1 : 0)
+            );
+
+            optimalityChart = new Chart(optCtx, {
+                type: 'bar',
+                data: {
+                    labels: sizes,
+                    datasets: [
+                        ...strategies.map((s, i) => ({
+                            label: `${s.toUpperCase()} Optimal`,
+                            data: optimalData[i],
+                            backgroundColor: s === 'cpsat' ? 'rgba(16, 185, 129, 0.8)' : 'rgba(16, 185, 129, 0.6)',
+                            borderColor: 'rgba(16, 185, 129, 1)',
+                            borderWidth: 1,
+                            borderRadius: 4
+                        })),
+                        ...strategies.map((s, i) => ({
+                            label: `${s.toUpperCase()} Feasible`,
+                            data: feasibleData[i],
+                            backgroundColor: s === 'cpsat' ? 'rgba(249, 115, 22, 0.8)' : 'rgba(249, 115, 22, 0.6)',
+                            borderColor: 'rgba(249, 115, 22, 1)',
+                            borderWidth: 1,
+                            borderRadius: 4
+                        }))
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: { color: '#94A3B8', font: { size: 10 } }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 2,
+                            grid: { color: 'rgba(42, 49, 88, 0.5)' },
+                            ticks: { color: '#94A3B8', stepSize: 1 }
+                        },
+                        x: {
+                            grid: { display: false },
+                            ticks: { color: '#94A3B8' }
+                        }
+                    }
+                }
+            });
+        }
+
+        function showWinner(results) {
+            // Compare strategies
+            const cpsatResults = results.filter(r => r.strategy_name === 'cpsat');
+            const hybridResults = results.filter(r => r.strategy_name === 'hybrid');
+
+            if (cpsatResults.length === 0 || hybridResults.length === 0) {
+                document.getElementById('winnerCard').style.display = 'none';
+                return;
+            }
+
+            // Count wins
+            let cpsatWins = 0;
+            let hybridWins = 0;
+
+            const sizes = [...new Set(results.map(r => r.instance_size))];
+            for (const size of sizes) {
+                const cpsat = cpsatResults.find(r => r.instance_size === size);
+                const hybrid = hybridResults.find(r => r.instance_size === size);
+
+                if (cpsat && hybrid) {
+                    // Hybrid wins if: faster OR optimal when cpsat is not
+                    if (hybrid.is_optimal && !cpsat.is_optimal) {
+                        hybridWins++;
+                    } else if (cpsat.is_optimal && !hybrid.is_optimal) {
+                        cpsatWins++;
+                    } else if (hybrid.solve_time_ms < cpsat.solve_time_ms * 0.8) {
+                        hybridWins++;
+                    } else if (cpsat.solve_time_ms < hybrid.solve_time_ms * 0.8) {
+                        cpsatWins++;
+                    }
+                }
+            }
+
+            const winnerCard = document.getElementById('winnerCard');
+            const winnerTitle = document.getElementById('winnerTitle');
+            const winnerDetails = document.getElementById('winnerDetails');
+
+            if (hybridWins > cpsatWins) {
+                winnerCard.style.display = 'block';
+                winnerTitle.textContent = '🏆 Hybrid Solver Wins!';
+                winnerDetails.textContent = `Faster and/or found optimal solutions more often (${hybridWins} wins vs ${cpsatWins})`;
+            } else if (cpsatWins > hybridWins) {
+                winnerCard.style.display = 'block';
+                winnerTitle.textContent = '🏆 CP-SAT Wins!';
+                winnerDetails.textContent = `Pure CP-SAT performed better (${cpsatWins} wins vs ${hybridWins})`;
+            } else {
+                winnerCard.style.display = 'block';
+                winnerTitle.textContent = '🤝 It\'s a Tie!';
+                winnerDetails.textContent = 'Both solvers performed similarly';
+            }
+        }
+    </script>
+</body>
+
+</html>

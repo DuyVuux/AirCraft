@@ -1,0 +1,8 @@
+# Aircraft Maintenance Scheduler - Dependencies
+
+# Web framework
+flask>=2.0.0
+flask-cors>=3.0.0
+
+# Optimization solver
+ortools>=9.0.0

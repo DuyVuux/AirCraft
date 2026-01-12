@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "id": "114f7fbb-4045-4070-bc57-b9bf34e23c53",
+    "name": "Bộ dữ liệu mặc định",
+    "createdAt": "2025-12-12T00:33:24.416008",
+    "updatedAt": "2026-01-06T20:55:05.044196",
+    "itemCounts": {
+      "tasks": 0,
+      "employees": 0,
+      "hubs": 0,
+      "aircrafts": 0,
+      "busStops": 0,
+      "busRoutes": 0,
+      "timeMatrix": 0
+    }
+  },
+  "data": {
+    "trackingId": null,
+    "aircrafts": [],
+    "hubs": [],
+    "employees": [],
+    "busStops": [],
+    "busRoutes": [],
+    "matrixConfigs": null,
+    "tasks": [],
+    "timeMatrix": []
+  }
+}

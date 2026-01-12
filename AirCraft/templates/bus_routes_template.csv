@@ -1,0 +1,2 @@
+routeId,routeName,cycleTime,frequency,operatingHours.start,operatingHours.end,stops
+ROUTE_MAIN,Main Airport Loop,1440,1800,2024-12-05T06:00:00Z,2024-12-05T18:00:00Z,"BS_TERMINAL(0|120|120),BS_HANGAR(480|600|120),BS_REST_AREA(960|1080|120),BS_TERMINAL(1440|null|0)"
