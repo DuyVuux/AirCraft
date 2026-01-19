@@ -7,6 +7,12 @@ interface InputSummaryTabProps {
 }
 
 function InputSummaryTab({ aircrafts, employees }: InputSummaryTabProps) {
+    const formatUTCTime = (isoString: string) => {
+        if (!isoString) return '';
+        const date = new Date(isoString);
+        return `${date.getUTCHours().toString().padStart(2, '0')}:${date.getUTCMinutes().toString().padStart(2, '0')}`;
+    };
+
     const totalTasks = aircrafts.reduce((sum, a) => sum + a.requiredTasks.length, 0);
     const totalCapabilities = employees.reduce((sum, e) => sum + (e.taskCapabilities?.length || 0), 0);
 
@@ -88,9 +94,9 @@ function InputSummaryTab({ aircrafts, employees }: InputSummaryTabProps) {
                                         <td style={{ padding: '0.75rem', fontSize: '0.75rem' }}>
                                             {ac.timeWindow ? (
                                                 <>
-                                                    {new Date(ac.timeWindow.start).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })}
+                                                    {formatUTCTime(ac.timeWindow.start)}
                                                     {' - '}
-                                                    {new Date(ac.timeWindow.end).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })}
+                                                    {formatUTCTime(ac.timeWindow.end)}
                                                 </>
                                             ) : 'N/A'}
                                         </td>
@@ -158,9 +164,9 @@ function InputSummaryTab({ aircrafts, employees }: InputSummaryTabProps) {
                                                     <div key={idx}>
                                                         {wt.start && wt.end ? (
                                                             <>
-                                                                {new Date(wt.start).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })}
+                                                                {formatUTCTime(wt.start)}
                                                                 {' - '}
-                                                                {new Date(wt.end).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })}
+                                                                {formatUTCTime(wt.end)}
                                                             </>
                                                         ) : 'Chưa cấu hình'}
                                                     </div>

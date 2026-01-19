@@ -198,7 +198,7 @@ const AircraftEditor: React.FC<AircraftEditorProps> = ({
     }}>
 
       {/* LEFT COLUMN: Controls (Scrollable) */}
-      <div style={{ height: '100%', overflowY: 'auto', paddingRight: '0.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', width: '100%' }}>
+      <div style={{ maxHeight: '100%', height: 'auto', overflowY: 'auto', paddingRight: '0.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', width: '100%' }}>
 
         {isReadOnly && (
           <div className="editor-readonly-banner">
@@ -358,7 +358,8 @@ const AircraftEditor: React.FC<AircraftEditorProps> = ({
         </div>
 
         {/* Actions */}
-        <div style={{ marginTop: 'auto', marginBottom: '1rem' }}>
+        {/* Actions */}
+        <div style={{ marginBottom: '1rem' }}>
           {isReadOnly ? (
             <button className="editor-form-button-primary" onClick={onStartEdit}>
               <span className="material-symbols-outlined">edit</span> Update

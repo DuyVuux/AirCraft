@@ -1,0 +1,466 @@
+{
+  "solution": [
+    {
+      "employeeId": "DEF-EMP-002",
+      "certificates": [
+        "A321",
+        "B787"
+      ],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "ARR-M",
+            "aircraftId": "DEF-VN101-1",
+            "requiredCertificates": [
+              "ARR-M"
+            ]
+          },
+          "locationId": "stand-01",
+          "startTime": "2026-01-12T09:00:00Z",
+          "endTime": "2026-01-12T09:30:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "DEF-EMP-004",
+      "certificates": [
+        "A321",
+        "B787"
+      ],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "ARR-A",
+            "aircraftId": "DEF-VN101-1",
+            "requiredCertificates": [
+              "ARR-A"
+            ]
+          },
+          "locationId": "stand-01",
+          "startTime": "2026-01-12T09:00:00Z",
+          "endTime": "2026-01-12T09:30:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "DEF-EMP-001",
+      "certificates": [
+        "A321",
+        "B787"
+      ],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "DEP-M",
+            "aircraftId": "DEF-VN101-1",
+            "requiredCertificates": [
+              "DEP-M"
+            ]
+          },
+          "locationId": "stand-01",
+          "startTime": "2026-01-12T09:00:00Z",
+          "endTime": "2026-01-12T09:30:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "DEF-EMP-007",
+      "certificates": [
+        "A321",
+        "B787"
+      ],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "DEP-A",
+            "aircraftId": "DEF-VN101-1",
+            "requiredCertificates": [
+              "DEP-A"
+            ]
+          },
+          "locationId": "stand-01",
+          "startTime": "2026-01-12T09:00:00Z",
+          "endTime": "2026-01-12T09:30:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "DEF-EMP-003",
+      "certificates": [
+        "A321",
+        "B787"
+      ],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "TOW",
+            "aircraftId": "DEF-VN101-1",
+            "requiredCertificates": [
+              "TOW"
+            ]
+          },
+          "locationId": "stand-01",
+          "startTime": "2026-01-12T09:00:00Z",
+          "endTime": "2026-01-12T09:30:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "DEF-EMP-005",
+      "certificates": [
+        "A321",
+        "B787"
+      ],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "WO-01",
+            "aircraftId": "DEF-VN101-1",
+            "requiredCertificates": [
+              "WO-01"
+            ]
+          },
+          "locationId": "stand-01",
+          "startTime": "2026-01-12T09:00:00Z",
+          "endTime": "2026-01-12T09:30:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "DEF-EMP-006",
+      "certificates": [
+        "A321",
+        "B787"
+      ],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "WO-02",
+            "aircraftId": "DEF-VN101-1",
+            "requiredCertificates": [
+              "WO-02"
+            ]
+          },
+          "locationId": "stand-01",
+          "startTime": "2026-01-12T09:00:00Z",
+          "endTime": "2026-01-12T09:30:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "DEF-EMP-017",
+      "certificates": [
+        "A321",
+        "B787"
+      ],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "WO-03",
+            "aircraftId": "DEF-VN101-1",
+            "requiredCertificates": [
+              "WO-03"
+            ]
+          },
+          "locationId": "stand-01",
+          "startTime": "2026-01-12T09:00:00Z",
+          "endTime": "2026-01-12T09:30:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "DEF-EMP-009",
+      "certificates": [
+        "A321",
+        "B787"
+      ],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "WO-04",
+            "aircraftId": "DEF-VN101-1",
+            "requiredCertificates": [
+              "WO-04"
+            ]
+          },
+          "locationId": "stand-01",
+          "startTime": "2026-01-12T09:00:00Z",
+          "endTime": "2026-01-12T09:30:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "DEF-EMP-020",
+      "certificates": [
+        "A321",
+        "B787"
+      ],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "WO-05",
+            "aircraftId": "DEF-VN101-1",
+            "requiredCertificates": [
+              "WO-05"
+            ]
+          },
+          "locationId": "stand-01",
+          "startTime": "2026-01-12T09:00:00Z",
+          "endTime": "2026-01-12T09:30:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "DEF-EMP-010",
+      "certificates": [
+        "A321",
+        "B787"
+      ],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "WO-01",
+            "aircraftId": "DEF-VN102-2",
+            "requiredCertificates": [
+              "WO-01"
+            ]
+          },
+          "locationId": "stand-02",
+          "startTime": "2026-01-12T09:00:00Z",
+          "endTime": "2026-01-12T09:30:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "DEF-EMP-011",
+      "certificates": [
+        "A321",
+        "B787"
+      ],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "WO-02",
+            "aircraftId": "DEF-VN102-2",
+            "requiredCertificates": [
+              "WO-02"
+            ]
+          },
+          "locationId": "stand-02",
+          "startTime": "2026-01-12T09:00:00Z",
+          "endTime": "2026-01-12T09:30:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "DEF-EMP-028",
+      "certificates": [
+        "A321",
+        "B787"
+      ],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "WO-03",
+            "aircraftId": "DEF-VN102-2",
+            "requiredCertificates": [
+              "WO-03"
+            ]
+          },
+          "locationId": "stand-02",
+          "startTime": "2026-01-12T09:00:00Z",
+          "endTime": "2026-01-12T09:30:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "DEF-EMP-022",
+      "certificates": [
+        "A321",
+        "B787"
+      ],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "WO-04",
+            "aircraftId": "DEF-VN102-2",
+            "requiredCertificates": [
+              "WO-04"
+            ]
+          },
+          "locationId": "stand-02",
+          "startTime": "2026-01-12T09:00:00Z",
+          "endTime": "2026-01-12T09:30:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "DEF-EMP-031",
+      "certificates": [
+        "A321",
+        "B787"
+      ],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "WO-05",
+            "aircraftId": "DEF-VN102-2",
+            "requiredCertificates": [
+              "WO-05"
+            ]
+          },
+          "locationId": "stand-02",
+          "startTime": "2026-01-12T09:00:00Z",
+          "endTime": "2026-01-12T09:30:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "DEF-EMP-013",
+      "certificates": [
+        "A321",
+        "B787"
+      ],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "ARR-M",
+            "aircraftId": "DEF-VN102-2",
+            "requiredCertificates": [
+              "ARR-M"
+            ]
+          },
+          "locationId": "stand-02",
+          "startTime": "2026-01-12T09:00:00Z",
+          "endTime": "2026-01-12T09:30:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "DEF-EMP-015",
+      "certificates": [
+        "A321",
+        "B787"
+      ],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "ARR-A",
+            "aircraftId": "DEF-VN102-2",
+            "requiredCertificates": [
+              "ARR-A"
+            ]
+          },
+          "locationId": "stand-02",
+          "startTime": "2026-01-12T09:00:00Z",
+          "endTime": "2026-01-12T09:30:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "DEF-EMP-012",
+      "certificates": [
+        "A321",
+        "B787"
+      ],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "DEP-M",
+            "aircraftId": "DEF-VN102-2",
+            "requiredCertificates": [
+              "DEP-M"
+            ]
+          },
+          "locationId": "stand-02",
+          "startTime": "2026-01-12T09:00:00Z",
+          "endTime": "2026-01-12T09:30:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "DEF-EMP-018",
+      "certificates": [
+        "A321",
+        "B787"
+      ],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "DEP-A",
+            "aircraftId": "DEF-VN102-2",
+            "requiredCertificates": [
+              "DEP-A"
+            ]
+          },
+          "locationId": "stand-02",
+          "startTime": "2026-01-12T09:00:00Z",
+          "endTime": "2026-01-12T09:30:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "DEF-EMP-008",
+      "certificates": [
+        "A321",
+        "B787"
+      ],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "TOW",
+            "aircraftId": "DEF-VN102-2",
+            "requiredCertificates": [
+              "TOW"
+            ]
+          },
+          "locationId": "stand-02",
+          "startTime": "2026-01-12T09:00:00Z",
+          "endTime": "2026-01-12T09:30:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    }
+  ],
+  "droppedTasks": [],
+  "strategy": "GreedyStrategy"
+}

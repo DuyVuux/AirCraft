@@ -18,7 +18,7 @@ export function transformEmployee(emp: Employee): object {
         employeeId: emp.employeeId,
         eType: {
             role: emp.eType.role,
-            certificates: emp.taskCapabilities || []
+            certificates: emp.certifications || []
         },
         currentLocation: null,
         workingTimes: emp.workingTimes.map(t => ({
@@ -29,7 +29,9 @@ export function transformEmployee(emp: Employee): object {
         fixedBreakTimes: (emp.fixedBreakTimes || []).map(t => ({
             start: toAlgoDateTime(t.start),
             end: toAlgoDateTime(t.end)
-        }))
+        })),
+        taskCapabilities: emp.taskCapabilities || [],
+        certifications: emp.certifications || []
     };
 }
 
@@ -44,7 +46,7 @@ export function transformAircraft(ac: Aircraft): object {
         },
         requiredTasks: ac.requiredTasks.map(task => ({
             taskCode: task.taskCode,
-            requiredCertificates: [task.taskCode]
+            requiredCertificates: task.requiredCertificates || []
         }))
     };
 }

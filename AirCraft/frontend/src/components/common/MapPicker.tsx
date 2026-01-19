@@ -137,6 +137,30 @@ const ZoomControlHandler: React.FC<ZoomControlHandlerProps> = ({ onZoomChange })
   }, [map, onZoomChange]);
 
   return null;
+  return null;
+};
+
+interface MapResizeHandlerProps {
+  // empty
+}
+
+const MapResizeHandler: React.FC<MapResizeHandlerProps> = () => {
+  const map = useMap();
+
+  useEffect(() => {
+    if (!map) return;
+
+    const container = map.getContainer();
+    const observer = new ResizeObserver(() => {
+      // Invalidate size immediately to refill container
+      map.invalidateSize();
+    });
+
+    observer.observe(container);
+    return () => observer.disconnect();
+  }, [map]);
+
+  return null;
 };
 
 // POI Polygons Component
@@ -629,6 +653,7 @@ const MapPicker: React.FC<MapPickerProps> = ({
           <MapClickHandler onMapClick={handleMapClick} />
           <ZoomControlHandler onZoomChange={setCurrentZoom} />
           <MapCenterUpdater latitude={latitude || DEFAULT_GPS.latitude} longitude={longitude || DEFAULT_GPS.longitude} />
+          <MapResizeHandler />
         </MapContainer>
       </Box>
     );
@@ -668,22 +693,37 @@ const MapPicker: React.FC<MapPickerProps> = ({
   );
 
   const mapContent = (
-    <>
+    <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%', width: '100%' }}>
       {!hideTitle && (
-        <>
+        <Box sx={{ flexShrink: 0 }}>
           <Typography variant="subtitle2" gutterBottom>
             Chọn vị trí trên bản đồ
           </Typography>
           <Typography variant="caption" color="text.secondary" sx={{ mb: 2, display: 'block' }}>
             Click trên bản đồ để chọn vị trí, hoặc tìm kiếm địa điểm
           </Typography>
-        </>
+        </Box>
       )}
 
-      {renderMapControls(true)}
-      {renderMap(height)}
-      {!hideCoordinates && renderCoordinates()}
-    </>
+      <Box sx={{ flexShrink: 0 }}>
+        {renderMapControls(true)}
+      </Box>
+
+      <Box sx={{
+        flex: height === '100%' ? '1 1 auto' : '0 0 auto',
+        height: height === '100%' ? 'auto' : 'auto', // rely on flex if 100%
+        minHeight: 0,
+        position: 'relative'
+      }}>
+        {renderMap(height === '100%' ? '100%' : height)}
+      </Box>
+
+      {!hideCoordinates && (
+        <Box sx={{ flexShrink: 0 }}>
+          {renderCoordinates()}
+        </Box>
+      )}
+    </Box>
   );
 
   return (

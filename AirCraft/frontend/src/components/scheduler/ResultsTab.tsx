@@ -12,6 +12,23 @@ function ResultsTab({ scheduleResult, employees }: ResultsTabProps) {
     const [selectedTask, setSelectedTask] = useState<ScheduledTask | null>(null);
     const [viewMode, setViewMode] = useState<'employee' | 'aircraft'>('employee');
 
+    const formatUTCTime = (isoString: string) => {
+        if (!isoString) return '';
+        const date = new Date(isoString);
+        return `${date.getUTCHours().toString().padStart(2, '0')}:${date.getUTCMinutes().toString().padStart(2, '0')}`;
+    };
+
+    const formatUTCDateTime = (isoString: string) => {
+        if (!isoString) return '';
+        const date = new Date(isoString);
+        const day = date.getUTCDate().toString().padStart(2, '0');
+        const month = (date.getUTCMonth() + 1).toString().padStart(2, '0');
+        const year = date.getUTCFullYear();
+        const hours = date.getUTCHours().toString().padStart(2, '0');
+        const minutes = date.getUTCMinutes().toString().padStart(2, '0');
+        return `${day}/${month}/${year} ${hours}:${minutes}`;
+    };
+
     const handleTaskClick = (task: ScheduledTask) => {
         setSelectedTask(task);
     };
@@ -167,10 +184,10 @@ function ResultsTab({ scheduleResult, employees }: ResultsTabProps) {
                                         <td style={{ padding: '0.75rem' }}>{task.aircraftId}</td>
                                         <td style={{ padding: '0.75rem' }}>{task.employeeName || task.employeeId}</td>
                                         <td style={{ padding: '0.75rem' }}>
-                                            {new Date(task.startTime).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })}
+                                            {formatUTCTime(task.startTime)}
                                         </td>
                                         <td style={{ padding: '0.75rem' }}>
-                                            {new Date(task.endTime).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' })}
+                                            {formatUTCTime(task.endTime)}
                                         </td>
                                         <td style={{ padding: '0.75rem' }}>{task.duration} phút</td>
                                     </tr>
@@ -216,10 +233,10 @@ function ResultsTab({ scheduleResult, employees }: ResultsTabProps) {
                                 <span>{selectedTask.employeeName || selectedTask.employeeId}</span>
 
                                 <span style={{ color: 'var(--color-text-secondary)' }}>Bắt đầu:</span>
-                                <span>{new Date(selectedTask.startTime).toLocaleString('vi-VN')}</span>
+                                <span>{formatUTCDateTime(selectedTask.startTime)}</span>
 
                                 <span style={{ color: 'var(--color-text-secondary)' }}>Kết thúc:</span>
-                                <span>{new Date(selectedTask.endTime).toLocaleString('vi-VN')}</span>
+                                <span>{formatUTCDateTime(selectedTask.endTime)}</span>
 
                                 <span style={{ color: 'var(--color-text-secondary)' }}>Thời lượng:</span>
                                 <span>{selectedTask.duration} phút</span>

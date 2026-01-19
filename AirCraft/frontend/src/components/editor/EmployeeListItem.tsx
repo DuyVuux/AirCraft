@@ -18,7 +18,10 @@ const EmployeeListItem: React.FC<EmployeeListItemProps> = ({
 }) => {
     const formatTime = (isoString: string) => {
         if (!isoString) return '';
-        return new Date(isoString).toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit', hour12: false });
+        const date = new Date(isoString);
+        const hours = date.getUTCHours().toString().padStart(2, '0');
+        const minutes = date.getUTCMinutes().toString().padStart(2, '0');
+        return `${hours}:${minutes}`;
     };
 
     const formatDuration = (seconds?: number) => {

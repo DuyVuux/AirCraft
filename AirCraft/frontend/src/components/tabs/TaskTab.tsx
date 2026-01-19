@@ -67,8 +67,8 @@ export default function TaskTab({
     };
 
     return (
-        <>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', height: '100%', overflowY: 'auto', paddingRight: '0.5rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexShrink: 0 }}>
                 <h3 style={{ margin: 0 }}>Thêm Task Mới</h3>
                 <div style={{ display: 'flex', gap: '0.5rem' }}>
                     <button
@@ -92,17 +92,21 @@ export default function TaskTab({
                     />
                 </div>
             </div>
-            <TaskEditor
-                onSave={handleTaskSave}
-                onDelete={handleTaskDelete}
-                initialData={editingTask}
-                existingTasks={tasks}
-            />
-            <TaskList
-                tasks={tasks}
-                onEdit={handleTaskEdit}
-                onDelete={handleTaskDelete}
-            />
-        </>
+            <div style={{ flexShrink: 0 }}>
+                <TaskEditor
+                    onSave={handleTaskSave}
+                    onDelete={handleTaskDelete}
+                    initialData={editingTask}
+                    existingTasks={tasks}
+                />
+            </div>
+            <div style={{ flex: 1 }}>
+                <TaskList
+                    tasks={tasks}
+                    onEdit={handleTaskEdit}
+                    onDelete={handleTaskDelete}
+                />
+            </div>
+        </div>
     );
 }

@@ -220,6 +220,9 @@ def solve_input(filename):
         if strategy_name == 'hybrid':
             from src.strategy.hybridStrategy import HybridStrategy
             strategy = HybridStrategy(time_limit)
+        elif strategy_name == 'greedy':
+            from src.strategy.greedyStrategy import GreedyStrategy
+            strategy = GreedyStrategy()
         else:
             from src.strategy.orStrategy import OrStrategy
             strategy = OrStrategy(time_limit)

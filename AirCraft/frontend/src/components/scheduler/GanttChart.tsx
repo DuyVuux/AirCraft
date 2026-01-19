@@ -60,7 +60,7 @@ function GanttChart({
 
     const formatHour = (timestamp: number) => {
         const date = new Date(timestamp);
-        return date.toLocaleTimeString('vi-VN', { hour: '2-digit', minute: '2-digit' });
+        return `${date.getUTCHours().toString().padStart(2, '0')}:${date.getUTCMinutes().toString().padStart(2, '0')}`;
     };
 
     if (scheduledTasks.length === 0) {

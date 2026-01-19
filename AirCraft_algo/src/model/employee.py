@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import List, Dict, Any, Optional
 from src.model.time import TimeWindow
 
@@ -21,7 +21,9 @@ class Employee:
     workingTimes: List[TimeWindow]
     breakDuration: int
     fixedBreakTimes: List[TimeWindow]
-    currentLocation: Optional[str] = None  # locationId only
+    currentLocation: Optional[str] = None
+    taskCapabilities: List[str] = field(default_factory=list)
+    certifications: List[str] = field(default_factory=list)
 
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> 'Employee':
@@ -31,5 +33,8 @@ class Employee:
             currentLocation=data.get('currentLocation'),
             workingTimes=[TimeWindow.from_dict(t) for t in data.get('workingTimes', [])],
             breakDuration=data.get('breakDuration', 0),
-            fixedBreakTimes=[TimeWindow.from_dict(t) for t in data.get('fixedBreakTimes', [])]
+            fixedBreakTimes=[TimeWindow.from_dict(t) for t in data.get('fixedBreakTimes', [])],
+            taskCapabilities=data.get('taskCapabilities', []),
+            certifications=data.get('certifications', [])
         )
+

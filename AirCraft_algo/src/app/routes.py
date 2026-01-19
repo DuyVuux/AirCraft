@@ -11,6 +11,7 @@ from src.utils.output_describer import generate_solution_summary
 import os
 # Import NBPClient to trigger @APIRegistry.register decorator
 import src.service.nbp_client  # noqa: F401
+import src.service.greedy_client  # noqa: F401
 
 api = Blueprint('api', __name__, url_prefix='/api')
 

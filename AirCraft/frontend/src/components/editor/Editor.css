@@ -219,9 +219,14 @@
 }
 
 .editor-task-list-empty {
-  font-size: 0.75rem;
-  color: var(--color-text-muted);
-  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  font-style: italic;
+  text-align: center;
+  padding: 1rem;
+  background: var(--color-surface);
+  border-radius: 0.5rem;
+  border: 1px dashed var(--color-border);
 }
 
 .editor-task-chips {
@@ -350,4 +355,94 @@
 
 .editor-readonly-banner .material-symbols-outlined {
   font-size: 0.875rem;
+}
+
+.draggable-item-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+/* Draggable Panel Styles */
+.draggable-item-content {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.draggable-item-content:hover {
+  border-color: var(--color-primary-light, #38bdf8);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Panel Header (Container) */
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  background: var(--color-surface-hover, #f8fafc);
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--transition-fast);
+}
+
+/* Specific Drag Target (now just Title Wrapper) */
+.drag-handle-target {
+  display: flex;
+  align-items: center;
+  /* Cursor reset to default */
+  cursor: default;
+  user-select: text;
+  padding-right: 1rem;
+  border-radius: var(--radius-md);
+}
+
+/* Remove interactive states */
+.drag-handle-target:hover {
+  background-color: transparent;
+}
+
+.drag-handle-target:active {
+  cursor: default;
+  background-color: transparent;
+}
+
+.drag-handle-icon {
+  color: var(--color-text-muted);
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+}
+
+.drag-handle-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-left: 0.5rem;
+  flex: 1;
+}
+
+/* Enhancing react-grid-layout visualization */
+.editor-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  height: 100%;
+  min-height: 0;
+}
+
+@media (min-width: 1200px) {
+  .editor-layout-grid {
+    grid-template-columns: 3fr 4fr 5fr;
+  }
+}
+
+.react-grid-item.react-grid-placeholder,
+.react-resizable-handle::after {
+  display: none !important;
 }

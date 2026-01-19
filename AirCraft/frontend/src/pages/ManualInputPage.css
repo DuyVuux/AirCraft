@@ -1,15 +1,20 @@
 .manual-input-page {
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .manual-input-tabs {
   display: flex;
   gap: 0.25rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   background-color: var(--color-surface);
   padding: 0.25rem;
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
+  flex-shrink: 0;
 }
 
 .manual-input-tab {
@@ -38,8 +43,27 @@
   background-color: var(--color-primary);
 }
 
+.manual-input-tab-content-wrapper {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
 .manual-input-tabpanel {
-  padding-top: 1rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Ensure the child component takes full height */
+.manual-input-tabpanel>* {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
 }
 
 .manual-input-info-bar {

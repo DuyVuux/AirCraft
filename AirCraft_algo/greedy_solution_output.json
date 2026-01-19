@@ -1,0 +1,52 @@
+{
+  "solution": [],
+  "droppedTasks": [
+    {
+      "aircraftId": "VN19-1",
+      "tasks": [
+        {
+          "taskCode": "DEP-M",
+          "aircraftId": "VN19-1",
+          "requiredCertificates": []
+        },
+        {
+          "taskCode": "DEP-A",
+          "aircraftId": "VN19-1",
+          "requiredCertificates": []
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN416-2",
+      "tasks": [
+        {
+          "taskCode": "DEP-M",
+          "aircraftId": "VN416-2",
+          "requiredCertificates": []
+        },
+        {
+          "taskCode": "DEP-A",
+          "aircraftId": "VN416-2",
+          "requiredCertificates": []
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN7253-3",
+      "tasks": [
+        {
+          "taskCode": "DEP-M",
+          "aircraftId": "VN7253-3",
+          "requiredCertificates": []
+        },
+        {
+          "taskCode": "DEP-A",
+          "aircraftId": "VN7253-3",
+          "requiredCertificates": []
+        }
+      ]
+    }
+  ],
+  "strategy": "GreedyStrategy",
+  "solveTime": 0.006
+}

@@ -177,8 +177,8 @@ export default function EmployeeTab({
     const allSelected = selectedIds.size === filteredEmployees.length && filteredEmployees.length > 0;
 
     return (
-        <>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', height: '100%', overflowY: 'auto', paddingRight: '0.5rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexShrink: 0 }}>
                 <h3 style={{ margin: 0 }}>Quản lý Nhân viên</h3>
                 <div style={{ display: 'flex', gap: '0.5rem' }}>
                     <button
@@ -205,7 +205,7 @@ export default function EmployeeTab({
             </div>
 
             {(!employees.length || editingEmployeeId === 'new' || (editingEmployeeId && editingEmployeeId !== 'new')) && (
-                <div className="layout-form-card" style={{ marginBottom: '1.5rem' }}>
+                <div className="layout-form-card" style={{ marginBottom: '1.5rem', flexShrink: 0 }}>
                     <h3 className="layout-form-card-title">
                         {editingEmployeeId && editingEmployeeId !== 'new' ? `Edit Employee: ${editingEmployeeId}` : 'Add New Employee'}
                     </h3>
@@ -230,8 +230,8 @@ export default function EmployeeTab({
             )}
 
             {employees.length > 0 && !editingEmployeeId && (
-                <div className="layout-form-card" style={{ marginTop: '1.5rem' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                <div className="layout-form-card" style={{ marginTop: '1.5rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexShrink: 0 }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
                             {employees.length > 0 && (
                                 <label style={{
@@ -275,33 +275,37 @@ export default function EmployeeTab({
                         </div>
                     </div>
 
-                    <EmployeeTableFilters
-                        filters={filters}
-                        onFilterChange={updateFilter}
-                        onClearFilters={clearFilters}
-                        hasActiveFilters={hasActiveFilters}
-                        activeFilterCount={activeFilterCount}
-                        filteredCount={filteredCount}
-                        totalCount={totalCount}
-                    />
+                    <div style={{ flexShrink: 0 }}>
+                        <EmployeeTableFilters
+                            filters={filters}
+                            onFilterChange={updateFilter}
+                            onClearFilters={clearFilters}
+                            hasActiveFilters={hasActiveFilters}
+                            activeFilterCount={activeFilterCount}
+                            filteredCount={filteredCount}
+                            totalCount={totalCount}
+                        />
+                    </div>
 
-                    {filteredEmployees.length === 0 ? (
-                        <div style={{ padding: '2rem', textAlign: 'center', color: 'var(--color-text-secondary)', background: 'var(--color-surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border)' }}>
-                            Không tìm thấy nhân viên phù hợp với bộ lọc hiện tại.
-                        </div>
-                    ) : (
-                        filteredEmployees.map((employee) => (
-                            <EmployeeListItem
-                                key={employee.employeeId}
-                                employee={employee}
-                                isSelected={selectedIds.has(employee.employeeId)}
-                                onToggleSelect={() => handleToggleSelect(employee.employeeId)}
-                                onEdit={() => setEditingEmployeeId(employee.employeeId)}
-                                onDelete={() => handleEmployeeDelete(employee.employeeId)}
-                            />
-                        )))}
+                    <div style={{ flex: 1, overflowY: 'auto' }}>
+                        {filteredEmployees.length === 0 ? (
+                            <div style={{ padding: '2rem', textAlign: 'center', color: 'var(--color-text-secondary)', background: 'var(--color-surface)', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border)' }}>
+                                Không tìm thấy nhân viên phù hợp với bộ lọc hiện tại.
+                            </div>
+                        ) : (
+                            filteredEmployees.map((employee) => (
+                                <EmployeeListItem
+                                    key={employee.employeeId}
+                                    employee={employee}
+                                    isSelected={selectedIds.has(employee.employeeId)}
+                                    onToggleSelect={() => handleToggleSelect(employee.employeeId)}
+                                    onEdit={() => setEditingEmployeeId(employee.employeeId)}
+                                    onDelete={() => handleEmployeeDelete(employee.employeeId)}
+                                />
+                            )))}
+                    </div>
                 </div>
             )}
-        </>
+        </div>
     );
 }

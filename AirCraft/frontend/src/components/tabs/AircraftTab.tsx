@@ -1,10 +1,17 @@
-import { useRef, useState, useMemo } from 'react';
+import { useRef, useState, useEffect, useMemo } from 'react';
 import type { TabProps, TabConfig } from './types';
 import type { Aircraft } from '@/types/aircraft';
 import { AIRCRAFT_TYPES } from '@/types/aircraft';
-import AircraftEditor from '@/components/editor/AircraftEditor';
+import { DEFAULT_GPS } from '@/utils/constants';
+
+// Components
 import AircraftList from '@/components/editor/AircraftList';
+import AircraftInfoForm from '@/components/editor/AircraftInfoForm';
+import AircraftStandMap from '@/components/editor/AircraftStandMap';
 import { downloadTemplate } from '@/services/csvParser';
+
+// Layout - Static Grid used instead of RGL
+import '@/components/editor/Editor.css';
 
 export const tabConfig: TabConfig = {
     id: 'aircrafts',
@@ -12,6 +19,25 @@ export const tabConfig: TabConfig = {
     order: 3,
 };
 
+// --- Defaults ---
+const DEFAULT_AIRCRAFT_LOCATION = {
+    locationId: '',
+    locationType: 'GATE' as const,
+    longitude: DEFAULT_GPS.longitude,
+    latitude: DEFAULT_GPS.latitude,
+};
+
+const DEFAULT_AIRCRAFT: Aircraft = {
+    aircraftId: '',
+    registrationNumber: '',
+    flightNumber: '',
+    aType: { id: 'A320', desc: 'Airbus A320' },
+    location: DEFAULT_AIRCRAFT_LOCATION,
+    timeWindow: { start: '', end: '' },
+    requiredTasks: [],
+};
+
+// --- Helper: CSV Parser ---
 function parseFlightsCSV(text: string): { aircrafts: Aircraft[]; errors: string[] } {
     const lines = text.split('\n').filter(line => line.trim());
     if (lines.length < 2) return { aircrafts: [], errors: ['File rỗng'] };
@@ -49,10 +75,14 @@ function parseFlightsCSV(text: string): { aircrafts: Aircraft[]; errors: string[
             requiredTasks: [{ taskCode: 'DEP-M' }, { taskCode: 'DEP-A' }],
         });
     }
-
     return { aircrafts, errors: [] };
 }
 
+// --- Layout Configuration ---
+// Removed RGL constants
+
+
+// --- Main Components ---
 export default function AircraftTab({
     aircrafts,
     setAircrafts,
@@ -68,6 +98,32 @@ export default function AircraftTab({
     const fileInputRef = useRef<HTMLInputElement>(null);
     const [importing, setImporting] = useState(false);
 
+    // --- State: Draft Aircraft ---
+    const [draftAircraft, setDraftAircraft] = useState<Aircraft>(DEFAULT_AIRCRAFT);
+
+    // When editing ID changes, update the draft
+    useEffect(() => {
+        if (editingAircraftId) {
+            const found = aircrafts.find(a => a.aircraftId === editingAircraftId);
+            if (found) {
+                setDraftAircraft(found);
+            } else {
+                setDraftAircraft(DEFAULT_AIRCRAFT);
+            }
+        } else {
+            setDraftAircraft(DEFAULT_AIRCRAFT);
+        }
+    }, [editingAircraftId, aircrafts]);
+
+    const handleFieldChange = (field: keyof Aircraft, value: any) => {
+        setDraftAircraft(prev => ({ ...prev, [field]: value }));
+    };
+
+    const handleSave = () => {
+        handleAircraftSave(draftAircraft);
+    };
+
+    // --- Stats ---
     const standStatus = useMemo(() => {
         const occupiedLocationIds = new Set(
             aircrafts
@@ -82,21 +138,19 @@ export default function AircraftTab({
         return { stands, occupied, available, occupiedLocationIds };
     }, [aircrafts, mapNodes]);
 
+    // --- Handlers ---
     const handleImportCSV = async (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
         if (!file) return;
-
         setImporting(true);
         try {
             const text = await file.text();
             const result = parseFlightsCSV(text);
-
             if (result.errors.length > 0) {
                 alert(`Lỗi:\n${result.errors.join('\n')}`);
             } else {
                 alert(`✅ Import thành công ${result.aircrafts.length} chuyến bay!`);
             }
-
             const existingIds = new Set(aircrafts.map(a => a.aircraftId));
             const newAircrafts = result.aircrafts.filter(a => !existingIds.has(a.aircraftId));
             setAircrafts([...aircrafts, ...newAircrafts]);
@@ -122,8 +176,11 @@ export default function AircraftTab({
         downloadTemplate('aircrafts_export.csv', headers, rows);
     };
 
+    // --- Main Render ---
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', height: 'calc(100vh - 200px)' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', height: 'calc(100vh - 140px)' }}>
+
+            {/* Header / Stats Bar */}
             <div style={{
                 display: 'flex',
                 gap: '1rem',
@@ -131,92 +188,108 @@ export default function AircraftTab({
                 background: 'var(--color-surface-elevated, #1e293b)',
                 borderRadius: '0.5rem',
                 flexWrap: 'wrap',
+                flexShrink: 0,
             }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <span style={{ fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}>Tổng bãi đỗ:</span>
                     <span style={{ fontWeight: 600 }}>{standStatus.stands.length}</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <span style={{
-                        width: '12px', height: '12px',
-                        borderRadius: '50%',
-                        background: 'var(--color-success)',
-                    }} />
+                    <span style={{ width: '12px', height: '12px', borderRadius: '50%', background: 'var(--color-success)' }} />
                     <span style={{ fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}>Trống:</span>
                     <span className="text-success" style={{ fontWeight: 600 }}>{standStatus.available.length}</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <span style={{
-                        width: '12px', height: '12px',
-                        borderRadius: '50%',
-                        background: 'var(--color-danger)',
-                    }} />
+                    <span style={{ width: '12px', height: '12px', borderRadius: '50%', background: 'var(--color-danger)' }} />
                     <span style={{ fontSize: '0.875rem', color: 'var(--color-text-secondary)' }}>Có máy bay:</span>
                     <span className="text-danger" style={{ fontWeight: 600 }}>{standStatus.occupied.length}</span>
                 </div>
                 <div style={{ marginLeft: 'auto', display: 'flex', gap: '0.5rem' }}>
-                    <button
-                        className="dataset-btn"
-                        onClick={handleDownload}
-                        disabled={aircrafts.length === 0}
-                        style={{
-                            opacity: aircrafts.length === 0 ? 0.5 : 1,
-                            cursor: aircrafts.length === 0 ? 'not-allowed' : 'pointer'
-                        }}
-                    >
-                        <span className="material-symbols-outlined">download</span>
-                        Download CSV ({aircrafts.length})
+                    <button className="dataset-btn" onClick={handleDownload} disabled={aircrafts.length === 0} style={{ opacity: aircrafts.length === 0 ? 0.5 : 1 }}>
+                        <span className="material-symbols-outlined">download</span> Download CSV ({aircrafts.length})
                     </button>
-                    <input
-                        ref={fileInputRef}
-                        type="file"
-                        accept=".csv"
-                        onChange={handleImportCSV}
-                        style={{ display: 'none' }}
-                    />
-                    <button
-                        className="dataset-btn"
-                        onClick={() => fileInputRef.current?.click()}
-                        disabled={importing}
-                    >
-                        <span className="material-symbols-outlined">upload_file</span>
-                        {importing ? 'Importing...' : 'Import Flights'}
+                    <input ref={fileInputRef} type="file" accept=".csv" onChange={handleImportCSV} style={{ display: 'none' }} />
+                    <button className="dataset-btn" onClick={() => fileInputRef.current?.click()} disabled={importing}>
+                        <span className="material-symbols-outlined">upload_file</span> {importing ? 'Importing...' : 'Import Flights'}
                     </button>
                 </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '300px 1fr', gap: '0.75rem', flex: 1, minHeight: 0 }}>
-                <div style={{ height: '100%', overflowY: 'auto', paddingRight: '0.5rem' }}>
-                    <button
-                        className="dataset-btn primary"
-                        onClick={() => setEditingAircraftId(null)}
-                        style={{ marginBottom: '1rem', width: '100%' }}
-                    >
-                        <span className="material-symbols-outlined">add</span>
-                        Add New Aircraft
-                    </button>
-                    <AircraftList
-                        aircrafts={aircrafts}
-                        onEdit={(a) => setEditingAircraftId(a.aircraftId)}
-                        onDelete={handleAircraftDelete}
-                        onBulkDelete={handleAircraftBulkDelete}
-                        selectedId={editingAircraftId}
-                    />
-                </div>
+            {/* Fixed Layout Area - No More Draggable */}
+            <div style={{ flex: 1, minHeight: 0, overflow: 'hidden' }}>
+                <div className="editor-layout-grid">
+                    {/* Item 1: List */}
+                    <div className="draggable-item-content">
+                        <div className="panel-header">
+                            <div className="drag-handle-target">
+                                <div className="drag-handle-icon">
+                                    <span className="material-symbols-outlined">list</span>
+                                </div>
+                                <span className="drag-handle-title">Danh sách tàu bay</span>
+                            </div>
+                            {/* Add New Button in Header */}
+                            <button
+                                className="dataset-btn primary"
+                                onClick={() => setEditingAircraftId(null)}
+                                style={{ padding: '0.2rem 0.5rem', fontSize: '0.75rem', marginLeft: 'auto' }}
+                            >
+                                + Add New
+                            </button>
+                        </div>
+                        <div style={{ flex: 1, overflowY: 'auto', padding: '0.5rem' }}>
+                            <AircraftList
+                                aircrafts={aircrafts}
+                                onEdit={(a) => setEditingAircraftId(a.aircraftId)}
+                                onDelete={handleAircraftDelete}
+                                onBulkDelete={handleAircraftBulkDelete}
+                                selectedId={editingAircraftId}
+                            />
+                        </div>
+                    </div>
 
-                <div style={{ height: '100%', overflowY: 'auto' }}>
-                    <AircraftEditor
-                        key={editingAircraftId || 'new'}
-                        initialData={editingAircraftId ? aircrafts.find(a => a.aircraftId === editingAircraftId) : null}
-                        isEditing={!!editingAircraftId}
-                        onSave={handleAircraftSave}
-                        onDelete={handleAircraftDelete}
-                        onStartEdit={() => { }}
-                        availableTaskCodes={availableTaskCodes}
-                        taskMap={taskMap}
-                        allAircrafts={aircrafts}
-                        mapNodes={mapNodes}
-                    />
+                    {/* Item 2: Info Form */}
+                    <div className="draggable-item-content">
+                        <div className="panel-header">
+                            <div className="drag-handle-target">
+                                <div className="drag-handle-icon">
+                                    <span className="material-symbols-outlined">edit_note</span>
+                                </div>
+                                <span className="drag-handle-title">Thêm mới / Chỉnh sửa</span>
+                            </div>
+                        </div>
+                        <div style={{ flex: 1, overflowY: 'auto', padding: '0.5rem' }}>
+                            <AircraftInfoForm
+                                aircraft={draftAircraft}
+                                onChange={handleFieldChange}
+                                onSave={handleSave}
+                                onStartEdit={() => { }}
+                                isReadOnly={!!editingAircraftId && false}
+                                availableTaskCodes={availableTaskCodes}
+                                taskMap={taskMap}
+                                initialData={editingAircraftId ? aircrafts.find(a => a.aircraftId === editingAircraftId) : null}
+                            />
+                        </div>
+                    </div>
+
+                    {/* Item 3: Map */}
+                    <div className="draggable-item-content">
+                        <div className="panel-header">
+                            <div className="drag-handle-target">
+                                <div className="drag-handle-icon">
+                                    <span className="material-symbols-outlined">map</span>
+                                </div>
+                                <span className="drag-handle-title">Vị trí đỗ</span>
+                            </div>
+                        </div>
+                        <div style={{ flex: 1, overflow: 'hidden', padding: '0.5rem' }}>
+                            <AircraftStandMap
+                                aircraft={draftAircraft}
+                                onChange={handleFieldChange}
+                                mapNodes={mapNodes}
+                                allAircrafts={aircrafts}
+                            />
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

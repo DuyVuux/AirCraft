@@ -141,11 +141,13 @@ function ManualInputPage() {
             </button>
           ))}
         </div>
-        {TAB_REGISTRY.map((tab, index) => (
-          <TabPanel key={tab.id} value={value} index={index}>
-            <tab.Component {...tabProps} />
-          </TabPanel>
-        ))}
+        <div className="manual-input-tab-content-wrapper">
+          {TAB_REGISTRY.map((tab, index) => (
+            <TabPanel key={tab.id} value={value} index={index}>
+              <tab.Component {...tabProps} />
+            </TabPanel>
+          ))}
+        </div>
       </div>
     </Layout>
   );
