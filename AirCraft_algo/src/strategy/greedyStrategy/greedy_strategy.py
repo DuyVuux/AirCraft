@@ -190,7 +190,7 @@ class GreedyStrategy(IStrategy):
     
     def _can_employee_do_task(self, emp_state: EmployeeState, task: TaskItem) -> bool:
         """Check if employee has required capabilities and certificates."""
-        if task.task_code not in emp_state.capabilities:
+        if emp_state.capabilities and task.task_code not in emp_state.capabilities:
             return False
         
         if task.required_certificates:
@@ -208,21 +208,19 @@ class GreedyStrategy(IStrategy):
         
         earliest_arrival = emp_state.available_time + travel_time
         
-        # KEY CHANGE: Start time limited by Aircraft Ready Time (Sequential)
         aircraft_ready = self._aircraft_ready_times.get(task.aircraft_id, 0)
-        
-        start_time = max(earliest_arrival, task.earliest_start, aircraft_ready)
-        
+        min_start_time = max(earliest_arrival, task.earliest_start, aircraft_ready)
         duration = self._get_task_duration(task.task_code, emp_state.role, task.aircraft_id)
-        end_time = start_time + duration
         
         for (win_start, win_end) in emp_state.working_windows:
-            if start_time >= win_start and end_time <= win_end:
-                if end_time <= task.deadline:
-                    return start_time
+            # Shift start time if window starts later than min_start_time
+            actual_start = max(min_start_time, win_start)
+            actual_end = actual_start + duration
+            
+            if actual_end <= win_end:
+                if actual_end <= task.deadline:
+                    return actual_start
         
-        # Try next windows? For simplicity, just check current best fit
-        # Improvements: Iterate all windows
         return None
     
     def _try_assign_task(self, task: TaskItem, solution: Solution) -> bool:

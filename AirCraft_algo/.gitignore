@@ -98,3 +98,7 @@ results/
 
 # Local config
 config.local.json
+
+
+.agent/
+.agent/rules/

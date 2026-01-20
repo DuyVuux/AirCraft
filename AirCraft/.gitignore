@@ -71,3 +71,6 @@ aircraft-web/backend/.pytest_cache/
 # Aircraft/result/
 
 quy-nhon-log/
+
+.agent
+.agent/rules

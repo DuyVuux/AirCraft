@@ -1,0 +1,1811 @@
+{
+  "trackingId": "PLAN-2024-12-05-001",
+  "aircrafts": [
+    {
+      "aircraftId": "VN-101",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-02",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T18:07:00Z",
+        "end": "2026-01-02T21:07:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ]
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ]
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-102",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-03",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T18:20:00Z",
+        "end": "2026-01-02T21:20:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ]
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ]
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-103",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-04",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T18:30:00Z",
+        "end": "2026-01-02T21:30:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ]
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ]
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-104",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-05",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T18:44:00Z",
+        "end": "2026-01-02T21:44:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ]
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ]
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-105",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-06",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T18:55:00Z",
+        "end": "2026-01-02T21:55:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ]
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ]
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-106",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-07",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T19:05:00Z",
+        "end": "2026-01-02T22:05:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ]
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ]
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-107",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-08",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T19:07:00Z",
+        "end": "2026-01-02T22:07:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ]
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ]
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-108",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-09",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T19:21:00Z",
+        "end": "2026-01-02T22:21:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ]
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ]
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-109",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-10",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T19:35:00Z",
+        "end": "2026-01-02T22:35:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ]
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ]
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-110",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-01",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T19:43:00Z",
+        "end": "2026-01-02T22:43:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ]
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ]
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-111",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-02",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T19:47:00Z",
+        "end": "2026-01-02T22:47:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ]
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ]
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-112",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-03",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T19:53:00Z",
+        "end": "2026-01-02T22:53:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ]
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ]
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-113",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-04",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T19:56:00Z",
+        "end": "2026-01-02T22:56:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ]
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ]
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-114",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-05",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T20:11:00Z",
+        "end": "2026-01-02T23:11:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ]
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ]
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-115",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-06",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T20:24:00Z",
+        "end": "2026-01-02T23:24:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ]
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ]
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-116",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-07",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T20:29:00Z",
+        "end": "2026-01-02T23:29:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ]
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ]
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-117",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-08",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T20:40:00Z",
+        "end": "2026-01-02T23:40:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ]
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ]
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-118",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-09",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T20:54:00Z",
+        "end": "2026-01-02T23:54:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ]
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ]
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-119",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-10",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T20:55:00Z",
+        "end": "2026-01-02T23:55:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ]
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ]
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-120",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-01",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T21:00:00Z",
+        "end": "2026-01-03T00:00:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ]
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ]
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ]
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ]
+        }
+      ]
+    }
+  ],
+  "hubs": [
+    {
+      "hubId": "HUB_01",
+      "location": {
+        "locationId": "REST_AREA_A",
+        "locationType": "HUB",
+        "longitude": 106.665,
+        "latitude": 10.82
+      }
+    }
+  ],
+  "employees": [
+    {
+      "employeeId": "EMP_MECHANIC_1",
+      "eType": {
+        "role": "MECHANIC",
+        "certificates": [
+          "CERT_MECH"
+        ]
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "EMP_MECHANIC_2",
+      "eType": {
+        "role": "MECHANIC",
+        "certificates": [
+          "CERT_MECH"
+        ]
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "EMP_MECHANIC_3",
+      "eType": {
+        "role": "MECHANIC",
+        "certificates": [
+          "CERT_MECH"
+        ]
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "EMP_MECHANIC_4",
+      "eType": {
+        "role": "MECHANIC",
+        "certificates": [
+          "CERT_MECH"
+        ]
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "EMP_MECHANIC_5",
+      "eType": {
+        "role": "MECHANIC",
+        "certificates": [
+          "CERT_MECH"
+        ]
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "EMP_MECHANIC_6",
+      "eType": {
+        "role": "MECHANIC",
+        "certificates": [
+          "CERT_MECH"
+        ]
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "EMP_GROUND_HANDLING_1",
+      "eType": {
+        "role": "GROUND_HANDLING",
+        "certificates": [
+          "CERT_GND"
+        ]
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "EMP_GROUND_HANDLING_2",
+      "eType": {
+        "role": "GROUND_HANDLING",
+        "certificates": [
+          "CERT_GND"
+        ]
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "EMP_GROUND_HANDLING_3",
+      "eType": {
+        "role": "GROUND_HANDLING",
+        "certificates": [
+          "CERT_GND"
+        ]
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "EMP_GROUND_HANDLING_4",
+      "eType": {
+        "role": "GROUND_HANDLING",
+        "certificates": [
+          "CERT_GND"
+        ]
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "EMP_GROUND_HANDLING_5",
+      "eType": {
+        "role": "GROUND_HANDLING",
+        "certificates": [
+          "CERT_GND"
+        ]
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "EMP_GROUND_HANDLING_6",
+      "eType": {
+        "role": "GROUND_HANDLING",
+        "certificates": [
+          "CERT_GND"
+        ]
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "EMP_GROUND_HANDLING_7",
+      "eType": {
+        "role": "GROUND_HANDLING",
+        "certificates": [
+          "CERT_GND"
+        ]
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "EMP_GROUND_HANDLING_8",
+      "eType": {
+        "role": "GROUND_HANDLING",
+        "certificates": [
+          "CERT_GND"
+        ]
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "EMP_CLEANER_1",
+      "eType": {
+        "role": "CLEANER",
+        "certificates": [
+          "CERT_CLN"
+        ]
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "EMP_CLEANER_2",
+      "eType": {
+        "role": "CLEANER",
+        "certificates": [
+          "CERT_CLN"
+        ]
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "EMP_CLEANER_3",
+      "eType": {
+        "role": "CLEANER",
+        "certificates": [
+          "CERT_CLN"
+        ]
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "EMP_CLEANER_4",
+      "eType": {
+        "role": "CLEANER",
+        "certificates": [
+          "CERT_CLN"
+        ]
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "EMP_CLEANER_5",
+      "eType": {
+        "role": "CLEANER",
+        "certificates": [
+          "CERT_CLN"
+        ]
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "EMP_FUEL_AGENT_1",
+      "eType": {
+        "role": "FUEL_AGENT",
+        "certificates": [
+          "CERT_FUEL"
+        ]
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "EMP_FUEL_AGENT_2",
+      "eType": {
+        "role": "FUEL_AGENT",
+        "certificates": [
+          "CERT_FUEL"
+        ]
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    },
+    {
+      "employeeId": "EMP_FUEL_AGENT_3",
+      "eType": {
+        "role": "FUEL_AGENT",
+        "certificates": [
+          "CERT_FUEL"
+        ]
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 0,
+      "fixedBreakTimes": []
+    }
+  ],
+  "busStops": [
+    {
+      "busStopId": "BS_TERMINAL",
+      "bType": {
+        "id": "TERMINAL_STOP",
+        "desc": "Terminal Bus Stop"
+      },
+      "location": {
+        "longitude": 106.6588,
+        "latitude": 10.8185
+      }
+    },
+    {
+      "busStopId": "BS_HANGAR",
+      "bType": {
+        "id": "HANGAR_STOP",
+        "desc": "Hangar Area Bus Stop"
+      },
+      "location": {
+        "longitude": 106.66,
+        "latitude": 10.819
+      }
+    },
+    {
+      "busStopId": "BS_REST_AREA",
+      "bType": {
+        "id": "REST_AREA_STOP",
+        "desc": "Rest Area Bus Stop"
+      },
+      "location": {
+        "longitude": 106.665,
+        "latitude": 10.82
+      }
+    }
+  ],
+  "busRoutes": [
+    {
+      "routeId": "ROUTE_MAIN",
+      "routeName": "Main Airport Loop",
+      "stops": [
+        {
+          "busStopId": "BS_TERMINAL",
+          "arrivalTime": 0,
+          "departureTime": 120,
+          "stopDuration": 120
+        },
+        {
+          "busStopId": "BS_HANGAR",
+          "arrivalTime": 480,
+          "departureTime": 600,
+          "stopDuration": 120
+        },
+        {
+          "busStopId": "BS_REST_AREA",
+          "arrivalTime": 960,
+          "departureTime": 1080,
+          "stopDuration": 120
+        },
+        {
+          "busStopId": "BS_TERMINAL",
+          "arrivalTime": 1440,
+          "departureTime": null,
+          "stopDuration": 0
+        }
+      ],
+      "cycleTime": 1440,
+      "frequency": 1800,
+      "operatingHours": {
+        "start": "2024-12-05T06:00:00Z",
+        "end": "2024-12-05T18:00:00Z"
+      }
+    }
+  ],
+  "matrixConfigs": {
+    "maxWalkDistance": 1200,
+    "distanceMatrix": [
+      {
+        "srcCode": "GATE-01",
+        "destCode": "HANGAR-02",
+        "travelTime": 900
+      },
+      {
+        "srcCode": "GATE-01",
+        "destCode": "APRON-03",
+        "travelTime": 1200
+      },
+      {
+        "srcCode": "GATE-01",
+        "destCode": "REST_AREA_A",
+        "travelTime": 600
+      },
+      {
+        "srcCode": "HANGAR-02",
+        "destCode": "GATE-01",
+        "travelTime": 900
+      },
+      {
+        "srcCode": "HANGAR-02",
+        "destCode": "APRON-03",
+        "travelTime": 600
+      },
+      {
+        "srcCode": "HANGAR-02",
+        "destCode": "REST_AREA_A",
+        "travelTime": 1500
+      },
+      {
+        "srcCode": "APRON-03",
+        "destCode": "GATE-01",
+        "travelTime": 1200
+      },
+      {
+        "srcCode": "APRON-03",
+        "destCode": "HANGAR-02",
+        "travelTime": 600
+      },
+      {
+        "srcCode": "APRON-03",
+        "destCode": "REST_AREA_A",
+        "travelTime": 1800
+      },
+      {
+        "srcCode": "REST_AREA_A",
+        "destCode": "GATE-01",
+        "travelTime": 600
+      },
+      {
+        "srcCode": "REST_AREA_A",
+        "destCode": "HANGAR-02",
+        "travelTime": 1500
+      },
+      {
+        "srcCode": "REST_AREA_A",
+        "destCode": "APRON-03",
+        "travelTime": 1800
+      },
+      {
+        "srcCode": "GATE-01",
+        "destCode": "GATE-01",
+        "travelTime": 0
+      },
+      {
+        "srcCode": "HANGAR-02",
+        "destCode": "HANGAR-02",
+        "travelTime": 0
+      },
+      {
+        "srcCode": "APRON-03",
+        "destCode": "APRON-03",
+        "travelTime": 0
+      },
+      {
+        "srcCode": "REST_AREA_A",
+        "destCode": "REST_AREA_A",
+        "travelTime": 0
+      }
+    ],
+    "busTransitMatrix": [
+      {
+        "fromBusStopId": "BS_TERMINAL",
+        "toBusStopId": "BS_HANGAR",
+        "routeId": "ROUTE_MAIN",
+        "transitTime": 360,
+        "averageWaitTime": 900
+      },
+      {
+        "fromBusStopId": "BS_HANGAR",
+        "toBusStopId": "BS_REST_AREA",
+        "routeId": "ROUTE_MAIN",
+        "transitTime": 360,
+        "averageWaitTime": 900
+      },
+      {
+        "fromBusStopId": "BS_REST_AREA",
+        "toBusStopId": "BS_TERMINAL",
+        "routeId": "ROUTE_MAIN",
+        "transitTime": 360,
+        "averageWaitTime": 900
+      },
+      {
+        "fromBusStopId": "BS_TERMINAL",
+        "toBusStopId": "BS_REST_AREA",
+        "routeId": "ROUTE_MAIN",
+        "transitTime": 840,
+        "averageWaitTime": 900
+      },
+      {
+        "fromBusStopId": "BS_HANGAR",
+        "toBusStopId": "BS_TERMINAL",
+        "routeId": "ROUTE_MAIN",
+        "transitTime": 840,
+        "averageWaitTime": 900
+      },
+      {
+        "fromBusStopId": "BS_REST_AREA",
+        "toBusStopId": "BS_HANGAR",
+        "routeId": "ROUTE_MAIN",
+        "transitTime": 840,
+        "averageWaitTime": 900
+      }
+    ],
+    "walkingDistanceFromLocationToBusStop": [
+      {
+        "locationId": "GATE-01",
+        "busStopId": "BS_TERMINAL",
+        "walkTime": 120
+      },
+      {
+        "locationId": "HANGAR-02",
+        "busStopId": "BS_HANGAR",
+        "walkTime": 90
+      },
+      {
+        "locationId": "REST_AREA_A",
+        "busStopId": "BS_REST_AREA",
+        "walkTime": 60
+      }
+    ],
+    "timeMatrix": [
+      {
+        "taskCode": "ARR-M",
+        "role": "MECHANIC",
+        "certificates": [
+          "CERT_MECH"
+        ],
+        "aircraftId": "ANY",
+        "timeProcess": 1800
+      },
+      {
+        "taskCode": "UNLOAD",
+        "role": "GROUND_HANDLING",
+        "certificates": [
+          "CERT_GND"
+        ],
+        "aircraftId": "ANY",
+        "timeProcess": 2700
+      },
+      {
+        "taskCode": "CLEAN",
+        "role": "CLEANER",
+        "certificates": [
+          "CERT_CLN"
+        ],
+        "aircraftId": "ANY",
+        "timeProcess": 2400
+      },
+      {
+        "taskCode": "FUEL",
+        "role": "FUEL_AGENT",
+        "certificates": [
+          "CERT_FUEL"
+        ],
+        "aircraftId": "ANY",
+        "timeProcess": 1800
+      },
+      {
+        "taskCode": "LOAD",
+        "role": "GROUND_HANDLING",
+        "certificates": [
+          "CERT_GND"
+        ],
+        "aircraftId": "ANY",
+        "timeProcess": 2700
+      },
+      {
+        "taskCode": "DEP-M",
+        "role": "MECHANIC",
+        "certificates": [
+          "CERT_MECH"
+        ],
+        "aircraftId": "ANY",
+        "timeProcess": 1800
+      }
+    ]
+  }
+}

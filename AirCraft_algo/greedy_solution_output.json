@@ -1,52 +1,115 @@
 {
-  "solution": [],
-  "droppedTasks": [
+  "solution": [
     {
-      "aircraftId": "VN19-1",
-      "tasks": [
+      "employeeId": "VAE03472",
+      "certificates": [],
+      "assignment": [
         {
-          "taskCode": "DEP-M",
-          "aircraftId": "VN19-1",
-          "requiredCertificates": []
-        },
-        {
-          "taskCode": "DEP-A",
-          "aircraftId": "VN19-1",
-          "requiredCertificates": []
+          "task": {
+            "taskCode": "DEP-M",
+            "aircraftId": "VN19-1",
+            "requiredCertificates": []
+          },
+          "locationId": "node-1767274394450-mb9m5d4pi",
+          "startTime": "2026-01-02T18:00:00Z",
+          "endTime": "2026-01-02T18:30:00Z"
         }
-      ]
+      ],
+      "travels": [],
+      "breakTimes": []
     },
     {
-      "aircraftId": "VN416-2",
-      "tasks": [
+      "employeeId": "VAE02320",
+      "certificates": [],
+      "assignment": [
         {
-          "taskCode": "DEP-M",
-          "aircraftId": "VN416-2",
-          "requiredCertificates": []
-        },
-        {
-          "taskCode": "DEP-A",
-          "aircraftId": "VN416-2",
-          "requiredCertificates": []
+          "task": {
+            "taskCode": "DEP-A",
+            "aircraftId": "VN19-1",
+            "requiredCertificates": []
+          },
+          "locationId": "node-1767274394450-mb9m5d4pi",
+          "startTime": "2026-01-02T18:30:00Z",
+          "endTime": "2026-01-02T19:00:00Z"
         }
-      ]
+      ],
+      "travels": [],
+      "breakTimes": []
     },
     {
-      "aircraftId": "VN7253-3",
-      "tasks": [
+      "employeeId": "VAE03466",
+      "certificates": [],
+      "assignment": [
         {
-          "taskCode": "DEP-M",
-          "aircraftId": "VN7253-3",
-          "requiredCertificates": []
-        },
-        {
-          "taskCode": "DEP-A",
-          "aircraftId": "VN7253-3",
-          "requiredCertificates": []
+          "task": {
+            "taskCode": "DEP-M",
+            "aircraftId": "VN416-2",
+            "requiredCertificates": []
+          },
+          "locationId": "node-1767274395212-htatpb0i9",
+          "startTime": "2026-01-02T18:00:00Z",
+          "endTime": "2026-01-02T18:30:00Z"
         }
-      ]
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "VAE02244",
+      "certificates": [],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "DEP-A",
+            "aircraftId": "VN416-2",
+            "requiredCertificates": []
+          },
+          "locationId": "node-1767274395212-htatpb0i9",
+          "startTime": "2026-01-02T18:30:00Z",
+          "endTime": "2026-01-02T19:00:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "VAE02802",
+      "certificates": [],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "DEP-M",
+            "aircraftId": "VN7253-3",
+            "requiredCertificates": []
+          },
+          "locationId": "node-1767274393712-lorlrbtkw",
+          "startTime": "2026-01-02T18:01:00Z",
+          "endTime": "2026-01-02T18:31:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "VAE00714",
+      "certificates": [],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "DEP-A",
+            "aircraftId": "VN7253-3",
+            "requiredCertificates": []
+          },
+          "locationId": "node-1767274393712-lorlrbtkw",
+          "startTime": "2026-01-02T18:31:00Z",
+          "endTime": "2026-01-02T19:01:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
     }
   ],
+  "droppedTasks": [],
   "strategy": "GreedyStrategy",
-  "solveTime": 0.006
+  "solveTime": 0.008
 }

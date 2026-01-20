@@ -89,7 +89,7 @@ function InputSummaryTab({ aircrafts, employees }: InputSummaryTabProps) {
                                 {aircrafts.map((ac) => (
                                     <tr key={ac.aircraftId} style={{ borderBottom: '1px solid var(--color-border)' }}>
                                         <td style={{ padding: '0.75rem', fontWeight: 500 }}>{ac.aircraftId}</td>
-                                        <td style={{ padding: '0.75rem' }}>{ac.aircraftType || 'N/A'}</td>
+                                        <td style={{ padding: '0.75rem' }}>{ac.aType?.desc || 'N/A'}</td>
                                         <td style={{ padding: '0.75rem' }}>{ac.location?.locationId || 'Chưa gán'}</td>
                                         <td style={{ padding: '0.75rem', fontSize: '0.75rem' }}>
                                             {ac.timeWindow ? (

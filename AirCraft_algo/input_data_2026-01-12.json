@@ -15,8 +15,8 @@
         "latitude": 21.21476464103058
       },
       "timeWindow": {
-        "start": "2022-01-31 00:00:00",
-        "end": "2022-01-30 18:00:00"
+        "start": "2026-01-02T18:00:00Z",
+        "end": "2026-01-03T00:00:00Z"
       },
       "requiredTasks": [
         {
@@ -41,8 +41,8 @@
         "latitude": 21.214254544275885
       },
       "timeWindow": {
-        "start": "2022-01-31 00:00:00",
-        "end": "2022-01-30 18:00:00"
+        "start": "2026-01-02T18:00:00Z",
+        "end": "2026-01-03T00:00:00Z"
       },
       "requiredTasks": [
         {
@@ -67,8 +67,8 @@
         "latitude": 21.21528973878966
       },
       "timeWindow": {
-        "start": "2022-01-31 00:01:00",
-        "end": "2022-01-30 18:01:00"
+        "start": "2026-01-02T18:01:00Z",
+        "end": "2026-01-03T00:01:00Z"
       },
       "requiredTasks": [
         {
@@ -84,7 +84,7 @@
   "employees": [
     {
       "employeeId": "VAE03726",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -102,7 +102,7 @@
     },
     {
       "employeeId": "VAE02323",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -120,7 +120,7 @@
     },
     {
       "employeeId": "VAE02320",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -139,7 +139,7 @@
     },
     {
       "employeeId": "VAE02244",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -159,7 +159,7 @@
     },
     {
       "employeeId": "VAE02141",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -177,7 +177,7 @@
     },
     {
       "employeeId": "VAE02021",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -195,7 +195,7 @@
     },
     {
       "employeeId": "VAE01466",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -213,7 +213,7 @@
     },
     {
       "employeeId": "VAE01374",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -231,7 +231,7 @@
     },
     {
       "employeeId": "VAE01368",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -249,7 +249,7 @@
     },
     {
       "employeeId": "VAE02363",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -267,7 +267,7 @@
     },
     {
       "employeeId": "VAE01231",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -285,7 +285,7 @@
     },
     {
       "employeeId": "VAE01218",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -303,7 +303,7 @@
     },
     {
       "employeeId": "VAE01130",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -321,7 +321,7 @@
     },
     {
       "employeeId": "VAE01123",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -339,7 +339,7 @@
     },
     {
       "employeeId": "VAE00714",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -359,7 +359,7 @@
     },
     {
       "employeeId": "VAE00561",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -378,7 +378,7 @@
     },
     {
       "employeeId": "VAE00464",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -397,7 +397,7 @@
     },
     {
       "employeeId": "VAE00428",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -417,7 +417,7 @@
     },
     {
       "employeeId": "VAE03483",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -437,7 +437,7 @@
     },
     {
       "employeeId": "VAE01227",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -455,7 +455,7 @@
     },
     {
       "employeeId": "VAE02527",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -474,7 +474,7 @@
     },
     {
       "employeeId": "VAE02097",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -492,7 +492,7 @@
     },
     {
       "employeeId": "VAE02602",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -510,7 +510,7 @@
     },
     {
       "employeeId": "VAE03472",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -531,7 +531,7 @@
     },
     {
       "employeeId": "VAE03466",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -554,7 +554,7 @@
     },
     {
       "employeeId": "VAE03258",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -572,7 +572,7 @@
     },
     {
       "employeeId": "VAE02538",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -594,7 +594,7 @@
     },
     {
       "employeeId": "VAE03080",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -612,7 +612,7 @@
     },
     {
       "employeeId": "VAE03022",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -630,7 +630,7 @@
     },
     {
       "employeeId": "VAE02998",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -648,7 +648,7 @@
     },
     {
       "employeeId": "VAE02995",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -667,7 +667,7 @@
     },
     {
       "employeeId": "VAE02955",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -688,7 +688,7 @@
     },
     {
       "employeeId": "VAE03082",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -706,7 +706,7 @@
     },
     {
       "employeeId": "VAE02926",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -724,7 +724,7 @@
     },
     {
       "employeeId": "VAE02910",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -743,7 +743,7 @@
     },
     {
       "employeeId": "VAE02842",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -761,7 +761,7 @@
     },
     {
       "employeeId": "VAE02841",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -779,7 +779,7 @@
     },
     {
       "employeeId": "VAE02834",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -797,7 +797,7 @@
     },
     {
       "employeeId": "VAE02815",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -816,7 +816,7 @@
     },
     {
       "employeeId": "VAE02802",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -836,7 +836,7 @@
     },
     {
       "employeeId": "VAE02752",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -855,7 +855,7 @@
     },
     {
       "employeeId": "VAE02930",
-      "name": "(Chưa cập nhật)",
+      "name": "(Ch\u01b0a c\u1eadp nh\u1eadt)",
       "eType": {
         "role": "MECHANIC"
       },
@@ -874,8 +874,8 @@
     },
     {
       "employeeId": "VAE00964",
-      "name": "Bạch Văn Chính",
-      "position": "Nhân viên",
+      "name": "Ba\u0323ch V\u0103n Chi\u0301nh",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -903,8 +903,8 @@
     },
     {
       "employeeId": "VAE02705",
-      "name": "Bùi Hoài Nam",
-      "position": "Kỹ sư",
+      "name": "Bu\u0300i Hoa\u0300i Nam",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -923,8 +923,8 @@
     },
     {
       "employeeId": "VAE02694",
-      "name": "Bùi Văn Vũ",
-      "position": "Kỹ Sư",
+      "name": "Bu\u0300i V\u0103n Vu\u0303",
+      "position": "K\u1ef9 S\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -949,8 +949,8 @@
     },
     {
       "employeeId": "VAE00971",
-      "name": "Bùi Đình Hà",
-      "position": "Kỹ sư",
+      "name": "Bu\u0300i \u0110i\u0300nh Ha\u0300",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -973,8 +973,8 @@
     },
     {
       "employeeId": "VAE03503",
-      "name": "Bùi Hải Đăng",
-      "position": "Nhân viên",
+      "name": "B\u00f9i H\u1ea3i \u0110\u0103ng",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -998,8 +998,8 @@
     },
     {
       "employeeId": "VAE03042",
-      "name": "Bùi Mạnh Hà",
-      "position": "Nhân viên",
+      "name": "B\u00f9i M\u1ea1nh H\u00e0",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1025,8 +1025,8 @@
     },
     {
       "employeeId": "VAE03063",
-      "name": "Bùi Thành Tín",
-      "position": "Nhân viên",
+      "name": "B\u00f9i Th\u00e0nh T\u00edn",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1052,8 +1052,8 @@
     },
     {
       "employeeId": "VAE01106",
-      "name": "Cao Khánh Phong",
-      "position": "Nhân viên",
+      "name": "Cao Kh\u00e1nh Phong",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1072,8 +1072,8 @@
     },
     {
       "employeeId": "VAE01352",
-      "name": "Cù Văn Tuấn",
-      "position": "Kỹ Sư",
+      "name": "C\u00f9 V\u0103n Tu\u1ea5n",
+      "position": "K\u1ef9 S\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1098,8 +1098,8 @@
     },
     {
       "employeeId": "VAE02933",
-      "name": "Dương Mạnh Hùng",
-      "position": "Kỹ sư",
+      "name": "D\u01b0\u01a1ng M\u1ea1nh H\u00f9ng",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1118,8 +1118,8 @@
     },
     {
       "employeeId": "VAE01992",
-      "name": "Dương Trọng Cường",
-      "position": "Kỹ sư",
+      "name": "D\u01b0\u01a1ng Tr\u1ecdng C\u01b0\u1eddng",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1134,8 +1134,8 @@
     },
     {
       "employeeId": "VAE01991",
-      "name": "Dương Tuấn Sơn",
-      "position": "Kỹ sư",
+      "name": "D\u01b0\u01a1ng Tu\u1ea5n S\u01a1n",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1162,8 +1162,8 @@
     },
     {
       "employeeId": "VAE00969",
-      "name": "Dương Văn Chung",
-      "position": "Nhân viên",
+      "name": "D\u01b0\u01a1ng V\u0103n Chung",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1188,8 +1188,8 @@
     },
     {
       "employeeId": "VAE00752",
-      "name": "Dương Văn Khiêm",
-      "position": "Nhân viên",
+      "name": "D\u01b0\u01a1ng V\u0103n Khi\u00eam",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1213,8 +1213,8 @@
     },
     {
       "employeeId": "VAE01028",
-      "name": "Dương Văn Ninh",
-      "position": "Nhân viên",
+      "name": "D\u01b0\u01a1ng V\u0103n Ninh",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1240,8 +1240,8 @@
     },
     {
       "employeeId": "VAE00537",
-      "name": "Hà Hồng Huy",
-      "position": "Nhân viên",
+      "name": "Ha\u0300 H\u00f4\u0300ng Huy",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1266,8 +1266,8 @@
     },
     {
       "employeeId": "VAE01299",
-      "name": "Hà Trung Kiên",
-      "position": "Nhân viên",
+      "name": "Ha\u0300 Trung Ki\u00ean",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1292,8 +1292,8 @@
     },
     {
       "employeeId": "VAE02755",
-      "name": "Hà Văn Tài",
-      "position": "Nhân viên",
+      "name": "Ha\u0300 V\u0103n Ta\u0300i",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1318,8 +1318,8 @@
     },
     {
       "employeeId": "VAE01078",
-      "name": "Hoàng Anh",
-      "position": "Nhân viên",
+      "name": "Hoa\u0300ng Anh",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1346,8 +1346,8 @@
     },
     {
       "employeeId": "VAE00865",
-      "name": "Hoàng Ngọc Thưởng",
-      "position": "Đội trưởng",
+      "name": "Hoa\u0300ng Ngo\u0323c Th\u01b0\u01a1\u0309ng",
+      "position": "\u0110\u00f4\u0323i tr\u01b0\u01a1\u0309ng",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1368,8 +1368,8 @@
     },
     {
       "employeeId": "VAE01235",
-      "name": "Đồng Huy Hoàng",
-      "position": "Nhân viên",
+      "name": "\u0110\u1ed3ng Huy Ho\u00e0ng",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1384,8 +1384,8 @@
     },
     {
       "employeeId": "VAE03230",
-      "name": "Hoàng Trần Thắng",
-      "position": "Kỹ sư",
+      "name": "Hoa\u0300ng Tr\u00e2\u0300n Th\u0103\u0301ng",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1407,8 +1407,8 @@
     },
     {
       "employeeId": "VAE03476",
-      "name": "Hoàng Đăng Tiến",
-      "position": "Nhân Viên",
+      "name": "Hoa\u0300ng \u0110\u0103ng Ti\u00ea\u0301n",
+      "position": "Nh\u00e2n Vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1429,8 +1429,8 @@
     },
     {
       "employeeId": "VAE02703",
-      "name": "Hoàng Hữu Hải",
-      "position": "Kỹ sư",
+      "name": "Ho\u00e0ng H\u1eefu H\u1ea3i",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1456,8 +1456,8 @@
     },
     {
       "employeeId": "VAE02443",
-      "name": "Hoàng Minh Hiếu",
-      "position": "Kỹ sư",
+      "name": "Ho\u00e0ng Minh Hi\u1ebfu",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1478,8 +1478,8 @@
     },
     {
       "employeeId": "VAE02669",
-      "name": "Hoàng Minh Tuấn",
-      "position": "Kỹ sư",
+      "name": "Ho\u00e0ng Minh Tu\u1ea5n",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1499,8 +1499,8 @@
     },
     {
       "employeeId": "VAE00903",
-      "name": "Hoàng Nghĩa Trường",
-      "position": "Nhân viên",
+      "name": "Ho\u00e0ng Ngh\u0129a Tr\u01b0\u1eddng",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1521,8 +1521,8 @@
     },
     {
       "employeeId": "VAE00556",
-      "name": "Hoàng Thanh Tùng",
-      "position": "Nhân viên",
+      "name": "Ho\u00e0ng Thanh T\u00f9ng",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1537,8 +1537,8 @@
     },
     {
       "employeeId": "VAE00975",
-      "name": "Hoàng Xuân Trường",
-      "position": "Tổ trưởng",
+      "name": "Ho\u00e0ng Xu\u00e2n Tr\u01b0\u1eddng",
+      "position": "T\u1ed5 tr\u01b0\u1edfng",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1556,8 +1556,8 @@
     },
     {
       "employeeId": "VAE01094",
-      "name": "Hà Hùng Tới",
-      "position": "Nhân viên",
+      "name": "H\u00e0 H\u00f9ng T\u1edbi",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1584,8 +1584,8 @@
     },
     {
       "employeeId": "VAE00898",
-      "name": "Hà Hồng Thành",
-      "position": "Nhân viên",
+      "name": "H\u00e0 H\u1ed3ng Th\u00e0nh",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1600,8 +1600,8 @@
     },
     {
       "employeeId": "VAE03061",
-      "name": "Hà Việt Hùng",
-      "position": "Nhân viên",
+      "name": "H\u00e0 Vi\u1ec7t H\u00f9ng",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1626,8 +1626,8 @@
     },
     {
       "employeeId": "VAE03266",
-      "name": "Hà Xuân Dương",
-      "position": "ĐH1",
+      "name": "H\u00e0 Xu\u00e2n D\u01b0\u01a1ng",
+      "position": "\u0110H1",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1642,8 +1642,8 @@
     },
     {
       "employeeId": "VAE02422",
-      "name": "Hà Đình Trung",
-      "position": "Kỹ sư",
+      "name": "H\u00e0 \u0110\u00ecnh Trung",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1662,8 +1662,8 @@
     },
     {
       "employeeId": "VAE02305",
-      "name": "Hà Đức Hùng",
-      "position": "Nhân viên",
+      "name": "H\u00e0 \u0110\u1ee9c H\u00f9ng",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1684,8 +1684,8 @@
     },
     {
       "employeeId": "VAE02211",
-      "name": "Khuất Quang Huy",
-      "position": "Kỹ Sư",
+      "name": "Khu\u1ea5t Quang Huy",
+      "position": "K\u1ef9 S\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1712,8 +1712,8 @@
     },
     {
       "employeeId": "VAE03043",
-      "name": "Lý Đình Cường",
-      "position": "Nhân viên",
+      "name": "Ly\u0301 \u0110i\u0300nh C\u01b0\u01a1\u0300ng",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1737,8 +1737,8 @@
     },
     {
       "employeeId": "VAE01033",
-      "name": "Lê Anh Dũng",
-      "position": "Nhân Viên",
+      "name": "L\u00ea Anh D\u0169ng",
+      "position": "Nh\u00e2n Vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1763,8 +1763,8 @@
     },
     {
       "employeeId": "VAE00830",
-      "name": "Lê Anh Hào",
-      "position": "ĐH2",
+      "name": "L\u00ea Anh H\u00e0o",
+      "position": "\u0110H2",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1779,8 +1779,8 @@
     },
     {
       "employeeId": "VAE02300",
-      "name": "Lê Anh Sơn",
-      "position": "Nhân viên",
+      "name": "L\u00ea Anh S\u01a1n",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1800,8 +1800,8 @@
     },
     {
       "employeeId": "VAE01020",
-      "name": "Lê Anh Tùng Sơn",
-      "position": "Nhân viên",
+      "name": "L\u00ea Anh Tu\u0300ng S\u01a1n",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1828,8 +1828,8 @@
     },
     {
       "employeeId": "VAE01016",
-      "name": "Lê Anh Tuấn",
-      "position": "Nhân viên",
+      "name": "L\u00ea Anh Tu\u1ea5n",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1844,8 +1844,8 @@
     },
     {
       "employeeId": "VAE02237",
-      "name": "Lê Anh Đức",
-      "position": "Kỹ sư",
+      "name": "L\u00ea Anh \u0110\u1ee9c",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1869,8 +1869,8 @@
     },
     {
       "employeeId": "VAE01086",
-      "name": "Lê AnhTuấn",
-      "position": "Nhân viên",
+      "name": "L\u00ea AnhTu\u1ea5n",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1895,8 +1895,8 @@
     },
     {
       "employeeId": "VAE01041",
-      "name": "Lê Bá Quân",
-      "position": "Nhân Viên",
+      "name": "L\u00ea B\u00e1 Qu\u00e2n",
+      "position": "Nh\u00e2n Vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1921,8 +1921,8 @@
     },
     {
       "employeeId": "VAE00944",
-      "name": "Lê Cao Nam",
-      "position": "Nhân viên",
+      "name": "L\u00ea Cao Nam",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1947,8 +1947,8 @@
     },
     {
       "employeeId": "VAE01325",
-      "name": "Lê Doãn Tuấn",
-      "position": "Nhân viên",
+      "name": "L\u00ea Do\u00e3n Tu\u1ea5n",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1967,8 +1967,8 @@
     },
     {
       "employeeId": "VAE01093",
-      "name": "Lê Hoài Nam",
-      "position": "Đội phó",
+      "name": "L\u00ea Ho\u00e0i Nam",
+      "position": "\u0110\u1ed9i ph\u00f3",
       "eType": {
         "role": "MECHANIC"
       },
@@ -1989,8 +1989,8 @@
     },
     {
       "employeeId": "VAE00498",
-      "name": "Lê Huy Thiệp",
-      "position": "Tổ trưởng",
+      "name": "L\u00ea Huy Thi\u1ec7p",
+      "position": "T\u1ed5 tr\u01b0\u1edfng",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2009,8 +2009,8 @@
     },
     {
       "employeeId": "VAE01019",
-      "name": "Lê Huy Tuấn",
-      "position": "Nhân viên",
+      "name": "L\u00ea Huy Tu\u00e2\u0301n",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2034,8 +2034,8 @@
     },
     {
       "employeeId": "VAE01560",
-      "name": "Lê Hồng Phú",
-      "position": "Đội phó",
+      "name": "L\u00ea H\u1ed3ng Ph\u00fa",
+      "position": "\u0110\u1ed9i ph\u00f3",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2055,8 +2055,8 @@
     },
     {
       "employeeId": "VAE00894",
-      "name": "Lê Kim Hùng",
-      "position": "Nhân viên",
+      "name": "L\u00ea Kim H\u00f9ng",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2071,8 +2071,8 @@
     },
     {
       "employeeId": "VAE01010",
-      "name": "Lê Mạnh Tuân",
-      "position": "Tổ phó",
+      "name": "L\u00ea M\u1ea1nh Tu\u00e2n",
+      "position": "T\u1ed5 ph\u00f3",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2098,8 +2098,8 @@
     },
     {
       "employeeId": "VAE01014",
-      "name": "Lê Ngọc Anh",
-      "position": "Nhân Viên",
+      "name": "L\u00ea Ng\u1ecdc Anh",
+      "position": "Nh\u00e2n Vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2124,8 +2124,8 @@
     },
     {
       "employeeId": "VAE02203",
-      "name": "Lê Thanh Sơn",
-      "position": "Tổ trưởng",
+      "name": "L\u00ea Thanh S\u01a1n",
+      "position": "T\u1ed5 tr\u01b0\u1edfng",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2144,8 +2144,8 @@
     },
     {
       "employeeId": "VAE00900",
-      "name": "Lê Trung Anh",
-      "position": "Đội trưởng",
+      "name": "L\u00ea Trung Anh",
+      "position": "\u0110\u1ed9i tr\u01b0\u1edfng",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2165,8 +2165,8 @@
     },
     {
       "employeeId": "VAE01072",
-      "name": "Lê Trung Dũng",
-      "position": "Đội trưởng",
+      "name": "L\u00ea Trung D\u0169ng",
+      "position": "\u0110\u1ed9i tr\u01b0\u1edfng",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2181,8 +2181,8 @@
     },
     {
       "employeeId": "VAE02922",
-      "name": "Lê Văn Chung",
-      "position": "Kỹ sư",
+      "name": "L\u00ea V\u0103n Chung",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2201,8 +2201,8 @@
     },
     {
       "employeeId": "VAE02121",
-      "name": "Lê Văn Xuân",
-      "position": "Tổ trưởng",
+      "name": "L\u00ea V\u0103n Xu\u00e2n",
+      "position": "T\u1ed5 tr\u01b0\u1edfng",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2228,8 +2228,8 @@
     },
     {
       "employeeId": "VAE01087",
-      "name": "Lê Đình Phong",
-      "position": "Nhân viên",
+      "name": "L\u00ea \u0110\u00ecnh Phong",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2253,8 +2253,8 @@
     },
     {
       "employeeId": "VAE01067",
-      "name": "Lý Thanh Tùng",
-      "position": "Nhân viên",
+      "name": "L\u00fd Thanh T\u00f9ng",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2279,8 +2279,8 @@
     },
     {
       "employeeId": "VAE02264",
-      "name": "Lưu Bằng Phi",
-      "position": "Kỹ Sư",
+      "name": "L\u01b0u B\u0103\u0300ng Phi",
+      "position": "K\u1ef9 S\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2304,8 +2304,8 @@
     },
     {
       "employeeId": "VAE02426",
-      "name": "Lưu Thanh Tú",
-      "position": "Kỹ sư",
+      "name": "L\u01b0u Thanh T\u00fa",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2324,8 +2324,8 @@
     },
     {
       "employeeId": "VAE00488",
-      "name": "Lưu Văn Trang",
-      "position": "Nhân viên",
+      "name": "L\u01b0u V\u0103n Trang",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2346,8 +2346,8 @@
     },
     {
       "employeeId": "VAE02686",
-      "name": "Lưu Đăng Khoa",
-      "position": "Kỹ Sư",
+      "name": "L\u01b0u \u0110\u0103ng Khoa",
+      "position": "K\u1ef9 S\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2373,8 +2373,8 @@
     },
     {
       "employeeId": "VAE00982",
-      "name": "Lưu Đức Tuấn",
-      "position": "Nhân viên",
+      "name": "L\u01b0u \u0110\u01b0\u0301c Tu\u00e2\u0301n",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2396,8 +2396,8 @@
     },
     {
       "employeeId": "VAE00908",
-      "name": "Lại Anh Tuấn",
-      "position": "Kỹ sư",
+      "name": "L\u1ea1i Anh Tu\u1ea5n",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2423,8 +2423,8 @@
     },
     {
       "employeeId": "VAE00457",
-      "name": "Mai Quang Hùng",
-      "position": "Nhân viên",
+      "name": "Mai Quang H\u00f9ng",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2445,7 +2445,7 @@
     },
     {
       "employeeId": "VAE03498",
-      "name": "Mai Trần Bảo Nghi",
+      "name": "Mai Tr\u00e2\u0300n Ba\u0309o Nghi",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2460,8 +2460,8 @@
     },
     {
       "employeeId": "VAE00846",
-      "name": "Nguyễn Anh Tuấn",
-      "position": "Kỹ sư",
+      "name": "Nguy\u00ea\u0303n Anh Tu\u00e2\u0301n",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2480,8 +2480,8 @@
     },
     {
       "employeeId": "VAE02960",
-      "name": "Nguyễn Hoàng Anh",
-      "position": "Kỹ sư",
+      "name": "Nguy\u00ea\u0303n Hoa\u0300ng Anh",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2500,8 +2500,8 @@
     },
     {
       "employeeId": "VAE00536",
-      "name": "Nguyễn Quang Tú",
-      "position": "Nhân viên",
+      "name": "Nguy\u00ea\u0303n Quang Tu\u0301",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2529,8 +2529,8 @@
     },
     {
       "employeeId": "VAE01064",
-      "name": "Nguyễn Sinh Hải Anh",
-      "position": "Nhân Viên",
+      "name": "Nguy\u00ea\u0303n Sinh Ha\u0309i Anh",
+      "position": "Nh\u00e2n Vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2553,8 +2553,8 @@
     },
     {
       "employeeId": "VAE00961",
-      "name": "Nguyễn Sơn Tùng",
-      "position": "Nhân viên",
+      "name": "Nguy\u00ea\u0303n S\u01a1n Tu\u0300ng",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2579,8 +2579,8 @@
     },
     {
       "employeeId": "VAE00730",
-      "name": "Nguyễn Thanh Sơn",
-      "position": "Nhân viên",
+      "name": "Nguy\u00ea\u0303n Thanh S\u01a1n",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2605,8 +2605,8 @@
     },
     {
       "employeeId": "VAE00935",
-      "name": "Nguyễn Tiến Nam",
-      "position": "Đội trưởng",
+      "name": "Nguy\u00ea\u0303n Ti\u00ea\u0301n Nam",
+      "position": "\u0110\u1ed9i tr\u01b0\u1edfng",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2627,8 +2627,8 @@
     },
     {
       "employeeId": "VAE00525",
-      "name": "Nguyễn Tuấn Anh",
-      "position": "Nhân viên",
+      "name": "Nguy\u00ea\u0303n Tu\u00e2\u0301n Anh",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2654,8 +2654,8 @@
     },
     {
       "employeeId": "VAE02085",
-      "name": "Nguyễn Tuấn Sơn",
-      "position": "Kỹ sư",
+      "name": "Nguy\u00ea\u0303n Tu\u00e2\u0301n S\u01a1n",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2681,8 +2681,8 @@
     },
     {
       "employeeId": "VAE00960",
-      "name": "Nguyễn Việt Dũng",
-      "position": "Nhân viên",
+      "name": "Nguy\u00ea\u0303n Vi\u00ea\u0323t Du\u0303ng",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2708,8 +2708,8 @@
     },
     {
       "employeeId": "VAE02963",
-      "name": "Nguyễn Văn Dũng",
-      "position": "Kỹ sư",
+      "name": "Nguy\u00ea\u0303n V\u0103n Du\u0303ng",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2735,8 +2735,8 @@
     },
     {
       "employeeId": "VAE03059",
-      "name": "Nguyễn Văn Hải",
-      "position": "Nhân viên",
+      "name": "Nguy\u00ea\u0303n V\u0103n Ha\u0309i",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2762,8 +2762,8 @@
     },
     {
       "employeeId": "VAE00963",
-      "name": "Nguyễn Văn Khải",
-      "position": "Nhân viên",
+      "name": "Nguy\u00ea\u0303n V\u0103n Kha\u0309i",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2790,8 +2790,8 @@
     },
     {
       "employeeId": "VAE01259",
-      "name": "Nguyễn Đức Duệ",
-      "position": "Nhân viên",
+      "name": "Nguy\u00ea\u0303n \u0110\u01b0\u0301c Du\u00ea\u0323",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2816,8 +2816,8 @@
     },
     {
       "employeeId": "VAE03541",
-      "name": "Nguyễn Đức Tiến",
-      "position": "Nhân viên",
+      "name": "Nguy\u00ea\u0303n \u0110\u01b0\u0301c Ti\u00ea\u0301n",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2840,8 +2840,8 @@
     },
     {
       "employeeId": "VAE02799",
-      "name": "Nguyễn Anh Quân",
-      "position": "Nhân viên",
+      "name": "Nguy\u1ec5n Anh Qu\u00e2n",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2856,8 +2856,8 @@
     },
     {
       "employeeId": "VAE02427",
-      "name": "Nguyễn Anh Tuấn",
-      "position": "Kỹ sư",
+      "name": "Nguy\u1ec5n Anh Tu\u1ea5n",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2882,8 +2882,8 @@
     },
     {
       "employeeId": "VAE02969",
-      "name": "Nguyễn Anh Đức",
-      "position": "KH-ĐH",
+      "name": "Nguy\u1ec5n Anh \u0110\u1ee9c",
+      "position": "KH-\u0110H",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2898,8 +2898,8 @@
     },
     {
       "employeeId": "VAE01003",
-      "name": "Nguyễn Cao Cường",
-      "position": "Nhân viên",
+      "name": "Nguy\u1ec5n Cao C\u01b0\u1eddng",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2925,8 +2925,8 @@
     },
     {
       "employeeId": "VAE02267",
-      "name": "Nguyễn Chung Sơn",
-      "position": "Kỹ Sư",
+      "name": "Nguy\u1ec5n Chung S\u01a1n",
+      "position": "K\u1ef9 S\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2952,8 +2952,8 @@
     },
     {
       "employeeId": "VAE01075",
-      "name": "Nguyễn Chí Công",
-      "position": "Nhân viên",
+      "name": "Nguy\u1ec5n Ch\u00ed C\u00f4ng",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -2977,8 +2977,8 @@
     },
     {
       "employeeId": "VAE01354",
-      "name": "Nguyễn Công Bằng",
-      "position": "Nhân viên",
+      "name": "Nguy\u1ec5n C\u00f4ng B\u1eb1ng",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3003,8 +3003,8 @@
     },
     {
       "employeeId": "VAE02540",
-      "name": "Nguyễn Hoàng Việt Anh",
-      "position": "Kỹ sư",
+      "name": "Nguy\u1ec5n Ho\u00e0ng Vi\u1ec7t Anh",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3019,8 +3019,8 @@
     },
     {
       "employeeId": "VAE01069",
-      "name": "Nguyễn Hoàng Vũ",
-      "position": "Nhân viên",
+      "name": "Nguy\u1ec5n Ho\u00e0ng V\u0169",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3042,8 +3042,8 @@
     },
     {
       "employeeId": "VAE00465",
-      "name": "Nguyễn Hải Tùng",
-      "position": "Nhân viên",
+      "name": "Nguy\u1ec5n H\u1ea3i T\u00f9ng",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3063,8 +3063,8 @@
     },
     {
       "employeeId": "VAE01040",
-      "name": "Nguyễn Hồng Quang",
-      "position": "Nhân Viên",
+      "name": "Nguy\u1ec5n H\u1ed3ng Quang",
+      "position": "Nh\u00e2n Vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3089,8 +3089,8 @@
     },
     {
       "employeeId": "VAE01008",
-      "name": "Nguyễn Hồng Tháp",
-      "position": "Nhân Viên",
+      "name": "Nguy\u1ec5n H\u1ed3ng Th\u00e1p",
+      "position": "Nh\u00e2n Vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3114,8 +3114,8 @@
     },
     {
       "employeeId": "VAE00946",
-      "name": "Nguyễn Hồng Thắng",
-      "position": "Nhân viên",
+      "name": "Nguy\u1ec5n H\u1ed3ng Th\u1eafng",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3137,8 +3137,8 @@
     },
     {
       "employeeId": "VAE02005",
-      "name": "Nguyễn Hữu Lực",
-      "position": "Tổ phó",
+      "name": "Nguy\u1ec5n H\u1eefu L\u1ef1c",
+      "position": "T\u1ed5 ph\u00f3",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3166,8 +3166,8 @@
     },
     {
       "employeeId": "VAE03047",
-      "name": "Nguyễn Hữu Thiện",
-      "position": "Nhân viên",
+      "name": "Nguy\u1ec5n H\u1eefu Thi\u1ec7n",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3192,8 +3192,8 @@
     },
     {
       "employeeId": "VAE00066",
-      "name": "Nguyễn Minh Tuấn",
-      "position": "Tổ trưởng",
+      "name": "Nguy\u1ec5n Minh Tu\u1ea5n",
+      "position": "T\u1ed5 tr\u01b0\u1edfng",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3218,8 +3218,8 @@
     },
     {
       "employeeId": "VAE00897",
-      "name": "Nguyễn Mạnh Trung",
-      "position": "Nhân viên",
+      "name": "Nguy\u1ec5n M\u1ea1nh Trung",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3234,8 +3234,8 @@
     },
     {
       "employeeId": "VAE00868",
-      "name": "Nguyễn Ngọc Bình",
-      "position": "Tổ trưởng",
+      "name": "Nguy\u1ec5n Ng\u1ecdc B\u00ecnh",
+      "position": "T\u1ed5 tr\u01b0\u1edfng",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3261,8 +3261,8 @@
     },
     {
       "employeeId": "VAE02114",
-      "name": "Nguyễn Ngọc Chiến",
-      "position": "Kỹ sư",
+      "name": "Nguy\u1ec5n Ng\u1ecdc Chi\u1ebfn",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3287,8 +3287,8 @@
     },
     {
       "employeeId": "VAE02801",
-      "name": "Nguyễn Ngọc Hùng",
-      "position": "Nhân viên",
+      "name": "Nguy\u1ec5n Ng\u1ecdc H\u00f9ng",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3309,8 +3309,8 @@
     },
     {
       "employeeId": "VAE03040",
-      "name": "Nguyễn Ngọc Nam",
-      "position": "Nhân viên",
+      "name": "Nguy\u1ec5n Ng\u1ecdc Nam",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3329,8 +3329,8 @@
     },
     {
       "employeeId": "VAE01054",
-      "name": "Nguyễn Ngọc Tuấn",
-      "position": "Nhân viên",
+      "name": "Nguy\u1ec5n Ng\u1ecdc Tu\u1ea5n",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3355,8 +3355,8 @@
     },
     {
       "employeeId": "VAE02451",
-      "name": "Nguyễn Như Nam",
-      "position": "Kỹ sư",
+      "name": "Nguy\u1ec5n Nh\u01b0 Nam",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3374,8 +3374,8 @@
     },
     {
       "employeeId": "VAE01480",
-      "name": "Nguyễn Quang Hưng",
-      "position": "KH-ĐH",
+      "name": "Nguy\u1ec5n Quang H\u01b0ng",
+      "position": "KH-\u0110H",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3390,8 +3390,8 @@
     },
     {
       "employeeId": "VAE02558",
-      "name": "Nguyễn Quang Luân",
-      "position": "Kỹ Sư",
+      "name": "Nguy\u1ec5n Quang Lu\u00e2n",
+      "position": "K\u1ef9 S\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3418,8 +3418,8 @@
     },
     {
       "employeeId": "VAE01063",
-      "name": "Nguyễn Quang Nghĩa",
-      "position": "Kỹ Sư",
+      "name": "Nguy\u1ec5n Quang Ngh\u0129a",
+      "position": "K\u1ef9 S\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3445,8 +3445,8 @@
     },
     {
       "employeeId": "VAE03066",
-      "name": "Nguyễn Quang Thao",
-      "position": "Nhân viên",
+      "name": "Nguy\u1ec5n Quang Thao",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3467,8 +3467,8 @@
     },
     {
       "employeeId": "VAE00443",
-      "name": "Nguyễn Quang Thắng",
-      "position": "Nhân Viên",
+      "name": "Nguy\u1ec5n Quang Th\u1eafng",
+      "position": "Nh\u00e2n Vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3488,8 +3488,8 @@
     },
     {
       "employeeId": "VAE00816",
-      "name": "Nguyễn Quang Thục",
-      "position": "Nhân viên",
+      "name": "Nguy\u1ec5n Quang Th\u1ee5c",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3516,8 +3516,8 @@
     },
     {
       "employeeId": "VAE02275",
-      "name": "Nguyễn Quốc Hoàn",
-      "position": "Tổ trưởng",
+      "name": "Nguy\u1ec5n Qu\u1ed1c Ho\u00e0n",
+      "position": "T\u1ed5 tr\u01b0\u1edfng",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3541,8 +3541,8 @@
     },
     {
       "employeeId": "VAE00998",
-      "name": "Nguyễn Sỹ Kiên",
-      "position": "Nhân viên",
+      "name": "Nguy\u1ec5n S\u1ef9 Ki\u00ean",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3557,8 +3557,8 @@
     },
     {
       "employeeId": "VAE01600",
-      "name": "Nguyễn Sỹ Thuần",
-      "position": "Nhân viên",
+      "name": "Nguy\u1ec5n S\u1ef9 Thu\u1ea7n",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3577,8 +3577,8 @@
     },
     {
       "employeeId": "VAE01065",
-      "name": "Nguyễn Thanh Long",
-      "position": "Nhân viên",
+      "name": "Nguy\u1ec5n Thanh Long",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3602,8 +3602,8 @@
     },
     {
       "employeeId": "VAE00907",
-      "name": "Nguyễn Thành Sơn",
-      "position": "Nhân viên",
+      "name": "Nguy\u1ec5n Th\u00e0nh S\u01a1n",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3626,8 +3626,8 @@
     },
     {
       "employeeId": "VAE01053",
-      "name": "Nguyễn Thái Vinh",
-      "position": "Kỹ sư",
+      "name": "Nguy\u1ec5n Th\u00e1i Vinh",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3645,8 +3645,8 @@
     },
     {
       "employeeId": "VAE00813",
-      "name": "Nguyễn Thị Hiên",
-      "position": "Nhân viên",
+      "name": "Nguy\u1ec5n Th\u1ecb Hi\u00ean",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3661,8 +3661,8 @@
     },
     {
       "employeeId": "VAE02194",
-      "name": "Nguyễn Thị Hiếu",
-      "position": "Nhân viên",
+      "name": "Nguy\u1ec5n Th\u1ecb Hi\u1ebfu",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3677,8 +3677,8 @@
     },
     {
       "employeeId": "VAE00675",
-      "name": "Nguyễn Thị Thanh Huyền",
-      "position": "Cử nhân",
+      "name": "Nguy\u1ec5n Th\u1ecb Thanh Huy\u1ec1n",
+      "position": "C\u1eed nh\u00e2n",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3693,8 +3693,8 @@
     },
     {
       "employeeId": "VAE01044",
-      "name": "Nguyễn Tiến Hoàng",
-      "position": "Nhân viên",
+      "name": "Nguy\u1ec5n Ti\u1ebfn Ho\u00e0ng",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3719,8 +3719,8 @@
     },
     {
       "employeeId": "VAE02943",
-      "name": "Nguyễn Tiến Long",
-      "position": "Kỹ Sư",
+      "name": "Nguy\u1ec5n Ti\u1ebfn Long",
+      "position": "K\u1ef9 S\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3746,8 +3746,8 @@
     },
     {
       "employeeId": "VAE03463",
-      "name": "Nguyễn Tiến Mạnh",
-      "position": "Kỹ sư",
+      "name": "Nguy\u1ec5n Ti\u1ebfn M\u1ea1nh",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3767,8 +3767,8 @@
     },
     {
       "employeeId": "VAE03540",
-      "name": "Nguyễn Đình Hoàng",
-      "position": "ĐH3",
+      "name": "Nguy\u1ec5n \u0110\u00ecnh Ho\u00e0ng",
+      "position": "\u0110H3",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3789,8 +3789,8 @@
     },
     {
       "employeeId": "VAE01013",
-      "name": "Nguyễn Đình Đài",
-      "position": "Nhân Viên",
+      "name": "Nguy\u1ec5n \u0110\u00ecnh \u0110\u00e0i",
+      "position": "Nh\u00e2n Vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3814,8 +3814,8 @@
     },
     {
       "employeeId": "VAE01036",
-      "name": "Nguyễn Đăng Cường",
-      "position": "Nhân Viên",
+      "name": "Nguy\u1ec5n \u0110\u0103ng C\u01b0\u1eddng",
+      "position": "Nh\u00e2n Vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3841,8 +3841,8 @@
     },
     {
       "employeeId": "VAE01995",
-      "name": "Nguyễn Đức Công",
-      "position": "Kỹ sư",
+      "name": "Nguy\u1ec5n \u0110\u1ee9c C\u00f4ng",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3867,8 +3867,8 @@
     },
     {
       "employeeId": "VAE01015",
-      "name": "Nguyễn Đức Cảnh",
-      "position": "Nhân Viên",
+      "name": "Nguy\u1ec5n \u0110\u1ee9c C\u1ea3nh",
+      "position": "Nh\u00e2n Vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3894,8 +3894,8 @@
     },
     {
       "employeeId": "VAE02502",
-      "name": "Nguyễn Đức Hoạt",
-      "position": "Kỹ sư",
+      "name": "Nguy\u1ec5n \u0110\u1ee9c Ho\u1ea1t",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3914,8 +3914,8 @@
     },
     {
       "employeeId": "VAE02449",
-      "name": "Nguyễn Đức Kiên",
-      "position": "Kỹ sư",
+      "name": "Nguy\u1ec5n \u0110\u1ee9c Ki\u00ean",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3939,8 +3939,8 @@
     },
     {
       "employeeId": "VAE02553",
-      "name": "Nguyễn Đức Ngọc",
-      "position": "Kỹ sư",
+      "name": "Nguy\u1ec5n \u0110\u1ee9c Ng\u1ecdc",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3955,8 +3955,8 @@
     },
     {
       "employeeId": "VAE02559",
-      "name": "Nguyễn Đức Triệu",
-      "position": "Kỹ sư",
+      "name": "Nguy\u1ec5n \u0110\u1ee9c Tri\u1ec7u",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -3983,8 +3983,8 @@
     },
     {
       "employeeId": "VAE00489",
-      "name": "Ngô Tiến Thành",
-      "position": "Nhân viên",
+      "name": "Ng\u00f4 Ti\u1ebfn Th\u00e0nh",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4004,8 +4004,8 @@
     },
     {
       "employeeId": "VAE01032",
-      "name": "Ngô Trường Độ",
-      "position": "Nhân Viên",
+      "name": "Ng\u00f4 Tr\u01b0\u1eddng \u0110\u1ed9",
+      "position": "Nh\u00e2n Vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4029,8 +4029,8 @@
     },
     {
       "employeeId": "VAE02081",
-      "name": "Ngô Đức Thọ",
-      "position": "Kỹ sư",
+      "name": "Ng\u00f4 \u0110\u01b0\u0301c Tho\u0323",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4057,8 +4057,8 @@
     },
     {
       "employeeId": "VAE00967",
-      "name": "Phan Bùi Biên",
-      "position": "Tổ trưởng",
+      "name": "Phan Bu\u0300i Bi\u00ean",
+      "position": "T\u1ed5 tr\u01b0\u1edfng",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4084,8 +4084,8 @@
     },
     {
       "employeeId": "VAE02618",
-      "name": "Phan Trần Long",
-      "position": "Kỹ sư",
+      "name": "Phan Tr\u00e2\u0300n Long",
+      "position": "Ky\u0303 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4104,8 +4104,8 @@
     },
     {
       "employeeId": "VAE02122",
-      "name": "Phan Tuấn Dũng",
-      "position": "Kỹ sư",
+      "name": "Phan Tu\u1ea5n D\u0169ng",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4120,8 +4120,8 @@
     },
     {
       "employeeId": "VAE02557",
-      "name": "Phan Đình Đại",
-      "position": "Tổ trưởng",
+      "name": "Phan \u0110\u00ecnh \u0110\u1ea1i",
+      "position": "T\u1ed5 tr\u01b0\u1edfng",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4140,8 +4140,8 @@
     },
     {
       "employeeId": "VAE01070",
-      "name": "Phạm Ngọc Bình",
-      "position": "Nhân viên",
+      "name": "Pha\u0323m Ngo\u0323c Bi\u0300nh",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4169,8 +4169,8 @@
     },
     {
       "employeeId": "VAE00976",
-      "name": "Phạm Tiến Dũng",
-      "position": "Nhân viên",
+      "name": "Pha\u0323m Ti\u00ea\u0301n Du\u0303ng",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4195,8 +4195,8 @@
     },
     {
       "employeeId": "VAE01986",
-      "name": "Phạm Tuấn Giang",
-      "position": "Kỹ sư",
+      "name": "Pha\u0323m Tu\u00e2\u0301n Giang",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4211,8 +4211,8 @@
     },
     {
       "employeeId": "VAE02130",
-      "name": "Phạm Việt Tú",
-      "position": "Kỹ sư",
+      "name": "Pha\u0323m Vi\u00ea\u0323t Tu\u0301",
+      "position": "Ky\u0303 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4236,8 +4236,8 @@
     },
     {
       "employeeId": "VAE01573",
-      "name": "Phạm Văn Hê",
-      "position": "Nhân viên",
+      "name": "Pha\u0323m V\u0103n H\u00ea",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4256,8 +4256,8 @@
     },
     {
       "employeeId": "VAE02950",
-      "name": "Phùng Lê Hoàng",
-      "position": "Kỹ sư",
+      "name": "Ph\u00f9ng L\u00ea Ho\u00e0ng",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4283,8 +4283,8 @@
     },
     {
       "employeeId": "VAE01092",
-      "name": "Phùng Thanh Hòa",
-      "position": "Kỹ sư",
+      "name": "Ph\u00f9ng Thanh H\u00f2a",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4299,8 +4299,8 @@
     },
     {
       "employeeId": "VAE00901",
-      "name": "Phùng Viết Sơn",
-      "position": "Kỹ sư",
+      "name": "Ph\u00f9ng Vi\u1ebft S\u01a1n",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4325,8 +4325,8 @@
     },
     {
       "employeeId": "VAE01068",
-      "name": "Phạm Anh Tuấn",
-      "position": "Nhân viên",
+      "name": "Ph\u1ea1m Anh Tu\u1ea5n",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4353,8 +4353,8 @@
     },
     {
       "employeeId": "VAE02812",
-      "name": "Phạm Duy Trung",
-      "position": "Nhân viên",
+      "name": "Ph\u1ea1m Duy Trung",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4369,8 +4369,8 @@
     },
     {
       "employeeId": "VAE01356",
-      "name": "Phạm Duy Tám",
-      "position": "Nhân viên",
+      "name": "Ph\u1ea1m Duy T\u00e1m",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4389,8 +4389,8 @@
     },
     {
       "employeeId": "VAE02453",
-      "name": "Phạm Hùng Cường",
-      "position": "Tổ trưởng",
+      "name": "Ph\u1ea1m H\u00f9ng C\u01b0\u1eddng",
+      "position": "T\u1ed5 tr\u01b0\u1edfng",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4416,8 +4416,8 @@
     },
     {
       "employeeId": "VAE00977",
-      "name": "Phạm Hồng Tứ",
-      "position": "Nhân viên",
+      "name": "Ph\u1ea1m H\u1ed3ng T\u1ee9",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4436,8 +4436,8 @@
     },
     {
       "employeeId": "VAE02919",
-      "name": "Phạm Ngọc Chung",
-      "position": "Kỹ sư",
+      "name": "Ph\u1ea1m Ng\u1ecdc Chung",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4465,8 +4465,8 @@
     },
     {
       "employeeId": "VAE00472",
-      "name": "Phạm Phương Nam",
-      "position": "Nhân viên",
+      "name": "Ph\u1ea1m Ph\u01b0\u01a1ng Nam",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4487,8 +4487,8 @@
     },
     {
       "employeeId": "VAE00876",
-      "name": "Phạm Thanh Tùng",
-      "position": "Nhân viên",
+      "name": "Ph\u1ea1m Thanh T\u00f9ng",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4503,8 +4503,8 @@
     },
     {
       "employeeId": "VAE01027",
-      "name": "Phạm Thái Sơn",
-      "position": "Nhân viên",
+      "name": "Ph\u1ea1m Th\u00e1i S\u01a1n",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4529,8 +4529,8 @@
     },
     {
       "employeeId": "VAE01004",
-      "name": "Phạm Văn Kiên",
-      "position": "Kỹ sư",
+      "name": "Ph\u1ea1m V\u0103n Ki\u00ean",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4555,8 +4555,8 @@
     },
     {
       "employeeId": "VAE03074",
-      "name": "Phạm Xuân Phúc",
-      "position": "Nhân viên",
+      "name": "Ph\u1ea1m Xu\u00e2n Ph\u00fac",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4571,8 +4571,8 @@
     },
     {
       "employeeId": "VAE03065",
-      "name": "Phạm Xuân Trường",
-      "position": "Nhân viên",
+      "name": "Ph\u1ea1m Xu\u00e2n Tr\u01b0\u1eddng",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4587,8 +4587,8 @@
     },
     {
       "employeeId": "VAE03198",
-      "name": "Phạm Đức Sơn",
-      "position": "Kỹ sư",
+      "name": "Ph\u1ea1m \u0110\u1ee9c S\u01a1n",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4612,8 +4612,8 @@
     },
     {
       "employeeId": "VAE00545",
-      "name": "Thái Xuân Sơn",
-      "position": "Tổ trưởng",
+      "name": "Tha\u0301i Xu\u00e2n S\u01a1n",
+      "position": "T\u1ed5 tr\u01b0\u1edfng",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4635,8 +4635,8 @@
     },
     {
       "employeeId": "VAE03036",
-      "name": "Trần Quang Trung",
-      "position": "Nhân viên",
+      "name": "Tr\u00e2\u0300n Quang Trung",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4661,8 +4661,8 @@
     },
     {
       "employeeId": "VAE01017",
-      "name": "Vũ Tuấn Anh",
-      "position": "Kỹ sư",
+      "name": "V\u0169 Tu\u1ea5n Anh",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4677,8 +4677,8 @@
     },
     {
       "employeeId": "VAE03046",
-      "name": "Trương Hồng Quân",
-      "position": "Nhân viên",
+      "name": "Tr\u01b0\u01a1ng H\u00f4\u0300ng Qu\u00e2n",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4705,8 +4705,8 @@
     },
     {
       "employeeId": "VAE02804",
-      "name": "Trương Thái Sơn",
-      "position": "Nhân viên",
+      "name": "Tr\u01b0\u01a1ng Tha\u0301i S\u01a1n",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4726,8 +4726,8 @@
     },
     {
       "employeeId": "VAE00476",
-      "name": "Trương Văn Trung",
-      "position": "Nhân viên",
+      "name": "Tr\u01b0\u01a1ng V\u0103n Trung",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4754,8 +4754,8 @@
     },
     {
       "employeeId": "VAE02555",
-      "name": "Trần Anh Tuấn",
-      "position": "ĐH4",
+      "name": "Tr\u1ea7n Anh Tu\u1ea5n",
+      "position": "\u0110H4",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4770,8 +4770,8 @@
     },
     {
       "employeeId": "VAE03468",
-      "name": "Trần Bảo Sơn",
-      "position": "Nhân viên",
+      "name": "Tr\u1ea7n B\u1ea3o S\u01a1n",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4791,8 +4791,8 @@
     },
     {
       "employeeId": "VAE01073",
-      "name": "Trần Bảo Thắng",
-      "position": "ĐH2",
+      "name": "Tr\u1ea7n B\u1ea3o Th\u1eafng",
+      "position": "\u0110H2",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4807,8 +4807,8 @@
     },
     {
       "employeeId": "VAE02941",
-      "name": "Trần Duy Hoàng Thiện",
-      "position": "Kỹ Sư",
+      "name": "Tr\u1ea7n Duy Ho\u00e0ng Thi\u1ec7n",
+      "position": "K\u1ef9 S\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4834,8 +4834,8 @@
     },
     {
       "employeeId": "VAE01056",
-      "name": "Trần Duy Trung",
-      "position": "Đội trưởng",
+      "name": "Tr\u1ea7n Duy Trung",
+      "position": "\u0110\u1ed9i tr\u01b0\u1edfng",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4854,8 +4854,8 @@
     },
     {
       "employeeId": "VAE00928",
-      "name": "Trần Hoài Nam",
-      "position": "Nhân viên",
+      "name": "Tr\u1ea7n Ho\u00e0i Nam",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4879,8 +4879,8 @@
     },
     {
       "employeeId": "VAE01061",
-      "name": "Trần Hoàng Anh",
-      "position": "Nhân viên",
+      "name": "Tr\u1ea7n Ho\u00e0ng Anh",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4900,8 +4900,8 @@
     },
     {
       "employeeId": "VAE00535",
-      "name": "Trần Hải Anh",
-      "position": "Nhân viên",
+      "name": "Tr\u1ea7n H\u1ea3i Anh",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4926,8 +4926,8 @@
     },
     {
       "employeeId": "VAE01023",
-      "name": "Trần Mạnh Điệp",
-      "position": "Nhân Viên",
+      "name": "Tr\u1ea7n M\u1ea1nh \u0110i\u1ec7p",
+      "position": "Nh\u00e2n Vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4952,8 +4952,8 @@
     },
     {
       "employeeId": "VAE01037",
-      "name": "Trần Nam Trung",
-      "position": "Nhân Viên",
+      "name": "Tr\u1ea7n Nam Trung",
+      "position": "Nh\u00e2n Vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4975,8 +4975,8 @@
     },
     {
       "employeeId": "VAE00925",
-      "name": "Trần Quang Hà",
-      "position": "Nhân viên",
+      "name": "Tr\u1ea7n Quang H\u00e0",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -4996,8 +4996,8 @@
     },
     {
       "employeeId": "VAE00555",
-      "name": "Trần Quốc Dũng",
-      "position": "Nhân viên",
+      "name": "Tr\u1ea7n Qu\u1ed1c D\u0169ng",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5022,8 +5022,8 @@
     },
     {
       "employeeId": "VAE02439",
-      "name": "Trần Quốc Hưng",
-      "position": "KH-ĐH",
+      "name": "Tr\u1ea7n Qu\u1ed1c H\u01b0ng",
+      "position": "KH-\u0110H",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5038,8 +5038,8 @@
     },
     {
       "employeeId": "VAE02119",
-      "name": "Trần Thanh Bình",
-      "position": "Kỹ sư",
+      "name": "Tr\u1ea7n Thanh B\u00ecnh",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5065,8 +5065,8 @@
     },
     {
       "employeeId": "VAE02128",
-      "name": "Trần Thái Bình",
-      "position": "ĐH3",
+      "name": "Tr\u1ea7n Th\u00e1i B\u00ecnh",
+      "position": "\u0110H3",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5081,8 +5081,8 @@
     },
     {
       "employeeId": "VAE03542",
-      "name": "Trần Tiến Thế",
-      "position": "KH-ĐH",
+      "name": "Tr\u1ea7n Ti\u1ebfn Th\u1ebf",
+      "position": "KH-\u0110H",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5097,8 +5097,8 @@
     },
     {
       "employeeId": "VAE00867",
-      "name": "Trần Tuấn Anh",
-      "position": "Đội phó",
+      "name": "Tr\u1ea7n Tu\u1ea5n Anh",
+      "position": "\u0110\u1ed9i ph\u00f3",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5120,8 +5120,8 @@
     },
     {
       "employeeId": "VAE01519",
-      "name": "Trần Tuấn Quang",
-      "position": "Kỹ sư",
+      "name": "Tr\u1ea7n Tu\u1ea5n Quang",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5147,8 +5147,8 @@
     },
     {
       "employeeId": "VAE03539",
-      "name": "Trần Việt Cường",
-      "position": "Kỹ sư",
+      "name": "Tr\u1ea7n Vi\u1ec7t C\u01b0\u1eddng",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5169,8 +5169,8 @@
     },
     {
       "employeeId": "VAE02760",
-      "name": "Trần Việt Tiến",
-      "position": "Nhân Viên",
+      "name": "Tr\u1ea7n Vi\u1ec7t Ti\u1ebfn",
+      "position": "Nh\u00e2n Vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5191,8 +5191,8 @@
     },
     {
       "employeeId": "VAE02560",
-      "name": "Trần Việt Tuấn",
-      "position": "Kỹ Sư",
+      "name": "Tr\u1ea7n Vi\u1ec7t Tu\u1ea5n",
+      "position": "K\u1ef9 S\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5215,8 +5215,8 @@
     },
     {
       "employeeId": "VAE00895",
-      "name": "Trần Võ Trung",
-      "position": "Nhân viên",
+      "name": "Tr\u1ea7n V\u00f5 Trung",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5231,8 +5231,8 @@
     },
     {
       "employeeId": "VAE00933",
-      "name": "Trần Văn Lê",
-      "position": "Nhân viên",
+      "name": "Tr\u1ea7n V\u0103n L\u00ea",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5251,8 +5251,8 @@
     },
     {
       "employeeId": "VAE00722",
-      "name": "Trần Văn Sơn",
-      "position": "Nhân viên",
+      "name": "Tr\u1ea7n V\u0103n S\u01a1n",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5274,8 +5274,8 @@
     },
     {
       "employeeId": "VAE00540",
-      "name": "Trần Vũ",
-      "position": "Nhân viên",
+      "name": "Tr\u1ea7n V\u0169",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5290,8 +5290,8 @@
     },
     {
       "employeeId": "VAE03220",
-      "name": "Trần Xuân Toàn",
-      "position": "Nhân viên",
+      "name": "Tr\u1ea7n Xu\u00e2n To\u00e0n",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5314,8 +5314,8 @@
     },
     {
       "employeeId": "VAE01021",
-      "name": "Trần Đăng Hạnh",
-      "position": "Nhân Viên",
+      "name": "Tr\u1ea7n \u0110\u0103ng H\u1ea1nh",
+      "position": "Nh\u00e2n Vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5340,8 +5340,8 @@
     },
     {
       "employeeId": "VAE02952",
-      "name": "Trần Đức Xuân Nam",
-      "position": "Kỹ sư",
+      "name": "Tr\u1ea7n \u0110\u1ee9c Xu\u00e2n Nam",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5365,8 +5365,8 @@
     },
     {
       "employeeId": "VAE00922",
-      "name": "Trịnh Hữu Chiến",
-      "position": "Kỹ sư",
+      "name": "Tr\u1ecbnh H\u1eefu Chi\u1ebfn",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5381,8 +5381,8 @@
     },
     {
       "employeeId": "VAE01062",
-      "name": "Trịnh Trọng Tuệ",
-      "position": "Nhân viên",
+      "name": "Tr\u1ecbnh Tr\u1ecdng Tu\u1ec7",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5407,8 +5407,8 @@
     },
     {
       "employeeId": "VAE03070",
-      "name": "Trịnh Văn Tuấn",
-      "position": "Nhân viên",
+      "name": "Tr\u1ecbnh V\u0103n Tu\u1ea5n",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5436,8 +5436,8 @@
     },
     {
       "employeeId": "VAE00959",
-      "name": "Trịnh Xuân Hiếu",
-      "position": "Kỹ sư",
+      "name": "Tr\u1ecbnh Xu\u00e2n Hi\u1ebfu",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5452,8 +5452,8 @@
     },
     {
       "employeeId": "VAE00522",
-      "name": "Trịnh Đoàn Thế Trinh",
-      "position": "Nhân viên",
+      "name": "Tr\u1ecbnh \u0110o\u00e0n Th\u1ebf Trinh",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5478,8 +5478,8 @@
     },
     {
       "employeeId": "VAE03471",
-      "name": "Trịnh Đăng Trọng Tuấn",
-      "position": "Kỹ sư",
+      "name": "Tr\u1ecbnh \u0110\u0103ng Tr\u1ecdng Tu\u1ea5n",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5500,8 +5500,8 @@
     },
     {
       "employeeId": "VAE01046",
-      "name": "Tạ Quốc Huy",
-      "position": "Kỹ sư",
+      "name": "T\u1ea1 Qu\u1ed1c Huy",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5528,8 +5528,8 @@
     },
     {
       "employeeId": "VAE03212",
-      "name": "Tạ Vũ Sơn",
-      "position": "Kỹ sư",
+      "name": "T\u1ea1 V\u0169 S\u01a1n",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5551,8 +5551,8 @@
     },
     {
       "employeeId": "VAE00858",
-      "name": "Vũ Anh Tuấn",
-      "position": "Nhân viên",
+      "name": "V\u0169 Anh Tu\u1ea5n",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5567,8 +5567,8 @@
     },
     {
       "employeeId": "VAE02936",
-      "name": "Vũ Hồng Sơn",
-      "position": "Nhân viên",
+      "name": "V\u0169 H\u1ed3ng S\u01a1n",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5594,8 +5594,8 @@
     },
     {
       "employeeId": "VAE00981",
-      "name": "Vũ Nam Việt",
-      "position": "Kỹ sư",
+      "name": "V\u0169 Nam Vi\u1ec7t",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5619,8 +5619,8 @@
     },
     {
       "employeeId": "VAE01051",
-      "name": "Vũ Ngọc Thắng",
-      "position": "Nhân viên",
+      "name": "V\u0169 Ng\u1ecdc Th\u1eafng",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5635,8 +5635,8 @@
     },
     {
       "employeeId": "VAE00938",
-      "name": "Vũ Quang Hanh",
-      "position": "Tổ phó",
+      "name": "V\u0169 Quang Hanh",
+      "position": "T\u1ed5 ph\u00f3",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5656,8 +5656,8 @@
     },
     {
       "employeeId": "VAE01581",
-      "name": "Vũ Quang Tuyến",
-      "position": "Kỹ Sư",
+      "name": "V\u0169 Quang Tuy\u1ebfn",
+      "position": "K\u1ef9 S\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5683,8 +5683,8 @@
     },
     {
       "employeeId": "VAE00929",
-      "name": "Vũ Quốc Đạt",
-      "position": "Nhân viên",
+      "name": "V\u0169 Qu\u1ed1c \u0110\u1ea1t",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5699,8 +5699,8 @@
     },
     {
       "employeeId": "VAE02126",
-      "name": "Vũ Thành Văn Thọ",
-      "position": "Nhân viên",
+      "name": "V\u0169 Th\u00e0nh V\u0103n Th\u1ecd",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5726,8 +5726,8 @@
     },
     {
       "employeeId": "VAE00972",
-      "name": "Vũ Thế Hưng",
-      "position": "Tổ trưởng",
+      "name": "V\u0169 Th\u1ebf H\u01b0ng",
+      "position": "T\u1ed5 tr\u01b0\u1edfng",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5742,8 +5742,8 @@
     },
     {
       "employeeId": "VAE02138",
-      "name": "Vũ Tiến Đạt",
-      "position": "Kỹ sư",
+      "name": "V\u0169 Ti\u1ebfn \u0110\u1ea1t",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5758,8 +5758,8 @@
     },
     {
       "employeeId": "VAE02795",
-      "name": "Vũ Trọng Quang Đại",
-      "position": "Kỹ sư",
+      "name": "V\u0169 Tr\u1ecdng Quang \u0110\u1ea1i",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5784,8 +5784,8 @@
     },
     {
       "employeeId": "VAE01993",
-      "name": "Vũ Văn Đình Mạnh",
-      "position": "Nhân viên",
+      "name": "V\u0169 V\u0103n \u0110\u00ecnh M\u1ea1nh",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5808,8 +5808,8 @@
     },
     {
       "employeeId": "VAE02414",
-      "name": "Vũ Văn Tuấn Anh",
-      "position": "Kỹ sư",
+      "name": "V\u0169 V\u0103n Tu\u1ea5n Anh",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5834,8 +5834,8 @@
     },
     {
       "employeeId": "VAE01455",
-      "name": "Vũ Việt Phương",
-      "position": "Kỹ sư",
+      "name": "V\u0169 Vi\u1ec7t Ph\u01b0\u01a1ng",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5862,8 +5862,8 @@
     },
     {
       "employeeId": "VAE01034",
-      "name": "Vũ Xuân Mạnh Trường",
-      "position": "Nhân Viên",
+      "name": "V\u0169 Xu\u00e2n M\u1ea1nh Tr\u01b0\u1eddng",
+      "position": "Nh\u00e2n Vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5888,8 +5888,8 @@
     },
     {
       "employeeId": "VAE01007",
-      "name": "Vũ Xuân Trường",
-      "position": "Nhân viên",
+      "name": "V\u0169 Xu\u00e2n Tr\u01b0\u1eddng",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5915,8 +5915,8 @@
     },
     {
       "employeeId": "VAE00989",
-      "name": "Vũ Đức Dũng",
-      "position": "Kỹ sư",
+      "name": "V\u0169 \u0110\u1ee9c D\u0169ng",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5938,8 +5938,8 @@
     },
     {
       "employeeId": "VAE01035",
-      "name": "Vũ Đức Kỳ",
-      "position": "Nhân viên",
+      "name": "V\u0169 \u0110\u1ee9c K\u1ef3",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5967,8 +5967,8 @@
     },
     {
       "employeeId": "VAE03037",
-      "name": "Vương Văn Dũng",
-      "position": "Nhân viên",
+      "name": "V\u01b0\u01a1ng V\u0103n D\u0169ng",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -5992,8 +5992,8 @@
     },
     {
       "employeeId": "VAE03038",
-      "name": "Vương Văn Kiên",
-      "position": "Nhân viên",
+      "name": "V\u01b0\u01a1ng V\u0103n Ki\u00ean",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -6018,8 +6018,8 @@
     },
     {
       "employeeId": "VAE03076",
-      "name": "Đinh Hoàng Tuấn",
-      "position": "Nhân viên",
+      "name": "\u0110inh Hoa\u0300ng Tu\u00e2\u0301n",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -6047,8 +6047,8 @@
     },
     {
       "employeeId": "VAE01076",
-      "name": "Đinh Ngọc Hòa",
-      "position": "Nhân viên",
+      "name": "\u0110inh Ng\u1ecdc H\u00f2a",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -6074,8 +6074,8 @@
     },
     {
       "employeeId": "VAE03034",
-      "name": "Đinh Quang Khuông",
-      "position": "Kỹ sư",
+      "name": "\u0110inh Quang Khu\u00f4ng",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -6097,8 +6097,8 @@
     },
     {
       "employeeId": "VAE00974",
-      "name": "Đinh Quang Tiến",
-      "position": "Kỹ sư",
+      "name": "\u0110inh Quang Ti\u1ebfn",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -6113,8 +6113,8 @@
     },
     {
       "employeeId": "VAE03057",
-      "name": "Đinh Thị Nga",
-      "position": "Nhân viên",
+      "name": "\u0110inh Th\u1ecb Nga",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -6142,8 +6142,8 @@
     },
     {
       "employeeId": "VAE01043",
-      "name": "Đinh Trọng Tuấn",
-      "position": "Nhân viên",
+      "name": "\u0110inh Tr\u1ecdng Tu\u1ea5n",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -6158,8 +6158,8 @@
     },
     {
       "employeeId": "VAE00999",
-      "name": "Đinh Tuấn Minh",
-      "position": "Nhân viên",
+      "name": "\u0110inh Tu\u1ea5n Minh",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -6184,8 +6184,8 @@
     },
     {
       "employeeId": "VAE00843",
-      "name": "Đinh Văn Bảy",
-      "position": "Kỹ sư",
+      "name": "\u0110inh V\u0103n B\u1ea3y",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -6200,8 +6200,8 @@
     },
     {
       "employeeId": "VAE02418",
-      "name": "Đặng Văn Hải",
-      "position": "Kỹ sư",
+      "name": "\u0110\u1eb7ng V\u0103n H\u1ea3i",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -6229,8 +6229,8 @@
     },
     {
       "employeeId": "VAE02589",
-      "name": "Đặng Văn Vũ",
-      "position": "Kỹ sư",
+      "name": "\u0110\u1eb7ng V\u0103n V\u0169",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -6248,8 +6248,8 @@
     },
     {
       "employeeId": "VAE02939",
-      "name": "Đặng Đình Bắc",
-      "position": "Kỹ sư",
+      "name": "\u0110\u1eb7ng \u0110\u00ecnh B\u1eafc",
+      "position": "K\u1ef9 s\u01b0",
       "eType": {
         "role": "MECHANIC"
       },
@@ -6268,8 +6268,8 @@
     },
     {
       "employeeId": "VAE00968",
-      "name": "Đặng Đình Giáp",
-      "position": "Nhân viên",
+      "name": "\u0110\u1eb7ng \u0110\u00ecnh Gi\u00e1p",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -6288,8 +6288,8 @@
     },
     {
       "employeeId": "VAE00950",
-      "name": "Đặng Đức Long",
-      "position": "Nhân viên",
+      "name": "\u0110\u1eb7ng \u0110\u1ee9c Long",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -6304,8 +6304,8 @@
     },
     {
       "employeeId": "VAE02117",
-      "name": "Đỗ Xuân Thái",
-      "position": "Nhân viên",
+      "name": "\u0110\u1ed7 Xu\u00e2n Th\u00e1i",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -6331,8 +6331,8 @@
     },
     {
       "employeeId": "VAE03077",
-      "name": "Đồng Thanh Linh",
-      "position": "Nhân viên",
+      "name": "\u0110\u1ed3ng Thanh Linh",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -6357,8 +6357,8 @@
     },
     {
       "employeeId": "VAE02322",
-      "name": "Đỗ Hải Hưng",
-      "position": "Nhân viên",
+      "name": "\u0110\u1ed7 H\u1ea3i H\u01b0ng",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },
@@ -6384,8 +6384,8 @@
     },
     {
       "employeeId": "VAE01029",
-      "name": "Đỗ Vũ Linh",
-      "position": "Nhân viên",
+      "name": "\u0110\u1ed7 V\u0169 Linh",
+      "position": "Nh\u00e2n vi\u00ean",
       "eType": {
         "role": "MECHANIC"
       },

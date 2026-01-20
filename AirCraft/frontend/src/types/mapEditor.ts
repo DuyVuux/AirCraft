@@ -32,6 +32,20 @@ export interface MapTrip {
   tags?: string[]
 }
 
+export interface MapSegment {
+  manualTime?: number;
+  [key: string]: any;
+}
+
+export interface MapRoute {
+  startNodeId: string;
+  endNodeId: string;
+  timeMode: 'manual_input' | 'auto_calc' | string;
+  segments: MapSegment[];
+  fixedVelocity?: number;
+  totalDistance?: number;
+}
+
 export const NODE_TYPE_LABELS: Record<NodeType, string> = {
   aircraft_stand: 'Vị trí đáp máy bay',
   bus_stop: 'Điểm xe bus',
@@ -84,4 +98,3 @@ export function generateEdgeId(): string {
 export function generateTripId(): string {
   return `trip-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
 }
-
