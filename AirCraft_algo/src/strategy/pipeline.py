@@ -6,6 +6,7 @@ from typing import List, Optional, Dict, Any
 from src.model.context import Context
 from src.model.solution import Solution
 from src.strategy.base import IStrategy
+from src.strategy.optimization.adapter import OptimizationEngineAdapter
 
 
 class Pipeline(IStrategy):

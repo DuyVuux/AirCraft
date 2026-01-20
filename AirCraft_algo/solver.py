@@ -5,6 +5,8 @@ import multiprocessing
 from ortools.sat.python import cp_model
 # from fake_input_generator import generate_fake_input  # Not needed
 from src.model.time import parse_time, normalize_time, timestamp_to_local_str
+from src.strategy.optimization.adapter import OptimizationEngineAdapter
+from src.model.context import Context
 
 # --- Constants (Seconds) ---
 WEIGHT_UNASSIGNED = 10_000_000
@@ -33,8 +35,8 @@ class Employee:
     def __init__(self, data, min_global_time, max_time):
         self.id = data['employeeId']
         self.idx = -1 # Assigned later
-        self.role = data['eType']['role']
-        self.level = data['eType']['level']
+        self.role = data.get('eType', {}).get('role', 'UNKNOWN')
+        self.level = data.get('eType', {}).get('level', 1)
         
         # Working Time
         if data['workingTimes']:
@@ -92,8 +94,15 @@ class AirportScheduler:
             self.travel_times[(entry['srcCode'], entry['destCode'])] = entry['travelTime']
 
         for entry in time_matrix:
-            key = (entry['taskCode'], entry['role'], entry['level'], entry['aircraftId'])
-            self.task_durations[key] = entry['timeProcess']
+            # Handle potentially missing keys in legacy timeMatrix structure
+            task_code = entry.get('taskCode')
+            role = entry.get('role', 'UNKNOWN')
+            level = entry.get('level', 1)
+            aircraft_id = entry.get('aircraftId')
+            
+            if task_code and aircraft_id:
+                key = (task_code, role, level, aircraft_id)
+                self.task_durations[key] = entry.get('timeProcess', 0)
             
         # 2. Global Time & Horizon
         self.min_global_time = float('inf')
@@ -134,7 +143,7 @@ class AirportScheduler:
                     'aircraft_id': ac_id,
                     'location': ac_loc,
                     'task_code': req_task['taskCode'],
-                    'min_level': req_task['minLevel'],
+                    'min_level': req_task.get('minLevel', 1),
                     'dependencies': req_task.get('dependencies', []),
                     'window_start': ac_start,
                     'window_end': ac_end,
@@ -480,6 +489,7 @@ if __name__ == '__main__':
     parser.add_argument('--fake', action='store_true', help='Generate fake data')
     parser.add_argument('--time-limit', type=int, default=60, help='Solver time limit')
     parser.add_argument('--output', type=str, default='solution_output.txt', help='Output file')
+    parser.add_argument('--strategy', type=str, default='legacy', choices=['legacy', 'lns'], help='Optimization strategy')
     args = parser.parse_args()
 
     # Load Data
@@ -490,14 +500,49 @@ if __name__ == '__main__':
         print(f"Error: File {args.input} not found.")
         exit(1)
 
-    # Run Solver
-    scheduler = AirportScheduler(data)
-    scheduler.setup_model()
-    scheduler.create_variables()
-    scheduler.create_constraints()
-    scheduler.create_cost_function()
-    scheduler.create_hints()
-    
-    status = scheduler.solve(time_limit_seconds=args.time_limit)
-    solution = scheduler.extract_solution()
-    scheduler.print_solution(solution, output_file=args.output)
+    if args.strategy == 'lns':
+        print("Using LNS Optimization Engine (Hexagonal Architecture)...")
+        # 1. Parse Context
+        ctx = Context.from_dict(data)
+        
+        # 2. Init and Run Adapter
+        adapter = OptimizationEngineAdapter()
+        adapter.init(ctx)
+        solution = adapter.execute()
+        
+        # 3. Output
+        # Convert to dict for printing consistency
+        # Assuming Solution model has to_dict
+        # We need to map it to the expected output format of 'print_solution' or just print it custom
+        print("="*80)
+        print("LNS SOLUTION")
+        print("="*80)
+        print(f"Assigned Employees: {len(solution.employees)}")
+        print(f"Dropped Tasks: {len(solution.droppedTasks)}")
+        
+        lines = []
+        for emp in solution.employees:
+            for assign in emp.assignments:
+                lines.append(f"{assign.taskCode:<25} {assign.aircraftId:<10} {assign.locationId:<10} {emp.employeeId:<10} {assign.startTime:<25} {assign.endTime:<25}")
+        
+        print(f"{'Task':<25} {'Aircraft':<10} {'Loc':<10} {'Employee':<10} {'Start':<25} {'End':<25}")
+        print("-" * 80)
+        print("\n".join(lines))
+        
+        if args.output:
+            with open(args.output, 'w') as f:
+                 f.write(f"LNS Solution\nDropped: {len(solution.droppedTasks)}\n\n")
+                 f.write("\n".join(lines))
+        
+    else:
+        # Run Legacy Solver
+        scheduler = AirportScheduler(data)
+        scheduler.setup_model()
+        scheduler.create_variables()
+        scheduler.create_constraints()
+        scheduler.create_cost_function()
+        scheduler.create_hints()
+        
+        status = scheduler.solve(time_limit_seconds=args.time_limit)
+        solution = scheduler.extract_solution()
+        scheduler.print_solution(solution, output_file=args.output)

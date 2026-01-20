@@ -12,9 +12,91 @@ import os
 # Import NBPClient to trigger @APIRegistry.register decorator
 import src.service.nbp_client  # noqa: F401
 import src.service.greedy_client  # noqa: F401
+from src.model.time import parse_time
 
 api = Blueprint('api', __name__, url_prefix='/api')
 
+
+@api.route('/scheduler/run', methods=['POST'])
+def run_scheduler():
+    """
+    Endpoint compatible with Frontend 'schedulerApi.ts'.
+    Path: POST /api/scheduler/run
+    Body: keys: aircrafts, employees, matrixConfigs, config: { algorithm: '...' }
+    """
+    try:
+        data = request.get_json()
+        if not data:
+            return jsonify({"error": "No JSON payload"}), 400
+            
+        # 1. Extract Configuration
+        config = data.get('config', {})
+        algorithm = config.get('algorithm', 'cpsat').lower() # e.g. 'lns', 'greedy', 'ortools'
+        
+        # 2. Select Handler based on algorithm
+        # Map frontend algo names to backend strategies
+        if algorithm == 'lns':
+             strategy = OptimizationEngineAdapter()
+        elif algorithm == 'greedy':
+             strategy = GreedyStrategy()
+        else:
+             # Default to OR-Tools/CP-SAT
+             time_limit = int(config.get('timeLimit', 30))
+             strategy = OrStrategy(time_limit)
+             
+        # 3. Build Context
+        # Frontend sends data matching Context structure mostly
+        # We might need to handle 'trackingId' generation if missing
+        if 'trackingId' not in data:
+            data['trackingId'] = f"REQ-{int(time.time())}"
+            
+        ctx = Context.from_dict(data)
+        
+        # 4. Execute
+        strategy.init(ctx)
+        solution = strategy.execute()
+        
+        # 5. Map Solution to Frontend Response (ScheduleResult)
+        # Frontend expects: { status, message, scheduledTasks: [], ... }
+        
+        scheduled_tasks = []
+        if solution:
+            for emp in solution.employees:
+                for assign in emp.assignments:
+                    # Resolve duration (approx)
+                    duration_min = (parse_time(assign.endTime) - parse_time(assign.startTime)) // 60
+                    
+                    scheduled_tasks.append({
+                        "taskId": f"{assign.taskCode}-{assign.aircraftId}", # Unique key
+                        "taskCode": assign.taskCode,
+                        "aircraftId": assign.aircraftId,
+                        "employeeId": emp.employeeId,
+                        "employeeName": f"Emp {emp.employeeId}", # Placeholder if name missing
+                        "startTime": assign.startTime,
+                        "endTime": assign.endTime,
+                        "duration": duration_min
+                    })
+                    
+            return jsonify({
+                "status": "OPTIMAL" if not solution.droppedTasks else "FEASIBLE",
+                "message": f"Solved using {algorithm.upper()}. Dropped: {len(solution.droppedTasks)} tasks.",
+                "scheduledTasks": scheduled_tasks,
+                "totalCost": 0, # Placeholder
+                "solveTimeMs": 0 # Placeholder
+            })
+        else:
+            return jsonify({
+                "status": "FAILED",
+                "message": "No solution found",
+                "scheduledTasks": [],
+                "totalCost": 0,
+                "solveTimeMs": 0
+            }), 200 # Return 200 with FAILED status so frontend handles gracefuly
+
+    except Exception as e:
+        print("\n[ERROR] Scheduler Run Failed:")
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
 
 @api.route('/solver/<api_name>', methods=['POST'])
 def handle_api(api_name: str):

@@ -223,6 +223,9 @@ def solve_input(filename):
         elif strategy_name == 'greedy':
             from src.strategy.greedyStrategy import GreedyStrategy
             strategy = GreedyStrategy()
+        elif strategy_name == 'lns':
+            from src.strategy.optimization.adapter import OptimizationEngineAdapter
+            strategy = OptimizationEngineAdapter()
         else:
             from src.strategy.orStrategy import OrStrategy
             strategy = OrStrategy(time_limit)
@@ -356,7 +359,8 @@ def get_strategies():
     return jsonify({
         'strategies': [
             {'id': 'cpsat', 'name': 'CP-SAT (OR-Tools)', 'description': 'Standard constraint programming solver'},
-            {'id': 'hybrid', 'name': 'Hybrid (CP-SAT + MIP)', 'description': 'Two-phase approach with MIP optimization'}
+            {'id': 'hybrid', 'name': 'Hybrid (CP-SAT + MIP)', 'description': 'Two-phase approach with MIP optimization'},
+            {'id': 'lns', 'name': 'LNS (Optimization Engine)', 'description': 'Large Neighborhood Search with Hexagonal Architecture'}
         ],
         'sizes': [
             {'id': 'small', 'name': 'Small', 'tasks': 9, 'employees': 5},

@@ -1,0 +1,9 @@
+================================================================================
+SOLUTION STATUS: OPTIMAL
+================================================================================
+Unassigned Tasks: 120
+  ARR-M, UNLOAD, CLEAN, FUEL, LOAD, DEP-M, ARR-M, UNLOAD, CLEAN, FUEL, LOAD, DEP-M, ARR-M, UNLOAD, CLEAN, FUEL, LOAD, DEP-M, ARR-M, UNLOAD, CLEAN, FUEL, LOAD, DEP-M, ARR-M, UNLOAD, CLEAN, FUEL, LOAD, DEP-M, ARR-M, UNLOAD, CLEAN, FUEL, LOAD, DEP-M, ARR-M, UNLOAD, CLEAN, FUEL, LOAD, DEP-M, ARR-M, UNLOAD, CLEAN, FUEL, LOAD, DEP-M, ARR-M, UNLOAD, CLEAN, FUEL, LOAD, DEP-M, ARR-M, UNLOAD, CLEAN, FUEL, LOAD, DEP-M, ARR-M, UNLOAD, CLEAN, FUEL, LOAD, DEP-M, ARR-M, UNLOAD, CLEAN, FUEL, LOAD, DEP-M, ARR-M, UNLOAD, CLEAN, FUEL, LOAD, DEP-M, ARR-M, UNLOAD, CLEAN, FUEL, LOAD, DEP-M, ARR-M, UNLOAD, CLEAN, FUEL, LOAD, DEP-M, ARR-M, UNLOAD, CLEAN, FUEL, LOAD, DEP-M, ARR-M, UNLOAD, CLEAN, FUEL, LOAD, DEP-M, ARR-M, UNLOAD, CLEAN, FUEL, LOAD, DEP-M, ARR-M, UNLOAD, CLEAN, FUEL, LOAD, DEP-M, ARR-M, UNLOAD, CLEAN, FUEL, LOAD, DEP-M
+--------------------------------------------------------------------------------
+Task                      Aircraft   Loc        Employee   Start      End       
+--------------------------------------------------------------------------------
+================================================================================
