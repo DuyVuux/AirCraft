@@ -70,7 +70,7 @@ def get_data(filename):
     
     # Try new structure first: data/{trackingId}/output.json
     # filename might be a trackingId or full path
-    tracking_id = filename.replace('.json', '').replace('_output_cpsat', '').replace('_output_hybrid', '')
+    tracking_id = filename.replace('.json', '').replace('_output_cpsat', '').replace('_output_hybrid', '').replace('_output_lns', '')
     
     # Check if it's a timestamped tracking file like "20260104_183904_PLAN-2024-12-05-001.json"
     import re
@@ -99,7 +99,7 @@ def get_data(filename):
                 output_data = json.load(f)
             
             # Try to find matching input file (legacy)
-            input_filename = re.sub(r'_output_(cpsat|hybrid)\.json$', '.json', filename)
+            input_filename = re.sub(r'_output_(cpsat|hybrid|lns)\.json$', '.json', filename)
             input_path = os.path.join(input_dir, input_filename)
             if os.path.exists(input_path):
                 with open(input_path, 'r', encoding='utf-8') as f:
