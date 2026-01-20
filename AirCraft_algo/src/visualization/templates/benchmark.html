@@ -254,17 +254,16 @@
                                 <input type="checkbox" id="strategyCpsat" checked
                                     class="checkbox-custom w-5 h-5 rounded">
                                 <div class="ml-3">
-                                    <span class="text-white font-medium">CP-SAT</span>
-                                    <p class="text-xs text-gray-400">Pure OR-Tools CP-SAT solver</p>
+                                    <span class="text-white font-medium">Pure CP-SAT</span>
+                                    <p class="text-xs text-gray-400">Baseline Exact Solver</p>
                                 </div>
                             </label>
                             <label
                                 class="flex items-center p-3 rounded-lg bg-dark-primary/50 border border-dark-border hover:border-purple-500 transition-colors cursor-pointer">
-                                <input type="checkbox" id="strategyHybrid" checked
-                                    class="checkbox-custom w-5 h-5 rounded">
+                                <input type="checkbox" id="strategyLns" checked class="checkbox-custom w-5 h-5 rounded">
                                 <div class="ml-3">
-                                    <span class="text-white font-medium">Hybrid</span>
-                                    <p class="text-xs text-gray-400">CP-SAT (Phase 1) + MIP (Phase 2)</p>
+                                    <span class="text-white font-medium">Hybrid LNS</span>
+                                    <p class="text-xs text-gray-400">Recommended for Complex Tasks</p>
                                 </div>
                             </label>
                         </div>
@@ -593,7 +592,7 @@
             // Collect options
             const strategies = [];
             if (document.getElementById('strategyCpsat').checked) strategies.push('cpsat');
-            if (document.getElementById('strategyHybrid').checked) strategies.push('hybrid');
+            if (document.getElementById('strategyLns').checked) strategies.push('lns');
 
             const sizes = [];
             const useCustom = document.getElementById('useCustom').checked;

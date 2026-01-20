@@ -217,16 +217,14 @@ def solve_input(filename):
         context = Context.from_dict(input_data)
         
         # Select strategy
-        if strategy_name == 'hybrid':
-            from src.strategy.hybridStrategy import HybridStrategy
-            strategy = HybridStrategy(time_limit)
-        elif strategy_name == 'greedy':
+        if strategy_name == 'greedy':
             from src.strategy.greedyStrategy import GreedyStrategy
             strategy = GreedyStrategy()
         elif strategy_name == 'lns':
             from src.strategy.optimization.adapter import OptimizationEngineAdapter
             strategy = OptimizationEngineAdapter()
         else:
+            # Default to Pure CP-SAT (Refactored OrStrategy)
             from src.strategy.orStrategy import OrStrategy
             strategy = OrStrategy(time_limit)
         
@@ -317,7 +315,7 @@ def run_benchmark():
     
     try:
         data = request.get_json() or {}
-        strategies = data.get('strategies', ['cpsat', 'hybrid'])
+        strategies = data.get('strategies', ['cpsat', 'lns'])
         sizes = data.get('sizes', ['small', 'medium'])
         time_limit = data.get('time_limit', 30)
         custom_config = data.get('custom_config', None)
@@ -358,9 +356,8 @@ def get_strategies():
     """Get available benchmark strategies."""
     return jsonify({
         'strategies': [
-            {'id': 'cpsat', 'name': 'CP-SAT (OR-Tools)', 'description': 'Standard constraint programming solver'},
-            {'id': 'hybrid', 'name': 'Hybrid (CP-SAT + MIP)', 'description': 'Two-phase approach with MIP optimization'},
-            {'id': 'lns', 'name': 'LNS (Optimization Engine)', 'description': 'Large Neighborhood Search with Hexagonal Architecture'}
+            {'id': 'cpsat', 'name': 'Pure CP-SAT', 'description': 'Exact solver (Good for small problems, slow for large)'},
+            {'id': 'lns', 'name': 'Hybrid LNS', 'description': 'Large Neighborhood Search + CP-SAT (Recommended for production)'}
         ],
         'sizes': [
             {'id': 'small', 'name': 'Small', 'tasks': 9, 'employees': 5},

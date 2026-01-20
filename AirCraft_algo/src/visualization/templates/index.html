@@ -374,10 +374,9 @@
                         <div class="flex items-center space-x-2">
                             <select id="strategy-{{ loop.index }}"
                                 class="px-3 py-2 rounded-lg bg-dark-primary border border-dark-border text-gray-300 text-sm cursor-pointer">
-                                <option value="cpsat">CP-SAT</option>
-                                <option value="hybrid">Hybrid</option>
+                                <option value="cpsat">Pure CP-SAT</option>
+                                <option value="lns">Hybrid LNS</option>
                                 <option value="greedy">Greedy</option>
-                                <option value="lns">LNS</option>
                             </select>
                             <button
                                 onclick="runSolver('{{ file }}', document.getElementById('strategy-{{ loop.index }}').value)"
