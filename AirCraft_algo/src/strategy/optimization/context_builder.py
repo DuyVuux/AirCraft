@@ -95,9 +95,12 @@ class ContextBuilder:
                 # Try specific (aircraft, task)
                 d = duration_map.get((ac.aircraftId, t.taskCode))
                 if d is None:
-                    # Fallback or default
+                    # Fallback to "ANY" aircraft
+                    d = duration_map.get(("ANY", t.taskCode))
+                if d is None:
                     print(f"[WARN] No time entry for {ac.aircraftId} - {t.taskCode}. Using default 3600s.")
                     d = 3600
+
                 
                 # Parse Time Window
                 # Aircraft TimeWindow: start/end are ISO strings. 

@@ -1,0 +1,3445 @@
+{
+  "trackingId": "PLAN-2024-12-05-001-V2",
+  "aircrafts": [
+    {
+      "aircraftId": "VN-101",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-02",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T18:07:00Z",
+        "end": "2026-01-02T21:07:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "ARR-M"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ],
+          "dependencies": [
+            "UNLOAD"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ],
+          "dependencies": [
+            "CLEAN"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "CLEAN",
+            "FUEL"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [
+            "LOAD"
+          ],
+          "minLevel": 2
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-102",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-03",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T18:20:00Z",
+        "end": "2026-01-02T21:20:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "ARR-M"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ],
+          "dependencies": [
+            "UNLOAD"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ],
+          "dependencies": [
+            "CLEAN"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "CLEAN",
+            "FUEL"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [
+            "LOAD"
+          ],
+          "minLevel": 2
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-103",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-04",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T18:30:00Z",
+        "end": "2026-01-02T21:30:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "ARR-M"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ],
+          "dependencies": [
+            "UNLOAD"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ],
+          "dependencies": [
+            "CLEAN"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "CLEAN",
+            "FUEL"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [
+            "LOAD"
+          ],
+          "minLevel": 2
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-104",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-05",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T18:44:00Z",
+        "end": "2026-01-02T21:44:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "ARR-M"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ],
+          "dependencies": [
+            "UNLOAD"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ],
+          "dependencies": [
+            "CLEAN"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "CLEAN",
+            "FUEL"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [
+            "LOAD"
+          ],
+          "minLevel": 2
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-105",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-06",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T18:55:00Z",
+        "end": "2026-01-02T21:55:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "ARR-M"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ],
+          "dependencies": [
+            "UNLOAD"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ],
+          "dependencies": [
+            "CLEAN"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "CLEAN",
+            "FUEL"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [
+            "LOAD"
+          ],
+          "minLevel": 2
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-106",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-07",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T19:05:00Z",
+        "end": "2026-01-02T22:05:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "ARR-M"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ],
+          "dependencies": [
+            "UNLOAD"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ],
+          "dependencies": [
+            "CLEAN"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "CLEAN",
+            "FUEL"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [
+            "LOAD"
+          ],
+          "minLevel": 2
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-107",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-08",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T19:07:00Z",
+        "end": "2026-01-02T22:07:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "ARR-M"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ],
+          "dependencies": [
+            "UNLOAD"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ],
+          "dependencies": [
+            "CLEAN"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "CLEAN",
+            "FUEL"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [
+            "LOAD"
+          ],
+          "minLevel": 2
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-108",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-09",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T19:21:00Z",
+        "end": "2026-01-02T22:21:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "ARR-M"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ],
+          "dependencies": [
+            "UNLOAD"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ],
+          "dependencies": [
+            "CLEAN"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "CLEAN",
+            "FUEL"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [
+            "LOAD"
+          ],
+          "minLevel": 2
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-109",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-10",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T19:35:00Z",
+        "end": "2026-01-02T22:35:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "ARR-M"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ],
+          "dependencies": [
+            "UNLOAD"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ],
+          "dependencies": [
+            "CLEAN"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "CLEAN",
+            "FUEL"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [
+            "LOAD"
+          ],
+          "minLevel": 2
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-110",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-01",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T19:43:00Z",
+        "end": "2026-01-02T22:43:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "ARR-M"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ],
+          "dependencies": [
+            "UNLOAD"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ],
+          "dependencies": [
+            "CLEAN"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "CLEAN",
+            "FUEL"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [
+            "LOAD"
+          ],
+          "minLevel": 2
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-111",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-02",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T19:47:00Z",
+        "end": "2026-01-02T22:47:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "ARR-M"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ],
+          "dependencies": [
+            "UNLOAD"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ],
+          "dependencies": [
+            "CLEAN"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "CLEAN",
+            "FUEL"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [
+            "LOAD"
+          ],
+          "minLevel": 2
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-112",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-03",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T19:53:00Z",
+        "end": "2026-01-02T22:53:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "ARR-M"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ],
+          "dependencies": [
+            "UNLOAD"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ],
+          "dependencies": [
+            "CLEAN"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "CLEAN",
+            "FUEL"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [
+            "LOAD"
+          ],
+          "minLevel": 2
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-113",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-04",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T19:56:00Z",
+        "end": "2026-01-02T22:56:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "ARR-M"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ],
+          "dependencies": [
+            "UNLOAD"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ],
+          "dependencies": [
+            "CLEAN"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "CLEAN",
+            "FUEL"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [
+            "LOAD"
+          ],
+          "minLevel": 2
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-114",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-05",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T20:11:00Z",
+        "end": "2026-01-02T23:11:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "ARR-M"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ],
+          "dependencies": [
+            "UNLOAD"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ],
+          "dependencies": [
+            "CLEAN"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "CLEAN",
+            "FUEL"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [
+            "LOAD"
+          ],
+          "minLevel": 2
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-115",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-06",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T20:24:00Z",
+        "end": "2026-01-02T23:24:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "ARR-M"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ],
+          "dependencies": [
+            "UNLOAD"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ],
+          "dependencies": [
+            "CLEAN"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "CLEAN",
+            "FUEL"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [
+            "LOAD"
+          ],
+          "minLevel": 2
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-116",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-07",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T20:29:00Z",
+        "end": "2026-01-02T23:29:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "ARR-M"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ],
+          "dependencies": [
+            "UNLOAD"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ],
+          "dependencies": [
+            "CLEAN"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "CLEAN",
+            "FUEL"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [
+            "LOAD"
+          ],
+          "minLevel": 2
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-117",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-08",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T20:40:00Z",
+        "end": "2026-01-02T23:40:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "ARR-M"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ],
+          "dependencies": [
+            "UNLOAD"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ],
+          "dependencies": [
+            "CLEAN"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "CLEAN",
+            "FUEL"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [
+            "LOAD"
+          ],
+          "minLevel": 2
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-118",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-09",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T20:54:00Z",
+        "end": "2026-01-02T23:54:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "ARR-M"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ],
+          "dependencies": [
+            "UNLOAD"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ],
+          "dependencies": [
+            "CLEAN"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "CLEAN",
+            "FUEL"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [
+            "LOAD"
+          ],
+          "minLevel": 2
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-119",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-10",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T20:55:00Z",
+        "end": "2026-01-02T23:55:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "ARR-M"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ],
+          "dependencies": [
+            "UNLOAD"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ],
+          "dependencies": [
+            "CLEAN"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "CLEAN",
+            "FUEL"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [
+            "LOAD"
+          ],
+          "minLevel": 2
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-120",
+      "aType": {
+        "id": "A321",
+        "desc": "Airbus A321"
+      },
+      "location": {
+        "locationId": "GATE-01",
+        "locationType": "GATE",
+        "longitude": 106.0,
+        "latitude": 10.0
+      },
+      "timeWindow": {
+        "start": "2026-01-02T21:00:00Z",
+        "end": "2026-01-03T00:00:00Z"
+      },
+      "requiredTasks": [
+        {
+          "taskCode": "ARR-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "UNLOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "ARR-M"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "CLEAN",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ],
+          "dependencies": [
+            "UNLOAD"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "FUEL",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ],
+          "dependencies": [
+            "CLEAN"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "LOAD",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "dependencies": [
+            "CLEAN",
+            "FUEL"
+          ],
+          "minLevel": 1
+        },
+        {
+          "taskCode": "DEP-M",
+          "requiredCertificates": [
+            "CERT_MECH"
+          ],
+          "dependencies": [
+            "LOAD"
+          ],
+          "minLevel": 2
+        }
+      ]
+    }
+  ],
+  "hubs": [
+    {
+      "hubId": "HUB_01",
+      "location": {
+        "locationId": "REST_AREA_A",
+        "locationType": "HUB",
+        "longitude": 106.665,
+        "latitude": 10.82
+      }
+    }
+  ],
+  "employees": [
+    {
+      "employeeId": "EMP_MECHANIC_1",
+      "eType": {
+        "role": "MECHANIC",
+        "certificates": [
+          "CERT_MECH"
+        ],
+        "level": 2
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 1800,
+      "fixedBreakTimes": [
+        {
+          "start": "2026-01-02T21:00:00Z",
+          "end": "2026-01-02T21:30:00Z"
+        }
+      ]
+    },
+    {
+      "employeeId": "EMP_MECHANIC_2",
+      "eType": {
+        "role": "MECHANIC",
+        "certificates": [
+          "CERT_MECH"
+        ],
+        "level": 3
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 1800,
+      "fixedBreakTimes": [
+        {
+          "start": "2026-01-02T21:00:00Z",
+          "end": "2026-01-02T21:30:00Z"
+        }
+      ]
+    },
+    {
+      "employeeId": "EMP_MECHANIC_3",
+      "eType": {
+        "role": "MECHANIC",
+        "certificates": [
+          "CERT_MECH"
+        ],
+        "level": 1
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 1800,
+      "fixedBreakTimes": [
+        {
+          "start": "2026-01-02T21:00:00Z",
+          "end": "2026-01-02T21:30:00Z"
+        }
+      ]
+    },
+    {
+      "employeeId": "EMP_MECHANIC_4",
+      "eType": {
+        "role": "MECHANIC",
+        "certificates": [
+          "CERT_MECH"
+        ],
+        "level": 2
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 1800,
+      "fixedBreakTimes": [
+        {
+          "start": "2026-01-02T21:00:00Z",
+          "end": "2026-01-02T21:30:00Z"
+        }
+      ]
+    },
+    {
+      "employeeId": "EMP_MECHANIC_5",
+      "eType": {
+        "role": "MECHANIC",
+        "certificates": [
+          "CERT_MECH"
+        ],
+        "level": 2
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 1800,
+      "fixedBreakTimes": [
+        {
+          "start": "2026-01-02T21:00:00Z",
+          "end": "2026-01-02T21:30:00Z"
+        }
+      ]
+    },
+    {
+      "employeeId": "EMP_MECHANIC_6",
+      "eType": {
+        "role": "MECHANIC",
+        "certificates": [
+          "CERT_MECH"
+        ],
+        "level": 1
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 1800,
+      "fixedBreakTimes": [
+        {
+          "start": "2026-01-02T21:00:00Z",
+          "end": "2026-01-02T21:30:00Z"
+        }
+      ]
+    },
+    {
+      "employeeId": "EMP_GROUND_HANDLING_1",
+      "eType": {
+        "role": "GROUND_HANDLING",
+        "certificates": [
+          "CERT_GND"
+        ],
+        "level": 1
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 1800,
+      "fixedBreakTimes": [
+        {
+          "start": "2026-01-02T21:00:00Z",
+          "end": "2026-01-02T21:30:00Z"
+        }
+      ]
+    },
+    {
+      "employeeId": "EMP_GROUND_HANDLING_2",
+      "eType": {
+        "role": "GROUND_HANDLING",
+        "certificates": [
+          "CERT_GND"
+        ],
+        "level": 2
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 1800,
+      "fixedBreakTimes": [
+        {
+          "start": "2026-01-02T21:00:00Z",
+          "end": "2026-01-02T21:30:00Z"
+        }
+      ]
+    },
+    {
+      "employeeId": "EMP_GROUND_HANDLING_3",
+      "eType": {
+        "role": "GROUND_HANDLING",
+        "certificates": [
+          "CERT_GND"
+        ],
+        "level": 1
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 1800,
+      "fixedBreakTimes": [
+        {
+          "start": "2026-01-02T21:00:00Z",
+          "end": "2026-01-02T21:30:00Z"
+        }
+      ]
+    },
+    {
+      "employeeId": "EMP_GROUND_HANDLING_4",
+      "eType": {
+        "role": "GROUND_HANDLING",
+        "certificates": [
+          "CERT_GND"
+        ],
+        "level": 2
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 1800,
+      "fixedBreakTimes": [
+        {
+          "start": "2026-01-02T21:00:00Z",
+          "end": "2026-01-02T21:30:00Z"
+        }
+      ]
+    },
+    {
+      "employeeId": "EMP_GROUND_HANDLING_5",
+      "eType": {
+        "role": "GROUND_HANDLING",
+        "certificates": [
+          "CERT_GND"
+        ],
+        "level": 3
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 1800,
+      "fixedBreakTimes": [
+        {
+          "start": "2026-01-02T21:00:00Z",
+          "end": "2026-01-02T21:30:00Z"
+        }
+      ]
+    },
+    {
+      "employeeId": "EMP_GROUND_HANDLING_6",
+      "eType": {
+        "role": "GROUND_HANDLING",
+        "certificates": [
+          "CERT_GND"
+        ],
+        "level": 1
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 1800,
+      "fixedBreakTimes": [
+        {
+          "start": "2026-01-02T21:00:00Z",
+          "end": "2026-01-02T21:30:00Z"
+        }
+      ]
+    },
+    {
+      "employeeId": "EMP_GROUND_HANDLING_7",
+      "eType": {
+        "role": "GROUND_HANDLING",
+        "certificates": [
+          "CERT_GND"
+        ],
+        "level": 2
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 1800,
+      "fixedBreakTimes": [
+        {
+          "start": "2026-01-02T21:00:00Z",
+          "end": "2026-01-02T21:30:00Z"
+        }
+      ]
+    },
+    {
+      "employeeId": "EMP_GROUND_HANDLING_8",
+      "eType": {
+        "role": "GROUND_HANDLING",
+        "certificates": [
+          "CERT_GND"
+        ],
+        "level": 1
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 1800,
+      "fixedBreakTimes": [
+        {
+          "start": "2026-01-02T21:00:00Z",
+          "end": "2026-01-02T21:30:00Z"
+        }
+      ]
+    },
+    {
+      "employeeId": "EMP_CLEANER_1",
+      "eType": {
+        "role": "CLEANER",
+        "certificates": [
+          "CERT_CLN"
+        ],
+        "level": 1
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 1800,
+      "fixedBreakTimes": [
+        {
+          "start": "2026-01-02T21:00:00Z",
+          "end": "2026-01-02T21:30:00Z"
+        }
+      ]
+    },
+    {
+      "employeeId": "EMP_CLEANER_2",
+      "eType": {
+        "role": "CLEANER",
+        "certificates": [
+          "CERT_CLN"
+        ],
+        "level": 2
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 1800,
+      "fixedBreakTimes": [
+        {
+          "start": "2026-01-02T21:00:00Z",
+          "end": "2026-01-02T21:30:00Z"
+        }
+      ]
+    },
+    {
+      "employeeId": "EMP_CLEANER_3",
+      "eType": {
+        "role": "CLEANER",
+        "certificates": [
+          "CERT_CLN"
+        ],
+        "level": 1
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 1800,
+      "fixedBreakTimes": [
+        {
+          "start": "2026-01-02T21:00:00Z",
+          "end": "2026-01-02T21:30:00Z"
+        }
+      ]
+    },
+    {
+      "employeeId": "EMP_CLEANER_4",
+      "eType": {
+        "role": "CLEANER",
+        "certificates": [
+          "CERT_CLN"
+        ],
+        "level": 2
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 1800,
+      "fixedBreakTimes": [
+        {
+          "start": "2026-01-02T21:00:00Z",
+          "end": "2026-01-02T21:30:00Z"
+        }
+      ]
+    },
+    {
+      "employeeId": "EMP_CLEANER_5",
+      "eType": {
+        "role": "CLEANER",
+        "certificates": [
+          "CERT_CLN"
+        ],
+        "level": 1
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 1800,
+      "fixedBreakTimes": [
+        {
+          "start": "2026-01-02T21:00:00Z",
+          "end": "2026-01-02T21:30:00Z"
+        }
+      ]
+    },
+    {
+      "employeeId": "EMP_FUEL_AGENT_1",
+      "eType": {
+        "role": "FUEL_AGENT",
+        "certificates": [
+          "CERT_FUEL"
+        ],
+        "level": 2
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 1800,
+      "fixedBreakTimes": [
+        {
+          "start": "2026-01-02T21:00:00Z",
+          "end": "2026-01-02T21:30:00Z"
+        }
+      ]
+    },
+    {
+      "employeeId": "EMP_FUEL_AGENT_2",
+      "eType": {
+        "role": "FUEL_AGENT",
+        "certificates": [
+          "CERT_FUEL"
+        ],
+        "level": 1
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 1800,
+      "fixedBreakTimes": [
+        {
+          "start": "2026-01-02T21:00:00Z",
+          "end": "2026-01-02T21:30:00Z"
+        }
+      ]
+    },
+    {
+      "employeeId": "EMP_FUEL_AGENT_3",
+      "eType": {
+        "role": "FUEL_AGENT",
+        "certificates": [
+          "CERT_FUEL"
+        ],
+        "level": 3
+      },
+      "currentLocation": "HUB_01",
+      "workingTimes": [
+        {
+          "start": "2026-01-02T18:00:00Z",
+          "end": "2026-01-03T00:00:00Z"
+        }
+      ],
+      "taskCapabilities": [],
+      "breakDuration": 1800,
+      "fixedBreakTimes": [
+        {
+          "start": "2026-01-02T21:00:00Z",
+          "end": "2026-01-02T21:30:00Z"
+        }
+      ]
+    }
+  ],
+  "busStops": [
+    {
+      "busStopId": "BS_TERMINAL",
+      "bType": {
+        "id": "TERMINAL_STOP",
+        "desc": "Terminal Bus Stop"
+      },
+      "location": {
+        "longitude": 106.6588,
+        "latitude": 10.8185
+      }
+    },
+    {
+      "busStopId": "BS_HANGAR",
+      "bType": {
+        "id": "HANGAR_STOP",
+        "desc": "Hangar Area Bus Stop"
+      },
+      "location": {
+        "longitude": 106.66,
+        "latitude": 10.819
+      }
+    },
+    {
+      "busStopId": "BS_REST_AREA",
+      "bType": {
+        "id": "REST_AREA_STOP",
+        "desc": "Rest Area Bus Stop"
+      },
+      "location": {
+        "longitude": 106.665,
+        "latitude": 10.82
+      }
+    }
+  ],
+  "busRoutes": [
+    {
+      "routeId": "ROUTE_MAIN",
+      "routeName": "Main Airport Loop",
+      "stops": [
+        {
+          "busStopId": "BS_TERMINAL",
+          "arrivalTime": 0,
+          "departureTime": 120,
+          "stopDuration": 120
+        },
+        {
+          "busStopId": "BS_HANGAR",
+          "arrivalTime": 480,
+          "departureTime": 600,
+          "stopDuration": 120
+        },
+        {
+          "busStopId": "BS_REST_AREA",
+          "arrivalTime": 960,
+          "departureTime": 1080,
+          "stopDuration": 120
+        },
+        {
+          "busStopId": "BS_TERMINAL",
+          "arrivalTime": 1440,
+          "departureTime": null,
+          "stopDuration": 0
+        }
+      ],
+      "cycleTime": 1440,
+      "frequency": 1800,
+      "operatingHours": {
+        "start": "2024-12-05T06:00:00Z",
+        "end": "2024-12-05T18:00:00Z"
+      }
+    }
+  ],
+  "matrixConfigs": {
+    "maxWalkDistance": 1200,
+    "distanceMatrix": [
+      {
+        "srcCode": "GATE-01",
+        "destCode": "HANGAR-02",
+        "travelTime": 900
+      },
+      {
+        "srcCode": "GATE-01",
+        "destCode": "APRON-03",
+        "travelTime": 1200
+      },
+      {
+        "srcCode": "GATE-01",
+        "destCode": "REST_AREA_A",
+        "travelTime": 600
+      },
+      {
+        "srcCode": "HANGAR-02",
+        "destCode": "GATE-01",
+        "travelTime": 900
+      },
+      {
+        "srcCode": "HANGAR-02",
+        "destCode": "APRON-03",
+        "travelTime": 600
+      },
+      {
+        "srcCode": "HANGAR-02",
+        "destCode": "REST_AREA_A",
+        "travelTime": 1500
+      },
+      {
+        "srcCode": "APRON-03",
+        "destCode": "GATE-01",
+        "travelTime": 1200
+      },
+      {
+        "srcCode": "APRON-03",
+        "destCode": "HANGAR-02",
+        "travelTime": 600
+      },
+      {
+        "srcCode": "APRON-03",
+        "destCode": "REST_AREA_A",
+        "travelTime": 1800
+      },
+      {
+        "srcCode": "REST_AREA_A",
+        "destCode": "GATE-01",
+        "travelTime": 600
+      },
+      {
+        "srcCode": "REST_AREA_A",
+        "destCode": "HANGAR-02",
+        "travelTime": 1500
+      },
+      {
+        "srcCode": "REST_AREA_A",
+        "destCode": "APRON-03",
+        "travelTime": 1800
+      },
+      {
+        "srcCode": "GATE-01",
+        "destCode": "GATE-01",
+        "travelTime": 0
+      },
+      {
+        "srcCode": "HANGAR-02",
+        "destCode": "HANGAR-02",
+        "travelTime": 0
+      },
+      {
+        "srcCode": "APRON-03",
+        "destCode": "APRON-03",
+        "travelTime": 0
+      },
+      {
+        "srcCode": "REST_AREA_A",
+        "destCode": "REST_AREA_A",
+        "travelTime": 0
+      },
+      {
+        "srcCode": "REST_AREA_A",
+        "destCode": "GATE-02",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "REST_AREA_A",
+        "destCode": "GATE-05",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "REST_AREA_A",
+        "destCode": "GATE-07",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "REST_AREA_A",
+        "destCode": "GATE-06",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "REST_AREA_A",
+        "destCode": "GATE-03",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "REST_AREA_A",
+        "destCode": "GATE-10",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "REST_AREA_A",
+        "destCode": "GATE-09",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "REST_AREA_A",
+        "destCode": "GATE-04",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "REST_AREA_A",
+        "destCode": "GATE-08",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-02",
+        "destCode": "REST_AREA_A",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-02",
+        "destCode": "GATE-02",
+        "travelTime": 0
+      },
+      {
+        "srcCode": "GATE-02",
+        "destCode": "APRON-03",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-02",
+        "destCode": "GATE-05",
+        "travelTime": 180
+      },
+      {
+        "srcCode": "GATE-02",
+        "destCode": "GATE-07",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-02",
+        "destCode": "GATE-06",
+        "travelTime": 240
+      },
+      {
+        "srcCode": "GATE-02",
+        "destCode": "GATE-03",
+        "travelTime": 60
+      },
+      {
+        "srcCode": "GATE-02",
+        "destCode": "GATE-10",
+        "travelTime": 480
+      },
+      {
+        "srcCode": "GATE-02",
+        "destCode": "GATE-09",
+        "travelTime": 420
+      },
+      {
+        "srcCode": "GATE-02",
+        "destCode": "HANGAR-02",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-02",
+        "destCode": "GATE-04",
+        "travelTime": 120
+      },
+      {
+        "srcCode": "GATE-02",
+        "destCode": "GATE-01",
+        "travelTime": 60
+      },
+      {
+        "srcCode": "GATE-02",
+        "destCode": "GATE-08",
+        "travelTime": 360
+      },
+      {
+        "srcCode": "APRON-03",
+        "destCode": "GATE-02",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "APRON-03",
+        "destCode": "GATE-05",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "APRON-03",
+        "destCode": "GATE-07",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "APRON-03",
+        "destCode": "GATE-06",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "APRON-03",
+        "destCode": "GATE-03",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "APRON-03",
+        "destCode": "GATE-10",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "APRON-03",
+        "destCode": "GATE-09",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "APRON-03",
+        "destCode": "GATE-04",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "APRON-03",
+        "destCode": "GATE-08",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-05",
+        "destCode": "REST_AREA_A",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-05",
+        "destCode": "GATE-02",
+        "travelTime": 180
+      },
+      {
+        "srcCode": "GATE-05",
+        "destCode": "APRON-03",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-05",
+        "destCode": "GATE-05",
+        "travelTime": 0
+      },
+      {
+        "srcCode": "GATE-05",
+        "destCode": "GATE-07",
+        "travelTime": 120
+      },
+      {
+        "srcCode": "GATE-05",
+        "destCode": "GATE-06",
+        "travelTime": 60
+      },
+      {
+        "srcCode": "GATE-05",
+        "destCode": "GATE-03",
+        "travelTime": 120
+      },
+      {
+        "srcCode": "GATE-05",
+        "destCode": "GATE-10",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-05",
+        "destCode": "GATE-09",
+        "travelTime": 240
+      },
+      {
+        "srcCode": "GATE-05",
+        "destCode": "HANGAR-02",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-05",
+        "destCode": "GATE-04",
+        "travelTime": 60
+      },
+      {
+        "srcCode": "GATE-05",
+        "destCode": "GATE-01",
+        "travelTime": 240
+      },
+      {
+        "srcCode": "GATE-05",
+        "destCode": "GATE-08",
+        "travelTime": 180
+      },
+      {
+        "srcCode": "GATE-07",
+        "destCode": "REST_AREA_A",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-07",
+        "destCode": "GATE-02",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-07",
+        "destCode": "APRON-03",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-07",
+        "destCode": "GATE-05",
+        "travelTime": 120
+      },
+      {
+        "srcCode": "GATE-07",
+        "destCode": "GATE-07",
+        "travelTime": 0
+      },
+      {
+        "srcCode": "GATE-07",
+        "destCode": "GATE-06",
+        "travelTime": 60
+      },
+      {
+        "srcCode": "GATE-07",
+        "destCode": "GATE-03",
+        "travelTime": 240
+      },
+      {
+        "srcCode": "GATE-07",
+        "destCode": "GATE-10",
+        "travelTime": 180
+      },
+      {
+        "srcCode": "GATE-07",
+        "destCode": "GATE-09",
+        "travelTime": 120
+      },
+      {
+        "srcCode": "GATE-07",
+        "destCode": "HANGAR-02",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-07",
+        "destCode": "GATE-04",
+        "travelTime": 180
+      },
+      {
+        "srcCode": "GATE-07",
+        "destCode": "GATE-01",
+        "travelTime": 360
+      },
+      {
+        "srcCode": "GATE-07",
+        "destCode": "GATE-08",
+        "travelTime": 60
+      },
+      {
+        "srcCode": "GATE-06",
+        "destCode": "REST_AREA_A",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-06",
+        "destCode": "GATE-02",
+        "travelTime": 240
+      },
+      {
+        "srcCode": "GATE-06",
+        "destCode": "APRON-03",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-06",
+        "destCode": "GATE-05",
+        "travelTime": 60
+      },
+      {
+        "srcCode": "GATE-06",
+        "destCode": "GATE-07",
+        "travelTime": 60
+      },
+      {
+        "srcCode": "GATE-06",
+        "destCode": "GATE-06",
+        "travelTime": 0
+      },
+      {
+        "srcCode": "GATE-06",
+        "destCode": "GATE-03",
+        "travelTime": 180
+      },
+      {
+        "srcCode": "GATE-06",
+        "destCode": "GATE-10",
+        "travelTime": 240
+      },
+      {
+        "srcCode": "GATE-06",
+        "destCode": "GATE-09",
+        "travelTime": 180
+      },
+      {
+        "srcCode": "GATE-06",
+        "destCode": "HANGAR-02",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-06",
+        "destCode": "GATE-04",
+        "travelTime": 120
+      },
+      {
+        "srcCode": "GATE-06",
+        "destCode": "GATE-01",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-06",
+        "destCode": "GATE-08",
+        "travelTime": 120
+      },
+      {
+        "srcCode": "GATE-03",
+        "destCode": "REST_AREA_A",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-03",
+        "destCode": "GATE-02",
+        "travelTime": 60
+      },
+      {
+        "srcCode": "GATE-03",
+        "destCode": "APRON-03",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-03",
+        "destCode": "GATE-05",
+        "travelTime": 120
+      },
+      {
+        "srcCode": "GATE-03",
+        "destCode": "GATE-07",
+        "travelTime": 240
+      },
+      {
+        "srcCode": "GATE-03",
+        "destCode": "GATE-06",
+        "travelTime": 180
+      },
+      {
+        "srcCode": "GATE-03",
+        "destCode": "GATE-03",
+        "travelTime": 0
+      },
+      {
+        "srcCode": "GATE-03",
+        "destCode": "GATE-10",
+        "travelTime": 420
+      },
+      {
+        "srcCode": "GATE-03",
+        "destCode": "GATE-09",
+        "travelTime": 360
+      },
+      {
+        "srcCode": "GATE-03",
+        "destCode": "HANGAR-02",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-03",
+        "destCode": "GATE-04",
+        "travelTime": 60
+      },
+      {
+        "srcCode": "GATE-03",
+        "destCode": "GATE-01",
+        "travelTime": 120
+      },
+      {
+        "srcCode": "GATE-03",
+        "destCode": "GATE-08",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-10",
+        "destCode": "REST_AREA_A",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-10",
+        "destCode": "GATE-02",
+        "travelTime": 480
+      },
+      {
+        "srcCode": "GATE-10",
+        "destCode": "APRON-03",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-10",
+        "destCode": "GATE-05",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-10",
+        "destCode": "GATE-07",
+        "travelTime": 180
+      },
+      {
+        "srcCode": "GATE-10",
+        "destCode": "GATE-06",
+        "travelTime": 240
+      },
+      {
+        "srcCode": "GATE-10",
+        "destCode": "GATE-03",
+        "travelTime": 420
+      },
+      {
+        "srcCode": "GATE-10",
+        "destCode": "GATE-10",
+        "travelTime": 0
+      },
+      {
+        "srcCode": "GATE-10",
+        "destCode": "GATE-09",
+        "travelTime": 60
+      },
+      {
+        "srcCode": "GATE-10",
+        "destCode": "HANGAR-02",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-10",
+        "destCode": "GATE-04",
+        "travelTime": 360
+      },
+      {
+        "srcCode": "GATE-10",
+        "destCode": "GATE-01",
+        "travelTime": 540
+      },
+      {
+        "srcCode": "GATE-10",
+        "destCode": "GATE-08",
+        "travelTime": 120
+      },
+      {
+        "srcCode": "GATE-09",
+        "destCode": "REST_AREA_A",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-09",
+        "destCode": "GATE-02",
+        "travelTime": 420
+      },
+      {
+        "srcCode": "GATE-09",
+        "destCode": "APRON-03",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-09",
+        "destCode": "GATE-05",
+        "travelTime": 240
+      },
+      {
+        "srcCode": "GATE-09",
+        "destCode": "GATE-07",
+        "travelTime": 120
+      },
+      {
+        "srcCode": "GATE-09",
+        "destCode": "GATE-06",
+        "travelTime": 180
+      },
+      {
+        "srcCode": "GATE-09",
+        "destCode": "GATE-03",
+        "travelTime": 360
+      },
+      {
+        "srcCode": "GATE-09",
+        "destCode": "GATE-10",
+        "travelTime": 60
+      },
+      {
+        "srcCode": "GATE-09",
+        "destCode": "GATE-09",
+        "travelTime": 0
+      },
+      {
+        "srcCode": "GATE-09",
+        "destCode": "HANGAR-02",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-09",
+        "destCode": "GATE-04",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-09",
+        "destCode": "GATE-01",
+        "travelTime": 480
+      },
+      {
+        "srcCode": "GATE-09",
+        "destCode": "GATE-08",
+        "travelTime": 60
+      },
+      {
+        "srcCode": "HANGAR-02",
+        "destCode": "GATE-02",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "HANGAR-02",
+        "destCode": "GATE-05",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "HANGAR-02",
+        "destCode": "GATE-07",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "HANGAR-02",
+        "destCode": "GATE-06",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "HANGAR-02",
+        "destCode": "GATE-03",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "HANGAR-02",
+        "destCode": "GATE-10",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "HANGAR-02",
+        "destCode": "GATE-09",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "HANGAR-02",
+        "destCode": "GATE-04",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "HANGAR-02",
+        "destCode": "GATE-08",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-04",
+        "destCode": "REST_AREA_A",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-04",
+        "destCode": "GATE-02",
+        "travelTime": 120
+      },
+      {
+        "srcCode": "GATE-04",
+        "destCode": "APRON-03",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-04",
+        "destCode": "GATE-05",
+        "travelTime": 60
+      },
+      {
+        "srcCode": "GATE-04",
+        "destCode": "GATE-07",
+        "travelTime": 180
+      },
+      {
+        "srcCode": "GATE-04",
+        "destCode": "GATE-06",
+        "travelTime": 120
+      },
+      {
+        "srcCode": "GATE-04",
+        "destCode": "GATE-03",
+        "travelTime": 60
+      },
+      {
+        "srcCode": "GATE-04",
+        "destCode": "GATE-10",
+        "travelTime": 360
+      },
+      {
+        "srcCode": "GATE-04",
+        "destCode": "GATE-09",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-04",
+        "destCode": "HANGAR-02",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-04",
+        "destCode": "GATE-04",
+        "travelTime": 0
+      },
+      {
+        "srcCode": "GATE-04",
+        "destCode": "GATE-01",
+        "travelTime": 180
+      },
+      {
+        "srcCode": "GATE-04",
+        "destCode": "GATE-08",
+        "travelTime": 240
+      },
+      {
+        "srcCode": "GATE-01",
+        "destCode": "GATE-02",
+        "travelTime": 60
+      },
+      {
+        "srcCode": "GATE-01",
+        "destCode": "GATE-05",
+        "travelTime": 240
+      },
+      {
+        "srcCode": "GATE-01",
+        "destCode": "GATE-07",
+        "travelTime": 360
+      },
+      {
+        "srcCode": "GATE-01",
+        "destCode": "GATE-06",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-01",
+        "destCode": "GATE-03",
+        "travelTime": 120
+      },
+      {
+        "srcCode": "GATE-01",
+        "destCode": "GATE-10",
+        "travelTime": 540
+      },
+      {
+        "srcCode": "GATE-01",
+        "destCode": "GATE-09",
+        "travelTime": 480
+      },
+      {
+        "srcCode": "GATE-01",
+        "destCode": "GATE-04",
+        "travelTime": 180
+      },
+      {
+        "srcCode": "GATE-01",
+        "destCode": "GATE-08",
+        "travelTime": 420
+      },
+      {
+        "srcCode": "GATE-08",
+        "destCode": "REST_AREA_A",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-08",
+        "destCode": "GATE-02",
+        "travelTime": 360
+      },
+      {
+        "srcCode": "GATE-08",
+        "destCode": "APRON-03",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-08",
+        "destCode": "GATE-05",
+        "travelTime": 180
+      },
+      {
+        "srcCode": "GATE-08",
+        "destCode": "GATE-07",
+        "travelTime": 60
+      },
+      {
+        "srcCode": "GATE-08",
+        "destCode": "GATE-06",
+        "travelTime": 120
+      },
+      {
+        "srcCode": "GATE-08",
+        "destCode": "GATE-03",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-08",
+        "destCode": "GATE-10",
+        "travelTime": 120
+      },
+      {
+        "srcCode": "GATE-08",
+        "destCode": "GATE-09",
+        "travelTime": 60
+      },
+      {
+        "srcCode": "GATE-08",
+        "destCode": "HANGAR-02",
+        "travelTime": 300
+      },
+      {
+        "srcCode": "GATE-08",
+        "destCode": "GATE-04",
+        "travelTime": 240
+      },
+      {
+        "srcCode": "GATE-08",
+        "destCode": "GATE-01",
+        "travelTime": 420
+      },
+      {
+        "srcCode": "GATE-08",
+        "destCode": "GATE-08",
+        "travelTime": 0
+      }
+    ],
+    "busTransitMatrix": [
+      {
+        "fromBusStopId": "BS_TERMINAL",
+        "toBusStopId": "BS_HANGAR",
+        "routeId": "ROUTE_MAIN",
+        "transitTime": 360,
+        "averageWaitTime": 900
+      },
+      {
+        "fromBusStopId": "BS_HANGAR",
+        "toBusStopId": "BS_REST_AREA",
+        "routeId": "ROUTE_MAIN",
+        "transitTime": 360,
+        "averageWaitTime": 900
+      },
+      {
+        "fromBusStopId": "BS_REST_AREA",
+        "toBusStopId": "BS_TERMINAL",
+        "routeId": "ROUTE_MAIN",
+        "transitTime": 360,
+        "averageWaitTime": 900
+      },
+      {
+        "fromBusStopId": "BS_TERMINAL",
+        "toBusStopId": "BS_REST_AREA",
+        "routeId": "ROUTE_MAIN",
+        "transitTime": 840,
+        "averageWaitTime": 900
+      },
+      {
+        "fromBusStopId": "BS_HANGAR",
+        "toBusStopId": "BS_TERMINAL",
+        "routeId": "ROUTE_MAIN",
+        "transitTime": 840,
+        "averageWaitTime": 900
+      },
+      {
+        "fromBusStopId": "BS_REST_AREA",
+        "toBusStopId": "BS_HANGAR",
+        "routeId": "ROUTE_MAIN",
+        "transitTime": 840,
+        "averageWaitTime": 900
+      }
+    ],
+    "walkingDistanceFromLocationToBusStop": [
+      {
+        "locationId": "GATE-01",
+        "busStopId": "BS_TERMINAL",
+        "walkTime": 130
+      },
+      {
+        "locationId": "GATE-01",
+        "busStopId": "BS_HANGAR",
+        "walkTime": 190
+      },
+      {
+        "locationId": "GATE-01",
+        "busStopId": "BS_REST_AREA",
+        "walkTime": 160
+      },
+      {
+        "locationId": "GATE-02",
+        "busStopId": "BS_TERMINAL",
+        "walkTime": 140
+      },
+      {
+        "locationId": "GATE-02",
+        "busStopId": "BS_HANGAR",
+        "walkTime": 200
+      },
+      {
+        "locationId": "GATE-02",
+        "busStopId": "BS_REST_AREA",
+        "walkTime": 170
+      },
+      {
+        "locationId": "GATE-03",
+        "busStopId": "BS_TERMINAL",
+        "walkTime": 150
+      },
+      {
+        "locationId": "GATE-03",
+        "busStopId": "BS_HANGAR",
+        "walkTime": 210
+      },
+      {
+        "locationId": "GATE-03",
+        "busStopId": "BS_REST_AREA",
+        "walkTime": 180
+      },
+      {
+        "locationId": "GATE-04",
+        "busStopId": "BS_TERMINAL",
+        "walkTime": 160
+      },
+      {
+        "locationId": "GATE-04",
+        "busStopId": "BS_HANGAR",
+        "walkTime": 220
+      },
+      {
+        "locationId": "GATE-04",
+        "busStopId": "BS_REST_AREA",
+        "walkTime": 190
+      },
+      {
+        "locationId": "GATE-05",
+        "busStopId": "BS_TERMINAL",
+        "walkTime": 170
+      },
+      {
+        "locationId": "GATE-05",
+        "busStopId": "BS_HANGAR",
+        "walkTime": 230
+      },
+      {
+        "locationId": "GATE-05",
+        "busStopId": "BS_REST_AREA",
+        "walkTime": 200
+      },
+      {
+        "locationId": "GATE-06",
+        "busStopId": "BS_TERMINAL",
+        "walkTime": 180
+      },
+      {
+        "locationId": "GATE-06",
+        "busStopId": "BS_HANGAR",
+        "walkTime": 240
+      },
+      {
+        "locationId": "GATE-06",
+        "busStopId": "BS_REST_AREA",
+        "walkTime": 210
+      },
+      {
+        "locationId": "GATE-07",
+        "busStopId": "BS_TERMINAL",
+        "walkTime": 190
+      },
+      {
+        "locationId": "GATE-07",
+        "busStopId": "BS_HANGAR",
+        "walkTime": 250
+      },
+      {
+        "locationId": "GATE-07",
+        "busStopId": "BS_REST_AREA",
+        "walkTime": 220
+      },
+      {
+        "locationId": "GATE-08",
+        "busStopId": "BS_TERMINAL",
+        "walkTime": 200
+      },
+      {
+        "locationId": "GATE-08",
+        "busStopId": "BS_HANGAR",
+        "walkTime": 260
+      },
+      {
+        "locationId": "GATE-08",
+        "busStopId": "BS_REST_AREA",
+        "walkTime": 230
+      },
+      {
+        "locationId": "GATE-09",
+        "busStopId": "BS_TERMINAL",
+        "walkTime": 210
+      },
+      {
+        "locationId": "GATE-09",
+        "busStopId": "BS_HANGAR",
+        "walkTime": 270
+      },
+      {
+        "locationId": "GATE-09",
+        "busStopId": "BS_REST_AREA",
+        "walkTime": 240
+      },
+      {
+        "locationId": "GATE-10",
+        "busStopId": "BS_TERMINAL",
+        "walkTime": 220
+      },
+      {
+        "locationId": "GATE-10",
+        "busStopId": "BS_HANGAR",
+        "walkTime": 280
+      },
+      {
+        "locationId": "GATE-10",
+        "busStopId": "BS_REST_AREA",
+        "walkTime": 250
+      },
+      {
+        "locationId": "HANGAR-02",
+        "busStopId": "BS_HANGAR",
+        "walkTime": 90
+      },
+      {
+        "locationId": "APRON-03",
+        "busStopId": "BS_HANGAR",
+        "walkTime": 120
+      },
+      {
+        "locationId": "REST_AREA_A",
+        "busStopId": "BS_REST_AREA",
+        "walkTime": 60
+      }
+    ],
+    "timeMatrix": [
+      {
+        "taskCode": "ARR-M",
+        "role": "MECHANIC",
+        "level": 1,
+        "certificates": [
+          "CERT_MECH"
+        ],
+        "aircraftId": "ANY",
+        "timeProcess": 2100
+      },
+      {
+        "taskCode": "ARR-M",
+        "role": "MECHANIC",
+        "level": 2,
+        "certificates": [
+          "CERT_MECH"
+        ],
+        "aircraftId": "ANY",
+        "timeProcess": 1800
+      },
+      {
+        "taskCode": "ARR-M",
+        "role": "MECHANIC",
+        "level": 3,
+        "certificates": [
+          "CERT_MECH"
+        ],
+        "aircraftId": "ANY",
+        "timeProcess": 1500
+      },
+      {
+        "taskCode": "UNLOAD",
+        "role": "GROUND_HANDLING",
+        "level": 1,
+        "certificates": [
+          "CERT_GND"
+        ],
+        "aircraftId": "ANY",
+        "timeProcess": 3000
+      },
+      {
+        "taskCode": "UNLOAD",
+        "role": "GROUND_HANDLING",
+        "level": 2,
+        "certificates": [
+          "CERT_GND"
+        ],
+        "aircraftId": "ANY",
+        "timeProcess": 2700
+      },
+      {
+        "taskCode": "UNLOAD",
+        "role": "GROUND_HANDLING",
+        "level": 3,
+        "certificates": [
+          "CERT_GND"
+        ],
+        "aircraftId": "ANY",
+        "timeProcess": 2400
+      },
+      {
+        "taskCode": "CLEAN",
+        "role": "CLEANER",
+        "level": 1,
+        "certificates": [
+          "CERT_CLN"
+        ],
+        "aircraftId": "ANY",
+        "timeProcess": 2700
+      },
+      {
+        "taskCode": "CLEAN",
+        "role": "CLEANER",
+        "level": 2,
+        "certificates": [
+          "CERT_CLN"
+        ],
+        "aircraftId": "ANY",
+        "timeProcess": 2400
+      },
+      {
+        "taskCode": "CLEAN",
+        "role": "CLEANER",
+        "level": 3,
+        "certificates": [
+          "CERT_CLN"
+        ],
+        "aircraftId": "ANY",
+        "timeProcess": 2100
+      },
+      {
+        "taskCode": "FUEL",
+        "role": "FUEL_AGENT",
+        "level": 1,
+        "certificates": [
+          "CERT_FUEL"
+        ],
+        "aircraftId": "ANY",
+        "timeProcess": 2100
+      },
+      {
+        "taskCode": "FUEL",
+        "role": "FUEL_AGENT",
+        "level": 2,
+        "certificates": [
+          "CERT_FUEL"
+        ],
+        "aircraftId": "ANY",
+        "timeProcess": 1800
+      },
+      {
+        "taskCode": "FUEL",
+        "role": "FUEL_AGENT",
+        "level": 3,
+        "certificates": [
+          "CERT_FUEL"
+        ],
+        "aircraftId": "ANY",
+        "timeProcess": 1500
+      },
+      {
+        "taskCode": "LOAD",
+        "role": "GROUND_HANDLING",
+        "level": 1,
+        "certificates": [
+          "CERT_GND"
+        ],
+        "aircraftId": "ANY",
+        "timeProcess": 3000
+      },
+      {
+        "taskCode": "LOAD",
+        "role": "GROUND_HANDLING",
+        "level": 2,
+        "certificates": [
+          "CERT_GND"
+        ],
+        "aircraftId": "ANY",
+        "timeProcess": 2700
+      },
+      {
+        "taskCode": "LOAD",
+        "role": "GROUND_HANDLING",
+        "level": 3,
+        "certificates": [
+          "CERT_GND"
+        ],
+        "aircraftId": "ANY",
+        "timeProcess": 2400
+      },
+      {
+        "taskCode": "DEP-M",
+        "role": "MECHANIC",
+        "level": 1,
+        "certificates": [
+          "CERT_MECH"
+        ],
+        "aircraftId": "ANY",
+        "timeProcess": 2100
+      },
+      {
+        "taskCode": "DEP-M",
+        "role": "MECHANIC",
+        "level": 2,
+        "certificates": [
+          "CERT_MECH"
+        ],
+        "aircraftId": "ANY",
+        "timeProcess": 1800
+      },
+      {
+        "taskCode": "DEP-M",
+        "role": "MECHANIC",
+        "level": 3,
+        "certificates": [
+          "CERT_MECH"
+        ],
+        "aircraftId": "ANY",
+        "timeProcess": 1500
+      }
+    ]
+  },
+  "version": "2.0"
+}
