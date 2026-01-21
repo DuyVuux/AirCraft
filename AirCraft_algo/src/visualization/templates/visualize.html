@@ -267,10 +267,11 @@
             flex: 1;
             position: relative;
             min-width: 800px;
-            height: 56px;
+            min-height: 56px;
             background: rgba(0, 0, 0, 0.05);
             /* Neutral track bg */
             border-radius: 8px;
+            transition: height 0.2s ease;
         }
 
         /* Task Bars */
@@ -396,6 +397,82 @@
             font-size: 10px;
             color: var(--text-secondary);
         }
+
+        .time-marker {
+            flex: 1;
+            text-align: center;
+            font-size: 10px;
+            color: var(--text-secondary);
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-content {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-default);
+            border-radius: 16px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: scale(0.95);
+            transition: transform 0.2s ease;
+        }
+
+        .modal-overlay.open .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-default);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-body {
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            padding: 4px;
+            border-radius: 4px;
+            transition: all 0.2s;
+        }
+
+        .modal-close:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.1);
+        }
     </style>
 </head>
 
@@ -429,6 +506,11 @@
                             class="nav-pill px-4 py-2 rounded-lg text-sm font-medium text-secondary cursor-pointer"
                             onclick="switchTab('aircraft')">
                             Aircraft
+                        </button>
+                        <button id="workload-tab"
+                            class="nav-pill px-4 py-2 rounded-lg text-sm font-medium text-secondary cursor-pointer"
+                            onclick="switchTab('workload')">
+                            Workload
                         </button>
                     </div>
                     <!-- Theme Toggle -->
@@ -507,7 +589,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="glass-card p-4">
+                <div class="glass-card p-4 transition-transform hover:scale-105 cursor-pointer"
+                    onclick="showDroppedTasks()">
                     <div class="flex items-center justify-between">
                         <div>
                             <p class="text-secondary text-xs uppercase tracking-wide">Dropped Tasks</p>
@@ -525,7 +608,7 @@
             </div>
 
             <!-- Workload Balance -->
-            <div class="glass-card p-6 mb-6">
+            <div id="workload-view" class="glass-card p-6 mb-6 hidden">
                 <div class="flex justify-between items-center mb-4">
                     <div>
                         <h2 class="font-heading font-semibold text-primary text-lg">Workload Balance</h2>
@@ -598,6 +681,24 @@
         </div>
     </div>
 
+    <!-- Dropped Tasks Modal -->
+    <div id="dropped-modal" class="modal-overlay">
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h3 class="text-xl font-heading font-semibold text-primary">Dropped Tasks Details</h3>
+                <button class="modal-close" onclick="closeModal()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body" id="dropped-list">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
+
     <!-- Tooltip -->
     <div id="tooltip" class="tooltip"></div>
 
@@ -610,23 +711,34 @@
         function switchTab(tab) {
             const empTab = document.getElementById('employee-tab');
             const airTab = document.getElementById('aircraft-tab');
+            const workTab = document.getElementById('workload-tab');
+
             const empView = document.getElementById('employee-view');
             const airView = document.getElementById('aircraft-view');
+            const workView = document.getElementById('workload-view');
 
+            // Reset all tabs
+            [empTab, airTab, workTab].forEach(t => {
+                t.classList.remove('active', 'text-white');
+                t.classList.add('text-gray-400');
+            });
+
+            // Hide all views
+            [empView, airView, workView].forEach(v => v.classList.add('hidden'));
+
+            // Activate selected
             if (tab === 'employee') {
                 empTab.classList.add('active', 'text-white');
                 empTab.classList.remove('text-gray-400');
-                airTab.classList.remove('active', 'text-white');
-                airTab.classList.add('text-gray-400');
                 empView.classList.remove('hidden');
-                airView.classList.add('hidden');
-            } else {
+            } else if (tab === 'aircraft') {
                 airTab.classList.add('active', 'text-white');
                 airTab.classList.remove('text-gray-400');
-                empTab.classList.remove('active', 'text-white');
-                empTab.classList.add('text-gray-400');
                 airView.classList.remove('hidden');
-                empView.classList.add('hidden');
+            } else if (tab === 'workload') {
+                workTab.classList.add('active', 'text-white');
+                workTab.classList.remove('text-gray-400');
+                workView.classList.remove('hidden');
             }
         }
 
@@ -841,6 +953,11 @@
 
                 // Calculate overlap offsets for tasks
                 const taskPositions = calculateTaskPositions(assignments);
+                const maxRow = taskPositions.length > 0
+                    ? Math.max(...taskPositions.map(p => p.row))
+                    : 0;
+                // Base height 56px, add 26px for each extra row
+                const trackHeight = Math.max(56, 40 + (maxRow * 26) + 26);
 
                 html += `
                     <div class="timeline-row">
@@ -855,7 +972,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="timeline-track">
+                        <div class="timeline-track" style="height: ${trackHeight}px">
                 `;
 
                 // Render working time backgrounds
@@ -1014,6 +1131,11 @@
                 const info = aircraftsInfo[aircraftId] || {};
                 const timeWindow = info.timeWindow || {};
                 const taskPositions = calculateTaskPositions(tasks);
+                const maxRow = taskPositions.length > 0
+                    ? Math.max(...taskPositions.map(p => p.row))
+                    : 0;
+                // Base height 56px, add 26px for each extra row
+                const trackHeight = Math.max(56, 40 + (maxRow * 26) + 26);
 
                 html += `
                     <div class="timeline-row">
@@ -1023,7 +1145,7 @@
                                 <div class="text-xs text-secondary">${info.aType?.desc || ''}</div>
                             </div>
                         </div>
-                        <div class="timeline-track">
+                        <div class="timeline-track" style="height: ${trackHeight}px">
                 `;
 
                 // Render time window background
@@ -1214,6 +1336,75 @@
                 document.getElementById('theme-icon-dark').classList.add('hidden');
                 document.getElementById('theme-icon-light').classList.remove('hidden');
             }
+        }
+
+        function showDroppedTasks() {
+            const droppedTasks = scheduleData.droppedTasks || [];
+            const container = document.getElementById('dropped-list');
+            const modal = document.getElementById('dropped-modal');
+
+            if (droppedTasks.length === 0) {
+                container.innerHTML = '<div class="text-center text-secondary py-8">No dropped tasks! Great job!</div>';
+            } else {
+                let html = '<div class="space-y-4">';
+                droppedTasks.forEach(item => {
+                    const tasks = item.tasks || [];
+                    const reason = item.reason || 'Constraints not met';
+
+                    tasks.forEach(task => {
+                        html += `
+                            <div class="glass-card p-4 border border-red-500/30">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <div class="flex items-center space-x-2">
+                                            <span class="font-heading font-semibold text-lg text-primary">${task.taskCode}</span>
+                                            <span class="px-2 py-0.5 rounded text-xs bg-red-500/20 text-red-400 font-medium">Dropped</span>
+                                        </div>
+                                        <div class="grid grid-cols-2 gap-4 mt-2 text-sm">
+                                            <div>
+                                                <span class="text-secondary">Aircraft:</span>
+                                                <span class="text-primary">${task.aircraftId}</span>
+                                            </div>
+                                            <div>
+                                                <span class="text-secondary">Location:</span>
+                                                <span class="text-primary">${task.locationId || '-'}</span>
+                                            </div>
+                                            <div>
+                                                <span class="text-secondary">Start:</span>
+                                                <span class="text-primary">${formatTime(task.startTime)}</span>
+                                            </div>
+                                            <div>
+                                                <span class="text-secondary">End:</span>
+                                                <span class="text-primary">${formatTime(task.endTime)}</span>
+                                            </div>
+                                        </div>
+                                        <div class="mt-2 text-sm">
+                                            <span class="text-secondary">Required:</span>
+                                            <span class="text-info">${task.requiredSkill} Lv.${task.requiredLevel}</span>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="text-xs text-secondary uppercase tracking-wide mb-1">Reason</div>
+                                        <div class="text-red-400 text-sm font-medium">${reason}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    });
+                });
+                html += '</div>';
+                container.innerHTML = html;
+            }
+
+            modal.classList.add('open');
+            // Close on outside click
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+        }
+
+        function closeModal() {
+            document.getElementById('dropped-modal').classList.remove('open');
         }
 
         // Initialize
