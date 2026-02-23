@@ -1,5 +1,7 @@
 
-.agent/rules
-AirCraft/.agent
-AirCraft_algo/.agent
-prompt
+**/.agent/
+**/.shared/
+prompt/
+report/
+**/__pycache__/
+*.pyc
