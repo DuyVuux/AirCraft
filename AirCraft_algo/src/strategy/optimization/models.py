@@ -19,6 +19,15 @@ class OptimizationTask:
     
     # Requirements
     required_certs: List[int]  # Mapped indices of certificates
+    
+    # V2: Level and Dependencies
+    min_level: int = 1
+    dependencies: List[str] = None
+    
+    def __post_init__(self):
+        if self.dependencies is None:
+            self.dependencies = []
+
 
 @dataclass
 class OptimizationEmployee:
@@ -34,6 +43,17 @@ class OptimizationEmployee:
     
     # Base location
     start_location_idx: Optional[int] = None
+    
+    # V2: Level System
+    level: int = 1
+    
+    # V2: Fixed Break Times (list of [start, end] intervals) 
+    breaks: List[Tuple[int, int]] = None
+    
+    def __post_init__(self):
+        if self.breaks is None:
+            self.breaks = []
+
 
 @dataclass
 class OptimizationContext:
@@ -46,12 +66,18 @@ class OptimizationContext:
     idx_to_cert: Dict[int, str]
     location_to_idx: Dict[str, int]
     
+    # Duration Lookup: (original_task_code, aircraft_id, level) -> duration
+    # Since OptimizationTask has simplified IDs, we might want map: (task_id, level) -> duration
+    # Moved to end to avoid dataclass error
+    
     # Matrices (Numpy)
     # distance_matrix[from_loc_idx, to_loc_idx] -> travel_time (int minutes/seconds)
     distance_matrix: np.ndarray 
     
     # Helper to reconstruct solution
     task_map: Dict[int, Tuple[str, str]] = field(default_factory=dict) # id -> (aircraft_id, task_code)
+
+    task_level_durations: Dict[Tuple[int, int], int] = field(default_factory=dict)
 
 @dataclass
 class SolutionState:

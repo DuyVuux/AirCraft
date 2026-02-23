@@ -51,6 +51,10 @@ class OptimizationEngineAdapter(IStrategy):
             emp_map[emp.employeeId] = emp_sol
             
         # Fill Assignments
+        # Build reverse location map
+        idx_to_loc = {v: k for k, v in opt_ctx.location_to_idx.items()}
+        
+        # Fill Assignments
         for task_id, emp_id_idx in final_state.assignments.items():
             # Get IDs
             # Emp ID is stored as INT in model
@@ -74,7 +78,6 @@ class OptimizationEngineAdapter(IStrategy):
             # ContextBuilder doesn't expose idx_to_location publicly in dataclass (checked).
             # Wait, OptimizationContext HAS location_to_idx. 
             # We can reverse it easily.
-            idx_to_loc = {v: k for k, v in opt_ctx.location_to_idx.items()}
             loc_id = idx_to_loc[task_obj.location_idx]
             
             # Certificates
@@ -97,10 +100,16 @@ class OptimizationEngineAdapter(IStrategy):
             task_obj = opt_ctx.tasks[task_id]
             req_certs = [opt_ctx.idx_to_cert[c] for c in task_obj.required_certs]
             
+            loc_id = idx_to_loc.get(task_obj.location_idx)
+            
             solution.drop_task(
                 aircraft_id=aircraft_id,
                 task_code=task_code,
-                required_certificates=req_certs
+                required_certificates=req_certs,
+                location_id=loc_id,
+                required_level=task_obj.min_level,
+                start_time=timestamp_to_iso(task_obj.earliest_start),
+                end_time=timestamp_to_iso(task_obj.latest_finish)
             )
             
         return solution

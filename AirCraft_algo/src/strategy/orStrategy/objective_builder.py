@@ -6,7 +6,7 @@ from ortools.sat.python import cp_model
 
 
 # Penalty Constants với tên mô tả
-PENALTY_TASK_DROP = 10_000_000       # Penalty cho mỗi task không assign được
+PENALTY_TASK_DROP = 100_000_000       # Penalty cho mỗi task không assign được
 PENALTY_AIRCRAFT_LATE = 1_000        # Penalty/giây khi task trễ aircraft deadline
 PENALTY_OVERTIME = 100               # Penalty/giây cho overtime (quá giờ tan ca)
 PENALTY_TOTAL_EFFORT = 100           # Penalty/giây cho tổng work+travel time

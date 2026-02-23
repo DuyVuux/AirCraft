@@ -21,23 +21,33 @@ class ConstraintProvider:
         """Create all decision variables."""
         for t in self.ctx.tasks:
             # 1. Start/End/Interval
-            # Domain: within global horizon, constrained by Task TW
-            # Note: Solver handles domain, but good to bound it.
-            # Using t.earliest_start and t.latest_finish as hard bounds.
-            s_var = self.model.NewIntVar(t.earliest_start, t.latest_finish - t.duration, f'start_{t.id}')
-            e_var = self.model.NewIntVar(t.earliest_start + t.duration, t.latest_finish, f'end_{t.id}')
+            # 1. Start/End/Interval
+            # Duration is variable in V2 (Level Based)
+            # Find min/max duration for domain bounds
+            relevant_durs = [d for (tid, lvl), d in self.ctx.task_level_durations.items() if tid == t.id]
+            if not relevant_durs:
+                # Fallback if map not populated
+                min_dur = t.duration
+                max_dur = t.duration
+            else:
+                min_dur = min(relevant_durs)
+                max_dur = max(relevant_durs)
+
+            s_var = self.model.NewIntVar(t.earliest_start, t.latest_finish - min_dur, f'start_{t.id}')
+            e_var = self.model.NewIntVar(t.earliest_start + min_dur, t.latest_finish, f'end_{t.id}')
             
-            # Optional Interval (because task might be dropped)
-            # Actually, standard VRP models often use a 'performed' variable.
-            # Let's use 'is_present' variable for the interval.
+            # Duration Variable
+            # Domain: [0, max_dur] (0 if unassigned)
+            dur_var = self.model.NewIntVar(0, max_dur, f'duration_{t.id}')
+            
+            # Is Performed
             is_performed = self.model.NewBoolVar(f'performed_{t.id}')
             self.is_dropped[t.id] = self.model.NewBoolVar(f'dropped_{t.id}')
             self.model.Add(self.is_dropped[t.id] == is_performed.Not())
              
-            # Interval
-            # Size is fixed duration
+            # Interval with variable size
             interval = self.model.NewOptionalIntervalVar(
-                s_var, t.duration, e_var, is_performed, f'interval_{t.id}'
+                s_var, dur_var, e_var, is_performed, f'interval_{t.id}'
             )
             
             self.start[t.id] = s_var
@@ -46,6 +56,8 @@ class ConstraintProvider:
 
             # 2. Assignment variables
             # For each employee compatible with task
+            dur_terms = []
+            
             for emp in self.ctx.employees:
                 # Basic Capability Check (Pre-filter)
                 if self._can_perform(t, emp):
@@ -53,14 +65,15 @@ class ConstraintProvider:
                     x_var = self.model.NewBoolVar(f'x_{t.id}_{emp.id}')
                     self.x[(t.id, emp.id)] = x_var
                     
+                    # Duration contribution
+                    # Lookup duration for this employee's level
+                    spec_dur = self.ctx.task_level_durations.get((t.id, emp.level), t.duration)
+                    dur_terms.append(x_var * spec_dur)
+
                     # Log for per-employee constraints
-                    # We need a copy of interval for this employee? 
-                    # OR-Tools 'OptionalInterval' logic: 
-                    # If x_var is true, then this task counts for this employee.
-                    # We can create an optional interval specific to this employee assignment.
-                    # This is key for NoOverlap.
+                    # Emp interval size = spec_dur (fixed for this emp)
                     emp_interval = self.model.NewOptionalIntervalVar(
-                        s_var, t.duration, e_var, x_var, f'interval_{t.id}_{emp.id}'
+                        s_var, spec_dur, e_var, x_var, f'interval_{t.id}_{emp.id}'
                     )
                     self.emp_tasks[emp.id].append({
                         'task': t,
@@ -69,9 +82,13 @@ class ConstraintProvider:
                         'end': e_var,
                         'active': x_var
                     })
-                else:
-                    # Not capable, can't assign (implicitly 0)
-                    pass
+            
+            # Link duration variable to assignments
+            if dur_terms:
+                self.model.Add(dur_var == sum(dur_terms))
+                # No one can do it? Implicitly dropped.
+                self.model.Add(s_var == s_var) # dummy
+
 
     def add_constraints(self):
         """Apply all constraints."""
@@ -161,19 +178,51 @@ class ConstraintProvider:
             # to ensure I ship a working solver first, then refine. 
             # Currently just `AddNoOverlap` to prevent double booking.
             
+            # V2: Add break intervals to this employee's NoOverlap
+            emp = next((e for e in self.ctx.employees if e.id == emp_id), None)
+            if emp and emp.breaks:
+                for b_start, b_end in emp.breaks:
+                    break_interval = self.model.NewFixedSizeIntervalVar(
+                        b_start, b_end - b_start, f'break_e{emp_id}_{b_start}'
+                    )
+                    intervals.append(break_interval)
+            
             self.model.AddNoOverlap(intervals)
+                        
+        self._add_dependency_constraints()
 
     def _can_perform(self, task: OptimizationTask, emp: OptimizationEmployee) -> bool:
-        """Check hard constraints: Certifications."""
-        # Check if emp has all required certs
-        # task.required_certs is list of ints
-        # emp.certs is set of ints
+        """Check hard constraints: Certifications and Level."""
         for req in task.required_certs:
             if req not in emp.certs:
                 return False
+        if emp.level < task.min_level:
+            return False
         return True
     
-    def get_objective_expr(self, w_drop=1000000, w_travel=1):
+    def _add_dependency_constraints(self):
+        """V2: Add precedence constraints for task dependencies."""
+        task_by_aircraft_code = {}
+        for t in self.ctx.tasks:
+            key = (t.aircraft_id, t.original_task_code)
+            task_by_aircraft_code[key] = t
+        
+        for t in self.ctx.tasks:
+            for dep_code in t.dependencies:
+                pred_key = (t.aircraft_id, dep_code)
+                pred = task_by_aircraft_code.get(pred_key)
+                if pred:
+                    is_pred_dropped = self.is_dropped.get(pred.id)
+                    is_curr_dropped = self.is_dropped.get(t.id)
+                    
+                    if is_pred_dropped is not None and is_curr_dropped is not None:
+                        both_performed = self.model.NewBoolVar(f'both_perf_{pred.id}_{t.id}')
+                        self.model.AddBoolAnd([is_pred_dropped.Not(), is_curr_dropped.Not()]).OnlyEnforceIf(both_performed)
+                        self.model.AddBoolOr([is_pred_dropped, is_curr_dropped]).OnlyEnforceIf(both_performed.Not())
+                        
+                        self.model.Add(self.start[t.id] >= self.end[pred.id]).OnlyEnforceIf(both_performed)
+    
+    def get_objective_expr(self, w_drop=100000000, w_travel=1):
         """
         Define objective: Min (Dropped * Penalty + Travel * Cost).
         Start with Min Dropped Tasks.

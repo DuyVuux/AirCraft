@@ -11,6 +11,7 @@ export interface ScheduledTask {
     startTime: string;
     endTime: string;
     duration: number;
+    type?: 'TASK' | 'BREAK' | 'WALK' | 'BUS';
 }
 
 export interface ScheduleResult {

@@ -5,6 +5,8 @@ from ortools.sat.python import cp_model
 from src.strategy.optimization.models import OptimizationContext, SolutionState, OptimizationTask
 from src.strategy.optimization.constraints import ConstraintProvider
 
+from src.strategy.optimization.greedy import GreedySolver
+
 class LNSSolver:
     def __init__(self, time_limit_seconds: int = 60, pure_cp_mode: bool = False):
         self.time_limit = time_limit_seconds
@@ -18,24 +20,30 @@ class LNSSolver:
         """
         start_time = time.time()
         
-        # Phase 1: Construction
-        # For MVP: Try solving full problem with CP-SAT for 5 seconds.
-        # If that fails to find optimal, it might give a feasible one.
+        # Phase 0: Greedy Warm Start
+        print("[LNS] Phase 0: Greedy Heuristic...")
+        greedy_solver = GreedySolver(ctx)
+        greedy_solution = greedy_solver.solve()
+        print(f"[LNS] Greedy found: {len(greedy_solution.assignments)} assigned, {len(greedy_solution.dropped_tasks)} dropped.")
+        
         # Phase 1: Construction
         # If pure_cp_mode, spend all time here
         construction_limit = self.time_limit if self.pure_cp_mode else 5.0
         
         print(f"[LNS] Phase 1: Construction (Full CP) - Time Limit: {construction_limit}s")
-        current_solution = self._solve_cp(ctx, current_solution=None, time_limit=construction_limit)
+        # Use Greedy as HINT
+        current_solution = self._solve_cp(ctx, current_solution=None, hints=greedy_solution, time_limit=construction_limit)
         
         if self.pure_cp_mode:
             return current_solution
         
         if not self._is_feasible(current_solution):
-            print("[LNS] Construction failed to find feasible solution. Trying fallback greedy (not implemented) or returning empty.")
-            # TODO: Implement simple greedy fallback here
-            # For now, return what we have (likely empty assignments)
-            pass
+            print("[LNS] Construction failed to find feasible solution. Trying fallback greedy or returning empty.")
+            if self._is_feasible(greedy_solution):
+                 print("[LNS] Using Greedy result as fallback.")
+                 current_solution = greedy_solution
+            else:
+                 pass
         
         best_solution = current_solution.copy()
         best_cost = self._calculate_cost(best_solution)
@@ -75,8 +83,6 @@ class LNSSolver:
             new_cost = self._calculate_cost(new_solution)
             
             # Simple Hill Climbing checking for now (or SA logic)
-            delta = new_cost - best_cost # Minimize cost
-            
             if new_cost < best_cost:
                 best_solution = new_solution.copy()
                 best_cost = new_cost
@@ -89,10 +95,11 @@ class LNSSolver:
             
         return best_solution
 
-    def _solve_cp(self, ctx: OptimizationContext, current_solution: SolutionState = None, time_limit: float = 5.0) -> SolutionState:
+    def _solve_cp(self, ctx: OptimizationContext, current_solution: SolutionState = None, hints: SolutionState = None, time_limit: float = 5.0) -> SolutionState:
         """
         Run CP-SAT solver.
-        If current_solution is provided, fix mapped variables.
+        If current_solution is provided, fix mapped variables (Hard Constraint).
+        If hints is provided, hint variables (Soft Guide).
         """
         model = cp_model.CpModel()
         cp = ConstraintProvider(model, ctx)
@@ -102,7 +109,17 @@ class LNSSolver:
         # Objective
         model.Minimize(cp.get_objective_expr())
         
-        # Constraints from current_solution (Fixing variables)
+        # Hints (from Greedy)
+        if hints:
+            for t in ctx.tasks:
+                emp_id = hints.assignments.get(t.id)
+                if emp_id is not None:
+                     if (t.id, emp_id) in cp.x:
+                         model.AddHint(cp.x[(t.id, emp_id)], 1)
+                     if t.id in cp.start:
+                         model.AddHint(cp.start[t.id], hints.start_times[t.id])
+        
+        # Constraints from current_solution (Fixing variables for LNS)
         if current_solution:
             # For every task:
             for t in ctx.tasks:
@@ -116,25 +133,22 @@ class LNSSolver:
                 if emp_id is not None and start_time is not None:
                     # FIX Assignment
                     # x[t, emp] == 1
-                    model.Add(cp.x[(t.id, emp_id)] == 1)
-                    # OR just enforce start time? 
-                    # Generally fixing assignment is enough, fixing start time makes it rigid.
-                    # LNS usually only destroys assignment. 
-                    # If we only fix assignment, start time can shift. 
-                    # Let's fix assignment ONLY for valid tasks.
-                    
-                    # Also need to fix that others are 0? 
-                    # The constraint sum(x) == 1 handles that.
+                    if (t.id, emp_id) in cp.x:
+                        model.Add(cp.x[(t.id, emp_id)] == 1)
                     
                     # Fix Start Time? 
                     # If we interpret "partial solution" as "keep these tasks EXACTLY here", then fix start.
-                    model.Add(cp.start[t.id] == start_time)
+                    if t.id in cp.start:
+                        model.Add(cp.start[t.id] == start_time)
                 
                 elif t.id in current_solution.dropped_tasks:
                      # It was explicitly dropped? 
                      # If we passed a solution where some are dropped, do we fix them as dropped?
-                     # Usually we Re-Optimize everything that is not Fixed.
-                     # If it's not in assignments and not dropped, it's free.
+                     # No, let solver try to re-insert if valid.
+                     # But current logic is "Repair Ruined". 
+                     # If it was dropped in partial, it stays dropped unless we "ruin" the dropped status.
+                     # Let's fix dropped status if not ruined?
+                     # Simpler: Only fix ASSIGNMENTS. Dropped tasks are free to be assigned.
                      pass
         
         solver = cp_model.CpSolver()

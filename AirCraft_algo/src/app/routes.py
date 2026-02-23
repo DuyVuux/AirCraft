@@ -74,8 +74,65 @@ def run_scheduler():
                         "employeeName": f"Emp {emp.employeeId}", # Placeholder if name missing
                         "startTime": assign.startTime,
                         "endTime": assign.endTime,
-                        "duration": duration_min
+                        "duration": duration_min,
+                        "type": "TASK"
                     })
+
+                # 5a. Add Breaks
+                for brk in emp.breakTimes:
+                    duration_min = (parse_time(brk.endTime) - parse_time(brk.startTime)) // 60
+                    scheduled_tasks.append({
+                        "taskId": f"BREAK-{emp.employeeId}-{brk.startTime}",
+                        "taskCode": "BREAK",
+                        "aircraftId": "",
+                        "employeeId": emp.employeeId,
+                        "employeeName": f"Emp {emp.employeeId}",
+                        "startTime": brk.startTime,
+                        "endTime": brk.endTime,
+                        "duration": duration_min,
+                        "type": "BREAK"
+                    })
+
+                # 5b. Add Travel Times (Walk/Bus)
+                # Sort assignments by start time to find gaps
+                sorted_assigns = sorted(emp.assignments, key=lambda x: parse_time(x.startTime))
+                for i in range(len(sorted_assigns) - 1):
+                    current = sorted_assigns[i]
+                    next_task = sorted_assigns[i+1]
+                    
+                    # Logic: If gap exists and locations different -> Travel
+                    # For simplicty, assume gap is travel if locations differ. 
+                    # Refinement: Check if locations are different.
+                    
+                    t_end = parse_time(current.endTime)
+                    t_next_start = parse_time(next_task.startTime)
+                    
+                    if t_next_start > t_end:
+                         # There is a gap. Is it travel?
+                         # Ideally check distance matrix. For now, if locations differ, mark as travel.
+                         # Or just mark any gap as IDLE/TRAVEL. 
+                         # User requested "Walk" and "Bus". 
+                         # We need to know WHICH one.
+                         # Since context not fully available here, valid heuristic:
+                         # distinct locations -> BUS (if far) or WALK.
+                         
+                         duration = (t_next_start - t_end) // 60
+                         if duration > 0:
+                             # Simple Heuristic: If > 20 mins -> BUS, else WALK (placeholder)
+                             # Better: Check location names (unreliable without context)
+                             travel_type = "BUS" if duration > 15 else "WALK"
+                             
+                             scheduled_tasks.append({
+                                "taskId": f"TRAVEL-{emp.employeeId}-{current.endTime}",
+                                "taskCode": travel_type,
+                                "aircraftId": "",
+                                "employeeId": emp.employeeId,
+                                "employeeName": f"Emp {emp.employeeId}",
+                                "startTime": current.endTime,
+                                "endTime": next_task.startTime,
+                                "duration": duration,
+                                "type": travel_type
+                            })
                     
             return jsonify({
                 "status": "OPTIMAL" if not solution.droppedTasks else "FEASIBLE",

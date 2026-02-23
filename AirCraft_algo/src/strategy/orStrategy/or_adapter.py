@@ -32,7 +32,7 @@ class EmployeeData:
     
     def __init__(self, emp_id: str, idx: int, role: str, certificates: List[str],
                  work_start: int, work_end: int, breaks: List[Tuple[int, int]],
-                 current_location: Optional[str] = None):
+                 current_location: Optional[str] = None, level: int = 1):
         self.id = emp_id
         self.idx = idx
         self.role = role
@@ -41,6 +41,7 @@ class EmployeeData:
         self.work_end = work_end
         self.breaks = breaks  # List of (start, end) tuples
         self.current_location = current_location  # Starting location ID
+        self.level = level
 
 
 class OrAdapter(IDataAdapter):
@@ -87,9 +88,9 @@ class OrAdapter(IDataAdapter):
         
         task_durations = defaultdict(list)
         for entry in context.matrixConfigs.time_entries:
-            # Key by (task, aircraft) -> list of (role, certs, duration)
+            # Key by (task, aircraft) -> list of (role, certs, level, duration)
             key = (entry.taskCode, entry.aircraftId)
-            task_durations[key].append((entry.role, set(entry.certificates), entry.timeProcess))
+            task_durations[key].append((entry.role, set(entry.certificates), entry.level, entry.timeProcess))
         
         # Fallback: Ensure all required tasks have at least one duration entry
         for aircraft in context.aircrafts:
@@ -98,7 +99,7 @@ class OrAdapter(IDataAdapter):
                 if key not in task_durations:
                     # Default: 30 min (1800s), no specific role (None), use certificates from task
                     # This allows the solver to proceed even if timeMatrix is empty
-                    task_durations[key].append((None, set(task.requiredCertificates), 1800))
+                    task_durations[key].append((None, set(task.requiredCertificates), 1, 1800))
         
         # 2. Calculate global min time
         min_global_time = float('inf')
@@ -120,8 +121,8 @@ class OrAdapter(IDataAdapter):
             ac_end = normalize_time(parse_time(aircraft.timeWindow.end), min_global_time)
             max_window_end = max(max_window_end, ac_end)
         
-        # Add buffer for overtime (4 hours)
-        max_time = max_window_end + (4 * 3600)
+        # Add buffer for overtime (8 hours)
+        max_time = max_window_end + (8 * 3600)
         
         # 4. Parse employees
         employees = []
@@ -149,7 +150,8 @@ class OrAdapter(IDataAdapter):
                 work_start=work_start,
                 work_end=work_end,
                 breaks=breaks,
-                current_location=emp.currentLocation  # Parse currentLocation
+                current_location=emp.currentLocation,  # Parse currentLocation
+                level=emp.level  # Use property we added
             ))
         
         # 5. Parse tasks

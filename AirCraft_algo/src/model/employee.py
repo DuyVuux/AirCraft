@@ -6,13 +6,16 @@ from src.model.time import TimeWindow
 class EmployeeType:
     role: str
     certificates: List[str]
+    level: int = 1
 
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> 'EmployeeType':
         return cls(
             role=data['role'],
-            certificates=data.get('certificates', [])
+            certificates=data.get('certificates', []),
+            level=data.get('level', 1)
         )
+
 
 @dataclass
 class Employee:
@@ -34,7 +37,11 @@ class Employee:
             workingTimes=[TimeWindow.from_dict(t) for t in data.get('workingTimes', [])],
             breakDuration=data.get('breakDuration', 0),
             fixedBreakTimes=[TimeWindow.from_dict(t) for t in data.get('fixedBreakTimes', [])],
-            taskCapabilities=data.get('taskCapabilities', []),
             certifications=data.get('certifications', [])
         )
+
+    @property
+    def level(self) -> int:
+        """Get employee level from EmployeeType."""
+        return self.eType.level
 

@@ -103,15 +103,23 @@ class ModelBuilder:
                 emp_certs = set(emp.certificates)
                 
                 # Iterate over all possible configurations for this task/aircraft
-                for req_role, req_certs, duration in task_durations[dur_key]:
+                # Iterate over all possible configurations for this task/aircraft
+                for req_role, req_certs, req_level, duration in task_durations[dur_key]:
                     # Check 1: Role match (relaxed substring check)
                     # If task doesn't specify role, check if matrix role is compatible with emp
                     if req_role and req_role not in emp.role:
                         continue
                         
                     # Check 2: Certificates match (superset)
-                    if emp_certs.issuperset(req_certs):
-                        valid_durations.append(duration)
+                    if not emp_certs.issuperset(req_certs):
+                        continue
+                        
+                    # Check 3: Level match (employee level must be >= required level)
+                    # Emp level matches if it is at least the level specified in the timing
+                    if emp.level < req_level:
+                        continue
+                        
+                    valid_durations.append(duration)
                 
                 if not valid_durations:
                     continue

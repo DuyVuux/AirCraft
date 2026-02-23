@@ -4,7 +4,7 @@ Time Utilities - Centralized time handling for aircraft maintenance scheduling.
 All time-related functions should be imported from this module.
 """
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import datetime, timezone
 from typing import Dict, Any, List
 
 
@@ -36,7 +36,7 @@ def timestamp_to_iso(timestamp: int) -> str:
     Returns:
         ISO string with 'Z' suffix (UTC)
     """
-    return datetime.utcfromtimestamp(timestamp).isoformat() + 'Z'
+    return datetime.fromtimestamp(timestamp, timezone.utc).isoformat().replace('+00:00', 'Z')
 
 
 def timestamp_to_local_str(timestamp: int) -> str:
@@ -147,6 +147,7 @@ class TimeEntry:
     certificates: List[str]
     aircraftId: str
     timeProcess: int
+    level: int = 1
 
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> 'TimeEntry':
@@ -155,6 +156,8 @@ class TimeEntry:
             role=data['role'],
             certificates=data.get('certificates', []),
             aircraftId=data['aircraftId'],
-            timeProcess=data['timeProcess']
+            timeProcess=data['timeProcess'],
+            level=data.get('level', 1)
         )
+
 

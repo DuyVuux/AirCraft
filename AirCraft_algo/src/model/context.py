@@ -84,6 +84,9 @@ class MatrixConfigs:
     
     bus_stop_to_idx: Dict[str, int] = field(default_factory=dict)
     idx_to_bus_stop: Dict[int, str] = field(default_factory=dict)
+    
+    # Lookup: (taskCode, aircraftId, level) -> timeProcess
+    time_lookup: Dict[Tuple[str, str, int], int] = field(default_factory=dict)
 
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> 'MatrixConfigs':
@@ -128,7 +131,18 @@ class MatrixConfigs:
             self.distance_matrix[src_idx, dest_idx] = entry.travelTime
     
     def _build_time_matrix(self):
-        """Build numpy time matrix from entries."""
+        """Build time lookup map from entries."""
+        # Reset lookup
+        self.time_lookup = {}
+        
+        # Populate lookup map: (taskCode, aircraftId, level) -> timeProcess
+        for entry in self.time_entries:
+            key = (entry.taskCode, entry.aircraftId, entry.level)
+            # If multiple entries exist, keep the minimum time (most optimistic)
+            # or keep latest. Assuming min time for now as it's efficient.
+            if key not in self.time_lookup or entry.timeProcess < self.time_lookup[key]:
+                self.time_lookup[key] = entry.timeProcess
+        
         # Collect unique task codes
         tasks = set()
         for entry in self.time_entries:
@@ -139,13 +153,7 @@ class MatrixConfigs:
         self.task_to_idx = {task: idx for idx, task in enumerate(sorted_tasks)}
         self.idx_to_task = {idx: task for task, idx in self.task_to_idx.items()}
         
-        # Build time matrix (task x level) - DEPRECATED with certificate system
-        # time_matrix is no longer used; duration lookup now uses certificate-based keys
-        # Kept for backward compatibility but not populated
-        self.time_matrix = None  # Disabled - use time_entries directly with certificate matching
-        
-        # Note: Solver will use time_entries directly with certificate-based lookup:
-        # key = (taskCode, role, tuple(sorted(certificates)), aircraftId)
+        self.time_matrix = None  # Disabled - using time_lookup
     
     def get_travel_time(self, src: str, dest: str) -> float:
         """Get travel time between two locations."""
@@ -155,17 +163,20 @@ class MatrixConfigs:
             return np.inf
         return self.distance_matrix[src_idx, dest_idx]
     
-    def get_process_time(self, task_code: str, level: int) -> float:
-        """DEPRECATED: Get process time for a task at a given employee level.
+    def get_process_time(self, task_code: str, aircraft_id: str, level: int) -> float:
+        """Get process time for a task based on aircraft and employee level."""
+        key = (task_code, aircraft_id, level)
+        if key in self.time_lookup:
+            return self.time_lookup[key]
         
-        This method is obsolete with the certificate-based system.
-        Use time_entries directly with certificate matching instead.
-        """
-        raise NotImplementedError(
-            "get_process_time() is deprecated. "
-            "Use time_entries with certificate-based lookup: "
-            "key = (taskCode, role, tuple(sorted(certificates)), aircraftId)"
-        )
+        # Fallback 1: Try level 1 if requested level not found
+        if level > 1:
+            fallback_key = (task_code, aircraft_id, 1)
+            if fallback_key in self.time_lookup:
+                return self.time_lookup[fallback_key]
+        
+        # Fallback 2: Return default 30 mins
+        return 1800.0
     
     def _build_bus_matrices(self):
         """Build bus transit and walking matrices"""

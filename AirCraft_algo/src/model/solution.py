@@ -91,12 +91,20 @@ class DroppedTask:
     taskCode: str
     aircraftId: str
     requiredCertificates: List[str]
+    locationId: Optional[str] = None
+    startTime: Optional[str] = None
+    endTime: Optional[str] = None
+    requiredLevel: Optional[int] = None
     
     def to_dict(self) -> Dict[str, Any]:
         return {
             "taskCode": self.taskCode,
             "aircraftId": self.aircraftId,
-            "requiredCertificates": self.requiredCertificates
+            "requiredCertificates": self.requiredCertificates,
+            "locationId": self.locationId,
+            "startTime": self.startTime,
+            "endTime": self.endTime,
+            "requiredLevel": self.requiredLevel
         }
 
 
@@ -166,7 +174,8 @@ class Solution:
             raise ValueError(f"Employee {employee_id} not in solution")
         emp.breakTimes.append(TimeSlot(startTime=start_time, endTime=end_time))
     
-    def drop_task(self, aircraft_id: str, task_code: str, required_certificates: List[str]):
+    def drop_task(self, aircraft_id: str, task_code: str, required_certificates: List[str],
+                  location_id: str = None, start_time: str = None, end_time: str = None, required_level: int = None):
         """Mark a task as dropped."""
         aircraft = None
         for d in self.droppedTasks:
@@ -181,5 +190,9 @@ class Solution:
         aircraft.tasks.append(DroppedTask(
             taskCode=task_code,
             aircraftId=aircraft_id,
-            requiredCertificates=required_certificates
+            requiredCertificates=required_certificates,
+            locationId=location_id,
+            startTime=start_time,
+            endTime=end_time,
+            requiredLevel=required_level
         ))

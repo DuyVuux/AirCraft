@@ -61,20 +61,24 @@ class ContextBuilder:
                             dist_matrix[new_s, new_d] = val
         
         # 3. Create Time Entry Lookup Map
-        # Key: (aircraftId, taskCode) -> duration (int seconds)
-        # Strategy: Take the specific entry if exists. 
-        # Note: TimeEntry also has role/certs, but we assume here that duration depends mainly on task+aircraft.
-        # If multiple entries exist (different roles), we'll conservatively take the max or just the first.
-        # Let's simple mapping for now.
+        # V2: Key includes level for level-based duration
+        # Key: (aircraftId, taskCode, level) -> duration (int seconds)
         duration_map = {}
         for te in ctx.matrixConfigs.time_entries:
-            key = (te.aircraftId, te.taskCode)
-            # Store duration. If duplicate, we might overwrite. 
-            # Ideally we pick the one matching requirements, but for now exact match on ID/Code is best effort.
+            key = (te.aircraftId, te.taskCode, te.level)
             duration_map[key] = te.timeProcess
+        
+        # Also store by (aircraftId, taskCode) for fallback - use median duration
+        duration_fallback = {}
+        for te in ctx.matrixConfigs.time_entries:
+            key = (te.aircraftId, te.taskCode)
+            if key not in duration_fallback:
+                duration_fallback[key] = []
+            duration_fallback[key].append(te.timeProcess)
 
         # 4. Create OptimizationTasks
         opt_tasks: List[OptimizationTask] = []
+        task_level_durations = {}
         task_counter = 0
         task_map = {}
         
@@ -91,15 +95,29 @@ class ContextBuilder:
                     if c in cert_to_idx
                 ]
                 
-                # Lookup Duration
-                # Try specific (aircraft, task)
-                d = duration_map.get((ac.aircraftId, t.taskCode))
+                # V2: Lookup Duration with level
+                # Use minLevel as baseline - this is the minimum capable level
+                d = None
+                for level in [t.minLevel, 2, 1, 3]:
+                    d = duration_map.get((ac.aircraftId, t.taskCode, level))
+                    if d:
+                        break
+                    d = duration_map.get(("ANY", t.taskCode, level))
+                    if d:
+                        break
+                
+                # Fallback to average of available durations
                 if d is None:
-                    # Fallback to "ANY" aircraft
-                    d = duration_map.get(("ANY", t.taskCode))
-                if d is None:
-                    print(f"[WARN] No time entry for {ac.aircraftId} - {t.taskCode}. Using default 3600s.")
-                    d = 3600
+                    fallback_key = (ac.aircraftId, t.taskCode)
+                    if fallback_key in duration_fallback:
+                        d = int(sum(duration_fallback[fallback_key]) / len(duration_fallback[fallback_key]))
+                    else:
+                        fallback_key = ("ANY", t.taskCode)
+                        if fallback_key in duration_fallback:
+                            d = int(sum(duration_fallback[fallback_key]) / len(duration_fallback[fallback_key]))
+                        else:
+                            print(f"[WARN] No time entry for {ac.aircraftId} - {t.taskCode}. Using default 1800s.")
+                            d = 1800
 
                 
                 # Parse Time Window
@@ -125,11 +143,32 @@ class ContextBuilder:
                     latest_finish=lf,
                     duration=d,
                     location_idx=aircraft_loc_idx,
-                    required_certs=req_certs_indices
+                    required_certs=req_certs_indices,
+                    min_level=t.minLevel,
+                    dependencies=t.dependencies
                 )
                 
                 opt_tasks.append(opt_task)
                 task_map[task_counter] = (ac.aircraftId, t.taskCode)
+                
+                # Populate task_level_durations for levels 1,2,3
+                for lvl in [1, 2, 3]:
+                    # Try specific
+                    dur = duration_map.get((ac.aircraftId, t.taskCode, lvl))
+                    if not dur:
+                        # Try ANY aircraft
+                        dur = duration_map.get(("ANY", t.taskCode, lvl))
+                    
+                    if not dur:
+                        # Fallback to calculated 'd' (nominal) or re-run fallback logic
+                        # Simplified: use 'd' if we can't find specific level info
+                        # But d was calculated using 'minLevel'.
+                        # If data has levels, we assume duration_map works.
+                        # If not, use d.
+                        dur = d
+                    
+                    task_level_durations[(task_counter, lvl)] = dur
+
                 task_counter += 1
                 
         # 5. Create OptimizationEmployees
@@ -146,16 +185,24 @@ class ContextBuilder:
             for tw in emp.workingTimes:
                 shifts.append((parse_time(tw.start), parse_time(tw.end)))
             
+            breaks = []
+            for brk in emp.fixedBreakTimes:
+                breaks.append((parse_time(brk.start), parse_time(brk.end)))
+            
             start_loc_idx = None
             if emp.currentLocation:
                  start_loc_idx = loc_to_idx.get(emp.currentLocation)
+            
+            emp_level = emp.eType.level if emp.eType else 1
             
             opt_emp = OptimizationEmployee(
                 id=i,
                 original_id=emp.employeeId,
                 certs=cert_indices,
                 shifts=shifts,
-                start_location_idx=start_loc_idx
+                start_location_idx=start_loc_idx,
+                level=emp_level,
+                breaks=breaks
             )
             opt_employees.append(opt_emp)
 
@@ -169,5 +216,6 @@ class ContextBuilder:
             idx_to_cert=idx_to_cert,
             location_to_idx=loc_to_idx,
             distance_matrix=dist_matrix,
-            task_map=task_map
+            task_map=task_map,
+            task_level_durations=task_level_durations
         )

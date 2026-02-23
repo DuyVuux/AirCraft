@@ -22,7 +22,15 @@ const TASK_COLORS: Record<string, string> = {
 };
 
 function GanttTaskBar({ task, left, width, onClick }: GanttTaskBarProps) {
-    const color = TASK_COLORS[task.taskCode] || '#64748b';
+    let color = '#64748b'; // default gray
+
+    if (task.type === 'BREAK') color = '#F97316'; // Orange
+    else if (task.type === 'WALK') color = '#10B981'; // Green
+    else if (task.type === 'BUS') color = '#8B5CF6'; // Purple
+    else {
+        // Default task colors based on task code
+        color = TASK_COLORS[task.taskCode] || '#3b82f6'; // Default Blue
+    }
 
     return (
         <div
