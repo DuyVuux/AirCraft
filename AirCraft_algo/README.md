@@ -1,178 +1,49 @@
-# Aircraft Maintenance Scheduler
+# 🧠 AirCraft Optimization Engine
 
-Hệ thống tối ưu lịch bảo trì máy bay sử dụng OR-Tools (CP-SAT + MIP).
+The core algorithmic component of the AirCraftPort system. It uses advanced mathematical optimization to schedule and assign maintenance tasks to ground staff efficiently.
 
-## 📋 Mô tả
+## 🏗️ Architecture overview
 
-Giải quyết bài toán gán task bảo trì cho nhân viên với các ràng buộc:
-- Thời gian làm việc của nhân viên
-- Cửa sổ thời gian của máy bay
-- Kỹ năng và level của nhân viên
-- Thời gian di chuyển giữa các vị trí
-- Precedence giữa các task
+The algorithm engine has been completely decoupled from the legacy Flask API and is now executed as a computationally intensive Python module. It is consumed by the main FastAPI backend using `ProcessPoolExecutor`, which allows the CPU-bound solver logic to run asynchronously without blocking the asynchronous event loop of the web server.
 
-## 🚀 Cài đặt
+## 💡 Core Algorithms
 
-### Yêu cầu
-- Python 3.8+
-- pip
+The engine leverages **Google OR-Tools (CP-SAT)** as its primary solver, utilizing a suite of advanced heuristics:
 
-### Cài đặt dependencies
+1. **Hybrid LNS (Large Neighborhood Search)**
+   - The primary solver loop uses an LNS strategy tailored to vehicle/personnel routing constraints.
+   - Modifies existing feasible solutions by destroying parts of the neighborhood and repairing them iteratively.
+   - Interacts seamlessly with the CP-SAT engine for sub-problem optimization.
 
-```bash
-pip install flask flask-cors ortools
-```
+2. **Simulated Annealing (SA) Integration**
+   - Incorporated into the LNS accept/reject criteria.
+   - Utilizes a *Boltzmann acceptance probability* (`exp(-delta/T)`) with a strict cooling rate (`0.99`).
+   - Dynamically evaluates a newly calculated Cost Function that penalizes dropped tasks (100M penalty) and optimizes for overall active employees (10K penalty) and travel time constraints driven by the distance matrix.
 
-Hoặc tạo file `requirements.txt`:
-```
-flask>=2.0.0
-flask-cors>=3.0.0
-ortools>=9.0.0
-```
+3. **Greedy Fallback Strategy**
+   - Acts as a fallback and generates initialization state for the LNS solver.
+   - Performs topological sorting to ensure task dependencies (Precedences) are naturally respected during initial assignments.
+   - Automatically avoids scheduled employee break windows using continuous interval tracking.
 
-Và chạy:
-```bash
-pip install -r requirements.txt
-```
+## 🔒 Constraints Handled
 
-## 🖥️ Chạy Server
+- **Pairwise Travel Time:** Incorporates the `distance_matrix` directly into the `OptimizationContext` to ensure employees travel realistically between gates.
+- **Precedence (Dependencies):** Tasks that must be completed securely before others (e.g., Engine Check -> Oil Refill).
+- **Break Time Avoidance:** Enforces `NoOverlap2D` constraints, adjusting greedy scheduling logic (`_adjust_for_breaks()`) so no tasks occur while staff are on mandatory breaks.
+- **Certificate Verification:** Employees lacking necessary skill certification levels for particular tasks are forcefully ignored in the assignment scope.
 
-### Khởi động server
+## 🧪 Running Tests
+
+The algorithm suite comes with strict test coverage ensuring zero regressions on the constraints.
 
 ```bash
-python3 main.py
+# From the root directory or algorithm directory
+pytest tests/
+# or specifically for algo:
+pytest AirCraft_algo/tests/
 ```
 
-Server sẽ chạy tại:
-- **Local**: http://127.0.0.1:8000
-- **Network**: http://[your-ip]:8000
-
-### Các trang web
-
-| URL | Mô tả |
-|-----|-------|
-| http://127.0.0.1:8000 | Dashboard chính - xem solutions |
-| http://127.0.0.1:8000/benchmark | Benchmark Dashboard - so sánh strategies |
-| http://127.0.0.1:8000/visualize/{filename} | Visualize một solution cụ thể |
-
-## 📁 Cấu trúc thư mục
-
-```
-aircraft/
-├── main.py                 # Entry point - Flask server
-├── solver.py               # Standalone solver script
-├── data/
-│   ├── input/             # Input JSON files
-│   └── output/            # Output solutions
-├── src/
-│   ├── model/             # Data models
-│   ├── strategy/          # Solver strategies
-│   │   ├── orStrategy/    # CP-SAT solver
-│   │   └── hybridStrategy/# Hybrid CP-SAT + MIP solver
-│   ├── benchmark/         # Benchmarking tools
-│   └── visualization/     # Web UI templates
-└── docs/                   # Documentation
-```
-
-## 🔧 Solver Strategies
-
-### 1. CP-SAT (OrStrategy)
-- Pure OR-Tools CP-SAT solver
-- Tìm solution tối ưu nhưng có thể chậm với instances lớn
-
-### 2. Hybrid (HybridStrategy)
-- **Phase 1**: CP-SAT tìm feasible assignments (80% time)
-- **Phase 2**: MIP tối ưu thời gian bắt đầu (20% time)
-- Thường nhanh hơn với instances lớn
-
-## 📊 Chạy Benchmark
-
-### Qua Web UI
-1. Vào http://127.0.0.1:8000/benchmark
-2. Chọn strategies (CP-SAT, Hybrid)
-3. Chọn instance sizes hoặc Custom
-4. Đặt time limit
-5. Click "Run Benchmark"
-
-### Qua API
-
-```bash
-curl -X POST http://127.0.0.1:8000/api/benchmark/run \
-  -H "Content-Type: application/json" \
-  -d '{
-    "strategies": ["cpsat", "hybrid"],
-    "sizes": ["small", "medium"],
-    "time_limit": 30
-  }'
-```
-
-### Custom Instance
-
-```bash
-curl -X POST http://127.0.0.1:8000/api/benchmark/run \
-  -H "Content-Type: application/json" \
-  -d '{
-    "strategies": ["cpsat", "hybrid"],
-    "custom_config": {
-      "num_aircrafts": 10,
-      "tasks_per_aircraft": 5,
-      "num_employees": 20
-    },
-    "time_limit": 60
-  }'
-```
-
-## 📝 API Endpoints
-
-| Method | Endpoint | Mô tả |
-|--------|----------|-------|
-| GET | `/` | Dashboard chính |
-| GET | `/benchmark` | Benchmark dashboard |
-| GET | `/visualize/{filename}` | Visualize solution |
-| GET | `/api/data/{filename}` | Lấy data của solution |
-| GET | `/api/inputs` | List input files |
-| POST | `/api/solve/{filename}` | Chạy solver trên input file |
-| POST | `/api/benchmark/run` | Chạy benchmark |
-
-### Solve Input File
-
-```bash
-curl -X POST "http://127.0.0.1:8000/api/solve/input_sample.json?strategy=hybrid&time_limit=30"
-```
-
-## ⚙️ Cấu hình
-
-### Time Limit Options
-- 10s, 30s, 60s, 120s, 5m, 10m
-- Custom (1-3600 seconds)
-- Unlimited (0)
-
-### Instance Sizes
-| Size | Aircrafts | Tasks | Employees |
-|------|-----------|-------|-----------|
-| Small | 3 | 9 | 5 |
-| Medium | 10 | 50 | 20 |
-| Large | 20 | 100 | 40 |
-
-## 📈 Giải thích Status
-
-| Status | Ý nghĩa |
-|--------|---------|
-| **OPTIMAL** | Đã chứng minh là tối ưu nhất |
-| **FEASIBLE** | Tìm được lời giải nhưng chưa chứng minh tối ưu |
-| **INFEASIBLE** | Không tìm được lời giải (constraints mâu thuẫn) |
-| **UNKNOWN** | Không có thông tin optimality |
-
-## 🛠️ Development
-
-### Chạy tests
-```bash
-python -m pytest tests/
-```
-
-### Debug mode
-Server mặc định chạy ở debug mode với hot reload.
-
-## 📄 License
-
-MIT License
+This verifies:
+- CP-SAT model generations.
+- Time utility functionalities.
+- LNS and Greedy Strategy deterministic outputs.

@@ -6,112 +6,121 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.104-009688.svg)](https://fastapi.tiangolo.com/)
 [![OR-Tools](https://img.shields.io/badge/OR--Tools-9.0+-orange.svg)](https://developers.google.com/optimization)
 
-**AirCraftPort** là một hệ thống quản lý và tối ưu hóa lịch trình bảo trì máy bay toàn diện. Dự án kết hợp giao diện quản lý dữ liệu hiện đại với các thuật toán tối ưu hóa mạnh mẽ để giải quyết các bài toán logistics phức tạp tại sân bay.
+**AirCraftPort** is a comprehensive aircraft maintenance scheduling and optimization system. It combines a modern data management interface with powerful algorithms to solve complex logistics problems at airports, ensuring timely aircraft turnarounds and efficient staff allocation.
 
 ---
 
-## 🏗️ Kiến trúc hệ thống
+## 🏗️ High-level Architecture
 
-Hệ thống được chia thành hai thành phần chính:
+Following a recent architecture consolidation, the system operates as a unified stack:
 
-1.  **[AirCraft](./AirCraft)**: Hệ thống quản lý dữ liệu (Data Management System).
-    - **Frontend**: React 18, TypeScript, Vite, MUI.
-    - **Backend**: FastAPI, Pydantic, Pandas.
-2.  **[AirCraft_algo](./AirCraft_algo)**: Công cụ tối ưu hóa (Optimization Engine).
-    - **Core**: Google OR-Tools (CP-SAT & MIP).
-    - **API**: Flask server để phục vụ các yêu cầu giải bài toán và benchmark.
+1. **Frontend**: React 18, TypeScript, Vite, MUI. Handles user interactions, data visualization, and input.
+2. **Backend**: 100% FastAPI. Provides RESTful APIs, securing operations via JWT & RBAC, and interacting with the database.
+3. **Database**: SQLAlchemy ORM with Alembic migrations. Uses SQLite locally (PostgreSQL-ready for production).
+4. **Optimization Engine**: Integrated directly into the backend. Uses Google OR-Tools (CP-SAT) and Hybrid LNS, running asynchronously via `ProcessPoolExecutor` for CPU-bound tasks without blocking the API.
 
 ```mermaid
 graph TD
-    User((Người dùng)) -->|Quản lý dữ liệu| FE[Frontend - React]
-    FE -->|API Requests| BE[Backend - FastAPI]
-    BE -->|Cung cấp Input| Algo[Optimization Engine - Flask]
-    Algo -->|Trả về Solution| BE
-    BE -->|Hiển thị kết quả| FE
+    User((User)) -->|Manage Data & Run Jobs| FE[Frontend - React/Vite]
+    FE -->|REST API - JWT Auth| BE[Backend - FastAPI]
+    BE -->|SQLAlchemy| DB[(Database \n Alembic Migrations)]
+    BE -->|ProcessPoolExecutor| Algo[Optimization Engine \n LNS / CP-SAT]
+    Algo -->|Return Solution| BE
 ```
 
 ---
 
-## ✨ Tính năng chính
+## ✨ Key Features
 
-### 📊 Quản lý dữ liệu (AirCraft)
-- **Nhập liệu linh hoạt**: Hỗ trợ tải tệp CSV/Excel, nhập thủ công qua form hoặc trình chỉnh sửa JSON (Monaco Editor).
-- **Xác thực thời gian thực**: Kiểm tra tính hợp lệ của dữ liệu ngay khi nhập.
-- **Trực quan hóa Bản đồ**: Quản lý tọa độ GPS của các máy bay và trạm dừng qua bản đồ tương tác.
-- **Quản lý thực thể**: Máy bay, nhân viên, Hub, tuyến xe bus, và ma trận thời gian/khoảng cách.
-
-### 🧠 Tối ưu hóa lịch trình (AirCraft_algo)
-- **Chiến lược giải đa dạng**:
-    - **CP-SAT**: Tìm lời giải tối ưu cho các bài toán quy mô nhỏ và vừa.
-    - **Hybrid (CP-SAT + MIP)**: Kết hợp gán task và tối ưu thời gian, hiệu quả với dữ liệu lớn.
-- **Benchmark Tool**: So sánh hiệu suất giữa các chiến lược và cấu hình khác nhau.
-- **Dashboard trực quan**: Xem tiến trình và kết quả giải bài toán qua biểu đồ.
+- **Robust Security**: JWT authentication with refresh tokens, Role-Based Access Control (Admin, Operator, Viewer), configurable CORS, and rate limiting.
+- **Data Persistence**: Managed through SQLAlchemy models and Alembic database migrations.
+- **Advanced Scheduling Engine**: Hybrid Large Neighborhood Search (LNS) combined with Simulated Annealing and a fallback Greedy strategy. Handles pairwise travel times, dependency precedence, and break times avoidance.
+- **Asynchronous Execution**: Scheduler runs in background workers without blocking the API.
+- **Interactive UI**: Upload data, view results, and manage aircrafts/employees globally.
 
 ---
 
-## 🚀 Cài đặt nhanh
+## 🚀 Getting Started
 
-### Yêu cầu hệ thống
+### System Requirements
 - **Node.js**: 18.0+
 - **Python**: 3.9+
 - **pip** & **npm**
 
-### Các bước thực hiện
+### 1. Environment Variables Setup
 
-#### 1. Cài đặt Data Management (AirCraft)
-```bash
-cd AirCraft
-# Cài đặt Backend
-cd backend && python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt
-# Cài đặt Frontend
-cd ../frontend && npm install
+Create `.env` files based on the provided examples. 
+
+**Backend `.env`:**
+```env
+# Backend & Security
+API_HOST=0.0.0.0
+API_PORT=8002
+JWT_SECRET_KEY=your-super-strong-secret-key-at-least-32-chars
+JWT_REFRESH_SECRET_KEY=your-super-strong-refresh-secret-key
+ALLOWED_ORIGINS=http://localhost:5173,http://localhost:3000
+
+# Database
+DATABASE_URL=sqlite:///./aircraft.db
 ```
 
-#### 2. Cài đặt Optimization Engine (AirCraft_algo)
+### 2. Backend Setup & Database Migration
+
 ```bash
-cd AirCraft_algo
-python -m venv .venv && source .venv/bin/activate && pip install -r README.md # Cài đặt theo hướng dẫn trong đó
-# Hoặc cài đặt trực tiếp
-pip install flask flask-cors ortools
+cd AirCraft/backend
+
+# Create and activate virtual environment
+python -m venv .venv
+source .venv/bin/activate  # Or .\venv\Scripts\activate on Windows
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run database migrations
+alembic upgrade head
+
+# Start the FastAPI server
+uvicorn main:app --reload --port 8002
 ```
 
-#### 3. Khởi chạy toàn bộ hệ thống
-Sử dụng các script có sẵn trong `AirCraft`:
+### 3. Frontend Setup
+
 ```bash
-cd AirCraft
-./start-all.sh
-```
-Khởi chạy Solver:
-```bash
-cd AirCraft_algo
-python3 main.py
+cd AirCraft/frontend
+
+# Install packages
+npm install
+
+# Start the development server
+npm run dev
 ```
 
 ---
 
-## 📁 Cấu trúc thư mục
+## 📁 Root Directory Structure
 
-- `AirCraft/`: Mã nguồn giao diện và backend quản lý dữ liệu.
-- `AirCraft_algo/`: Mã nguồn các thuật toán tối ưu hóa và server solver.
-- `report/`: Các báo cáo kiểm thử và kiểm toán hệ thống (Audit, UI reports).
-- `prompt/`: Tài liệu và hướng dẫn vận hành.
-
----
-
-## 🧪 Kiểm thử
-
-Dự án tuân thủ quy trình kiểm thử nghiêm ngặt:
-- **Backend**: Sử dụng `pytest` cho cả hai module.
-- **Frontend**: Kết hợp Unit tests và Integration tests.
-- **Tài liệu**: Kiểm tra tính toàn vẹn của liên kết và đường dẫn.
+- `AirCraft/`: Contains the consolidated system.
+  - `backend/`: FastAPI application, Alembic configuration, and API endpoints. 
+  - `frontend/`: React application, Vite config, and UI components.
+- `AirCraft_algo/`: The core optimization engine algorithms, constraints, and solver strategies (imported and used by the backend).
+- `report/`: Audit and verification reports.
+- `prompt/`: Operational documentation and guides.
 
 ---
 
-## 📄 Giấy phép
+## 🧪 Testing
 
-Dự án này được cấp phép theo **MIT License**.
+The project uses `pytest` for robust quality assurance:
+- **Backend Tests**: Coverage for API flows, authentication, and scheduler processing.
+- **Algorithm Tests**: Comprehensive validation of CP-SAT constraints, travel times, and solver logic.
+
+```bash
+# Run tests
+pytest tests/
+```
 
 ---
-<p align="center">
-  Được xây dựng với ❤️ nhằm tối ưu hóa vận hành sân bay hiện đại.
-</p>
+
+## 📄 License
+
+This project is licensed under the **MIT License**.
