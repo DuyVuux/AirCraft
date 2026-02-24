@@ -1,3 +1,5 @@
+from src.utils.logger import get_logger
+logger = get_logger("src.strategy.optimization.adapter")
 from typing import Optional
 from src.strategy.base import IStrategy
 from src.model.solution import Solution, EmployeeSolution, DroppedAircraft, DroppedTask
@@ -20,13 +22,13 @@ class OptimizationEngineAdapter(IStrategy):
             raise ValueError("Context not initialized")
         
         # 1. Build Optimization Context
-        print("[Adapter] Building Context...")
+        logger.info("[Adapter] Building Context...")
         builder = ContextBuilder()
         opt_ctx = builder.build(self.context)
-        print(f"[Adapter] Context Built. {len(opt_ctx.tasks)} tasks, {len(opt_ctx.employees)} employees.")
+        logger.info(f"[Adapter] Context Built. {len(opt_ctx.tasks)} tasks, {len(opt_ctx.employees)} employees.")
         
         # 2. Run Solver
-        print("[Adapter] Running Solver...")
+        logger.info("[Adapter] Running Solver...")
         # Default defaults
         final_args = {'time_limit_seconds': 10}
         final_args.update(self.solver_args)
@@ -35,7 +37,7 @@ class OptimizationEngineAdapter(IStrategy):
         final_state = solver.solve(opt_ctx)
         
         # 3. Map back to Solution
-        print("[Adapter] Converting Solution...")
+        logger.info("[Adapter] Converting Solution...")
         solution = Solution.empty()
         
         # Initialize Employee Solutions

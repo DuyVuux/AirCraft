@@ -5,6 +5,8 @@ from typing import Dict, List, Set, Tuple
 from src.model.context import Context
 from src.model.solution import Solution
 from src.model.time import parse_time
+from src.utils.logger import get_logger
+logger = get_logger("src.validation.solution_validator")
 
 
 class ValidationError(Exception):
@@ -41,9 +43,9 @@ class SolutionValidator:
         
         # Report
         if self.warnings:
-            print("\n[VALIDATION WARNINGS]")
+            logger.info("\n[VALIDATION WARNINGS]")
             for warning in self.warnings:
-                print(f"  ⚠️  {warning}")
+                logger.info(f"  ⚠️  {warning}")
         
         if self.errors:
             error_msg = "\n".join([f"  ❌ {e}" for e in self.errors])

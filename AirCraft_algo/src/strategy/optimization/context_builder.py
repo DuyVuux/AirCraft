@@ -1,3 +1,5 @@
+from src.utils.logger import get_logger
+logger = get_logger("src.strategy.optimization.context_builder")
 from typing import List, Dict, Set, Tuple
 import numpy as np
 from src.model.context import Context
@@ -86,7 +88,7 @@ class ContextBuilder:
             aircraft_loc_idx = loc_to_idx.get(ac.location.locationId)
             
             if aircraft_loc_idx is None:
-                print(f"[WARN] Aircraft {ac.aircraftId} location {ac.location.locationId} not found. Skipping.")
+                logger.info(f"[WARN] Aircraft {ac.aircraftId} location {ac.location.locationId} not found. Skipping.")
                 continue
 
             for t in ac.requiredTasks:
@@ -116,7 +118,7 @@ class ContextBuilder:
                         if fallback_key in duration_fallback:
                             d = int(sum(duration_fallback[fallback_key]) / len(duration_fallback[fallback_key]))
                         else:
-                            print(f"[WARN] No time entry for {ac.aircraftId} - {t.taskCode}. Using default 1800s.")
+                            logger.info(f"[WARN] No time entry for {ac.aircraftId} - {t.taskCode}. Using default 1800s.")
                             d = 1800
 
                 

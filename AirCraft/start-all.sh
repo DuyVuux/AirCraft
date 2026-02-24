@@ -35,7 +35,7 @@ pip install -r "$SCRIPT_DIR/requirements.txt" --quiet
 # Start backend
 echo "[1/2] Starting Backend Server..."
 cd "$SCRIPT_DIR/backend"
-echo "🚀 Backend starting on http://localhost:8000"
+echo "🚀 Backend starting on http://localhost:8002"
 python main.py &
 BACKEND_PID=$!
 cd "$SCRIPT_DIR"
@@ -55,7 +55,7 @@ cd "$SCRIPT_DIR"
 echo ""
 echo "========================================"
 echo " Both servers are running!"
-echo " - Backend:  http://localhost:8000"
+echo " - Backend:  http://localhost:8002"
 echo " - Frontend: http://localhost:5173"
 echo "========================================"
 echo ""

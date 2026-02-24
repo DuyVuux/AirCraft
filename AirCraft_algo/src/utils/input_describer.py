@@ -1,6 +1,8 @@
 from src.model.context import Context
 from datetime import datetime
 from typing import Optional
+from src.utils.logger import get_logger
+logger = get_logger("src.utils.input_describer")
 
 def generate_input_description(ctx: Context, output_path: str = "input_description.md"):
     """Generate a markdown file describing the input data structure"""
@@ -139,4 +141,4 @@ def generate_input_description(ctx: Context, output_path: str = "input_descripti
                 f.write(f"- Entries: {len(mc.walking_distance_entries)}\n")
             f.write("\n")
     
-    print(f"[OK] Generated input description: {output_path}")
+    logger.info(f"[OK] Generated input description: {output_path}")

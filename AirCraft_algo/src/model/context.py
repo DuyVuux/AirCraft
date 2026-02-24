@@ -1,3 +1,5 @@
+from src.utils.logger import get_logger
+logger = get_logger("src.model.context")
 from dataclasses import dataclass, field
 from typing import List, Dict, Any, Optional, Tuple
 import numpy as np
@@ -22,8 +24,8 @@ class DistanceEntry:
                 travelTime=data['travelTime']
             )
         except KeyError as e:
-            print(f"[ERROR] DistanceEntry missing field {e}")
-            print(f"[ERROR] Received data: {data}")
+            logger.error(f" DistanceEntry missing field {e}")
+            logger.error(f" Received data: {data}")
             raise ValueError(f"DistanceEntry missing required field: {e}. Got: {list(data.keys())}")
 
 @dataclass

@@ -1,0 +1,24 @@
+{
+    "trackingId": "test_track_001",
+    "aircrafts": [
+        {
+            "aircraft_id": "VN-A123",
+            "type": "A321",
+            "data": {
+                "capacity": 200
+            }
+        }
+    ],
+    "employees": [
+        {
+            "employee_id": "EMP-001",
+            "name": "Nguyen Van A",
+            "certificates": [
+                "A321 Basic"
+            ],
+            "skills": [
+                "Engine Repair"
+            ]
+        }
+    ]
+}

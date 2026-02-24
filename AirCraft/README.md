@@ -228,7 +228,7 @@ Terminal 1 (Backend):
 ```bash
 cd backend
 source venv/bin/activate  # or .\venv\Scripts\activate on Windows
-uvicorn main:app --reload --port 8000
+uvicorn main:app --reload --port 8002
 ```
 
 Terminal 2 (Frontend):
@@ -240,8 +240,8 @@ npm run dev
 #### 5. Access the Application
 
 - **Frontend**: http://localhost:5173 (or http://localhost:3000)
-- **Backend API**: http://localhost:8000
-- **API Documentation**: http://localhost:8000/docs
+- **Backend API**: http://localhost:8002
+- **API Documentation**: http://localhost:8002/docs
 
 ---
 
@@ -254,7 +254,7 @@ The backend uses FastAPI with the following default settings:
 | Setting | Default | Description |
 |---------|---------|-------------|
 | Host | `0.0.0.0` | Server bind address |
-| Port | `8000` | Server port |
+| Port | `8002` | Server port |
 | Reload | `true` | Auto-reload on changes |
 | CORS Origins | `localhost:3000`, `localhost:5173` | Allowed frontend origins |
 
@@ -267,7 +267,7 @@ export default defineConfig({
   server: {
     port: 3000,
     proxy: {
-      '/api': 'http://localhost:8000'
+      '/api': 'http://localhost:8002'
     }
   }
 })
@@ -280,11 +280,11 @@ Create `.env` files for environment-specific configuration:
 ```bash
 # backend/.env
 API_HOST=0.0.0.0
-API_PORT=8000
+API_PORT=8002
 DEBUG=true
 
 # frontend/.env
-VITE_API_BASE_URL=http://localhost:8000
+VITE_API_BASE_URL=http://localhost:8002
 ```
 
 ---
@@ -482,7 +482,7 @@ npm run build
 
 ```bash
 cd backend
-uvicorn main:app --host 0.0.0.0 --port 8000 --workers 4
+uvicorn main:app --host 0.0.0.0 --port 8002 --workers 4
 ```
 
 ### Docker Deployment
@@ -494,7 +494,7 @@ WORKDIR /app
 COPY backend/requirements.txt .
 RUN pip install -r requirements.txt
 COPY backend/ .
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8002"]
 ```
 
 ### Recommended Production Stack
@@ -554,7 +554,7 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 
 - **Frontend**: Use React DevTools and browser console
 - **Backend**: Check FastAPI auto-reload logs
-- **API Issues**: Test endpoints at http://localhost:8000/docs
+- **API Issues**: Test endpoints at http://localhost:8002/docs
 
 ---
 

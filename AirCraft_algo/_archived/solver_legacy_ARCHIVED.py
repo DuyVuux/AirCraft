@@ -259,12 +259,12 @@ class AirportScheduler:
                     # No hard constraint here.
             
             # Breaks (Hard)
-            for b_start, b_end in emp.breaks:
+            for b_idx, (b_start, b_end) in enumerate(emp.breaks):
                 brk_int = self.model.NewIntervalVar(
                     self.model.NewConstant(b_start),
                     self.model.NewConstant(b_end - b_start),
                     self.model.NewConstant(b_end),
-                    f'break_e{emp.idx}'
+                    f'break_e{emp.idx}_{b_idx}_{b_start}'
                 )
                 emp_intervals.append(brk_int)
                 

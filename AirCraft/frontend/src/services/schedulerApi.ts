@@ -57,7 +57,7 @@ export interface SchedulerProgress {
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '';
 
 const ENDPOINTS = {
-    GET_ALGORITHMS: '/api/get/algorithms',
+    GET_ALGORITHMS: '/api/scheduler/algorithms',
     SCHEDULER_RUN: '/api/scheduler/run',
     SCHEDULER_STATUS: '/api/scheduler/status',
     SCHEDULER_CANCEL: '/api/scheduler/cancel',
@@ -65,7 +65,10 @@ const ENDPOINTS = {
 
 export async function fetchAlgorithms(): Promise<AlgorithmsResponse> {
     try {
-        const response = await fetch(`${API_BASE_URL}${ENDPOINTS.GET_ALGORITHMS}`);
+        const token = localStorage.getItem('access_token') || '';
+        const response = await fetch(`${API_BASE_URL}${ENDPOINTS.GET_ALGORITHMS}`, {
+            headers: token ? { 'Authorization': `Bearer ${token}` } : {},
+        });
         if (!response.ok) {
             throw new Error(`Failed to fetch algorithms: ${response.status}`);
         }
@@ -212,10 +215,13 @@ export async function runScheduler(
 
         const startTime = performance.now();
 
+        const token = localStorage.getItem('access_token') || '';
+
         const response = await fetch(`${API_BASE_URL}${ENDPOINTS.SCHEDULER_RUN}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                ...(token ? { 'Authorization': `Bearer ${token}` } : {}),
             },
             body: JSON.stringify(schedulerInput),
         });

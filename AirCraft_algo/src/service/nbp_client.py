@@ -1,3 +1,5 @@
+from src.utils.logger import get_logger
+logger = get_logger("src.service.nbp_client")
 """
 NBP Client - Registered API service for aircraft maintenance scheduling.
 """
@@ -58,7 +60,7 @@ class NBPClient(BaseAPIHandler):
         
         # Step 5: Save request/response with tracking ID
         tracking_dir = self.tracker.save_request(tracking_id, data, output_data)
-        print(f"[Tracking] Saved to: {tracking_dir}/")
+        logger.info(f"[Tracking] Saved to: {tracking_dir}/")
         
         # Step 6: Return solution
         return output_data

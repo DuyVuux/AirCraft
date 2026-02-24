@@ -30,7 +30,7 @@ start "Frontend Server" cmd /k "cd /d %~dp0frontend && npm install && npm run de
 
 echo ========================================
 echo  Both servers are starting!
-echo  - Backend:  http://localhost:8000
+echo  - Backend:  http://localhost:8002
 echo  - Frontend: http://localhost:5173
 echo ========================================
 echo.

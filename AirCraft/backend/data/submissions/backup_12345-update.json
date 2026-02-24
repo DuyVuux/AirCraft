@@ -1,0 +1,36 @@
+{
+    "trackingId": "12345-update",
+    "aircrafts": [
+        {
+            "aircraft_id": "VN-123",
+            "type": "Boeing 737 MAX",
+            "data": {
+                "capacity": 220
+            }
+        }
+    ],
+    "employees": [
+        {
+            "employee_id": "EMP01",
+            "name": "Nguyen Van A (Updated)",
+            "certificates": [
+                "A",
+                "B"
+            ],
+            "skills": [
+                "Mechanic",
+                "Electrician"
+            ]
+        },
+        {
+            "employee_id": "EMP02",
+            "name": "Tran Thi B",
+            "certificates": [
+                "C"
+            ],
+            "skills": [
+                "Engineer"
+            ]
+        }
+    ]
+}

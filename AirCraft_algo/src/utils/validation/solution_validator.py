@@ -5,6 +5,8 @@ from typing import List, Tuple, Optional
 from src.model.context import Context
 from src.model.solution import Solution
 from src.model.time import parse_time, format_duration
+from src.utils.logger import get_logger
+logger = get_logger("src.utils.validation.solution_validator")
 
 
 class SolutionValidator:
@@ -243,10 +245,10 @@ def validate_solution(context: Context, solution: Solution) -> bool:
     warnings = validator.validate()
     
     if warnings:
-        print(f"\n[VALIDATION] Found {len(warnings)} constraint violations:")
+        logger.info(f"\n[VALIDATION] Found {len(warnings)} constraint violations:")
         for w in warnings:
-            print(f"  [!] {w}")
+            logger.info(f"  [!] {w}")
         return False
     else:
-        print("[VALIDATION] [OK] All constraints satisfied")
+        logger.info("[VALIDATION] [OK] All constraints satisfied")
         return True

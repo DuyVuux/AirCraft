@@ -1,0 +1,24 @@
+{
+    "trackingId": "12345",
+    "aircrafts": [
+        {
+            "aircraft_id": "VN-123",
+            "type": "Boeing 737",
+            "data": {
+                "capacity": 200
+            }
+        }
+    ],
+    "employees": [
+        {
+            "employee_id": "EMP01",
+            "name": "Nguyen Van A",
+            "certificates": [
+                "A"
+            ],
+            "skills": [
+                "Mechanic"
+            ]
+        }
+    ]
+}

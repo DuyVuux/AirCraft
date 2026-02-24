@@ -1,3 +1,5 @@
+from src.utils.logger import get_logger
+logger = get_logger("src.strategy.orStrategy.orStrategy")
 """
 OR-Tools Strategy - Main orchestrator for OR-Tools optimization.
 """
@@ -47,17 +49,23 @@ class OrStrategy(IStrategy):
             time_limit_seconds=time_limit_seconds, 
             pure_cp_mode=True
         )
+        self._solver_status = None
     
     @property
     def is_optimal(self) -> bool:
         """Check if solution is optimal."""
-        return True # Simplified assumption for now, or check internal status
+        return self._solver_status == cp_model.OPTIMAL
+
+    @property
+    def is_feasible(self) -> bool:
+        """Check if solution is at least feasible."""
+        return self._solver_status in [cp_model.OPTIMAL, cp_model.FEASIBLE]
     
     def execute(self) -> Solution:
         """
         Execute Pure CP-SAT optimization.
         """
-        print(f"[OrStrategy] Executing Pure CP-SAT with time limit: {self.time_limit_seconds}s")
+        logger.info(f"[OrStrategy] Executing Pure CP-SAT with time limit: {self.time_limit_seconds}s")
         
         if not self.context:
             return Solution.empty()
@@ -66,7 +74,14 @@ class OrStrategy(IStrategy):
         self._adapter.init(self.context)
         
         # 2. Execute directly (configuration already set in __init__)
-        return self._adapter.execute()
+        solution = self._adapter.execute()
+        
+        # Determine adapter status conceptually (Adapter doesn't expose CP-SAT status directly out-of-box)
+        # Assuming the Adapter wrapper updates a status, or we infer it based on dropped tasks
+        self._solver_status = self._adapter.solver_status if hasattr(self._adapter, "solver_status") else (
+            cp_model.OPTIMAL if not solution.droppedTasks else cp_model.FEASIBLE
+        )
+        return solution
     
     def _apply_solution_hints(self, model: cp_model.CpModel, variables: dict, 
                               data: dict, solution: Solution) -> None:

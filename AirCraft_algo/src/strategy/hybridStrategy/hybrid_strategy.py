@@ -1,3 +1,5 @@
+from src.utils.logger import get_logger
+logger = get_logger("src.strategy.hybridStrategy.hybrid_strategy")
 """
 Hybrid Strategy - Two-phase CP-SAT + MIP optimization.
 
@@ -70,7 +72,7 @@ class HybridStrategy(IStrategy):
             phase2_limit = 0
         
         # 2. Phase 1: CP-SAT for assignments
-        print(f"\n[HybridStrategy] Phase 1: CP-SAT (limit={phase1_limit}s)")
+        logger.info(f"[HybridStrategy] Phase 1: CP-SAT (limit={phase1_limit}s)")
         phase1_start = time.time()
         
         phase1 = Phase1CpSat()
@@ -79,15 +81,15 @@ class HybridStrategy(IStrategy):
         self.phase1_time = time.time() - phase1_start
         self.phase1_status = "FEASIBLE" if success1 else "INFEASIBLE"
         
-        print(f"[HybridStrategy] Phase 1 completed: {self.phase1_status} in {self.phase1_time:.2f}s")
-        print(f"[HybridStrategy] Assigned: {len(assignments)}/{len(data['tasks'])} tasks")
+        logger.info(f"[HybridStrategy] Phase 1 completed: {self.phase1_status} in {self.phase1_time:.2f}s")
+        logger.info(f"[HybridStrategy] Assigned: {len(assignments)}/{len(data['tasks'])} tasks")
         
         if not success1:
-            print("[HybridStrategy] Phase 1 failed, returning empty solution")
+            logger.info("[HybridStrategy] Phase 1 failed, returning empty solution")
             return Solution.empty()
         
         # 3. Phase 2: MIP for time optimization
-        print(f"\n[HybridStrategy] Phase 2: MIP (limit={phase2_limit}s)")
+        logger.info(f"[HybridStrategy] Phase 2: MIP (limit={phase2_limit}s)")
         phase2_start = time.time()
         
         phase2 = Phase2Mip(data, variables)
@@ -97,7 +99,7 @@ class HybridStrategy(IStrategy):
         self.phase2_status = "OPTIMAL" if success2 else "FALLBACK"
         self.used_phase2 = success2
         
-        print(f"[HybridStrategy] Phase 2 completed: {self.phase2_status} in {self.phase2_time:.2f}s")
+        logger.info(f"[HybridStrategy] Phase 2 completed: {self.phase2_status} in {self.phase2_time:.2f}s")
         
         # 4. Build solution
         if success2:
@@ -105,7 +107,7 @@ class HybridStrategy(IStrategy):
                 data, variables, assignments, start_times
             )
         else:
-            print("[HybridStrategy] Phase 2 failed, using Phase 1 times")
+            logger.info("[HybridStrategy] Phase 2 failed, using Phase 1 times")
             solution = self._build_solution_from_cpsat(
                 data, variables, assignments, phase1
             )
@@ -115,16 +117,22 @@ class HybridStrategy(IStrategy):
         for t_idx, task_var in enumerate(variables['tasks']):
             if t_idx not in assigned_task_indices:
                 task = task_var['task']
+                # TODO: Check if task has required_certificates, default to empty list if not.
+                # Xử lý gán min_level vào required_level của drop_task
+                req_certs = getattr(task, 'required_certificates', [])
+                min_level = getattr(task, 'min_level', None)
+                
                 solution.drop_task(
                     aircraft_id=task.aircraft_id,
                     task_code=task.task_code,
-                    min_level=task.min_level
+                    required_certificates=req_certs,
+                    required_level=min_level
                 )
         
         # Print summary
         total_time = self.phase1_time + self.phase2_time
-        print(f"\n[HybridStrategy] Total time: {total_time:.2f}s")
-        print(f"[HybridStrategy] Used Phase 2: {self.used_phase2}")
+        logger.info(f"[HybridStrategy] Total time: {total_time:.2f}s")
+        logger.info(f"[HybridStrategy] Used Phase 2: {self.used_phase2}")
         
         return solution
     

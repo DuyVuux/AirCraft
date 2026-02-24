@@ -1,3 +1,5 @@
+from src.utils.logger import get_logger
+logger = get_logger("src.strategy.orStrategy.objective_builder")
 """
 Objective Builder - Build cost function with weighted components.
 """
@@ -269,64 +271,64 @@ def format_seconds(seconds: int) -> str:
 
 def print_penalty_breakdown(breakdown: Dict[str, Any]) -> None:
     """Print penalty breakdown in readable format."""
-    print("\n[Penalty Breakdown]")
-    print("-" * 60)
+    logger.info("\n[Penalty Breakdown]")
+    logger.info("-" * 60)
     
     # Unassigned
     count = breakdown['unassigned']['count']
     penalty = breakdown['unassigned']['penalty']
-    print(f"  DROPPED TASKS:  {count} tasks, penalty: {penalty:,}")
+    logger.info(f"  DROPPED TASKS:  {count} tasks, penalty: {penalty:,}")
     if count > 0:
         for t_idx in breakdown['unassigned']['tasks']:
-            print(f"                  - Task #{t_idx}")
+            logger.info(f"                  - Task #{t_idx}")
     
     # Tardiness (Aircraft deadline violations)
     total_sec = breakdown['tardiness']['total_seconds']
     penalty = breakdown['tardiness']['penalty']
-    print(f"  AIRCRAFT LATE:  {format_seconds(total_sec)}, penalty: {penalty:,}")
+    logger.info(f"  AIRCRAFT LATE:  {format_seconds(total_sec)}, penalty: {penalty:,}")
     if total_sec > 0:
         for task_info, seconds, end_val, window_end in breakdown['tardiness']['tasks']:
-            print(f"                  - {task_info}: +{format_seconds(seconds)}")
+            logger.info(f"                  - {task_info}: +{format_seconds(seconds)}")
     
     # Overtime
     overtime_sec = breakdown['overtime']['total_seconds']
     overtime_penalty = breakdown['overtime']['penalty']
-    print(f"  OVERTIME:       {format_seconds(overtime_sec)}, penalty: {overtime_penalty:,}")
+    logger.info(f"  OVERTIME:       {format_seconds(overtime_sec)}, penalty: {overtime_penalty:,}")
     if overtime_sec > 0:
         for emp_id, t_idx, ot_val, work_end in breakdown['overtime']['tasks']:
-            print(f"                  - Employee {emp_id}, Task #{t_idx}: +{format_seconds(ot_val)}")
+            logger.info(f"                  - Employee {emp_id}, Task #{t_idx}: +{format_seconds(ot_val)}")
     
     # Makespan
     makespan_total = breakdown['makespan']['total_seconds']
     makespan_penalty = breakdown['makespan']['penalty']
-    print(f"  MAKESPAN:       {format_seconds(makespan_total)}, penalty: {makespan_penalty:,}")
+    logger.info(f"  MAKESPAN:       {format_seconds(makespan_total)}, penalty: {makespan_penalty:,}")
     if makespan_total > 0:
         for emp_idx, val in breakdown['makespan']['by_employee']:
             if val > 0:
-                print(f"                  - Employee #{emp_idx}: {format_seconds(val)}")
+                logger.info(f"                  - Employee #{emp_idx}: {format_seconds(val)}")
     
     # Total Effort (work + travel time)
     effort_val = breakdown['total_effort']['value']
     effort_penalty = breakdown['total_effort']['penalty']
-    print(f"  TOTAL EFFORT:   {format_seconds(effort_val)}, penalty: {effort_penalty:,}")
+    logger.info(f"  TOTAL EFFORT:   {format_seconds(effort_val)}, penalty: {effort_penalty:,}")
     
     # Total Wait (employee wait at bus stop)
     wait_val = breakdown['total_wait']['value']
     wait_penalty = breakdown['total_wait']['penalty']
-    print(f"  BUS WAIT:       {format_seconds(wait_val)}, penalty: {wait_penalty:,}")
+    logger.info(f"  BUS WAIT:       {format_seconds(wait_val)}, penalty: {wait_penalty:,}")
     
     # Bus Delay
     delay_val = breakdown['bus_delay']['value']
     delay_penalty = breakdown['bus_delay']['penalty']
-    print(f"  BUS DELAY:      {delay_val}s, penalty: {delay_penalty:,}")
+    logger.info(f"  BUS DELAY:      {delay_val}s, penalty: {delay_penalty:,}")
     
-    print("-" * 60)
-    print(f"  TOTAL PENALTY:  {breakdown['total']:,}")
-    print()
+    logger.info("-" * 60)
+    logger.info(f"  TOTAL PENALTY:  {breakdown['total']:,}")
+    logger.info()
     
     # DEBUG: Show all task end times vs deadlines
     if 'debug_tasks' in breakdown:
-        print("[DEBUG] Task end times:")
+        logger.info("[DEBUG] Task end times:")
         for info in breakdown['debug_tasks']:
-            print(f"  {info}")
-        print()
+            logger.info(f"  {info}")
+        logger.info()

@@ -1,8 +1,10 @@
 from flask import Blueprint, render_template, jsonify, current_app
 import os
 import json
+from src.utils.logger import get_logger
+logger = get_logger("src.visualization.web.controllers")
 
-main = Blueprint('main', __name__, template_folder='../templates', static_folder='../static')
+main = Bluelogger.info('main', __name__, template_folder='../templates', static_folder='../static')
 
 def get_data_dir(folder='output'):
     """Get absolute path to data folder (input or output)."""

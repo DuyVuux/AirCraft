@@ -1,3 +1,5 @@
+from src.utils.logger import get_logger
+logger = get_logger("src.strategy.hybridStrategy.phase2_mip")
 """
 Phase 2: MIP Time Optimization
 
@@ -55,7 +57,7 @@ class Phase2Mip:
             self.solver = pywraplp.Solver.CreateSolver('CBC')
         
         if not self.solver:
-            print("[Phase2MIP] Warning: No MIP solver available")
+            logger.info("[Phase2MIP] Warning: No MIP solver available")
             return False, {}
         
         if time_limit_seconds > 0:

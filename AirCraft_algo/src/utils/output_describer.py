@@ -2,6 +2,8 @@ from src.model.solution import Solution
 from datetime import datetime
 from typing import Dict, List
 from collections import defaultdict
+from src.utils.logger import get_logger
+logger = get_logger("src.utils.output_describer")
 
 def generate_solution_summary(solution: Solution, output_path: str = "solution_summary.md"):
     """Generate a markdown summary of the solution showing task assignments"""
@@ -129,4 +131,4 @@ def generate_solution_summary(solution: Solution, output_path: str = "solution_s
                 f.write(f"| `{task_code}` | {count} |\n")
             f.write("\n")
     
-    print(f"[OK] Generated solution summary: {output_path}")
+    logger.info(f"[OK] Generated solution summary: {output_path}")

@@ -31,5 +31,5 @@ uvicorn main:app --reload
 
 ## Development
 
-API documentation available at: `http://localhost:8000/docs`
+API documentation available at: `http://localhost:8002/docs`
 

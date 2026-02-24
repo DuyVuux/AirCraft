@@ -1,3 +1,6 @@
+from src.utils.logger import get_logger
+logger = get_logger("src.strategy.optimization.solver")
+import math
 import random
 import time
 from typing import List, Dict, Tuple
@@ -11,8 +14,11 @@ class LNSSolver:
     def __init__(self, time_limit_seconds: int = 60, pure_cp_mode: bool = False):
         self.time_limit = time_limit_seconds
         self.pure_cp_mode = pure_cp_mode
+        self.ctx = None
+        self.min_temperature = 0.1
 
     def solve(self, ctx: OptimizationContext) -> SolutionState:
+        self.ctx = ctx
         """
         Main runner for LNS.
         1. Construct initial solution (Greedy or via CP-SAT on full problem with short timeout)
@@ -21,16 +27,16 @@ class LNSSolver:
         start_time = time.time()
         
         # Phase 0: Greedy Warm Start
-        print("[LNS] Phase 0: Greedy Heuristic...")
+        logger.info("[LNS] Phase 0: Greedy Heuristic...")
         greedy_solver = GreedySolver(ctx)
         greedy_solution = greedy_solver.solve()
-        print(f"[LNS] Greedy found: {len(greedy_solution.assignments)} assigned, {len(greedy_solution.dropped_tasks)} dropped.")
+        logger.info(f"[LNS] Greedy found: {len(greedy_solution.assignments)} assigned, {len(greedy_solution.dropped_tasks)} dropped.")
         
         # Phase 1: Construction
         # If pure_cp_mode, spend all time here
         construction_limit = self.time_limit if self.pure_cp_mode else 5.0
         
-        print(f"[LNS] Phase 1: Construction (Full CP) - Time Limit: {construction_limit}s")
+        logger.info(f"[LNS] Phase 1: Construction (Full CP) - Time Limit: {construction_limit}s")
         # Use Greedy as HINT
         current_solution = self._solve_cp(ctx, current_solution=None, hints=greedy_solution, time_limit=construction_limit)
         
@@ -38,9 +44,9 @@ class LNSSolver:
             return current_solution
         
         if not self._is_feasible(current_solution):
-            print("[LNS] Construction failed to find feasible solution. Trying fallback greedy or returning empty.")
+            logger.info("[LNS] Construction failed to find feasible solution. Trying fallback greedy or returning empty.")
             if self._is_feasible(greedy_solution):
-                 print("[LNS] Using Greedy result as fallback.")
+                 logger.info("[LNS] Using Greedy result as fallback.")
                  current_solution = greedy_solution
             else:
                  pass
@@ -49,13 +55,13 @@ class LNSSolver:
         best_cost = self._calculate_cost(best_solution)
         
         # Phase 2: LNS Loop
-        print(f"[LNS] Phase 2: Loop. Start Cost: {best_cost}")
+        logger.info(f"[LNS] Phase 2: Loop. Start Cost: {best_cost}")
         
         temperature = 100.0
         cooling_rate = 0.99
         iteration = 0
         
-        while time.time() - start_time < self.time_limit:
+        while time.time() - start_time < self.time_limit and temperature > self.min_temperature:
             iteration += 1
             
             # 1. Destroy (Ruin)
@@ -87,7 +93,7 @@ class LNSSolver:
                 best_solution = new_solution.copy()
                 best_cost = new_cost
                 current_solution = new_solution
-                print(f"[LNS] Iter {iteration}: New Best Cost {best_cost}")
+                logger.info(f"[LNS] Iter {iteration}: New Best Cost {best_cost}")
             elif self._accept_worse(current_solution, new_solution, temperature):
                 current_solution = new_solution
             
@@ -296,19 +302,45 @@ class LNSSolver:
         return new_sol, ruined
     
     def _calculate_cost(self, sol: SolutionState) -> float:
-        """Calculate simplified cost for comparison."""
-        dropped_penalty = len(sol.dropped_tasks) * 1000000
-        
-        # Calculate active employees
+        dropped_penalty = len(sol.dropped_tasks) * 1_000_000
+
         active_employees = set(sol.assignments.values())
-        headcount_penalty = len(active_employees) * 10000
-        
-        return dropped_penalty + headcount_penalty
+        headcount_penalty = len(active_employees) * 10_000
+
+        travel_cost = 0
+        if self.ctx is not None:
+            emp_tasks = {}
+            for task_id, emp_id in sol.assignments.items():
+                if emp_id not in emp_tasks:
+                    emp_tasks[emp_id] = []
+                start_time = sol.start_times.get(task_id, 0)
+                task = next((t for t in self.ctx.tasks if t.id == task_id), None)
+                if task:
+                    emp_tasks[emp_id].append((start_time, task.location_idx))
+
+            for emp_id, task_list in emp_tasks.items():
+                task_list.sort(key=lambda x: x[0])
+                for i in range(len(task_list) - 1):
+                    _, loc_a = task_list[i]
+                    _, loc_b = task_list[i + 1]
+                    if loc_a != loc_b:
+                        tt = self.ctx.distance_matrix[loc_a, loc_b]
+                        if not math.isinf(tt):
+                            travel_cost += int(tt)
+
+        return dropped_penalty + headcount_penalty + travel_cost
 
     def _is_feasible(self, sol: SolutionState) -> bool:
         """Check if solution has any content."""
         return len(sol.assignments) > 0 or len(sol.dropped_tasks) > 0
 
     def _accept_worse(self, current: SolutionState, candidate: SolutionState, temp: float) -> bool:
-        # SA logic
-        return False # Greedy for now
+        current_cost = self._calculate_cost(current)
+        candidate_cost = self._calculate_cost(candidate)
+        delta = candidate_cost - current_cost
+        if delta <= 0:
+            return True
+        if temp <= 0:
+            return False
+        probability = math.exp(-delta / temp)
+        return random.random() < probability

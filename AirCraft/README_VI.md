@@ -228,7 +228,7 @@ Terminal 1 (Backend):
 ```bash
 cd backend
 source venv/bin/activate  # hoặc .\venv\Scripts\activate trên Windows
-uvicorn main:app --reload --port 8000
+uvicorn main:app --reload --port 8002
 ```
 
 Terminal 2 (Frontend):
@@ -240,8 +240,8 @@ npm run dev
 #### 5. Truy Cập Ứng Dụng
 
 - **Frontend**: http://localhost:5173 (hoặc http://localhost:3000)
-- **Backend API**: http://localhost:8000
-- **Tài Liệu API**: http://localhost:8000/docs
+- **Backend API**: http://localhost:8002
+- **Tài Liệu API**: http://localhost:8002/docs
 
 ---
 
@@ -254,7 +254,7 @@ Backend sử dụng FastAPI với các cài đặt mặc định sau:
 | Cài Đặt | Mặc Định | Mô Tả |
 |---------|----------|-------|
 | Host | `0.0.0.0` | Địa chỉ bind server |
-| Port | `8000` | Port server |
+| Port | `8002` | Port server |
 | Reload | `true` | Tự động reload khi có thay đổi |
 | CORS Origins | `localhost:3000`, `localhost:5173` | Các origin frontend được phép |
 
@@ -267,7 +267,7 @@ export default defineConfig({
   server: {
     port: 3000,
     proxy: {
-      '/api': 'http://localhost:8000'
+      '/api': 'http://localhost:8002'
     }
   }
 })
@@ -280,11 +280,11 @@ Tạo file `.env` cho cấu hình theo môi trường:
 ```bash
 # backend/.env
 API_HOST=0.0.0.0
-API_PORT=8000
+API_PORT=8002
 DEBUG=true
 
 # frontend/.env
-VITE_API_BASE_URL=http://localhost:8000
+VITE_API_BASE_URL=http://localhost:8002
 ```
 
 ---
@@ -482,7 +482,7 @@ npm run build
 
 ```bash
 cd backend
-uvicorn main:app --host 0.0.0.0 --port 8000 --workers 4
+uvicorn main:app --host 0.0.0.0 --port 8002 --workers 4
 ```
 
 ### Triển Khai Docker
@@ -494,7 +494,7 @@ WORKDIR /app
 COPY backend/requirements.txt .
 RUN pip install -r requirements.txt
 COPY backend/ .
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8002"]
 ```
 
 ### Stack Production Khuyến Nghị
@@ -554,7 +554,7 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 
 - **Frontend**: Sử dụng React DevTools và console trình duyệt
 - **Backend**: Kiểm tra logs auto-reload của FastAPI
-- **Vấn đề API**: Test endpoints tại http://localhost:8000/docs
+- **Vấn đề API**: Test endpoints tại http://localhost:8002/docs
 
 ---
 

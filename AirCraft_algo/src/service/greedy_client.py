@@ -1,3 +1,5 @@
+from src.utils.logger import get_logger
+logger = get_logger("src.service.greedy_client")
 """
 Greedy Client - API endpoint for greedy-based aircraft maintenance scheduling.
 """
@@ -53,7 +55,7 @@ class GreedyClient(BaseAPIHandler):
         output_data['strategy'] = 'GreedyStrategy'
         
         tracking_dir = self.tracker.save_request(tracking_id, data, output_data)
-        print(f"[Tracking] Greedy solution saved to: {tracking_dir}/")
+        logger.info(f"[Tracking] Greedy solution saved to: {tracking_dir}/")
         
         return output_data
     
