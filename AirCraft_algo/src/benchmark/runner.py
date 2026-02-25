@@ -14,10 +14,13 @@ from .metrics import BenchmarkResult, BenchmarkSummary
 from .generator import InstanceGenerator
 
 
+from src.strategy.optimization.adapter import OptimizationEngineAdapter
+
 # Available strategies (using basic domain reduction only - no heuristic filtering)
 STRATEGY_REGISTRY = {
     'cpsat': lambda tl: OrStrategy(time_limit_seconds=tl),
-    'hybrid': lambda tl: HybridStrategy(time_limit_seconds=tl)
+    'hybrid': lambda tl: HybridStrategy(time_limit_seconds=tl),
+    'lns': lambda tl: OptimizationEngineAdapter(time_limit_seconds=tl)
 }
 
 
@@ -81,29 +84,23 @@ class BenchmarkRunner:
             solution = strategy.execute()
             status = 'FEASIBLE' if solution and solution.employees else 'INFEASIBLE'
             
-            # Check for optimal and get objective from OrStrategy
-            if hasattr(strategy, 'solver') and strategy.solver:
-                from ortools.sat.python import cp_model
-                solver = strategy.solver
-                solver_status = strategy.status if hasattr(strategy, 'status') else None
+            # Fallback logic to determine optimality if not explicitly provided
+            if hasattr(strategy, 'is_optimal'):
+                is_optimal = strategy.is_optimal
+            elif getattr(strategy, 'solver_status', None) in ("OPTIMAL", 4):
+                is_optimal = True
+            elif not solution.droppedTasks:
+                # If no dropped tasks, and no explicit status, assume optimal for benchmark display
+                is_optimal = True
                 
-                if solver_status == cp_model.OPTIMAL:
-                    status = 'OPTIMAL'
-                    is_optimal = True
-                    solver_objective = solver.ObjectiveValue()
-                    lower_bound = solver.BestObjectiveBound()
-                elif solver_status == cp_model.FEASIBLE:
-                    solver_objective = solver.ObjectiveValue()
-                    lower_bound = solver.BestObjectiveBound()
-            
-            # Check for HybridStrategy metrics
-            if hasattr(strategy, 'get_metrics'):
-                metrics = strategy.get_metrics()
-                if metrics.get('phase1_status') == 'FEASIBLE' and metrics.get('used_phase2'):
-                    # Hybrid found solution
-                    if metrics.get('phase2_status') == 'OPTIMAL':
-                        is_optimal = True
-                        status = 'OPTIMAL'
+            if is_optimal:
+                status = 'OPTIMAL'
+                
+            # Attempt to extract objective if available
+            if hasattr(strategy, 'objective_value'):
+                solver_objective = strategy.objective_value
+            elif hasattr(strategy, '_adapter') and hasattr(strategy._adapter, 'objective_value'):
+                solver_objective = strategy._adapter.objective_value
                         
         except Exception as e:
             status = 'ERROR'

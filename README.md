@@ -42,9 +42,23 @@ graph TD
 
 ## 🚀 Getting Started
 
-To run the complete system locally, you must start all three services. Ensure you have **Node.js (≥18)** and **Python (≥3.9)** installed.
+To run the complete system locally, you have two options: use the automated deployment script or start each service manually. Ensure you have **Node.js (≥18)** and **Python (≥3.9)** installed.
 
-### Step 1: Start the Core API Backend (FastAPI)
+### Option 1: Run All Services Automatically (Recommended)
+
+You can start the Backend API, Optimization Engine, and React Frontend simultaneously using the provided start script. The script will also open 3 separate terminal windows to let you monitor the logs of each service.
+
+```bash
+# Grant execution permission (first time only)
+chmod +x start_all.sh
+
+# Run the complete system
+./start_all.sh
+```
+
+### Option 2: Start Services Manually
+
+#### Step 1: Start the Core API Backend (FastAPI)
 
 This service manages the database, authentication, and user data.
 
