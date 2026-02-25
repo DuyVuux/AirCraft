@@ -51,6 +51,18 @@
   overflow: hidden;
 }
 
+.manual-input-tabpanel-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.manual-input-tabpanel-wrapper[hidden] {
+  display: none !important;
+}
+
 .manual-input-tabpanel {
   width: 100%;
   height: 100%;

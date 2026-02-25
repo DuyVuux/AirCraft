@@ -20,6 +20,7 @@ function TabPanel({ children, value, index, ...other }: TabPanelProps) {
       hidden={value !== index}
       id={`manual-input-tabpanel-${index}`}
       aria-labelledby={`manual-input-tab-${index}`}
+      className="manual-input-tabpanel-wrapper"
       {...other}
     >
       {value === index && <div className="manual-input-tabpanel">{children}</div>}
