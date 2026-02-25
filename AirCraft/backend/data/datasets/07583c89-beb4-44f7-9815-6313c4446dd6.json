@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "id": "07583c89-beb4-44f7-9815-6313c4446dd6",
+    "name": "fgbfg",
+    "createdAt": "2026-02-24T21:32:28.764017",
+    "updatedAt": "2026-02-25T11:53:51.846578",
+    "itemCounts": {
+      "tasks": 0,
+      "employees": 0,
+      "hubs": 0,
+      "aircrafts": 0,
+      "busStops": 0,
+      "busRoutes": 0,
+      "timeMatrix": 0
+    }
+  },
+  "data": {
+    "trackingId": null,
+    "aircrafts": [],
+    "hubs": [],
+    "employees": [],
+    "busStops": [],
+    "busRoutes": [],
+    "matrixConfigs": null,
+    "tasks": [],
+    "timeMatrix": []
+  }
+}

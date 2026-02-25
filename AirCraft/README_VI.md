@@ -1,62 +1,84 @@
-# ✈️ Ứng Dụng AirCraft (Backend & Frontend)
+# ✈️ AirCraft: Ứng Dụng Lõi & Giao Diện Người Dùng
 
-Thư mục này chứa toàn bộ hệ thống Web Application cốt lõi cho dự án AirCraft, đã được hợp nhất và hiện đại hóa.
+Thư mục này chứa các tầng **Quản Lý Dữ Liệu** và **Giao Diện Người Dùng** cốt lõi cho Hệ thống Lập lịch Đội ngũ Nhân viên Sân bay AirCraft.
 
-## 🌐 Tổng Quan Giao Diện Hệ Thống
-
-Hệ thống bao gồm một Frontend động sử dụng React/Vite kết hợp với Backend mạnh mẽ dựa trên FastAPI. Đợt "Hợp nhất Kiến trúc (Architecture Consolidation)" gần đây đã chuyển hoàn toàn chức năng lập lịch vào FastAPI, loại bỏ sự phụ thuộc vào ứng dụng Flask độc lập cũ. Backend hiện đảm nhận HTTP requests, xác thực, lưu trữ dữ liệu thông qua SQLAlchemy và xử lý bất đồng bộ các tác vụ thuật toán chuyên sâu trên CPU.
+Nó được chia thành hai phân hệ chính:
+1. `backend/`: Ứng dụng Python FastAPI xử lý đồng thời cực cao, chịu trách nhiệm kết nối Cơ sở dữ liệu và Xác thực người dùng.
+2. `frontend/`: Ứng dụng React động được xây dựng bằng công cụ Vite và ngôn ngữ TypeScript.
 
 ---
 
 ## ⚙️ Backend (FastAPI)
 
-Được xây dựng để đáp ứng độ đồng thời cao, bảo mật mạnh mẽ và tối ưu trải nghiệm của lập trình viên.
+Backend đóng vai trò là "người gác cổng" tập trung cho mọi thao tác thay đổi dữ liệu và xác thực của hệ thống.
 
-### Các Tính Năng Cốt Lõi
-- **Xác Thực JWT & Token Refresh**: Cơ chế đăng nhập cung cấp `access_token` có hiệu lực ngắn và `refresh_token` kéo dài 7 ngày (tại `/api/auth/refresh`). Yêu cầu secret keys cực kỳ nghiêm ngặt (>32 ký tự).
-- **Phân Quyền Dựa Trên Vai Trò (RBAC)**: Được xử lý tự động thông qua decorator `require_role()`. Bảo vệ các API, đảm bảo chỉ những người dùng có quyền `Admin`, `Operator`, hoặc `Viewer` mới được phép thực hiện các thao tác thay đổi dữ liệu.
-- **Bảo Mật Mặc Định**: Tích hợp cấu hình CORS được nạp từ biến môi trường (Environment Variables), hạn chế lượng truy cập bằng `slowapi` (VD: tối đa 5 lần đăng nhập/phút), và kiểm tra chặt chẽ payload đầu vào (giới hạn ở 10MB) để phòng chống tấn công DDoS.
+### Tính Năng Chính
+- **JWT & Phân Quyền Vai Trò (Roles)**: Cung cấp `access_token` và `refresh_token`. Các API sẽ được bảo vệ nghiêm ngặt qua decorator `require_role(["admin", "operator", "viewer"])`.
+- **Toàn Vẹn Dữ Liệu Quan Hệ**: Sử dụng SQLAlchemy với CSDL `sqlite` (hoặc PostgreSQL ở môi trường production). Các cấu trúc bảng được kiểm soát chặt chẽ thông qua Alembic Migrations.
+- **Bảo Mật Tăng Cường**: Tích hợp các biện pháp phòng vệ CORS cấu hình qua Biến Môi Trường, Giới hạn truy cập bằng `slowapi`, và Giới hạn dung lượng tải trọng (Payload Limits) để chặn DDoS.
 
-### Cơ Sở Dữ Liệu & Migrations (Alembic)
-Hệ thống đã loại bỏ việc đọc/ghi trực tiếp từ file JSON dễ bị lỗi, chuyển sang cấu trúc an toàn của **SQLAlchemy**. Các Entities chính bao gồm `Aircraft`, `Employee`, `MaintenanceTask`, và `ScheduleJob`. 
+### Hướng Dẫn Cài Đặt Local
 
-Mọi thay đổi trong lược đồ (Schema) đều được quản lý thông qua công cụ Migration **Alembic**.
 ```bash
-# Để nâng cấp CSDL lên phiên bản schema mới nhất:
+cd backend
+
+# Thiết lập Môi trường ảo (Virtual Environment)
+python3 -m venv .venv
+source .venv/bin/activate
+
+# Cài đặt thư viện
+pip install -r requirements.txt
+
+# Thiết lập Cấu hình Biến Môi Trường (.env)
+cat <<EOF > .env
+API_HOST=0.0.0.0
+API_PORT=8002
+JWT_SECRET_KEY=yoursecretkeythatisatleast32characterslong123
+REFRESH_SECRET_KEY=yourrefreshsecretkeythatisatleast32chars123
+ALLOWED_ORIGINS=http://localhost:5173,http://localhost:3000
+DATABASE_URL=sqlite:///./aircraft.db
+EOF
+
+# Đảm bảo Cơ sở dữ liệu được cập nhật lên cấu trúc mới nhất
 alembic upgrade head
+
+# Khởi chạy Server
+uvicorn main:app --env-file .env --reload --port 8002
 ```
 
-### 🛣️ Các Tham Số API (Endpoints) Quan Trọng
-
-| Method | Endpoint | Mô tả |
-|:---:|---|---|
-| POST | `/api/auth/login` | Xác thực người dùng và trả về chùm khóa JWT. |
-| POST | `/api/auth/refresh` | Cấp lại `access_token` mới thông qua Refresh Token hiện có. |
-| POST | `/api/scheduler/run` | Gửi yêu cầu giải quyết lịch trình. Endpoint lập tức trả về `job_id` trong khi `ProcessPoolExecutor` chạy nền để xử lý thuật toán LNS bất đồng bộ. |
-| GET | `/api/scheduler/status/{job_id}` | Truy vấn trạng thái vòng đời của một Job (`PENDING` -> `RUNNING` -> `COMPLETED`/`FAILED`). |
-| GET | `/api/scheduler/algorithms` | Lấy danh sách các thuật toán tối ưu hóa hiện có trên Server. |
+Mở trình duyệt truy cập vào [http://localhost:8002/docs](http://localhost:8002/docs) để xem tài liệu API Swagger tích hợp sẵn.
 
 ---
 
 ## 🖥️ Frontend (React & Vite)
 
-### Công Nghệ
-- React 18 & TypeScript
-- Trình biên dịch Vite
-- HTTP Interceptors tiêu chuẩn tự động thiết lập Header `Authorization: Bearer <token>` trên mỗi Requests.
+Frontend xử lý quá trình Validation theo thời gian thực, tải dữ liệu (CSV/Excel), tích hợp bản đồ, và hệ thống Dashboard cho tương tác trực quan.
 
-### Hướng Dẫn Khởi Chạy Frontend
+### Hướng Dẫn Cài Đặt Local
 
-Yêu cầu máy tính cài đặt sẵn `Node.js` (≥18).
+Yêu cầu máy tính cài đặt sẵn **Node.js 18+**.
 
 ```bash
 cd frontend
 
-# Cài đặt tất cả thư viện (tạo thư mục node_modules)
+# Chỉ định cho Frontend biết vị trí của Backend FastAPI đang chạy
+echo "VITE_API_BASE_URL=http://localhost:8002" > .env
+
+# Tải và cài đặt các Modules cần thiết
 npm install
 
-# Bật máy chủ phát triển (HMR) 
+# Khởi động máy chủ phát triển (Hỗ trợ nạp lại code nóng - HMR)
 npm run dev
 ```
 
-Frontend này sẽ kết nối nội bộ với FastAPI Backend thường chạy tại cổng `8002`. Vui lòng luôn kiểm tra file `.env` của backend, xem xét mục `ALLOWED_ORIGINS` để thêm địa chỉ gốc của Frontend, nhằm vượt qua chính sách CORS an toàn.
+Truy cập [http://localhost:5173](http://localhost:5173) để mở Ứng dụng Web.
+
+---
+
+## 🧪 Kiểm Thử
+
+Có thể chạy trực tiếp bộ công cụ Unit Test cho Backend bằng lệnh sau:
+```bash
+cd backend
+pytest tests/
+```

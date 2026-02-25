@@ -1,49 +1,72 @@
 # 🧠 AirCraft Optimization Engine
 
-The core algorithmic component of the AirCraftPort system. It uses advanced mathematical optimization to schedule and assign maintenance tasks to ground staff efficiently.
+This module serves as the dedicated mathematical modeling and computational brain for the AirCraft System. Deployed as an independent **Flask Server**, it decouples intense algorithmic processing from the core data API.
 
-## 🏗️ Architecture overview
+## 📋 Capabilities
 
-The algorithm engine has been completely decoupled from the legacy Flask API and is now executed as a computationally intensive Python module. It is consumed by the main FastAPI backend using `ProcessPoolExecutor`, which allows the CPU-bound solver logic to run asynchronously without blocking the asynchronous event loop of the web server.
+The engine solves the complex Aircraft Maintenance Scheduling routing problem, balancing the following strict constraints:
+- Employee Certifications vs Task Requirements.
+- Precedence (e.g., Task B cannot start until Task A finishes).
+- Pairwise Travel Distances via location-aware mapping.
+- Non-Overlapping Working Windows & Mandatory Break Intervals.
 
-## 💡 Core Algorithms
+## 🚀 Running the Engine Local
 
-The engine leverages **Google OR-Tools (CP-SAT)** as its primary solver, utilizing a suite of advanced heuristics:
-
-1. **Hybrid LNS (Large Neighborhood Search)**
-   - The primary solver loop uses an LNS strategy tailored to vehicle/personnel routing constraints.
-   - Modifies existing feasible solutions by destroying parts of the neighborhood and repairing them iteratively.
-   - Interacts seamlessly with the CP-SAT engine for sub-problem optimization.
-
-2. **Simulated Annealing (SA) Integration**
-   - Incorporated into the LNS accept/reject criteria.
-   - Utilizes a *Boltzmann acceptance probability* (`exp(-delta/T)`) with a strict cooling rate (`0.99`).
-   - Dynamically evaluates a newly calculated Cost Function that penalizes dropped tasks (100M penalty) and optimizes for overall active employees (10K penalty) and travel time constraints driven by the distance matrix.
-
-3. **Greedy Fallback Strategy**
-   - Acts as a fallback and generates initialization state for the LNS solver.
-   - Performs topological sorting to ensure task dependencies (Precedences) are naturally respected during initial assignments.
-   - Automatically avoids scheduled employee break windows using continuous interval tracking.
-
-## 🔒 Constraints Handled
-
-- **Pairwise Travel Time:** Incorporates the `distance_matrix` directly into the `OptimizationContext` to ensure employees travel realistically between gates.
-- **Precedence (Dependencies):** Tasks that must be completed securely before others (e.g., Engine Check -> Oil Refill).
-- **Break Time Avoidance:** Enforces `NoOverlap2D` constraints, adjusting greedy scheduling logic (`_adjust_for_breaks()`) so no tasks occur while staff are on mandatory breaks.
-- **Certificate Verification:** Employees lacking necessary skill certification levels for particular tasks are forcefully ignored in the assignment scope.
-
-## 🧪 Running Tests
-
-The algorithm suite comes with strict test coverage ensuring zero regressions on the constraints.
+Ensure you have Python 3.9+ installed on your system.
 
 ```bash
-# From the root directory or algorithm directory
-pytest tests/
-# or specifically for algo:
-pytest AirCraft_algo/tests/
+# 1. Navigate to the directory
+cd AirCraft_algo
+
+# 2. Create and activate a Virtual Environment
+python3 -m venv .venv
+source .venv/bin/activate
+
+# 3. Install Python dependencies
+pip install -r requirements.txt
+
+# 4. Boot the server
+python3 main.py
 ```
 
-This verifies:
-- CP-SAT model generations.
-- Time utility functionalities.
-- LNS and Greedy Strategy deterministic outputs.
+The Flask server will start on port `8001`.
+
+**Important Internal URLs:**
+- `http://localhost:8001/` - Solutions Dashboard.
+- `http://localhost:8001/benchmark` - Built-in Algorithm Comparison Tool.
+
+## 💡 Algorithmic Strategies
+
+The engine exposes multiple solvers dependent on the size of the instance:
+
+1. **Greedy Strategy (Fast Heuristic)**
+   - Uses Topological Sort to execute tasks immediately when dependencies are clear.
+   - Respects scheduled break times (`NoOverlap2D` proxies).
+2. **Pure CP-SAT (`OrStrategy`)**
+   - Direct execution via Google OR-Tools. Perfect for finding the mathematically `OPTIMAL` solution in small instances.
+3. **Hybrid LNS (Large Neighborhood Search)**
+   - Recommended for Production. Employs a 'Destroy and Repair' loop over a greedy initialization.
+   - Evaluates transitions via **Simulated Annealing** (Boltzmann acceptance) mapped strongly against a custom cost scalar ($100M for dropped tasks).
+
+## 📊 Run Benchmarks 
+
+You can use the built-in UI at `http://localhost:8001/benchmark` or hit the API directly:
+
+```bash
+curl -X POST http://localhost:8001/api/benchmark/run \
+  -H "Content-Type: application/json" \
+  -d '{
+    "strategies": ["cpsat", "lns"],
+    "sizes": ["small", "medium"],
+    "time_limit": 30
+  }'
+```
+
+## 🧪 Testing
+
+The engine is heavily tested using `pytest`.
+
+```bash
+# Run all unit and integration tests
+pytest tests/
+```

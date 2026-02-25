@@ -70,7 +70,10 @@ class OptimizationEngineAdapter(IStrategy):
             
             # Time: stored as int keys
             start_ts = final_state.start_times[task_id]
-            end_ts = start_ts + task_obj.duration
+            # Lookup specific duration based on assigned employee's level
+            emp_level = opt_ctx.employees[emp_id_idx].level
+            dur = opt_ctx.task_level_durations.get((task_id, emp_level), task_obj.duration)
+            end_ts = start_ts + dur
             
             # Location ID
             # Map back? 

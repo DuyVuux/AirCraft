@@ -1,0 +1,1721 @@
+{
+  "solution": [
+    {
+      "employeeId": "EMP_MECHANIC_1",
+      "certificates": [],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "ARR-M",
+            "aircraftId": "VN-102",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-03",
+          "startTime": "2026-01-02T18:20:00Z",
+          "endTime": "2026-01-02T18:50:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "ARR-M",
+            "aircraftId": "VN-105",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-06",
+          "startTime": "2026-01-02T18:55:01Z",
+          "endTime": "2026-01-02T19:25:01Z"
+        },
+        {
+          "task": {
+            "taskCode": "DEP-M",
+            "aircraftId": "VN-106",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-07",
+          "startTime": "2026-01-02T21:30:00Z",
+          "endTime": "2026-01-02T22:00:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "DEP-M",
+            "aircraftId": "VN-109",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-10",
+          "startTime": "2026-01-02T19:35:01Z",
+          "endTime": "2026-01-02T20:05:01Z"
+        },
+        {
+          "task": {
+            "taskCode": "DEP-M",
+            "aircraftId": "VN-112",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-03",
+          "startTime": "2026-01-02T22:06:00Z",
+          "endTime": "2026-01-02T22:36:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "ARR-M",
+            "aircraftId": "VN-115",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-06",
+          "startTime": "2026-01-02T20:24:00Z",
+          "endTime": "2026-01-02T20:54:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "DEP-M",
+            "aircraftId": "VN-115",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-06",
+          "startTime": "2026-01-02T22:39:00Z",
+          "endTime": "2026-01-02T23:09:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "DEP-M",
+            "aircraftId": "VN-120",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-01",
+          "startTime": "2026-01-02T23:14:00Z",
+          "endTime": "2026-01-02T23:44:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "EMP_MECHANIC_2",
+      "certificates": [],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "ARR-M",
+            "aircraftId": "VN-101",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-02",
+          "startTime": "2026-01-02T18:07:00Z",
+          "endTime": "2026-01-02T18:32:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "DEP-M",
+            "aircraftId": "VN-101",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-02",
+          "startTime": "2026-01-02T20:35:00Z",
+          "endTime": "2026-01-02T21:00:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "DEP-M",
+            "aircraftId": "VN-104",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-05",
+          "startTime": "2026-01-02T19:35:00Z",
+          "endTime": "2026-01-02T20:00:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "DEP-M",
+            "aircraftId": "VN-105",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-06",
+          "startTime": "2026-01-02T21:30:00Z",
+          "endTime": "2026-01-02T21:55:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "ARR-M",
+            "aircraftId": "VN-107",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-08",
+          "startTime": "2026-01-02T19:07:00Z",
+          "endTime": "2026-01-02T19:32:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "ARR-M",
+            "aircraftId": "VN-111",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-02",
+          "startTime": "2026-01-02T20:03:00Z",
+          "endTime": "2026-01-02T20:28:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "DEP-M",
+            "aircraftId": "VN-111",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-02",
+          "startTime": "2026-01-02T22:00:00Z",
+          "endTime": "2026-01-02T22:25:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "DEP-M",
+            "aircraftId": "VN-114",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-05",
+          "startTime": "2026-01-02T22:28:00Z",
+          "endTime": "2026-01-02T22:53:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "DEP-M",
+            "aircraftId": "VN-119",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-10",
+          "startTime": "2026-01-02T22:58:00Z",
+          "endTime": "2026-01-02T23:23:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "EMP_MECHANIC_3",
+      "certificates": [],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "ARR-M",
+            "aircraftId": "VN-104",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-05",
+          "startTime": "2026-01-02T18:44:00Z",
+          "endTime": "2026-01-02T19:19:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "ARR-M",
+            "aircraftId": "VN-109",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-10",
+          "startTime": "2026-01-02T19:35:00Z",
+          "endTime": "2026-01-02T20:10:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "ARR-M",
+            "aircraftId": "VN-113",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-04",
+          "startTime": "2026-01-02T20:16:00Z",
+          "endTime": "2026-01-02T20:51:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "ARR-M",
+            "aircraftId": "VN-117",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-08",
+          "startTime": "2026-01-02T22:07:00Z",
+          "endTime": "2026-01-02T22:42:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "EMP_MECHANIC_4",
+      "certificates": [],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "DEP-M",
+            "aircraftId": "VN-102",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-03",
+          "startTime": "2026-01-02T19:03:01Z",
+          "endTime": "2026-01-02T19:33:01Z"
+        },
+        {
+          "task": {
+            "taskCode": "ARR-M",
+            "aircraftId": "VN-103",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-04",
+          "startTime": "2026-01-02T18:30:00Z",
+          "endTime": "2026-01-02T19:00:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "ARR-M",
+            "aircraftId": "VN-110",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-01",
+          "startTime": "2026-01-02T19:43:00Z",
+          "endTime": "2026-01-02T20:13:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "DEP-M",
+            "aircraftId": "VN-110",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-01",
+          "startTime": "2026-01-02T22:09:00Z",
+          "endTime": "2026-01-02T22:39:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "ARR-M",
+            "aircraftId": "VN-114",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-05",
+          "startTime": "2026-01-02T20:17:00Z",
+          "endTime": "2026-01-02T20:47:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "DEP-M",
+            "aircraftId": "VN-117",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-08",
+          "startTime": "2026-01-02T23:06:00Z",
+          "endTime": "2026-01-02T23:36:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "ARR-M",
+            "aircraftId": "VN-119",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-10",
+          "startTime": "2026-01-02T21:30:00Z",
+          "endTime": "2026-01-02T22:00:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "EMP_MECHANIC_5",
+      "certificates": [],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "DEP-M",
+            "aircraftId": "VN-103",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-04",
+          "startTime": "2026-01-02T20:28:00Z",
+          "endTime": "2026-01-02T20:58:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "ARR-M",
+            "aircraftId": "VN-106",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-07",
+          "startTime": "2026-01-02T19:05:00Z",
+          "endTime": "2026-01-02T19:35:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "ARR-M",
+            "aircraftId": "VN-112",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-03",
+          "startTime": "2026-01-02T19:57:00Z",
+          "endTime": "2026-01-02T20:27:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "DEP-M",
+            "aircraftId": "VN-113",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-04",
+          "startTime": "2026-01-02T22:03:00Z",
+          "endTime": "2026-01-02T22:33:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "DEP-M",
+            "aircraftId": "VN-116",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-07",
+          "startTime": "2026-01-02T22:36:00Z",
+          "endTime": "2026-01-02T23:06:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "ARR-M",
+            "aircraftId": "VN-120",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-01",
+          "startTime": "2026-01-02T21:30:00Z",
+          "endTime": "2026-01-02T22:00:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "EMP_MECHANIC_6",
+      "certificates": [],
+      "assignment": [],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "EMP_GROUND_HANDLING_1",
+      "certificates": [],
+      "assignment": [],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "EMP_GROUND_HANDLING_2",
+      "certificates": [],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "UNLOAD",
+            "aircraftId": "VN-105",
+            "requiredCertificates": [
+              "CERT_GND"
+            ]
+          },
+          "locationId": "GATE-06",
+          "startTime": "2026-01-02T19:25:01Z",
+          "endTime": "2026-01-02T20:10:01Z"
+        },
+        {
+          "task": {
+            "taskCode": "LOAD",
+            "aircraftId": "VN-106",
+            "requiredCertificates": [
+              "CERT_GND"
+            ]
+          },
+          "locationId": "GATE-07",
+          "startTime": "2026-01-02T20:11:01Z",
+          "endTime": "2026-01-02T20:56:01Z"
+        },
+        {
+          "task": {
+            "taskCode": "UNLOAD",
+            "aircraftId": "VN-115",
+            "requiredCertificates": [
+              "CERT_GND"
+            ]
+          },
+          "locationId": "GATE-06",
+          "startTime": "2026-01-02T21:30:01Z",
+          "endTime": "2026-01-02T22:15:01Z"
+        },
+        {
+          "task": {
+            "taskCode": "LOAD",
+            "aircraftId": "VN-117",
+            "requiredCertificates": [
+              "CERT_GND"
+            ]
+          },
+          "locationId": "GATE-08",
+          "startTime": "2026-01-02T22:18:00Z",
+          "endTime": "2026-01-02T23:03:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "EMP_GROUND_HANDLING_3",
+      "certificates": [],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "LOAD",
+            "aircraftId": "VN-112",
+            "requiredCertificates": [
+              "CERT_GND"
+            ]
+          },
+          "locationId": "GATE-03",
+          "startTime": "2026-01-02T19:53:00Z",
+          "endTime": "2026-01-02T20:43:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "UNLOAD",
+            "aircraftId": "VN-116",
+            "requiredCertificates": [
+              "CERT_GND"
+            ]
+          },
+          "locationId": "GATE-07",
+          "startTime": "2026-01-02T21:30:00Z",
+          "endTime": "2026-01-02T22:20:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "EMP_GROUND_HANDLING_4",
+      "certificates": [],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "UNLOAD",
+            "aircraftId": "VN-107",
+            "requiredCertificates": [
+              "CERT_GND"
+            ]
+          },
+          "locationId": "GATE-08",
+          "startTime": "2026-01-02T19:32:00Z",
+          "endTime": "2026-01-02T20:17:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "UNLOAD",
+            "aircraftId": "VN-113",
+            "requiredCertificates": [
+              "CERT_GND"
+            ]
+          },
+          "locationId": "GATE-04",
+          "startTime": "2026-01-02T21:30:00Z",
+          "endTime": "2026-01-02T22:15:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "UNLOAD",
+            "aircraftId": "VN-120",
+            "requiredCertificates": [
+              "CERT_GND"
+            ]
+          },
+          "locationId": "GATE-01",
+          "startTime": "2026-01-02T22:18:00Z",
+          "endTime": "2026-01-02T23:03:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "EMP_GROUND_HANDLING_5",
+      "certificates": [],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "UNLOAD",
+            "aircraftId": "VN-101",
+            "requiredCertificates": [
+              "CERT_GND"
+            ]
+          },
+          "locationId": "GATE-02",
+          "startTime": "2026-01-02T18:32:00Z",
+          "endTime": "2026-01-02T19:12:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "LOAD",
+            "aircraftId": "VN-101",
+            "requiredCertificates": [
+              "CERT_GND"
+            ]
+          },
+          "locationId": "GATE-02",
+          "startTime": "2026-01-02T19:55:00Z",
+          "endTime": "2026-01-02T20:35:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "UNLOAD",
+            "aircraftId": "VN-111",
+            "requiredCertificates": [
+              "CERT_GND"
+            ]
+          },
+          "locationId": "GATE-02",
+          "startTime": "2026-01-02T21:30:00Z",
+          "endTime": "2026-01-02T22:10:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "UNLOAD",
+            "aircraftId": "VN-118",
+            "requiredCertificates": [
+              "CERT_GND"
+            ]
+          },
+          "locationId": "GATE-09",
+          "startTime": "2026-01-02T22:32:00Z",
+          "endTime": "2026-01-02T23:12:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "EMP_GROUND_HANDLING_6",
+      "certificates": [],
+      "assignment": [],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "EMP_GROUND_HANDLING_7",
+      "certificates": [],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "UNLOAD",
+            "aircraftId": "VN-102",
+            "requiredCertificates": [
+              "CERT_GND"
+            ]
+          },
+          "locationId": "GATE-03",
+          "startTime": "2026-01-02T18:50:00Z",
+          "endTime": "2026-01-02T19:35:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "UNLOAD",
+            "aircraftId": "VN-109",
+            "requiredCertificates": [
+              "CERT_GND"
+            ]
+          },
+          "locationId": "GATE-10",
+          "startTime": "2026-01-02T20:10:00Z",
+          "endTime": "2026-01-02T20:55:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "UNLOAD",
+            "aircraftId": "VN-112",
+            "requiredCertificates": [
+              "CERT_GND"
+            ]
+          },
+          "locationId": "GATE-03",
+          "startTime": "2026-01-02T21:30:00Z",
+          "endTime": "2026-01-02T22:15:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "EMP_GROUND_HANDLING_8",
+      "certificates": [],
+      "assignment": [],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "EMP_CLEANER_1",
+      "certificates": [],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "CLEAN",
+            "aircraftId": "VN-104",
+            "requiredCertificates": [
+              "CERT_CLN"
+            ]
+          },
+          "locationId": "GATE-05",
+          "startTime": "2026-01-02T20:04:00Z",
+          "endTime": "2026-01-02T20:49:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "CLEAN",
+            "aircraftId": "VN-106",
+            "requiredCertificates": [
+              "CERT_CLN"
+            ]
+          },
+          "locationId": "GATE-07",
+          "startTime": "2026-01-02T19:06:02Z",
+          "endTime": "2026-01-02T19:51:02Z"
+        },
+        {
+          "task": {
+            "taskCode": "CLEAN",
+            "aircraftId": "VN-110",
+            "requiredCertificates": [
+              "CERT_CLN"
+            ]
+          },
+          "locationId": "GATE-01",
+          "startTime": "2026-01-02T21:30:00Z",
+          "endTime": "2026-01-02T22:15:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "CLEAN",
+            "aircraftId": "VN-116",
+            "requiredCertificates": [
+              "CERT_CLN"
+            ]
+          },
+          "locationId": "GATE-07",
+          "startTime": "2026-01-02T22:21:00Z",
+          "endTime": "2026-01-02T23:06:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "CLEAN",
+            "aircraftId": "VN-120",
+            "requiredCertificates": [
+              "CERT_CLN"
+            ]
+          },
+          "locationId": "GATE-01",
+          "startTime": "2026-01-02T23:12:00Z",
+          "endTime": "2026-01-02T23:57:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "EMP_CLEANER_2",
+      "certificates": [],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "CLEAN",
+            "aircraftId": "VN-101",
+            "requiredCertificates": [
+              "CERT_CLN"
+            ]
+          },
+          "locationId": "GATE-02",
+          "startTime": "2026-01-02T19:12:00Z",
+          "endTime": "2026-01-02T19:52:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "CLEAN",
+            "aircraftId": "VN-105",
+            "requiredCertificates": [
+              "CERT_CLN"
+            ]
+          },
+          "locationId": "GATE-06",
+          "startTime": "2026-01-02T20:10:01Z",
+          "endTime": "2026-01-02T20:50:01Z"
+        },
+        {
+          "task": {
+            "taskCode": "CLEAN",
+            "aircraftId": "VN-108",
+            "requiredCertificates": [
+              "CERT_CLN"
+            ]
+          },
+          "locationId": "GATE-09",
+          "startTime": "2026-01-02T21:30:00Z",
+          "endTime": "2026-01-02T22:10:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "CLEAN",
+            "aircraftId": "VN-113",
+            "requiredCertificates": [
+              "CERT_CLN"
+            ]
+          },
+          "locationId": "GATE-04",
+          "startTime": "2026-01-02T22:15:00Z",
+          "endTime": "2026-01-02T22:55:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "CLEAN",
+            "aircraftId": "VN-119",
+            "requiredCertificates": [
+              "CERT_CLN"
+            ]
+          },
+          "locationId": "GATE-10",
+          "startTime": "2026-01-02T23:04:00Z",
+          "endTime": "2026-01-02T23:44:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "EMP_CLEANER_3",
+      "certificates": [],
+      "assignment": [],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "EMP_CLEANER_4",
+      "certificates": [],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "CLEAN",
+            "aircraftId": "VN-102",
+            "requiredCertificates": [
+              "CERT_CLN"
+            ]
+          },
+          "locationId": "GATE-03",
+          "startTime": "2026-01-02T19:35:00Z",
+          "endTime": "2026-01-02T20:15:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "CLEAN",
+            "aircraftId": "VN-107",
+            "requiredCertificates": [
+              "CERT_CLN"
+            ]
+          },
+          "locationId": "GATE-08",
+          "startTime": "2026-01-02T20:20:00Z",
+          "endTime": "2026-01-02T21:00:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "CLEAN",
+            "aircraftId": "VN-114",
+            "requiredCertificates": [
+              "CERT_CLN"
+            ]
+          },
+          "locationId": "GATE-05",
+          "startTime": "2026-01-02T22:19:00Z",
+          "endTime": "2026-01-02T22:59:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "CLEAN",
+            "aircraftId": "VN-117",
+            "requiredCertificates": [
+              "CERT_CLN"
+            ]
+          },
+          "locationId": "GATE-08",
+          "startTime": "2026-01-02T21:31:01Z",
+          "endTime": "2026-01-02T22:11:01Z"
+        },
+        {
+          "task": {
+            "taskCode": "CLEAN",
+            "aircraftId": "VN-118",
+            "requiredCertificates": [
+              "CERT_CLN"
+            ]
+          },
+          "locationId": "GATE-09",
+          "startTime": "2026-01-02T23:12:00Z",
+          "endTime": "2026-01-02T23:52:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "EMP_CLEANER_5",
+      "certificates": [],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "CLEAN",
+            "aircraftId": "VN-103",
+            "requiredCertificates": [
+              "CERT_CLN"
+            ]
+          },
+          "locationId": "GATE-04",
+          "startTime": "2026-01-02T19:54:00Z",
+          "endTime": "2026-01-02T20:39:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "CLEAN",
+            "aircraftId": "VN-109",
+            "requiredCertificates": [
+              "CERT_CLN"
+            ]
+          },
+          "locationId": "GATE-10",
+          "startTime": "2026-01-02T21:30:00Z",
+          "endTime": "2026-01-02T22:15:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "CLEAN",
+            "aircraftId": "VN-115",
+            "requiredCertificates": [
+              "CERT_CLN"
+            ]
+          },
+          "locationId": "GATE-06",
+          "startTime": "2026-01-02T22:19:00Z",
+          "endTime": "2026-01-02T23:04:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "EMP_FUEL_AGENT_1",
+      "certificates": [],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "FUEL",
+            "aircraftId": "VN-102",
+            "requiredCertificates": [
+              "CERT_FUEL"
+            ]
+          },
+          "locationId": "GATE-03",
+          "startTime": "2026-01-02T19:35:00Z",
+          "endTime": "2026-01-02T20:05:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "FUEL",
+            "aircraftId": "VN-107",
+            "requiredCertificates": [
+              "CERT_FUEL"
+            ]
+          },
+          "locationId": "GATE-08",
+          "startTime": "2026-01-02T20:17:00Z",
+          "endTime": "2026-01-02T20:47:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "FUEL",
+            "aircraftId": "VN-108",
+            "requiredCertificates": [
+              "CERT_FUEL"
+            ]
+          },
+          "locationId": "GATE-09",
+          "startTime": "2026-01-02T21:30:00Z",
+          "endTime": "2026-01-02T22:00:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "FUEL",
+            "aircraftId": "VN-111",
+            "requiredCertificates": [
+              "CERT_FUEL"
+            ]
+          },
+          "locationId": "GATE-02",
+          "startTime": "2026-01-02T22:10:00Z",
+          "endTime": "2026-01-02T22:40:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "FUEL",
+            "aircraftId": "VN-115",
+            "requiredCertificates": [
+              "CERT_FUEL"
+            ]
+          },
+          "locationId": "GATE-06",
+          "startTime": "2026-01-02T22:44:00Z",
+          "endTime": "2026-01-02T23:14:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "FUEL",
+            "aircraftId": "VN-118",
+            "requiredCertificates": [
+              "CERT_FUEL"
+            ]
+          },
+          "locationId": "GATE-09",
+          "startTime": "2026-01-02T23:17:00Z",
+          "endTime": "2026-01-02T23:47:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "EMP_FUEL_AGENT_2",
+      "certificates": [],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "FUEL",
+            "aircraftId": "VN-105",
+            "requiredCertificates": [
+              "CERT_FUEL"
+            ]
+          },
+          "locationId": "GATE-06",
+          "startTime": "2026-01-02T20:10:01Z",
+          "endTime": "2026-01-02T20:45:01Z"
+        },
+        {
+          "task": {
+            "taskCode": "FUEL",
+            "aircraftId": "VN-106",
+            "requiredCertificates": [
+              "CERT_FUEL"
+            ]
+          },
+          "locationId": "GATE-07",
+          "startTime": "2026-01-02T19:33:02Z",
+          "endTime": "2026-01-02T20:08:02Z"
+        },
+        {
+          "task": {
+            "taskCode": "FUEL",
+            "aircraftId": "VN-109",
+            "requiredCertificates": [
+              "CERT_FUEL"
+            ]
+          },
+          "locationId": "GATE-10",
+          "startTime": "2026-01-02T21:30:00Z",
+          "endTime": "2026-01-02T22:05:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "FUEL",
+            "aircraftId": "VN-114",
+            "requiredCertificates": [
+              "CERT_FUEL"
+            ]
+          },
+          "locationId": "GATE-05",
+          "startTime": "2026-01-02T22:15:01Z",
+          "endTime": "2026-01-02T22:50:01Z"
+        },
+        {
+          "task": {
+            "taskCode": "FUEL",
+            "aircraftId": "VN-120",
+            "requiredCertificates": [
+              "CERT_FUEL"
+            ]
+          },
+          "locationId": "GATE-01",
+          "startTime": "2026-01-02T23:19:00Z",
+          "endTime": "2026-01-02T23:54:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "EMP_FUEL_AGENT_3",
+      "certificates": [],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "FUEL",
+            "aircraftId": "VN-101",
+            "requiredCertificates": [
+              "CERT_FUEL"
+            ]
+          },
+          "locationId": "GATE-02",
+          "startTime": "2026-01-02T19:15:00Z",
+          "endTime": "2026-01-02T19:40:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "FUEL",
+            "aircraftId": "VN-103",
+            "requiredCertificates": [
+              "CERT_FUEL"
+            ]
+          },
+          "locationId": "GATE-04",
+          "startTime": "2026-01-02T19:45:00Z",
+          "endTime": "2026-01-02T20:10:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "FUEL",
+            "aircraftId": "VN-104",
+            "requiredCertificates": [
+              "CERT_FUEL"
+            ]
+          },
+          "locationId": "GATE-05",
+          "startTime": "2026-01-02T20:11:00Z",
+          "endTime": "2026-01-02T20:36:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "FUEL",
+            "aircraftId": "VN-110",
+            "requiredCertificates": [
+              "CERT_FUEL"
+            ]
+          },
+          "locationId": "GATE-01",
+          "startTime": "2026-01-02T22:02:00Z",
+          "endTime": "2026-01-02T22:27:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "FUEL",
+            "aircraftId": "VN-113",
+            "requiredCertificates": [
+              "CERT_FUEL"
+            ]
+          },
+          "locationId": "GATE-04",
+          "startTime": "2026-01-02T22:30:00Z",
+          "endTime": "2026-01-02T22:55:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "FUEL",
+            "aircraftId": "VN-116",
+            "requiredCertificates": [
+              "CERT_FUEL"
+            ]
+          },
+          "locationId": "GATE-07",
+          "startTime": "2026-01-02T22:58:00Z",
+          "endTime": "2026-01-02T23:23:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "FUEL",
+            "aircraftId": "VN-117",
+            "requiredCertificates": [
+              "CERT_FUEL"
+            ]
+          },
+          "locationId": "GATE-08",
+          "startTime": "2026-01-02T21:30:00Z",
+          "endTime": "2026-01-02T21:55:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "FUEL",
+            "aircraftId": "VN-119",
+            "requiredCertificates": [
+              "CERT_FUEL"
+            ]
+          },
+          "locationId": "GATE-10",
+          "startTime": "2026-01-02T23:26:00Z",
+          "endTime": "2026-01-02T23:51:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "EMP_GROUND_HANDLING_EXTRA_1",
+      "certificates": [
+        "CERT_GND"
+      ],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "UNLOAD",
+            "aircraftId": "VN-104",
+            "requiredCertificates": [
+              "CERT_GND"
+            ]
+          },
+          "locationId": "GATE-05",
+          "startTime": "2026-01-02T19:19:00Z",
+          "endTime": "2026-01-02T20:04:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "UNLOAD",
+            "aircraftId": "VN-110",
+            "requiredCertificates": [
+              "CERT_GND"
+            ]
+          },
+          "locationId": "GATE-01",
+          "startTime": "2026-01-02T20:15:00Z",
+          "endTime": "2026-01-02T21:00:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "UNLOAD",
+            "aircraftId": "VN-119",
+            "requiredCertificates": [
+              "CERT_GND"
+            ]
+          },
+          "locationId": "GATE-10",
+          "startTime": "2026-01-02T22:19:00Z",
+          "endTime": "2026-01-02T23:04:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "EMP_GROUND_HANDLING_EXTRA_2",
+      "certificates": [
+        "CERT_GND"
+      ],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "UNLOAD",
+            "aircraftId": "VN-103",
+            "requiredCertificates": [
+              "CERT_GND"
+            ]
+          },
+          "locationId": "GATE-04",
+          "startTime": "2026-01-02T19:00:00Z",
+          "endTime": "2026-01-02T19:45:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "UNLOAD",
+            "aircraftId": "VN-108",
+            "requiredCertificates": [
+              "CERT_GND"
+            ]
+          },
+          "locationId": "GATE-09",
+          "startTime": "2026-01-02T19:58:00Z",
+          "endTime": "2026-01-02T20:43:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "UNLOAD",
+            "aircraftId": "VN-114",
+            "requiredCertificates": [
+              "CERT_GND"
+            ]
+          },
+          "locationId": "GATE-05",
+          "startTime": "2026-01-02T21:30:01Z",
+          "endTime": "2026-01-02T22:15:01Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    },
+    {
+      "employeeId": "EMP_MECHANIC_EXTRA_1",
+      "certificates": [
+        "CERT_MECH"
+      ],
+      "assignment": [
+        {
+          "task": {
+            "taskCode": "DEP-M",
+            "aircraftId": "VN-107",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-08",
+          "startTime": "2026-01-02T21:30:00Z",
+          "endTime": "2026-01-02T22:00:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "ARR-M",
+            "aircraftId": "VN-108",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-09",
+          "startTime": "2026-01-02T19:28:00Z",
+          "endTime": "2026-01-02T19:58:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "DEP-M",
+            "aircraftId": "VN-108",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-09",
+          "startTime": "2026-01-02T19:58:00Z",
+          "endTime": "2026-01-02T20:28:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "ARR-M",
+            "aircraftId": "VN-116",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-07",
+          "startTime": "2026-01-02T20:30:00Z",
+          "endTime": "2026-01-02T21:00:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "ARR-M",
+            "aircraftId": "VN-118",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-09",
+          "startTime": "2026-01-02T22:02:00Z",
+          "endTime": "2026-01-02T22:32:00Z"
+        },
+        {
+          "task": {
+            "taskCode": "DEP-M",
+            "aircraftId": "VN-118",
+            "requiredCertificates": [
+              "CERT_MECH"
+            ]
+          },
+          "locationId": "GATE-09",
+          "startTime": "2026-01-02T22:57:00Z",
+          "endTime": "2026-01-02T23:27:00Z"
+        }
+      ],
+      "travels": [],
+      "breakTimes": []
+    }
+  ],
+  "droppedTasks": [
+    {
+      "aircraftId": "VN-102",
+      "tasks": [
+        {
+          "taskCode": "LOAD",
+          "aircraftId": "VN-102",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "locationId": "GATE-03",
+          "startTime": "2026-01-02T18:20:00Z",
+          "endTime": "2026-01-02T21:20:00Z",
+          "requiredLevel": 1
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-103",
+      "tasks": [
+        {
+          "taskCode": "LOAD",
+          "aircraftId": "VN-103",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "locationId": "GATE-04",
+          "startTime": "2026-01-02T18:30:00Z",
+          "endTime": "2026-01-02T21:30:00Z",
+          "requiredLevel": 1
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-104",
+      "tasks": [
+        {
+          "taskCode": "LOAD",
+          "aircraftId": "VN-104",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "locationId": "GATE-05",
+          "startTime": "2026-01-02T18:44:00Z",
+          "endTime": "2026-01-02T21:44:00Z",
+          "requiredLevel": 1
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-105",
+      "tasks": [
+        {
+          "taskCode": "LOAD",
+          "aircraftId": "VN-105",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "locationId": "GATE-06",
+          "startTime": "2026-01-02T18:55:00Z",
+          "endTime": "2026-01-02T21:55:00Z",
+          "requiredLevel": 1
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-106",
+      "tasks": [
+        {
+          "taskCode": "UNLOAD",
+          "aircraftId": "VN-106",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "locationId": "GATE-07",
+          "startTime": "2026-01-02T19:05:00Z",
+          "endTime": "2026-01-02T22:05:00Z",
+          "requiredLevel": 1
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-107",
+      "tasks": [
+        {
+          "taskCode": "LOAD",
+          "aircraftId": "VN-107",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "locationId": "GATE-08",
+          "startTime": "2026-01-02T19:07:00Z",
+          "endTime": "2026-01-02T22:07:00Z",
+          "requiredLevel": 1
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-108",
+      "tasks": [
+        {
+          "taskCode": "LOAD",
+          "aircraftId": "VN-108",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "locationId": "GATE-09",
+          "startTime": "2026-01-02T19:21:00Z",
+          "endTime": "2026-01-02T22:21:00Z",
+          "requiredLevel": 1
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-109",
+      "tasks": [
+        {
+          "taskCode": "LOAD",
+          "aircraftId": "VN-109",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "locationId": "GATE-10",
+          "startTime": "2026-01-02T19:35:00Z",
+          "endTime": "2026-01-02T22:35:00Z",
+          "requiredLevel": 1
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-110",
+      "tasks": [
+        {
+          "taskCode": "LOAD",
+          "aircraftId": "VN-110",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "locationId": "GATE-01",
+          "startTime": "2026-01-02T19:43:00Z",
+          "endTime": "2026-01-02T22:43:00Z",
+          "requiredLevel": 1
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-111",
+      "tasks": [
+        {
+          "taskCode": "CLEAN",
+          "aircraftId": "VN-111",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ],
+          "locationId": "GATE-02",
+          "startTime": "2026-01-02T19:47:00Z",
+          "endTime": "2026-01-02T22:47:00Z",
+          "requiredLevel": 1
+        },
+        {
+          "taskCode": "LOAD",
+          "aircraftId": "VN-111",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "locationId": "GATE-02",
+          "startTime": "2026-01-02T19:47:00Z",
+          "endTime": "2026-01-02T22:47:00Z",
+          "requiredLevel": 1
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-112",
+      "tasks": [
+        {
+          "taskCode": "CLEAN",
+          "aircraftId": "VN-112",
+          "requiredCertificates": [
+            "CERT_CLN"
+          ],
+          "locationId": "GATE-03",
+          "startTime": "2026-01-02T19:53:00Z",
+          "endTime": "2026-01-02T22:53:00Z",
+          "requiredLevel": 1
+        },
+        {
+          "taskCode": "FUEL",
+          "aircraftId": "VN-112",
+          "requiredCertificates": [
+            "CERT_FUEL"
+          ],
+          "locationId": "GATE-03",
+          "startTime": "2026-01-02T19:53:00Z",
+          "endTime": "2026-01-02T22:53:00Z",
+          "requiredLevel": 1
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-113",
+      "tasks": [
+        {
+          "taskCode": "LOAD",
+          "aircraftId": "VN-113",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "locationId": "GATE-04",
+          "startTime": "2026-01-02T19:56:00Z",
+          "endTime": "2026-01-02T22:56:00Z",
+          "requiredLevel": 1
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-114",
+      "tasks": [
+        {
+          "taskCode": "LOAD",
+          "aircraftId": "VN-114",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "locationId": "GATE-05",
+          "startTime": "2026-01-02T20:11:00Z",
+          "endTime": "2026-01-02T23:11:00Z",
+          "requiredLevel": 1
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-115",
+      "tasks": [
+        {
+          "taskCode": "LOAD",
+          "aircraftId": "VN-115",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "locationId": "GATE-06",
+          "startTime": "2026-01-02T20:24:00Z",
+          "endTime": "2026-01-02T23:24:00Z",
+          "requiredLevel": 1
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-116",
+      "tasks": [
+        {
+          "taskCode": "LOAD",
+          "aircraftId": "VN-116",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "locationId": "GATE-07",
+          "startTime": "2026-01-02T20:29:00Z",
+          "endTime": "2026-01-02T23:29:00Z",
+          "requiredLevel": 1
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-117",
+      "tasks": [
+        {
+          "taskCode": "UNLOAD",
+          "aircraftId": "VN-117",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "locationId": "GATE-08",
+          "startTime": "2026-01-02T20:40:00Z",
+          "endTime": "2026-01-02T23:40:00Z",
+          "requiredLevel": 1
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-118",
+      "tasks": [
+        {
+          "taskCode": "LOAD",
+          "aircraftId": "VN-118",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "locationId": "GATE-09",
+          "startTime": "2026-01-02T20:54:00Z",
+          "endTime": "2026-01-02T23:54:00Z",
+          "requiredLevel": 1
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-119",
+      "tasks": [
+        {
+          "taskCode": "LOAD",
+          "aircraftId": "VN-119",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "locationId": "GATE-10",
+          "startTime": "2026-01-02T20:55:00Z",
+          "endTime": "2026-01-02T23:55:00Z",
+          "requiredLevel": 1
+        }
+      ]
+    },
+    {
+      "aircraftId": "VN-120",
+      "tasks": [
+        {
+          "taskCode": "LOAD",
+          "aircraftId": "VN-120",
+          "requiredCertificates": [
+            "CERT_GND"
+          ],
+          "locationId": "GATE-01",
+          "startTime": "2026-01-02T21:00:00Z",
+          "endTime": "2026-01-03T00:00:00Z",
+          "requiredLevel": 1
+        }
+      ]
+    }
+  ]
+}

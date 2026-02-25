@@ -31,7 +31,7 @@ logger = get_logger("src.app.routes")
 
 executor = ThreadPoolExecutor(max_workers=4)
 
-api = Bluelogger.info('api', __name__, url_prefix='/api')
+api = Blueprint('api', __name__, url_prefix='/api')
 
 APP_ENV = os.getenv("APP_ENV", "development").lower()
 

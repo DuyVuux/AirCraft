@@ -1,62 +1,84 @@
-# ✈️ Aircraft App (Backend & Frontend)
+# ✈️ AirCraft: Core App & Frontend
 
-This directory contains the modernized, consolidated Web Application stack for the AirCraft System. 
+This directory contains the central **Data Management** and **User Interface** layers for the AirCraft Ground Staff Scheduling System. 
 
-## 🌐 System Interface Overview
-
-The interface consists of a dynamic React/Vite Frontend paired with a robust FastAPI Backend. The recent Architecture Consolidation relocated scheduling duties completely into FastAPI, eliminating the need for a separate Flask application. The backend handles HTTP requests, authentication, data persistence via SQLAlchemy, and seamlessly dispatches CPU-bound algorithmic tasks.
+It is divided into two primary submodules:
+1. `backend/`: A highly concurrent Python FastAPI application managing Database connections and User Authentication.
+2. `frontend/`: A dynamic React application built with Vite and TypeScript.
 
 ---
 
 ## ⚙️ Backend (FastAPI)
 
-Built for high concurrency, robust security, and developer joy.
+The backend acts as the unified gatekeeper for all data mutations and system authentication.
 
-### Key Capabilities
-- **JWT Auth & Token Refresh**: Stateful login providing short-lived `access_token` and resilient 7-day `refresh_token` flows via `/api/auth/refresh`. Requires strictly enforced secrets (>32 characters).
-- **Role-Based Access Control (RBAC)**: Handled seamlessly using the `require_role()` dependency decorator. Protects routes ensuring only active `Admin`, `Operator`, or `Viewer` statuses can perform state-mutating requests.
-- **Secure by Default**: Integrates CORS configuration driven by Environment variables, `slowapi` rate limiting (e.g., max 5 login attempts / minute), and strict payload validation capping request bounds to 10MB to deflect DDoS behaviors.
+### Key Features
+- **JWT & Roles**: Implements access tokens and refresh tokens. Routes are secured via `require_role(["admin", "operator", "viewer"])`.
+- **Relational Integrity**: Uses SQLAlchemy with `sqlite` (or Postgres in production). Database schemas are handled iteratively via Alembic Migrations.
+- **Security Hardened**: Inbuilt CORS protections via Environment Variables, Rate Limiting (`slowapi`), and Payload Limits to defend against DDoS behaviors.
 
-### Database & Migrations
-The app replaces raw JSON mutability with a transactional **SQLAlchemy** mapping, managing schemas for `Aircraft`, `Employee`, `MaintenanceTask`, and `ScheduleJob`. 
+### Local Setup
 
-Database schema changes are governed strictly through **Alembic** migrations.
 ```bash
-# To apply the latest schema state:
+cd backend
+
+# Setup Virtual Environment
+python3 -m venv .venv
+source .venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Setup Environment Configuration
+cat <<EOF > .env
+API_HOST=0.0.0.0
+API_PORT=8002
+JWT_SECRET_KEY=yoursecretkeythatisatleast32characterslong123
+REFRESH_SECRET_KEY=yourrefreshsecretkeythatisatleast32chars123
+ALLOWED_ORIGINS=http://localhost:5173,http://localhost:3000
+DATABASE_URL=sqlite:///./aircraft.db
+EOF
+
+# Ensure the database schemas are up to date
 alembic upgrade head
+
+# Run the server
+uvicorn main:app --env-file .env --reload --port 8002
 ```
 
-### 🛣️ Important API Endpoints
-
-| Method | Endpoint | Description |
-|:---:|---|---|
-| POST | `/api/auth/login` | Authenticate and retrieve JWT tokens. |
-| POST | `/api/auth/refresh` | Obtain a new access token via Refresh Token. |
-| POST | `/api/scheduler/run` | Main dispatch endpoint. Returns immediately while the `ProcessPoolExecutor` processes the LNS algorithmic resolution asynchronously. |
-| GET | `/api/scheduler/status/{job_id}` | Poll the execution lifecycle (`PENDING` -> `RUNNING` -> `COMPLETED`/`FAILED`) for a dispatched task. |
-| GET | `/api/scheduler/algorithms` | Retrieve available Optimization strategies available on the server. |
+Navigate to [http://localhost:8002/docs](http://localhost:8002/docs) to view the Swagger API Specification.
 
 ---
 
 ## 🖥️ Frontend (React & Vite)
 
-### Technologies
-- React 18 & TypeScript
-- Vite Build Engine
-- Standard JWT HTTP interceptors adding the `Authorization: Bearer <token>` to outbound requests consistently.
+The frontend provides real-time validation, Data uploading mechanics (CSV/Excel), map integrations, and interactive dashboards.
 
-### Running the Frontend
+### Local Setup
 
-Ensure `Node.js` (≥18) is installed.
+Requires **Node.js 18+**.
 
 ```bash
 cd frontend
 
-# Install dependencies (populates node_modules)
+# Tell the frontend where the FastAPI backend lives
+echo "VITE_API_BASE_URL=http://localhost:8002" > .env
+
+# Install Node modules
 npm install
 
-# Start the Vite Hot-Module Replacement server
+# Start the Hot-Module-Replacement Development server
 npm run dev
 ```
 
-The app natively connects to the FastAPI backend running typically on port `8002`. Ensure your backend's `.env` specifically allows your frontend origin via `ALLOWED_ORIGINS` to satisfy CORS compliance.
+Navigate to [http://localhost:5173](http://localhost:5173) to access the application.
+
+---
+
+## Testing
+
+Backend unit tests can be executed sequentially:
+```bash
+cd backend
+pytest tests/
+```

@@ -1,126 +1,126 @@
-# ✈️ AirCraftPort: Integrated Aircraft Maintenance Scheduling System
+# ✈️ AirCraftPort: Integrated Aircraft Maintenance System
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Python](https://img.shields.io/badge/Python-3.9+-green.svg)](https://python.org)
 [![React](https://img.shields.io/badge/React-18.2-61DAFB.svg)](https://reactjs.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.104-009688.svg)](https://fastapi.tiangolo.com/)
-[![OR-Tools](https://img.shields.io/badge/OR--Tools-9.0+-orange.svg)](https://developers.google.com/optimization)
+[![Flask](https://img.shields.io/badge/Flask-3.x-lightgrey.svg)](https://flask.palletsprojects.com/)
 
-**AirCraftPort** is a comprehensive aircraft maintenance scheduling and optimization system. It combines a modern data management interface with powerful algorithms to solve complex logistics problems at airports, ensuring timely aircraft turnarounds and efficient staff allocation.
+**AirCraftPort** is an enterprise-grade aircraft maintenance scheduling and optimization system. It seamlessly integrates a modern data management dashboard with heavy computational algorithms to solve complex routing and personnel allocation scenarios in airport operations.
 
 ---
 
-## 🏗️ High-level Architecture
+## 🏗️ System Architecture
 
-Following a recent architecture consolidation, the system operates as a unified stack:
+The project consists of three distinct, loosely coupled services:
 
-1. **Frontend**: React 18, TypeScript, Vite, MUI. Handles user interactions, data visualization, and input.
-2. **Backend**: 100% FastAPI. Provides RESTful APIs, securing operations via JWT & RBAC, and interacting with the database.
-3. **Database**: SQLAlchemy ORM with Alembic migrations. Uses SQLite locally (PostgreSQL-ready for production).
-4. **Optimization Engine**: Integrated directly into the backend. Uses Google OR-Tools (CP-SAT) and Hybrid LNS, running asynchronously via `ProcessPoolExecutor` for CPU-bound tasks without blocking the API.
+1. **Frontend Web UI (React/Vite)**
+   - Located in: `AirCraft/frontend`
+   - Role: User interface for data entry, map visualization, and scheduling oversight.
+   - Runs on: `http://localhost:5173`
+
+2. **Core API Backend (FastAPI)**
+   - Located in: `AirCraft/backend`
+   - Role: Centralized data hub, JWT authentication, RBAC authorization, and persistent storage via SQLite/PostgreSQL (Alembic Migrations).
+   - Runs on: `http://localhost:8002`
+
+3. **Optimization Engine (Flask / Google OR-Tools)**
+   - Located in: `AirCraft_algo`
+   - Role: A dedicated computational server that runs CP-SAT and Hybrid Large Neighborhood Search (LNS) algorithms. Includes a built-in benchmark dashboard.
+   - Runs on: `http://localhost:8001`
 
 ```mermaid
 graph TD
-    User((User)) -->|Manage Data & Run Jobs| FE[Frontend - React/Vite]
-    FE -->|REST API - JWT Auth| BE[Backend - FastAPI]
-    BE -->|SQLAlchemy| DB[(Database \n Alembic Migrations)]
-    BE -->|ProcessPoolExecutor| Algo[Optimization Engine \n LNS / CP-SAT]
-    Algo -->|Return Solution| BE
+    User((User)) -->|Browser| FE[Frontend UI \n:5173]
+    FE -->|REST API & JWT| BE[FastAPI Backend \n:8002]
+    BE -->|SQLAlchemy| DB[(Database)]
+    FE -->|Trigger Optimization| Algo[Optimization Engine \n Flask :8001]
+    Algo -->|Return Solutions| FE
 ```
-
----
-
-## ✨ Key Features
-
-- **Robust Security**: JWT authentication with refresh tokens, Role-Based Access Control (Admin, Operator, Viewer), configurable CORS, and rate limiting.
-- **Data Persistence**: Managed through SQLAlchemy models and Alembic database migrations.
-- **Advanced Scheduling Engine**: Hybrid Large Neighborhood Search (LNS) combined with Simulated Annealing and a fallback Greedy strategy. Handles pairwise travel times, dependency precedence, and break times avoidance.
-- **Asynchronous Execution**: Scheduler runs in background workers without blocking the API.
-- **Interactive UI**: Upload data, view results, and manage aircrafts/employees globally.
 
 ---
 
 ## 🚀 Getting Started
 
-### System Requirements
-- **Node.js**: 18.0+
-- **Python**: 3.9+
-- **pip** & **npm**
+To run the complete system locally, you must start all three services. Ensure you have **Node.js (≥18)** and **Python (≥3.9)** installed.
 
-### 1. Environment Variables Setup
+### Step 1: Start the Core API Backend (FastAPI)
 
-Create `.env` files based on the provided examples. 
-
-**Backend `.env`:**
-```env
-# Backend & Security
-API_HOST=0.0.0.0
-API_PORT=8002
-JWT_SECRET_KEY=your-super-strong-secret-key-at-least-32-chars
-JWT_REFRESH_SECRET_KEY=your-super-strong-refresh-secret-key
-ALLOWED_ORIGINS=http://localhost:5173,http://localhost:3000
-
-# Database
-DATABASE_URL=sqlite:///./aircraft.db
-```
-
-### 2. Backend Setup & Database Migration
+This service manages the database, authentication, and user data.
 
 ```bash
+# 1. Navigate to the backend directory
 cd AirCraft/backend
 
-# Create and activate virtual environment
-python -m venv .venv
-source .venv/bin/activate  # Or .\venv\Scripts\activate on Windows
+# 2. Setup the virtual environment
+python3 -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
 
-# Install dependencies
+# 3. Install requirements
 pip install -r requirements.txt
 
-# Run database migrations
+# 4. Set up Environment Variables
+# Create a .env file locally
+cat <<EOF > .env
+API_HOST=0.0.0.0
+API_PORT=8002
+JWT_SECRET_KEY=yoursecretkeythatisatleast32characterslong123
+REFRESH_SECRET_KEY=yourrefreshsecretkeythatisatleast32chars123
+ALLOWED_ORIGINS=http://localhost:5173,http://localhost:3000
+DATABASE_URL=sqlite:///./aircraft.db
+EOF
+
+# 5. Apply Database Migrations
 alembic upgrade head
 
-# Start the FastAPI server
-uvicorn main:app --reload --port 8002
+# 6. Start the Server
+uvicorn main:app --env-file .env --reload --port 8002
 ```
+*API Docs available at: [http://localhost:8002/docs](http://localhost:8002/docs)*
 
-### 3. Frontend Setup
+### Step 2: Start the Optimization Engine (Flask)
+
+This service handles heavy constraint programming algorithms.
 
 ```bash
+# 1. Open a new terminal and navigate to the algo directory
+cd AirCraft_algo
+
+# 2. Setup the virtual environment
+python3 -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+
+# 3. Install requirements
+pip install -r requirements.txt
+
+# 4. Start the Application
+python3 main.py
+```
+*Algorithm Dashboard available at: [http://localhost:8001](http://localhost:8001)*
+
+### Step 3: Start the Frontend UI (React)
+
+```bash
+# 1. Open a new terminal and navigate to the frontend directory
 cd AirCraft/frontend
 
-# Install packages
+# 2. Configure Environment Variables
+echo "VITE_API_BASE_URL=http://localhost:8002" > .env
+
+# 3. Install packages
 npm install
 
-# Start the development server
+# 4. Start the Application
 npm run dev
 ```
+*Web Application available at: [http://localhost:5173](http://localhost:5173)*
 
 ---
 
-## 📁 Root Directory Structure
-
-- `AirCraft/`: Contains the consolidated system.
-  - `backend/`: FastAPI application, Alembic configuration, and API endpoints. 
-  - `frontend/`: React application, Vite config, and UI components.
-- `AirCraft_algo/`: The core optimization engine algorithms, constraints, and solver strategies (imported and used by the backend).
-- `report/`: Audit and verification reports.
-- `prompt/`: Operational documentation and guides.
-
----
-
-## 🧪 Testing
-
-The project uses `pytest` for robust quality assurance:
-- **Backend Tests**: Coverage for API flows, authentication, and scheduler processing.
-- **Algorithm Tests**: Comprehensive validation of CP-SAT constraints, travel times, and solver logic.
-
-```bash
-# Run tests
-pytest tests/
-```
-
----
+## 🎯 Key Capabilities
+- **Robust Security**: JSON Web Tokens (JWT) for session management, refresh tokens, and strict Role-Based Access Control (RBAC).
+- **Hybrid Solving Approaches**: Leverages Google OR-Tools alongside custom heuristics (LNS, Simulated Annealing, Greedy Topological Sorting).
+- **Persistent Data Layers**: Eliminated flat-file JSON mutations in favor of a robust SQLAlchemy workflow.
 
 ## 📄 License
-
-This project is licensed under the **MIT License**.
+This codebase is released under the **MIT License**.
